@@ -16,16 +16,16 @@
 title: Stephen's Blog
 email: stephen03.huan@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Just an ordinary high school student. Interests include (but not limited to):
+  cubing, programming, running, and anime. If you're looking for wisdom, I suggest
+  you take an alternative epistemological approach.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://stephen-huan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: vazarum
 github_username: stephen-huan
 facebook_username: stephen03.huan
 instagram_username: stephen_huan
-youtube_username: /channel/UC3adQ7hzj_Ug2dr4KQp8V_w
+#youtube_username: channel/UC3adQ7hzj_Ug2dr4KQp8V_w
 #rss: rss
 
 # Build settings
