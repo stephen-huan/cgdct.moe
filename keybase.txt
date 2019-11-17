@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/stephenhuan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://stephen-huan.github.io
+  * I am stephenhuan (https://keybase.io/stephenhuan) on keybase.
+  * I have a public key ASChn-H2Isi0q7z8QjThBdRKuFdSCST1Vg2et6gvB7bj7go
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120a19fe1f622c8b4abbcfc4234e105d44ab857520924f5560d9eb7a82f07b6e3ee0a",
+      "host": "keybase.io",
+      "kid": "0120a19fe1f622c8b4abbcfc4234e105d44ab857520924f5560d9eb7a82f07b6e3ee0a",
+      "uid": "de92ddb0c0e5ff5533de16b269d14819",
+      "username": "stephenhuan"
+    },
+    "merkle_root": {
+      "ctime": 1574007254,
+      "hash": "429006eabea5e6bddc93e23e2509e610211a95de7b7b74f9586de7cd6bad63e1480d2cb8d53f0fca86f7d1a22de7438de9d80e126c1ea6a77bc43e721be99a85",
+      "hash_meta": "fa89734ff259ce8d76793429236c983a6018f5302d19bbb44ccc31d5f1fc9aef",
+      "seqno": 9956100
+    },
+    "service": {
+      "entropy": "+LbIiL36xS5zoQwqhBbgCGK0",
+      "hostname": "stephen-huan.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.0.0"
+  },
+  "ctime": 1574007281,
+  "expire_in": 504576000,
+  "prev": "2274eeb4f9a79d8e4ead89c0c84798f1464cdf820266e6c297cdc74fcc7fbf17",
+  "seqno": 29,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgoZ/h9iLItKu8/EI04QXUSrhXUgkk9VYNnreoLwe24+4Kp3BheWxvYWTESpcCHcQgInTutPmnnY5OrYnAyEeY8UZM34ICZubCl83HT8x/vxfEIL5gLqtVKZLOiWGhrylzFz/PqCF1hZaTpr9L/L+/2hqZAgHCo3NpZ8RAnn8qcEa0HFR59SFLEbV62bjyxuVnrQ5u4NvDHTOlA44/fBYzBRW6ZuUpiI7khBh1/naYBcdAWDwWumHsK86GB6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIN9WRC7GsghJh8dfdKqXUqtANaw88W7UhEZCAjxxGHglo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/stephenhuan
+
+==================================================================
