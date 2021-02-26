@@ -1,0 +1,3 @@
+[submodule "assets/pdfs/cs-lectures"]
+	path = assets/pdfs/cs-lectures
+	url = https://github.com/stephen-huan/cs-lectures
