@@ -13,20 +13,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Stephen's Blog
+title: Stephen's Website
 email: stephen03.huan@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Just an ordinary high school student. Interests include (but not limited to):
-  cubing, programming, running, and anime. If you're looking for wisdom, I suggest
-  you take an alternative epistemological approach.
+  More of a filesystem than a website.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://stephen-huan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: vazarum
 github_username: stephen-huan
-facebook_username: stephen03.huan
-instagram_username: stephen_huan
-#youtube_username: channel/UC3adQ7hzj_Ug2dr4KQp8V_w
-#rss: rss
+# youtube_username: channel/UC3adQ7hzj_Ug2dr4KQp8V_w
+# rss: rss
 
 # Build settings
 markdown: kramdown
@@ -46,5 +41,5 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-#Own variables: original file up to line 44.
+# own variables: original file up to line 44.
 resume_path: /assets/pdfs/resume.pdf
