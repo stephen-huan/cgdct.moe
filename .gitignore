@@ -1,6 +1,11 @@
+# jekell files 
 _site
+_drafts
 .sass-cache
 .jekyll-metadata
+.jekyll-cache
 
+# ruby
 Gemfile
 Gemfile.lock
+

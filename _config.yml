@@ -40,6 +40,3 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-# own variables: original file up to line 44.
-resume_path: /assets/pdfs/resume.pdf
