@@ -1,0 +1,81 @@
+<html>
+<head>
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis-network.min.js"> </script>-->
+<center>
+<h1></h1>
+</center>
+
+<!-- use the new version of vis-network -->
+<link rel="stylesheet" href="./node_modules/vis-network/dist/dist/vis-network.css" type="text/css" />
+<script type="text/javascript" src="./node_modules/vis-network/dist/vis-network.min.js"> </script>
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 2560px;
+            height: 1440px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 1551", "label": "Differential Calculus", "shape": "box", "title": "*MATH 1551 - Differential Calculus*\nDifferential calculus including\napplications and the underlying theory\nof limits for functions and sequences.\n\n2 credit hours\n\n*Prerequisites:*\nNone"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 1552", "label": "Integral Calculus", "shape": "box", "title": "*MATH 1552 - Integral Calculus*\nDefinite and indefinite integrals,\ntechniques of integration,\nimproper integrals, infinite\nseries, applications.\n\n4 credit hours\n\n*Prerequisites:*\n*MATH 1551*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 1555", "label": "Calculus for Life Sciences", "shape": "box", "title": "*MATH 1555 - Calculus for Life Sciences*\nOverview of integral calculus,\nmultivariable calculus, and differential\nequations for biological sciences.\nThis course is required for students\nin School of Biology.\n\n4 credit hours\n\n*Prerequisites:*\n*MATH 1551*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 2106", "label": "Foundations of Mathematical Proof", "shape": "box", "title": "*MATH 2106 - Foundations of Mathematical Proof*\nAn introduction to proofs in advanced\nmathematics, intended as a transition\nto upper division courses including\nMATH 4107, 4150 and 4317. Fundamentals\nof mathematical abstraction including\nsets, logic, equivalence relations,\nand functions. Thorough development\nof the basic proof techniques:\ndirect, contrapositive, existence,\ncontradiction, and induction.\nIntroduction to proofs in analysis\nand algebra.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 1552* and *MATH 1554*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 2603", "label": "Introduction to Discrete Mathematics", "shape": "box", "title": "*MATH 2603 - Introduction to Discrete Mathematics*\nMathematical logic and proof,\nmathematical induction, counting\nmethods, recurrence relations,\nalgorithms and complexity, graph\ntheory and graph algorithms.\n\n4 credit hours\n\n*Prerequisites:*\n*MATH 1552*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 1554", "label": "Linear Algebra", "shape": "box", "title": "*MATH 1554 - Linear Algebra*\nLinear algebra through eigenvalues,\neigenvectors, applications to linear\nsystems, least squares, diagonalization,\nquadratic forms.\n\n4 credit hours\n\n*Prerequisites:*\nNone"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 3235", "label": "Probability Theory", "shape": "box", "title": "*MATH 3235 - Probability Theory*\nThis course is a mathematical\nintroduction to probability theory,\ncovering random variables, moments,\nmultivariate distributions, law\nof large numbers, central limit\ntheorem, and large deviations.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2551* and *MATH 2106*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4107", "label": "Abstract Algebra I", "shape": "box", "title": "*MATH 4107 - Abstract Algebra I*\nThis course develops in the theme of\n\"Arithmetic congruence, and abstract\nalgebraic structures.\" There will be\na very strong emphasis on theory and\nproofs.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2106*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4150", "label": "Introduction to Number Theory", "shape": "box", "title": "*MATH 4150 - Introduction to Number Theory*\nPrimes and unique factorization,\ncongruences, Chinese remainder\ntheorem, Diophantine equations,\nDiophantine approximations, quadratic\nreciprocity. Applications such as\nfast multiplication, factorization\nand encryption.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2106*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4317", "label": "Analysis I", "shape": "box", "title": "*MATH 4317 - Analysis I*\nReal numbers, topology of Euclidean\nspaces, Cauchy sequences, completeness,\ncontinuity and compactness, uniform\ncontinuity, series of functions, Fourier\nseries\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2106*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4318", "label": "Analysis II", "shape": "box", "title": "*MATH 4318 - Analysis II*\nDifferentiation of functions of one real\nvariable, Riemann-Stieltjes integral,\nthe derivative in R^n and integration in\nR^n\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 4317*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4431", "label": "Introduction to Topology", "shape": "box", "title": "*MATH 4431 - Introduction to Topology*\nPoint set topology, topological spaces\nand metric spaces, continuity and\ncompactness, homotopy and covering\nspaces\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 4317*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4432", "label": "Introduction to Algebraic Topology", "shape": "box", "title": "*MATH 4432 - Introduction to Algebraic Topology*\nIntroduction to algebraic methods\nin topology. Includes homotopy, the\nfundamental group, covering spaces,\nsimplicial complexes. Applications\nto fixed point theory and group theory.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 4317*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4108", "label": "Abstract Algebra II", "shape": "box", "title": "*MATH 4108 - Abstract Algebra II*\nContinuation of Abstract Algebra I, with\nemphasis on Galois theory, modules,\npolynomial fields, and the theory of\nlinear associative algebra.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 4107*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 2551", "label": "Multivariable Calculus", "shape": "box", "title": "*MATH 2551 - Multivariable Calculus*\nLinear approximation and Taylor\u2019s\ntheorems, Lagrange multiples and\nconstrained optimization, multiple\nintegration and vector analysis\nincluding the theorems of Green,\nGauss, and Stokes.\n\n4 credit hours\n\n*Prerequisites:*\nNone"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 3215", "label": "Introduction to Probability and Statistics", "shape": "box", "title": "*MATH 3215 - Introduction to Probability and Statistics*\nThis course is a problem oriented\nintroduction to the basic concepts of\nprobability and statistics, providing\na foundation for applications and\nfurther study.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2551*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 3670", "label": "Probability and Statistics with Applications", "shape": "box", "title": "*MATH 3670 - Probability and Statistics with Applications*\nIntroduction to probability,\nprobability distributions, point\nestimation, confidence intervals,\nhypothesis testing, linear regression\nand analysis of variance.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2551*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4320", "label": "Complex Analysis", "shape": "box", "title": "*MATH 4320 - Complex Analysis*\nTopics from complex function\ntheory, including contour\nintegration and conformal mapping\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2551*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4441", "label": "Differential Geometry", "shape": "box", "title": "*MATH 4441 - Differential Geometry*\nThe theory of curves, surfaces, and\nmore generally, manifolds. Curvature,\nparallel transport, covariant\ndifferentiation, Gauss-Bonet theorem\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2551*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4782", "label": "Quantum Information and Quantum Computing", "shape": "box", "title": "*MATH 4782 - Quantum Information and Quantum Computing*\nIntroduction to quantum computing and\nquantum information theory, formalism\nof quantum mechanics, quantum gates,\nalgorithms, measurements, coding, and\ninformation. Physical realizations and\nexperiments. Crosslisted with PHYS 4782\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2551*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4221", "label": "Stochastic Processes I", "shape": "box", "title": "*MATH 4221 - Stochastic Processes I*\nSimple random walk and the theory\nof discrete time Markov chains\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 3215*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4261", "label": "Mathematical Statistics I", "shape": "box", "title": "*MATH 4261 - Mathematical Statistics I*\nSampling distributions, Normal, t,\nchi-square and F distributions.\nMoment generating function methods,\nBayesian estimation and introduction\nto hypothesis testing\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 3215*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4280", "label": "Introduction to Information Theory", "shape": "box", "title": "*MATH 4280 - Introduction to Information Theory*\nThe measurement and quantification of\ninformation. These ideas are applied\nto the probabilistic analysis of the\ntransmission of information over a\nchannel along which random distortion\nof the message occurs.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 3215*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4262", "label": "Mathematical Statistics II", "shape": "box", "title": "*MATH 4262 - Mathematical Statistics II*\nHypothesis testing, likelihood ratio\ntests, nonparametric tests, bivariate\nand multivariate normal distributions\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 4261*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 3406", "label": "A Second Course on Linear Algebra", "shape": "box", "title": "*MATH 3406 - A Second Course on Linear Algebra*\nThis course will cover important topics\nin linear algebra not usually discussed\nin a first-semester course, featuring a\nmixture of theory and applications.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 1554*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4347", "label": "Partial Differential Equations I", "shape": "box", "title": "*MATH 4347 - Partial Differential Equations I*\nMethod of characteristics for first\nand second order partial differential\nequations, conservation laws and shocks,\nclassification of second order systems\nand applications.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2552* and *MATH 1554*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4541", "label": "Dynamics and Bifurcations I", "shape": "box", "title": "*MATH 4541 - Dynamics and Bifurcations I*\nA broad introduction to the local and\nglobal behavior of nonlinear dynamical\nsystems arising from maps and ordinary\ndifferential equations.\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2552* and *MATH 1554*"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 2552", "label": "Differential Equations", "shape": "box", "title": "*MATH 2552 - Differential Equations*\nMethods for obtaining numerical and\nanalytic solutions of elementary\ndifferential equations. Applications\nare also discussed with an emphasis\non modeling.\n\n4 credit hours\n\n*Prerequisites:*\nNone"}, {"color": {"background": "rgba(240, 240, 240, 0.8)"}, "id": "MATH 4640", "label": "Numerical Analysis I", "shape": "box", "title": "*MATH 4640 - Numerical Analysis I*\nIntroduction to numerical algorithms for\nsome basic problems in computational\nmathematics. Discussion of both\nimplementation issues and error\nanalysis. Crosslisted with CX 4640\n(formerly CS 4642).\n\n3 credit hours\n\n*Prerequisites:*\n*MATH 2552*"}]);
+        edges = new vis.DataSet([{"arrows": "to", "from": "MATH 1551", "to": "MATH 1552"}, {"arrows": "to", "from": "MATH 1551", "to": "MATH 1555"}, {"arrows": "to", "from": "MATH 1552", "to": "MATH 2106"}, {"arrows": "to", "from": "MATH 1552", "to": "MATH 2603"}, {"arrows": "to", "from": "MATH 1554", "to": "MATH 2106"}, {"arrows": "to", "from": "MATH 1554", "to": "MATH 3406"}, {"arrows": "to", "from": "MATH 1554", "to": "MATH 4347"}, {"arrows": "to", "from": "MATH 1554", "to": "MATH 4541"}, {"arrows": "to", "from": "MATH 2106", "to": "MATH 3235"}, {"arrows": "to", "from": "MATH 2106", "to": "MATH 4107"}, {"arrows": "to", "from": "MATH 2106", "to": "MATH 4150"}, {"arrows": "to", "from": "MATH 2106", "to": "MATH 4317"}, {"arrows": "to", "from": "MATH 2551", "to": "MATH 3215"}, {"arrows": "to", "from": "MATH 2551", "to": "MATH 3235"}, {"arrows": "to", "from": "MATH 2551", "to": "MATH 3670"}, {"arrows": "to", "from": "MATH 2551", "to": "MATH 4320"}, {"arrows": "to", "from": "MATH 2551", "to": "MATH 4441"}, {"arrows": "to", "from": "MATH 2551", "to": "MATH 4782"}, {"arrows": "to", "from": "MATH 2552", "to": "MATH 4347"}, {"arrows": "to", "from": "MATH 2552", "to": "MATH 4541"}, {"arrows": "to", "from": "MATH 2552", "to": "MATH 4640"}, {"arrows": "to", "from": "MATH 3215", "to": "MATH 4221"}, {"arrows": "to", "from": "MATH 3215", "to": "MATH 4261"}, {"arrows": "to", "from": "MATH 3215", "to": "MATH 4280"}, {"arrows": "to", "from": "MATH 4107", "to": "MATH 4108"}, {"arrows": "to", "from": "MATH 4261", "to": "MATH 4262"}, {"arrows": "to", "from": "MATH 4317", "to": "MATH 4318"}, {"arrows": "to", "from": "MATH 4317", "to": "MATH 4431"}, {"arrows": "to", "from": "MATH 4317", "to": "MATH 4432"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"configure": {"enabled": false}, "interaction": {"keyboard": true}, "layout": {"randomSeed": 16}, "edges": {"color": {"inherit": "to"}}, "physics": {"enabled": true, "barnesHut": {"gravitationalConstant": -4000}, "stabilization": {"enabled": true, "fit": true, "iterations": 1000, "onlyDynamicEdges": false, "updateInterval": 50}}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

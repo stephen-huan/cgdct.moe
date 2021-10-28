@@ -11,12 +11,11 @@ been no innovations in the basic cryptographic principles since PGP.
 
 Let's say my fingerprint is 0xA99DD60E and your fingerprint is 0x035E72CD.
 A "fingerprint" is a hash of the public key --- it (in theory) uniquely
-identifies the public key (note that brute force attacks ARE feasible
-for PGP, so an attacker can generate keys until the fingerprint happens
-to match, so if you `gpg --verify` it looks like I signed something
-but in fact it's the attacker's key whose fingerprint matches mine ...
-this is currently preventable by giving the full fingerprint, i.e.
-0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E)
+identifies the public key (note that brute force attacks ARE feasible for PGP,
+so an attacker can generate keys until the fingerprint happens to match, so
+if you `gpg --verify` it looks like I signed something, but in fact it's the
+attacker's key whose fingerprint matches mine (this is currently preventable by
+giving the full fingerprint, i.e. 0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E).
 
 So when I send a message to you, I encrypt it with the public key associated
 with the fingerprint 0x035E72CD, but suppose I don't know that 0x035E72CD
@@ -58,14 +57,13 @@ they'd just manipulate what is being shown on either end so both of
 us are deceived. Therefore you need to do something like `gpg --sign`
 to make it impossible to modify the message without detection.
 
-First off, it's perfectly safe to share safety numbers because they're
-simply our two fingerprints concatenated together. A fingerprint derives
-from the public key, which is meant to be shared. Second, if you post the
-safety number in public then they can figure out you're talking to me,
-since your key is there and my key is there. `gpg --sign`'ing a safety
-number therefore _proves_ that you're in communication with me (i.e. not
-a good idea to `gpg --sign` a safety number with a terrorist since it'll
-be really hard to prove that you didn't).
+First off, it's perfectly safe to share safety numbers because they're simply
+our two fingerprints concatenated together. A fingerprint derives from the
+public key, which is meant to be shared. Second, if you post the safety
+number in public then they can figure out you're talking to me, since your
+key is there and my key is there. `gpg --sign`'ing a safety number therefore
+_declares_ that you're in communication with me (and denying the connection
+is equivalent to claiming your private key was compromised).
 
 Assuming your PGP key hasn't been compromised, then you signing
 the safety number means that it really is your fingerprint and
@@ -77,13 +75,13 @@ the safety number matches, we're all good.
 - If the safety numbers match, that prevents a man-in-the-middle attack and
 guarantees who you think you're talking to really is who you're talking to
     - Note that if they don't match, it could be a result of uninstalling
-    Signal, changing phones, etc. --- Signal does not associate
-    a permanent key per account, it changes on some operations.
+      Signal, changing phones, etc. --- Signal does not associate
+      a permanent key per account, it changes on some operations.
 - Sharing a Signal safety number in public is safe
 (since it shares fingerprints) but is showing to
 the world that you're talking to the other person
     - Similarly, if you `gpg --sign` a safety number, you
-    prove you're in correspondence with that person
+      declare you're in correspondence with that person
 - Like PGP, you need a trusted channel to exchange safety numbers
     - i.e. you have confidence that you're talking to the right person
     - This channel cannot be Signal itself, for obvious reasons
