@@ -1,0 +1,229 @@
+/* general */
+
+// variables 
+$font: Verdana, Arial;
+$font-alt: 'Helvetica neue', Helvetica, "lucida grande", tahoma, verdana, arial, sans-serif;
+$font-mono: "menlo", monospace;
+
+$font-size: 11px;
+$score-size: 13px;
+$small-size: 10px;
+$status-size: 19px;
+
+$header-size: 25px;
+
+$column-pad: 4px;
+$row-pad: 1px;
+$progress-pad: 8px;
+$manga-progress-pad: 6px;
+$divide-pad: 15px;
+
+// functions 
+@mixin replace_text($selector, $text, $size) {
+    #{$selector} {
+        font-size: 0px;
+    }
+
+    #{$selector}:after {
+        content: "#{$text}";
+        font-size: $size;
+        vertical-align: middle;
+    }
+}
+
+// set font
+BODY {
+    margin: 0; 
+    font-family: $font; 
+    font-size: $font-size;
+}
+
+/* top status indicator */
+.status-menu-container {
+    height: 48px;
+
+    .status-menu .status-button {
+        font-family: $font-alt;
+        font-size: $status-size;
+    }
+}
+
+/* header */
+.list-unit .list-status-title {
+    height: $header-size;
+  
+    .text {
+        font-size: 0px;
+        height: 0px;
+    }
+
+    .stats {
+        height: $header-size;
+        line-height: $header-size;
+    }
+}
+
+/* gap */
+.list-block {
+    margin: 0px;
+}
+
+/* table */
+
+.list-table {
+    // header
+    .list-table-header {
+        // reduce padding 
+        .header-title {
+            height: 0px;
+            padding: $column-pad 0px $column-pad 0px;
+        }
+
+        // make title, score narrower and give more space to tags 
+        .header-title.number   {width:  30px;}
+        .header-title.image    {width:  66px;}
+        .header-title.title    {width: 600px;}
+        .header-title.score    {width:  50px;}
+        .header-title.type     {width:  60px;}
+        .header-title.progress {width:  90px;}
+        .header-title.tags     {width: 150px;}
+
+        .header-title.chapters {width:  90px;}
+        .header-title.volumes  {width:  90px;}
+    }
+
+    // table data 
+    .list-table-data  {
+        // reduce padding
+        .data {
+            height: 0px;
+            padding: $row-pad 0px $row-pad 0px;
+            vertical-align: middle;
+        }
+
+        // make monospace
+        .data.number {
+            font-family: $font-mono; 
+        }
+
+        .data.title {
+            // make title not go over "edit - more"
+            .link {
+                font-weight: bold;
+                max-width: 94%;
+                // display: inline-block;
+            }
+
+            // disable the more of "edit - more"
+            .add-edit-more {
+                font-size: 0px;
+            }
+
+            a.List_LightBox:after {
+                content: "edit";
+                font-size: $small-size;
+                vertical-align: middle;
+            }
+
+            .more {
+                font-size: 0px;
+            }
+        }
+
+        // align progress right to line up +'s, make monospace 
+        .data.progress { 
+            text-align: right;
+            padding-right: $progress-pad;
+            font-family: $font-mono;
+        }
+
+        // manga has different width columns, could do math
+        .data.chapter, .data.volume {
+            text-align: right;
+            padding-right: $manga-progress-pad;
+            font-family: $font-mono;
+        }
+
+        // keep completed centered
+        $columns: progress, chapter, volume;
+        @each $column in $columns {
+            .data.status.completed ~ .data.#{$column} { 
+                text-align: center;
+                padding-right: 0px;
+            }
+        }
+
+        // align "/" characters
+        @each $column in $columns {
+            .data.#{$column} span { 
+                min-width: $divide-pad;
+                display: inline-block;
+            }
+        }
+
+        // tags
+        .tags {
+            // make edit always on first line, change font
+            .edit {
+                text-align: left;
+                font-family: $font-alt;
+            }
+
+            // left-align tags
+            div {
+                text-align: left;
+                float: left;
+                width: 82%;
+                min-width: 82%;
+                min-height: 1px;
+            } 
+        }
+    }
+}
+
+/*** replaces ***/
+
+// make monospace
+@for $score from 1 through 10 {
+    a .score-label.score-#{$score} {
+        font-family: $font-mono;
+        font-size: $score-size;
+    }
+}
+
+// replace score of 10 with 0
+@include replace_text("a .score-label.score-10", "0", $score-size);
+// make lowercase
+@include replace_text(".list-table .list-table-data .tags .edit", "edit", $small-size);
+
+/*** icons ***/
+
+// disable watch icon
+.icon-watch.ml4 {
+    background-image: none;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    height: 0px;
+}
+
+// replace plus symbol with plus character
+.fa-solid.fa-circle-plus:before {
+    content: "+";
+    text-align: right;
+    font-family: $font-mono;
+} 
+
+// replace search with text/
+.fa-solid.fa-magnifying-glass:before {
+    content: "o-";
+    font-family: $font-alt;
+}
+
+/*** misc ***/
+
+textarea {
+    font-family: $font-mono;
+    font-size: $font-size;
+}
+
