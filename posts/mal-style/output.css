@@ -1,0 +1,182 @@
+/* general */
+BODY {
+  margin: 0;
+  font-family: Verdana, Arial;
+  font-size: 11px; }
+
+/* top status indicator */
+.status-menu-container {
+  height: 48px; }
+  .status-menu-container .status-menu .status-button {
+    font-family: "Helvetica neue", Helvetica, "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size: 19px; }
+
+/* header */
+.list-unit .list-status-title {
+  height: 25px; }
+  .list-unit .list-status-title .text {
+    font-size: 0px;
+    height: 0px; }
+  .list-unit .list-status-title .stats {
+    height: 25px;
+    line-height: 25px; }
+
+/* gap */
+.list-block {
+  margin: 0px; }
+
+/* table */
+.list-table .list-table-header .header-title {
+  height: 0px;
+  padding: 4px 0px 4px 0px; }
+.list-table .list-table-header .header-title.number {
+  width: 30px; }
+.list-table .list-table-header .header-title.image {
+  width: 66px; }
+.list-table .list-table-header .header-title.title {
+  width: 600px; }
+.list-table .list-table-header .header-title.score {
+  width: 50px; }
+.list-table .list-table-header .header-title.type {
+  width: 60px; }
+.list-table .list-table-header .header-title.progress {
+  width: 90px; }
+.list-table .list-table-header .header-title.tags {
+  width: 150px; }
+.list-table .list-table-header .header-title.chapters {
+  width: 90px; }
+.list-table .list-table-header .header-title.volumes {
+  width: 90px; }
+.list-table .list-table-data .data {
+  height: 0px;
+  padding: 1px 0px 1px 0px;
+  vertical-align: middle; }
+.list-table .list-table-data .data.number {
+  font-family: "menlo", monospace; }
+.list-table .list-table-data .data.title .link {
+  font-weight: bold;
+  max-width: 94%; }
+.list-table .list-table-data .data.title .add-edit-more {
+  font-size: 0px; }
+.list-table .list-table-data .data.title a.List_LightBox:after {
+  content: "edit";
+  font-size: 10px;
+  vertical-align: middle; }
+.list-table .list-table-data .data.title .more {
+  font-size: 0px; }
+.list-table .list-table-data .data.progress {
+  text-align: right;
+  padding-right: 8px;
+  font-family: "menlo", monospace; }
+.list-table .list-table-data .data.chapter, .list-table .list-table-data .data.volume {
+  text-align: right;
+  padding-right: 6px;
+  font-family: "menlo", monospace; }
+.list-table .list-table-data .data.status.completed ~ .data.progress {
+  text-align: center;
+  padding-right: 0px; }
+.list-table .list-table-data .data.status.completed ~ .data.chapter {
+  text-align: center;
+  padding-right: 0px; }
+.list-table .list-table-data .data.status.completed ~ .data.volume {
+  text-align: center;
+  padding-right: 0px; }
+.list-table .list-table-data .data.progress span {
+  min-width: 15px;
+  display: inline-block; }
+.list-table .list-table-data .data.chapter span {
+  min-width: 15px;
+  display: inline-block; }
+.list-table .list-table-data .data.volume span {
+  min-width: 15px;
+  display: inline-block; }
+.list-table .list-table-data .tags .edit {
+  text-align: left;
+  font-family: "Helvetica neue", Helvetica, "lucida grande", tahoma, verdana, arial, sans-serif; }
+.list-table .list-table-data .tags div {
+  text-align: left;
+  float: left;
+  width: 82%;
+  min-width: 82%;
+  min-height: 1px; }
+
+/*** replaces ***/
+a .score-label.score-1 {
+  font-family: "menlo", monospace;
+  font-size: 13px; }
+
+a .score-label.score-2 {
+  font-family: "menlo", monospace;
+  font-size: 13px; }
+
+a .score-label.score-3 {
+  font-family: "menlo", monospace;
+  font-size: 13px; }
+
+a .score-label.score-4 {
+  font-family: "menlo", monospace;
+  font-size: 13px; }
+
+a .score-label.score-5 {
+  font-family: "menlo", monospace;
+  font-size: 13px; }
+
+a .score-label.score-6 {
+  font-family: "menlo", monospace;
+  font-size: 13px; }
+
+a .score-label.score-7 {
+  font-family: "menlo", monospace;
+  font-size: 13px; }
+
+a .score-label.score-8 {
+  font-family: "menlo", monospace;
+  font-size: 13px; }
+
+a .score-label.score-9 {
+  font-family: "menlo", monospace;
+  font-size: 13px; }
+
+a .score-label.score-10 {
+  font-family: "menlo", monospace;
+  font-size: 13px; }
+
+a .score-label.score-10 {
+  font-size: 0px; }
+
+a .score-label.score-10:after {
+  content: "0";
+  font-size: 13px;
+  vertical-align: middle; }
+
+.list-table .list-table-data .tags .edit {
+  font-size: 0px; }
+
+.list-table .list-table-data .tags .edit:after {
+  content: "edit";
+  font-size: 10px;
+  vertical-align: middle; }
+
+/*** icons ***/
+.icon-watch.ml4 {
+  background-image: none;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  height: 0px; }
+
+.fa-solid.fa-circle-plus:before {
+  content: "+";
+  text-align: right;
+  font-family: "menlo", monospace; }
+
+.fa-solid.fa-magnifying-glass:before {
+  content: "o-";
+  font-family: "Helvetica neue", Helvetica, "lucida grande", tahoma, verdana, arial, sans-serif; }
+
+/*** misc ***/
+textarea {
+  font-family: "menlo", monospace;
+  font-size: 11px; }
+
+/*# sourceMappingURL=output.css.map */
