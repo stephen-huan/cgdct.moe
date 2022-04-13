@@ -199,12 +199,8 @@ BODY {
 /*** icons ***/
 
 // disable watch icon
-.icon-watch.ml4 {
-    background-image: none;
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
-    height: 0px;
+.malicon.malicon-streaming:before {
+  content: none;
 }
 
 // replace plus symbol with plus character
