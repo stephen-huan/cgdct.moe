@@ -1,16 +1,18 @@
-function hfun_bar(vname)
-  val = Meta.parse(vname[1])
-  return round(sqrt(val), digits=2)
+"""
+    hfun_makeheader
+
+Make the header list for the website.
+"""
+function hfun_makeheader()
+    current_page = splitext(locvar("fd_rpath"))[1]
+    current_page == "index" && (current_page = "")
+    io = IOBuffer()
+    write(io, "<ul>")
+    for (url, name) in globvar("headers")
+        is_active = (url[2:end - 1] == current_page) ? "active" : ""
+        write(io, """<li><a href="$url" class="$is_active">$name</a></li>\n""")
+    end
+    write(io, "</ul>")
+    return String(take!(io))
 end
 
-function hfun_m1fill(vname)
-  var = vname[1]
-  return pagevar("index", var)
-end
-
-function lx_baz(com, _)
-  # keep this first line
-  brace_content = Franklin.content(com.braces[1]) # input string
-  # do whatever you want here
-  return uppercase(brace_content)
-end

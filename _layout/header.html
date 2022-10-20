@@ -1,12 +1,11 @@
 <header>
-<div class="blog-name"><a href="/">Basic Template</a></div>
-<nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/menu1/">Code blocks</a></li>
-    <li><a href="/menu2/">More goodies</a></li>
-    <li><a href="/menu3/">Tags</a></li>
-  </ul>
-  <img src="/assets/hamburger.svg" id="menu-icon">
-</nav>
+  <div class="blog-name">
+    {{isnotpage index}}
+    <a href="/"><b class="font-weight-bold">Stephen</b> Huan</a>
+    {{end}}
+  </div>
+  <nav>
+    {{makeheader}}
+    <img src="/assets/hamburger.svg" id="menu-icon">
+  </nav>
 </header>

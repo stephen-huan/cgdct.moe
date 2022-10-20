@@ -347,7 +347,7 @@ code {
 }
 
 /* ==================================================================
-    Header and Nav
+    HEADER AND NAV
 ================================================================== */
 
 nav {
@@ -366,10 +366,10 @@ nav li {
 }
 
 nav li a {
-  color: #004de6;
+  color: black;
   text-decoration: none;
   font-size: 18px;
-  font-weight: bold;
+  /* font-weight: bold; */
   display: inline-block;
   float: center;
   padding-top: 10px;
@@ -378,7 +378,7 @@ nav li a {
   padding-bottom: 5px;
   margin-left: 7px;
   margin-right: 7px;
-  border-bottom: 2px solid #4c9cf1;
+  /* border-bottom: 2px solid #4c9cf1; */
   transition: color 0.3s ease;
 }
 
@@ -394,19 +394,28 @@ header .blog-name {
   width: 35%;
   display: inline-block;
   text-align: left;
-  font-size: 18px;
-  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 20px;
+  /* font-family: "Lucida Console", Monaco, monospace; */
   padding-top: 10px;
 }
 
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.active {
+  color: var(--theme-darksilver-color);
+  font-weight: 400;
+}
+
 header .blog-name a {
-  color: #a6a2a0;
+  color: black;
   text-decoration: none;
 }
 
 header li a:hover {
-  color: black;
-  border-bottom: 2px solid black;
+  color: var(--theme-seagreen-color);
+  /* border-bottom: 2px solid black; */
 }
 
 #menu-icon {

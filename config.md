@@ -2,7 +2,8 @@
 Add here global page variables to use throughout your website.
 -->
 +++
-author = "Septimia Zenobia"
+author = "Stephen Huan"
+date_format= "yyyy-mm-dd"
 mintoclevel = 2
 
 # Add here files or directories that should be ignored by Franklin, otherwise
@@ -14,9 +15,17 @@ ignore = ["Project.toml", "Manifest.toml",
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)
 generate_rss = true
-website_title = "Franklin Template"
-website_descr = "Example website using Franklin"
-website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
+website_title = "Stephen Huan"
+website_descr = "Stephen Huan's personal website"
+website_url   = "https://stephen-huan.github.io/"
+
+auto_code_path = true
+
+headers = [("/", "about"),
+           ("/menu1/", "blog"),
+           ("/menu2/", "projects"),
+           ("/menu3/", "cv"),
+          ]
 +++
 
 <!--
