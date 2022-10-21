@@ -21,6 +21,10 @@ website_url   = "https://stephen-huan.github.io/"
 
 auto_code_path = true
 
+# character for the icon
+icon = "浣"
+
+# header structure (url, display name)
 headers = [("/", "about"),
            ("/menu1/", "blog"),
            ("/menu2/", "projects"),
