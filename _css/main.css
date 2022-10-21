@@ -6,10 +6,10 @@
   --background: #fff;
   --block-background: hsl(0, 0%, 94%);
   --output-background: hsl(0, 0%, 98%);
-  --small: 14px;
+  --small: 16px;
   --normal: 19px;
   --text-color: hsv(0, 0%, 20%);
-  /* Adding the Florian colorscheme colors */
+  /* adding the Florian colorscheme colors */
   --theme-silver-color:        #9e9997;
   --theme-lightblue-color:     #a1b4c7;
   --theme-seagreen-color:      #23553c;
@@ -29,8 +29,9 @@
 ================================================================== */
 
 html {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: var(--normal);
+  font-weight: 300;
   color: var(--text-color);
 }
 
@@ -49,6 +50,7 @@ html {
 
 .franklin-content .right {
   float: right;
+  margin-left: 15px;
 }
 
 .franklin-content .container img {
@@ -102,7 +104,7 @@ html {
 /* On wide screens, fix content width to a max value. */
 @media (min-width: 940px) {
   .franklin-content {
-    width: 705px;
+    width: 800px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -120,9 +122,12 @@ html {
     TITLES
 ================================================================== */
 
-.franklin-content h1 { font-size: 24px; }
-.franklin-content h2 { font-size: 22px; }
-.franklin-content h3 { font-size: 20px; }
+.franklin-content h1 { font-size: 1.25rem; }
+.franklin-content h2 { font-size: 1.20rem; }
+.franklin-content h3 { font-size: 1.15rem; }
+.franklin-content h4 { font-size: 1.10rem; }
+.franklin-content h5 { font-size: 1.05rem; }
+.franklin-content h6 { font-size: 1.00rem; }
 
 .franklin-content h1,
 h2,
@@ -131,6 +136,7 @@ h4,
 h5,
 h6 {
   text-align: left;
+  font-weight: 400;
 }
 
 .franklin-content h1 {
@@ -200,7 +206,7 @@ td {
 }
 
 .franklin-content a {
-  color: #004de6;
+  color: var(--theme-darksilver-color);
   text-decoration: none;
 }
 
@@ -318,6 +324,7 @@ code {
 
 .hljs {
   font-size: var(--small);
+  font-weight: 400;
   line-height: 1.35em;
   border-radius: 10px;
   background: var(--background);
@@ -438,7 +445,7 @@ header li a:hover {
 /* wide display: enforce maximum width of header to match content */
 @media (min-width: 940px) {
   header {
-    width: 705px;
+    width: 800px;
     margin-left: auto;
     margin-right: auto;
   }
