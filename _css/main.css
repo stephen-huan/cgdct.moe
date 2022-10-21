@@ -573,3 +573,19 @@ table tbody tr td {
     0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
 }
 
+.news table {
+  margin-left: 0;
+}
+
+.news table tbody tr th {
+  display: none;
+}
+
+.news tr, table tbody tr td {
+  border: none;
+}
+
+.news table tbody tr td:first-of-type {
+  font-weight: 400;
+}
+
