@@ -1,15 +1,16 @@
 """
-    hfun_makeheader
+    hfun_makeheader()
 
 Make the header list for the website.
 """
 function hfun_makeheader()
-    current_page = splitext(locvar("fd_rpath"))[1]
-    current_page == "index" && (current_page = "")
+    current_page = "/$(splitext(locvar("fd_rpath"))[1])"
+    current_page = (endswith(current_page, "index")) ?
+        current_page[1:end - 5] : "$current_page/"
     io = IOBuffer()
     write(io, "<ul>")
     for (url, name) in globvar("headers")
-        is_active = (url[2:end - 1] == current_page) ? "active" : ""
+        is_active = (url == current_page) ? "active" : ""
         write(io, """<li><a href="$url" class="$is_active">$name</a></li>\n""")
     end
     write(io, "</ul>")
@@ -38,7 +39,6 @@ function lx_news(com, _)
             1 <= i - 3 <= n && (lines[i] = line)
         end
     end
-    println(lines)
     return join(lines, "\n")
 end
 
