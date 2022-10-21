@@ -545,3 +545,31 @@ table tbody tr td {
   border: 1px solid lightgray;
 }
 
+/* ==================================================================
+    MISCELLANEOUS
+================================================================== */
+
+.franklin-content .name {
+  font-size: 40px;
+  font-weight: 300;
+  padding-bottom: 0.5em;
+  border-bottom: none;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.address {
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 0.75em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.franklin-content .container img.profile {
+  border-radius: 4px;
+  box-shadow:
+    0 2px  5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+

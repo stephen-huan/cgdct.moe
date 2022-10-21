@@ -30,6 +30,8 @@ headers = [("/", "about"),
            ("/menu2/", "projects"),
            ("/menu3/", "cv"),
           ]
+
+pgp = "EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E"
 +++
 
 <!--
