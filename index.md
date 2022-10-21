@@ -45,7 +45,13 @@ I am best reached via [email](mailto:shuan@gatech.edu).
 - WCA: [2018HUAN21](https://www.worldcubeassociation.org/persons/2018HUAN21)
 - [YouTube](https://www.youtube.com/channel/UC3adQ7hzj_Ug2dr4KQp8V_w)
 
+@@showhover
 ## [news](/news/)
+@@
 
-<!-- ## selected publications -->
+\news{5}
+
+@@showhover
+## [selected publications](/publications/)
+@@
 

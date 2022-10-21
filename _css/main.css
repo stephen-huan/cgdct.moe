@@ -166,6 +166,10 @@ h6 {
 .franklin-content h6 a { color: inherit; }
 .franklin-content h6 a:hover { text-decoration: none; }
 
+.franklin-content .showhover a:hover {
+  text-decoration: var(--theme-darksilver-color) underline;
+}
+
 .franklin-content table {
   margin-left: auto;
   margin-right: auto;
