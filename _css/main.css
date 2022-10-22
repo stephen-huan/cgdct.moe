@@ -593,7 +593,7 @@ table tbody tr td {
 }
 
 /* ==================================================================
-    MISCELLANEOUS
+    ABOUT
 ================================================================== */
 
 .franklin-content .name {
@@ -643,6 +643,10 @@ table tbody tr td {
   }
 }
 
+/* ==================================================================
+    NEWS
+================================================================== */
+
 .news table {
   margin-left: 0;
 }
@@ -651,11 +655,116 @@ table tbody tr td {
   display: none;
 }
 
-.news tr, table tbody tr td {
+.news tr, .news table tbody tr td {
   border: none;
 }
 
 .news table tbody tr td:first-of-type {
   font-weight: 400;
+}
+
+/* ==================================================================
+    TAG PAGES
+================================================================== */
+
+.tagged-posts table {
+  margin-left: 0;
+}
+
+.tagged-posts tr:first-of-type {
+  background: var(--background);
+}
+
+.tagged-posts tr, .tagged-posts table tbody tr td {
+  border: none;
+}
+
+.tagged-posts table tbody tr th:first-of-type {
+  font-weight: 400;
+  border: none;
+}
+
+/* ==================================================================
+    BLOG POSTS
+================================================================== */
+
+.blog-title h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.35em;
+  text-align: center;
+  padding-bottom: 0em;
+  border-bottom: none;
+  margin-top: 0em;
+  margin-bottom: 0.25em;
+}
+
+.blog-title h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.35em;
+  text-align: center;
+  border-bottom: none;
+  margin-top: 0em;
+}
+
+.blog-tags {
+  text-align: center;
+  display: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top:    1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.blog-tags ul {
+  padding-left: 0em;
+}
+
+.blog-tags li, .blog-tags p {
+   display: inline-block;
+   margin-top: 0em;
+   margin-bottom: 0em;
+}
+
+.blog-tags p {
+   margin-left: 0.25em;
+   margin-right: 0.25em;
+}
+
+.blog-posts a:hover {
+  color: var(--theme-darksilver-color);
+}
+
+.blog-posts ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.blog-posts li {
+  padding-bottom: 1em;
+  border-bottom: 1px solid lightgrey;
+}
+
+.blog-posts li:last-of-type {
+  padding-bottom: 0em;
+  border-bottom: none;
+}
+
+.blog-posts p {
+  font-size: var(--small);
+}
+
+.blog-posts h3 {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 0em;
+}
+
+.post-meta, .post-tags {
+  font-size: var(--small);
+  color: var(--theme-darksilver-color);
 }
 

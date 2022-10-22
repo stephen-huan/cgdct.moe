@@ -3,6 +3,7 @@ Add here global page variables to use throughout your website.
 -->
 +++
 author = "Stephen Huan"
+pgp = "EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E"
 date_format= "yyyy-mm-dd"
 mintoclevel = 2
 
@@ -19,6 +20,9 @@ website_title = "Stephen Huan"
 website_descr = "Stephen Huan's personal website"
 website_url   = "https://stephen-huan.github.io/"
 
+# doesn't seem to have a default value for tag pages
+div_content = "franklin-content"
+
 auto_code_path = true
 
 # character for the icon
@@ -26,12 +30,11 @@ icon = "浣"
 
 # header structure (url, display name)
 headers = [("/", "about"),
-           ("/menu1/", "blog"),
-           ("/menu2/", "projects"),
-           ("/menu3/", "cv"),
+           ("/blog/", "blog"),
+           ("/projects/", "projects"),
+           ("/publications/", "publications"),
+           ("/assets/pdf/cv.pdf", "cv"),
           ]
-
-pgp = "EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E"
 +++
 
 <!--
