@@ -599,14 +599,24 @@ table tbody tr td {
 .franklin-content .name {
   font-size: 40px;
   font-weight: 300;
+  line-height: 1.35em;
   padding-bottom: 0.5em;
   border-bottom: none;
   margin-top: 0em;
   margin-bottom: 0em;
 }
 
+.pgp {
+  font-size: 16px;
+  overflow-wrap: break-word;
+}
+
+.pgp tt {
+  font-family: var(--monospace);
+}
+
 .address {
-  font-family: monospace;
+  font-family: var(--monospace);
   font-size: 16px;
   line-height: 0.75em;
   margin-top: 0px;
@@ -614,10 +624,23 @@ table tbody tr td {
 }
 
 .franklin-content .container img.profile {
+  width: auto;
   border-radius: 4px;
   box-shadow:
     0 2px  5px 0 rgba(0, 0, 0, 0.16),
     0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+@media (max-width: 700px) {
+  .franklin-content .container img.profile {
+    min-width: 100%;
+  }
+
+  .franklin-content .right {
+    margin-left: 0;
+    float: none;
+    text-align: center;
+  }
 }
 
 .news table {

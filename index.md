@@ -4,8 +4,8 @@ title = "Stephen Huan"
 
 ~~~
 <h1 class="name"><b class="font-weight-bold">Stephen</b> Huan (浣苇杭)</h1>
-<div style="font-size: 16px;">
-  PGP: <a href="/assets/misc/{{pgp}}.asc"><tt>0x{{pgp}}</tt></a>
+<div class="pgp">
+  PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><tt>0x{{pgp}}</tt></a>
 </div>
 ~~~
 
@@ -24,7 +24,7 @@ title = "Stephen Huan"
 ~~~
 @@
 @@
-I am an undergraduate student studying computer science
+I'm an undergraduate student studying computer science
 in the [College of Computing](https://www.cc.gatech.edu/)
 at [Georgia Tech](https://www.gatech.edu/).
 Prior to Georgia Tech, I was at [TJHSST](https://user.tjhsst.edu/2021shuan/).
