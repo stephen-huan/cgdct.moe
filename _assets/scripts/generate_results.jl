@@ -8,20 +8,13 @@ dir = @__DIR__
 """
     genplain(s)
 
-Small helper function to run some code and redirect the output (stdout) to a file.
+Small helper function to run some code and redirect the output to a file.
 """
 function genplain(s::String)
-    open(joinpath(dir, "output", "$(splitext(s)[1]).txt"), "w") do outf
+    open(joinpath(dir, "output", "$(splitext(s)[1]).out"), "w") do outf
         redirect_stdout(outf) do
             include(joinpath(dir, s))
         end
     end
 end
 
-# output
-
-genplain("script1.jl")
-
-# plots
-
-include("script2.jl")
