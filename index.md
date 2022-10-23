@@ -2,12 +2,15 @@
 title = "Stephen Huan"
 +++
 
+@@title
+# **Stephen** Huan (浣苇杭)
+@@
+
+@@pgp
 ~~~
-<h1 class="name"><b class="font-weight-bold">Stephen</b> Huan (浣苇杭)</h1>
-<div class="pgp">
-  PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><tt>0x{{pgp}}</tt></a>
-</div>
+PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><tt>0x{{pgp}}</tt></a>
 ~~~
+@@
 
 @@row
 @@container

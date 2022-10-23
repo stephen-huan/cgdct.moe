@@ -39,6 +39,9 @@
   --small: 16px;
   --normal: 19px;
   --text-color: #000;
+  --box-shadow:
+    0 2px  5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
   /* adding the Florian colorscheme colors */
   --theme-silver-color:        #9e9997;
   --theme-lightblue-color:     #a1b4c7;
@@ -447,10 +450,6 @@ header .blog-name {
   padding-top: 10px;
 }
 
-.font-weight-bold {
-  font-weight: 700 !important;
-}
-
 .active {
   color: var(--theme-darksilver-color);
   font-weight: 400;
@@ -598,7 +597,7 @@ table tbody tr td {
     ABOUT
 ================================================================== */
 
-.franklin-content .name {
+.franklin-content .title h1 {
   font-size: 40px;
   font-weight: 300;
   line-height: 1.35em;
@@ -606,6 +605,10 @@ table tbody tr td {
   border-bottom: none;
   margin-top: 0em;
   margin-bottom: 0em;
+}
+
+.franklin-content .title strong {
+  font-weight: 700;
 }
 
 .pgp {
@@ -628,12 +631,10 @@ table tbody tr td {
 .franklin-content .container img.profile {
   width: auto;
   border-radius: 4px;
-  box-shadow:
-    0 2px  5px 0 rgba(0, 0, 0, 0.16),
-    0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  box-shadow: var(--box-shadow);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   .franklin-content .container img.profile {
     min-width: 100%;
   }
@@ -768,5 +769,81 @@ table tbody tr td {
 .post-meta, .post-tags {
   font-size: var(--small);
   color: var(--theme-darksilver-color);
+}
+
+/* ==================================================================
+    PROJECTS
+================================================================== */
+
+.category h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: var(--theme-lightsilver-color);
+  text-align: right;
+  margin-top: 0;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout */
+
+@media (min-width: 760px) {
+  .inference { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 940px) {
+  .inference { grid-template-columns: repeat(3, 1fr); }
+}
+
+.inference {
+  display: grid;
+  grid-auto-rows: auto;
+  gap: 1em;
+}
+
+.card {
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  transition: all 0.55s ease-in-out;
+}
+
+.card:hover {
+  box-shadow:
+    0 8px 17px 0 rgba(0, 0, 0, 0.20),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card a {
+  color: var(--text-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.card a:hover {
+  color: var(--theme-darksilver-color);
+  text-decoration: none;
+}
+
+.card img {
+  padding-left: 0;
+  width: 100%;
+}
+
+.card-body {
+  padding: 1em;
+}
+
+.card h2 {
+  font-size: 1.75em;
+  line-height: 1.2em;
+  text-transform: lowercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+.card p {
+  font-size: var(--small);
+  font-weight: 400;
+  color: var(--theme-darksilver-color);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 

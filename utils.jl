@@ -1,11 +1,11 @@
 using Franklin: LxCom
 
 """
-    getvar(page, var; default)
+    getvar(page, var; default=nothing)
 
 Get `var` from `page`, using the simplier `Franklin.locvar` if possible.
 """
-function getvar(page, var; default)
+function getvar(page, var; default=nothing)
     (page == locvar(:fd_rpath)) ?
         locvar(var; default) : pagevar(page, var; default)
 end
@@ -203,6 +203,20 @@ function lx_news(com, _)
     end
     write(io, "@@", "\n")
     return String(take!(io))
+end
+
+"""
+    lx_makecard(com, _)
+
+Make a card for the given project page.
+"""
+function lx_makecard(com, _)
+    page = Franklin.content(com.braces[1])
+    path = "projects/$page"
+    image = pagevar(path, :preview_image)
+    title = pagevar(path, :title)
+    description = pagevar(path, :rss_description)
+    return "\\card{$page}{$image}{$title}{$description}"
 end
 
 """
