@@ -1,3 +1,5 @@
+using Franklin: LxCom
+
 """
     getvar(page, var; default)
 
@@ -200,6 +202,34 @@ function lx_news(com, _)
         end
     end
     write(io, "@@", "\n")
+    return String(take!(io))
+end
+
+"""
+    lx_cite(lxc::LxCom, _)
+
+Wrap citation with brackets, e.g. [1]. Use \\citet for the original behavior.
+
+See also: [\\citet](@ref), [\\citep](@ref) as defined in
+https://github.com/tlienart/Franklin.jl/blob/master\
+/src/converter/latex/hyperrefs.jl.
+"""
+function Franklin.lx_cite(lxc::LxCom, _)
+    Franklin.form_href(lxc, "BIBR"; parens="["=>"]", class="bibref")
+end
+
+"""
+    lx_cref(lxc::LxCom, _)
+
+Cross-reference like the cleveref package. Currently only supports equations.
+
+See also: [\\eqref](@ref).
+"""
+function lx_cref(lxc::LxCom, _)
+    io = IOBuffer()
+    write(io, "~~~")
+    write(io, Franklin.form_href(lxc, "EQR"; class="eqref cref"))
+    write(io, "~~~")
     return String(take!(io))
 end
 

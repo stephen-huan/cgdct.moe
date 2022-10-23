@@ -252,8 +252,10 @@ td {
     HYPERREFS AND FOOTNOTES
 ================================================================== */
 
-.franklin-content .eqref a { color: green; }
-.franklin-content .bibref a { color: green; }
+.franklin-content  .eqref a { color: var(--theme-darkrust-color); }
+/* this may seem a bit odd but it's how SIAM \cref looks for equations */
+.franklin-content   .cref   { color: var(--theme-darkrust-color); }
+.franklin-content .bibref a { color: var(--theme-darkseagreen-color); }
 
 .franklin-content sup {
   font-size: 70%;
@@ -325,8 +327,8 @@ body { counter-reset: eqnum; }
   counter-increment: eqnum;
   content: "(" counter(eqnum) ")";
   position: relative;
-  float: right;
-  padding-right: 5px;
+  float: left;
+  padding-left: 0px;
 }
 
 .nonumber .katex-display::after {
