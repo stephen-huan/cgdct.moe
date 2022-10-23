@@ -2,7 +2,9 @@
 title = "older news"
 +++
 
+@@title
 # older news
+@@
 
 @@news
 | Date       | Description |

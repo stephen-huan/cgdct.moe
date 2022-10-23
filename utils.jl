@@ -77,7 +77,7 @@ Return the modification time, ignoring automatically generated pages.
 """
 function hfun_lastupdated()
     url = get_url(locvar(:fd_rpath))
-    exclude = Set(["/blog/", "/404/"])
+    exclude = Set(["/blog/", "/404/", "/projects/"])
     (in(url, exclude)) ?  "" : "Last updated: $(locvar(:fd_mtime))."
 end
 

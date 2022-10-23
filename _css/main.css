@@ -847,3 +847,19 @@ table tbody tr td {
   margin-bottom: 0;
 }
 
+/* ==================================================================
+    PUBLICATIONS
+================================================================== */
+
+.year h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: var(--theme-lightsilver-color);
+  text-align: right;
+  margin-top: 0;
+  padding-top: 0.3em;
+  padding-bottom: 0;
+  border-top: 1px solid lightgrey;
+  border-bottom: none;
+}
+
