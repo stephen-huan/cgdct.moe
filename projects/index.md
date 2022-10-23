@@ -6,8 +6,8 @@ title = "projects"
 \newcommand{\card}[4]{
   ~~~
   <div class="card">
-    <a href="#1">
-      <img src="#2" alt="#3" width="auto" height="auto"></img>
+    <a href="/projects/!#1/">
+      <img src="!#2" alt="!#3" width="auto" height="auto"></img>
       <div class="card-body">
         <h2>#3</h2>
         <p>#4</p>
