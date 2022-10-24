@@ -54,6 +54,13 @@ function write_header!(io, page; rss=true)
 end
 
 """
+    hfun_assets()
+
+Get a path to the assets directory for the current page.
+"""
+hfun_assets() = "/assets/$(get_url(locvar(:fd_rpath))[begin + 1:end - 1])"
+
+"""
     hfun_makeheader()
 
 Make the header list for the website.

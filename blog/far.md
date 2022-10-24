@@ -6,8 +6,6 @@ rss = "Optimal variance text reflow for aesthetically pleasing borders."
 tags = ["cs"]
 +++
 
-@def assets = "/assets/blog/2020-12-16-far"
-
 {{maketitle}}
 
 [[Video]](https://youtu.be/H3Agto3ZSnk)

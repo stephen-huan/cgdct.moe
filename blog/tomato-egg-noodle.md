@@ -6,14 +6,12 @@ rss = "A simple and easy to make but tasty recipe for a classic dish."
 tags = ["misc"]
 +++
 
-@def assets = "/assets/blog/2022-10-23-tomato-egg-noodle"
-
 {{maketitle}}
 
 _This recipe is from [Daniel](https://blog.danielclu.com/)
 who also took the below photograph (of my cooking). Thanks!_
 
-![tomato egg noodle]({{assets}}/tomato_egg_noodles.jpg)
+\figalt{tomato egg noodle}{./tomato_egg_noodles.jpg}
 
 ## ingredients
 
