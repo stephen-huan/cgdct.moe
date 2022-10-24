@@ -629,7 +629,7 @@ table tbody tr td {
 }
 
 .franklin-content .container img.profile {
-  width: auto;
+  width: 265px;
   border-radius: 4px;
   box-shadow: var(--box-shadow);
 }
