@@ -1,0 +1,865 @@
+/* ==================================================================
+    VARIABLES
+================================================================== */
+
+:root {
+  --background: #fff;
+  --block-background: hsl(0, 0%, 94%);
+  --output-background: hsl(0, 0%, 98%);
+  /* system font stack:
+   * - https://bitsofco.de/the-new-system-font-stack/
+   * - https://markdotto.com/2018/02/07/github-system-fonts/
+   * - https://getbootstrap.com/docs/4.1/content/reboot/#native-font-stack
+   */
+  --font:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Noto Sans",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  /* there seems to be less agreement on monospace, these are from GitHub
+   * - https://www.client9.com/css-system-font-stack-monospace-v2/
+   * - https://www.digitalocean.com/community/tutorials/css-system-font-stack
+   * - https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
+   */
+  --monospace:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    "Noto Sans Mono",
+    "Liberation Mono",
+    monospace;
+  --small: 16px;
+  --normal: 19px;
+  --text-color: #000;
+  --box-shadow:
+    0 2px  5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  /* adding the Florian colorscheme colors */
+  --theme-silver-color:        #9e9997;
+  --theme-lightblue-color:     #a1b4c7;
+  --theme-seagreen-color:      #23553c;
+  --theme-orange-color:        #ea8810;
+  --theme-rust-color:          #b8420f;
+
+  --theme-lightsilver-color:   #e7e6e5;
+  --theme-darksilver-color:    #96918f;
+  --theme-darklightblue-color: #8999a9;
+  --theme-darkseagreen-color:  #1e4833;
+  --theme-darkorange-color:    #c7740e;
+  --theme-darkrust-color:      #9c380d;
+}
+
+/* ==================================================================
+    DEFAULT FONT AND LAYOUT
+================================================================== */
+
+html {
+  font-family: var(--font);
+  font-size: var(--normal);
+  font-weight: 300;
+  color: var(--text-color);
+}
+
+/* ==================================================================
+    BASIC GRID FOR PROFILE PIC
+================================================================== */
+
+.franklin-content .row {
+  display: block;
+}
+
+.franklin-content .left {
+  float: left;
+  margin-right: 15px;
+}
+
+.franklin-content .right {
+  float: right;
+  margin-left: 15px;
+}
+
+.franklin-content .container img {
+  width: auto;
+  padding-left: 0;
+  border-radius: 10px;
+}
+
+.franklin-content .footnote {
+  position: relative;
+  top: -0.5em;
+  font-size: 70%;
+}
+
+/* ==================================================================
+    FOOT / COPYRIGHT
+================================================================== */
+
+.franklin-content .page-foot a {
+  text-decoration: none;
+  color: #a6a2a0;
+  text-decoration: underline;
+}
+
+.page-foot {
+  font-size: 80%;
+  color: var(--theme-silver-color);
+  text-align: right;
+  margin-top: 2em;
+  border-top: 1px solid lightgrey;
+  padding-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* ==================================================================
+    TEXT GEOMETRY
+================================================================== */
+
+.franklin-toc li {
+  /* Avoid clickable elements being too close together. */
+  margin: 0.6rem 0;
+}
+
+.franklin-content {
+  position: relative;
+  padding-left: 12.5%;
+  padding-right: 12.5%;
+  line-height: 1.35em;
+}
+
+/* On wide screens, fix content width to a max value. */
+@media (min-width: 940px) {
+  .franklin-content {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* On narrow device, reduce margins. */
+@media (max-width: 480px) {
+  .franklin-content {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+/* ==================================================================
+    TITLES
+================================================================== */
+
+.franklin-content h1 { font-size: 1.25rem; }
+.franklin-content h2 { font-size: 1.20rem; }
+.franklin-content h3 { font-size: 1.15rem; }
+.franklin-content h4 { font-size: 1.10rem; }
+.franklin-content h5 { font-size: 1.05rem; }
+.franklin-content h6 { font-size: 1.00rem; }
+
+.franklin-content h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: left;
+  font-weight: 400;
+}
+
+.franklin-content h1 {
+  padding-bottom: 0.5em;
+  border-bottom: 3px double lightgrey;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+.franklin-content h2 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid lightgrey;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.franklin-content h1 a { color: inherit; }
+.franklin-content h1 a:hover { text-decoration: none; }
+.franklin-content h2 a { color: inherit; }
+.franklin-content h2 a:hover { text-decoration: none; }
+.franklin-content h3 a { color: inherit; }
+.franklin-content h3 a:hover { text-decoration: none; }
+.franklin-content h4 a { color: inherit; }
+.franklin-content h4 a:hover { text-decoration: none; }
+.franklin-content h5 a { color: inherit; }
+.franklin-content h5 a:hover { text-decoration: none; }
+.franklin-content h6 a { color: inherit; }
+.franklin-content h6 a:hover { text-decoration: none; }
+
+.franklin-content .showhover a:hover {
+  text-decoration: var(--theme-darksilver-color) underline;
+}
+
+.franklin-content table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.franklin-toc ol ol {
+  list-style-type: lower-alpha;
+}
+
+.franklin-content th,
+td {
+  font-size: var(--small);
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.franklin-content blockquote {
+  background: var(--block-background);
+  border-left: 7px solid #a8a8a8;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  font-style: italic;
+}
+
+.franklin-content blockquote p {
+  display: inline;
+}
+
+/* ==================================================================
+    GENERAL FORMATTING
+================================================================== */
+
+/* Spacing between bullet points. */
+.franklin-content li p {
+  margin: 10px 0;
+}
+
+.franklin-content a {
+  color: var(--theme-darksilver-color);
+  text-decoration: none;
+}
+
+.franklin-content a:hover {
+  text-decoration: underline;
+}
+
+/* ==================================================================
+    HYPERREFS AND FOOTNOTES
+================================================================== */
+
+.franklin-content  .eqref a { color: var(--theme-darkrust-color); }
+/* this may seem a bit odd but it's how SIAM \cref looks for equations */
+.franklin-content   .cref   { color: var(--theme-darkrust-color); }
+.franklin-content .bibref a { color: var(--theme-darkseagreen-color); }
+
+.franklin-content sup {
+  font-size: 70%;
+  vertical-align: super;
+  line-height: 0;
+}
+
+.franklin-content table.fndef {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.franklin-content .fndef tr,
+td {
+  padding: 0;
+  border: 0;
+  text-align: left;
+}
+
+.franklin-content .fndef tr {
+  border-left: 2px solid lightgray;
+}
+
+.franklin-content .fndef td.fndef-backref {
+  vertical-align: top;
+  font-size: 70%;
+  padding-left: 5px;
+}
+
+.franklin-content .fndef td.fndef-content {
+  font-size: 80%;
+  padding-left: 10px;
+  width: 100%;
+}
+
+/* ==================================================================
+    IMAGES in CONTENT
+================================================================== */
+
+.franklin-content img {
+  width: 80%;
+  text-align: center;
+  padding-left: 10%;
+}
+
+.franklin-content .img-small img {
+  width: 50%;
+  text-align: center;
+  padding-left: 20%;
+}
+
+/* ==================================================================
+    KATEX
+================================================================== */
+
+body { counter-reset: eqnum; }
+
+.katex { font-size: 1em !important; }
+
+.katex-display .katex {
+  /* Overwrite KaTeX settings. */
+  display: inline-block;
+
+  /* Allow display equations to wrap on small screens. */
+  white-space: normal;
+}
+
+.katex-display::after {
+  counter-increment: eqnum;
+  content: "(" counter(eqnum) ")";
+  position: relative;
+  float: left;
+  padding-left: 0px;
+}
+
+.nonumber .katex-display::after {
+  counter-increment: nothing;
+  content: "";
+}
+
+/* ==================================================================
+    CODE & HIGHLIGHT.JS
+================================================================== */
+
+code {
+  background-color: var(--output-background);
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+  font-family: var(--monospace);
+  font-size: var(--small);
+}
+
+/* Franklin does not annotate code output with the
+ * "code-output" class when using prerender=true
+ * instead, use "plaintext" for code output and can
+ * substitute actual plaintext with "text" or "txt"
+ * https://highlightjs.readthedocs.io/en/latest/supported-languages.html
+ */
+.plaintext {
+  background: var(--output-background);
+  border: 1px dashed #dbdbdb;
+}
+
+.hljs {
+  font-family: var(--monospace);
+  font-size: var(--small);
+  font-weight: 400;
+  line-height: 1.35em;
+  border-radius: 10px;
+  background: var(--background);
+}
+
+/* colors from https://julialang.org/assets/infra/logo.svg */
+.hljs-meta.prompt_ {font-weight: bold; color: #389826;}
+.hljs-metas        {font-weight: bold; color: #cb3c33;}
+.hljs-metap        {font-weight: bold; color: #4063d8;}
+
+/* ==================================================================
+    BOXES
+================================================================== */
+
+.franklin-content .colbox-blue {
+  background-color: #eef3f5;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 0 10px 10px 0;
+  border-left: 5px solid #4c9cf1;
+}
+
+/* ==================================================================
+    HEADER AND NAV
+================================================================== */
+
+nav {
+  width: 65%;
+  display: inline-block;
+}
+
+nav ul {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  /* font-weight: bold; */
+  display: inline-block;
+  float: center;
+  padding-top: 10px;
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-bottom: 5px;
+  margin-left: 7px;
+  margin-right: 7px;
+  /* border-bottom: 2px solid #4c9cf1; */
+  transition: color 0.3s ease;
+}
+
+nav li:last-of-type a {
+  margin-right: 0px;
+}
+
+header {
+  text-align: right;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+}
+
+header .blog-name {
+  width: 35%;
+  display: inline-block;
+  text-align: left;
+  font-size: 20px;
+  /* font-family: "Lucida Console", Monaco, monospace; */
+  padding-top: 10px;
+}
+
+.active {
+  color: var(--theme-darksilver-color);
+  font-weight: 400;
+}
+
+header .blog-name a {
+  color: black;
+  text-decoration: none;
+}
+
+header li a:hover {
+  color: var(--theme-seagreen-color);
+  /* border-bottom: 2px solid black; */
+}
+
+#menu-icon {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  header {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+@media (min-width: 481px) {
+  header {
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+  }
+}
+
+/* wide display: enforce maximum width of header to match content */
+@media (min-width: 940px) {
+  header {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*
+medium display: nav goes under name
+*/
+@media (max-width: 760px) {
+  header { display: block; }
+
+  header .blog-name {
+    display: block;
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  nav {
+    width: 100%;
+  }
+}
+
+/*
+narrow display: collapse the header (don't show the menu items)
+instead, display a burger menu.
+*/
+@media (max-width: 500px) {
+  header {
+    height: 35px;
+    display: flex;
+    align-items: center;
+  }
+
+  header .blog-name {
+    display: inline-block;
+    width: 70%;
+  }
+
+  nav {
+    display: inline-block;
+    width: 27%;
+  }
+
+  nav ul,
+  nav:active ul {
+    display: none;
+    position: absolute;
+
+    /* padding: 20px; */
+    background: #fff;
+    border: 1px solid #444;
+    right: 50px;
+    top: 60px;
+    width: 30%;
+    border-radius: 4px 0 4px 4px;
+    z-index: 1;
+  }
+
+  nav li {
+    text-align: left;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  header li a { border-bottom: none; }
+  header li a:hover { border-bottom: none; }
+
+  nav:hover ul {
+    display: block;
+  }
+
+  #menu-icon {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+table {
+  line-height: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+tr:first-of-type {
+  background: #eae9f4;
+}
+
+tr:first-of-type > th {
+  text-align: center;
+}
+
+tr,
+th,
+td {
+  padding: 10px;
+  border: 1px solid lightgray;
+}
+
+table tbody tr td {
+  border: 1px solid lightgray;
+}
+
+/* ==================================================================
+    ABOUT
+================================================================== */
+
+.franklin-content .title h1 {
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.35em;
+  padding-bottom: 0.5em;
+  border-bottom: none;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.franklin-content .title strong {
+  font-weight: 700;
+}
+
+.pgp {
+  font-size: 16px;
+  overflow-wrap: break-word;
+}
+
+.pgp tt {
+  font-family: var(--monospace);
+}
+
+.address {
+  font-family: var(--monospace);
+  font-size: 16px;
+  line-height: 0.75em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.franklin-content .container img.profile {
+  width: 265px;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+}
+
+@media (max-width: 760px) {
+  .franklin-content .container img.profile {
+    min-width: 100%;
+  }
+
+  .franklin-content .right {
+    margin-left: 0;
+    float: none;
+    text-align: center;
+  }
+}
+
+/* ==================================================================
+    NEWS
+================================================================== */
+
+.news table {
+  margin-left: 0;
+}
+
+.news table tbody tr th {
+  display: none;
+}
+
+.news tr, .news table tbody tr td {
+  border: none;
+}
+
+.news table tbody tr td:first-of-type {
+  font-weight: 400;
+}
+
+/* ==================================================================
+    TAG PAGES
+================================================================== */
+
+.tagged-posts table {
+  margin-left: 0;
+}
+
+.tagged-posts tr:first-of-type {
+  background: var(--background);
+}
+
+.tagged-posts tr, .tagged-posts table tbody tr td {
+  border: none;
+}
+
+.tagged-posts table tbody tr th:first-of-type {
+  font-weight: 400;
+  border: none;
+}
+
+/* ==================================================================
+    BLOG POSTS
+================================================================== */
+
+.blog-title h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.35em;
+  text-align: center;
+  padding-bottom: 0em;
+  border-bottom: none;
+  margin-top: 0em;
+  margin-bottom: 0.25em;
+}
+
+.blog-title h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.35em;
+  text-align: center;
+  border-bottom: none;
+  margin-top: 0em;
+}
+
+.blog-tags {
+  text-align: center;
+  display: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top:    1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.blog-tags ul {
+  padding-left: 0em;
+}
+
+.blog-tags li, .blog-tags p {
+   display: inline-block;
+   margin-top: 0em;
+   margin-bottom: 0em;
+}
+
+.blog-tags p {
+   margin-left: 0.25em;
+   margin-right: 0.25em;
+}
+
+.blog-posts a:hover {
+  color: var(--theme-darksilver-color);
+}
+
+.blog-posts ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.blog-posts li {
+  padding-bottom: 1em;
+  border-bottom: 1px solid lightgrey;
+}
+
+.blog-posts li:last-of-type {
+  padding-bottom: 0em;
+  border-bottom: none;
+}
+
+.blog-posts p {
+  font-size: var(--small);
+}
+
+.blog-posts h3 {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 0em;
+}
+
+.post-meta, .post-tags {
+  font-size: var(--small);
+  color: var(--theme-darksilver-color);
+}
+
+/* ==================================================================
+    PROJECTS
+================================================================== */
+
+.category h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: var(--theme-lightsilver-color);
+  text-align: right;
+  margin-top: 0;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout */
+
+@media (min-width: 760px) {
+  .inference { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 940px) {
+  .inference { grid-template-columns: repeat(3, 1fr); }
+}
+
+.inference {
+  display: grid;
+  grid-auto-rows: auto;
+  gap: 1em;
+}
+
+.card {
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  transition: all 0.55s ease-in-out;
+}
+
+.card:hover {
+  box-shadow:
+    0 8px 17px 0 rgba(0, 0, 0, 0.20),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card a {
+  color: var(--text-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.card a:hover {
+  color: var(--theme-darksilver-color);
+  text-decoration: none;
+}
+
+.card img {
+  padding-left: 0;
+  width: 100%;
+}
+
+.card-body {
+  padding: 1em;
+}
+
+.card h2 {
+  font-size: 1.75em;
+  line-height: 1.2em;
+  text-transform: lowercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+.card p {
+  font-size: var(--small);
+  font-weight: 400;
+  color: var(--theme-darksilver-color);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ==================================================================
+    PUBLICATIONS
+================================================================== */
+
+.year h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: var(--theme-lightsilver-color);
+  text-align: right;
+  margin-top: 0;
+  padding-top: 0.3em;
+  padding-bottom: 0;
+  border-top: 1px solid lightgrey;
+  border-bottom: none;
+}
+

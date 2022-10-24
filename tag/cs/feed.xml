@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:georss="http://www.georss.org/georss">
+
+  <channel>
+    <title>
+      <![CDATA[  Stephen Huan  ]]>
+    </title>
+    <link> https://stephen-huan.github.io/ </link>
+    <description>
+      <![CDATA[  Stephen Huan&#39;s personal website  ]]>
+    </description>
+    <atom:link
+      href="https://stephen-huan.github.io/feed.xml"
+      rel="self"
+      type="application/rss+xml" />
+
+
+<item>
+  <title>
+    <![CDATA[  Cholesky factorization by greedy conditional selection  ]]>
+  </title>
+  <link> https://stephen-huan.github.io/projects/cholesky/index.html </link>
+  <guid> https://stephen-huan.github.io/projects/cholesky/index.html </guid>
+  <description>
+    <![CDATA[  inference with conditional &lt;em&gt;k&lt;/em&gt;-nearest neighbors?  ]]>
+  </description>  
+    
+  <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Stephen Huan</atom:name>
+  </atom:author>
+    
+  <category> inference and computation </category>
+      
+</item>
+
+<item>
+  <title>
+    <![CDATA[  far: a &#40;f&#41;ast re-write of the Unix utility p&#40;ar&#41;  ]]>
+  </title>
+  <link> https://stephen-huan.github.io/blog/2020-12-16-far/index.html </link>
+  <guid> https://stephen-huan.github.io/blog/2020-12-16-far/index.html </guid>
+  <description>
+    <![CDATA[  Optimal variance text reflow for aesthetically pleasing borders.  ]]>
+  </description>  
+    
+  <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Stephen Huan</atom:name>
+  </atom:author>
+        
+</item>
+</channel></rss>
