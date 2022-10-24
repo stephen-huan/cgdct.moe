@@ -18,6 +18,8 @@ cp    "$root/highlight.js/styles/atom-one-light.css" \
       "$libs/highlight/styles/atom-one-light.min.css"
 
 git checkout "$build_branch"
+# sync changes
+git merge "$main_branch"
 
 # build site
 julia --project="@." -O0 -e "using Franklin: optimize; \
@@ -25,7 +27,7 @@ julia --project="@." -O0 -e "using Franklin: optimize; \
 
 # publish
 git add --force __site
-git commit --gpg-sign --message "Deploying to $push_branch from @ $commit"
+git commit --message "Deploying to $push_branch from @ $commit"
 # https://gist.github.com/cobyism/4730490
 git subtree push --prefix __site origin "$push_branch"
 
