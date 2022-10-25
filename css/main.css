@@ -3,13 +3,14 @@
 ================================================================== */
 
 :root {
+  --text-color: #000;
   --background: #fff;
-  --block-background: hsl(0, 0%, 94%);
+  --block-background:  hsl(0, 0%, 94%);
   --output-background: hsl(0, 0%, 98%);
   /* system font stack:
    * - https://bitsofco.de/the-new-system-font-stack/
    * - https://markdotto.com/2018/02/07/github-system-fonts/
-   * - https://getbootstrap.com/docs/4.1/content/reboot/#native-font-stack
+   * - https://getbootstrap.com/docs/5.2/content/reboot/#native-font-stack
    */
   --font:
     -apple-system,
@@ -36,9 +37,24 @@
     "Noto Sans Mono",
     "Liberation Mono",
     monospace;
-  --small: 16px;
-  --normal: 19px;
-  --text-color: #000;
+  /* font scale
+   * - https://www.aleksandrhovhannisyan.com/blog/use-rems-for-font-size/
+   * - https://getbootstrap.com/docs/5.2/content/typography/
+   */
+  --font-size-h1:       2.50rem;
+  --font-size-h2:       2.00rem;
+  --font-size-h3:       1.75rem;
+  --font-size-h4:       1.50rem;
+  --font-size-h5:       1.25rem;
+  --font-size-h6:       1.1875rem;
+  --font-size-huge:     4.75rem;
+  --font-size-normal:   1.1875rem;
+  --font-size-small:    1.00rem;
+  --font-size-footnote: 80%;
+  --font-size-tiny:     70%;
+  --font-weight-normal: 300;
+  --font-weight-thick:  400;
+  --font-weight-bold:   700;
   --box-shadow:
     0 2px  5px 0 rgba(0, 0, 0, 0.16),
     0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -66,10 +82,10 @@ body {
     DEFAULT FONT AND LAYOUT
 ================================================================== */
 
-html {
+body {
   font-family: var(--font);
-  font-size: var(--normal);
-  font-weight: 300;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
   color: var(--text-color);
 }
 
@@ -100,7 +116,7 @@ html {
 .franklin-content .footnote {
   position: relative;
   top: -0.5em;
-  font-size: 70%;
+  font-size: var(--font-size-tiny);
 }
 
 /* ==================================================================
@@ -114,7 +130,7 @@ html {
 }
 
 .page-foot {
-  font-size: 80%;
+  font-size: var(--font-size-footnote);
   color: var(--theme-silver-color);
   text-align: right;
   margin-top: 2em;
@@ -129,14 +145,15 @@ html {
 
 .franklin-toc li {
   /* Avoid clickable elements being too close together. */
-  margin: 0.6rem 0;
+  margin: 0.6em 0;
 }
 
 .franklin-content {
   position: relative;
   padding-left: 12.5%;
   padding-right: 12.5%;
-  line-height: 1.35em;
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
+  line-height: 1.35;
 }
 
 /* On wide screens, fix content width to a max value. */
@@ -160,12 +177,12 @@ html {
     TITLES
 ================================================================== */
 
-.franklin-content h1 { font-size: 1.25rem; }
-.franklin-content h2 { font-size: 1.20rem; }
-.franklin-content h3 { font-size: 1.15rem; }
-.franklin-content h4 { font-size: 1.10rem; }
-.franklin-content h5 { font-size: 1.05rem; }
-.franklin-content h6 { font-size: 1.00rem; }
+.franklin-content h1 { font-size: var(--font-size-h1); }
+.franklin-content h2 { font-size: var(--font-size-h2); }
+.franklin-content h3 { font-size: var(--font-size-h3); }
+.franklin-content h4 { font-size: var(--font-size-h4); }
+.franklin-content h5 { font-size: var(--font-size-h5); }
+.franklin-content h6 { font-size: var(--font-size-h6); }
 
 .franklin-content h1,
 h2,
@@ -174,21 +191,19 @@ h4,
 h5,
 h6 {
   text-align: left;
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
+  margin-top: var(--font-size-normal);
+  margin-bottom: var(--font-size-normal);
 }
 
 .franklin-content h1 {
-  padding-bottom: 0.5em;
+  padding-bottom: 0.5rem;
   border-bottom: 3px double lightgrey;
-  margin-top: 1.5em;
-  margin-bottom: 1em;
 }
 
 .franklin-content h2 {
-  padding-bottom: 0.3em;
+  padding-bottom: 0.3rem;
   border-bottom: 1px solid lightgrey;
-  margin-top: 2em;
-  margin-bottom: 1em;
 }
 
 .franklin-content h1 a { color: inherit; }
@@ -221,7 +236,7 @@ h6 {
 
 .franklin-content th,
 td {
-  font-size: var(--small);
+  font-size: var(--font-size-small);
   padding: 10px;
   border: 1px solid black;
 }
@@ -266,7 +281,7 @@ td {
 .franklin-content .bibref a { color: var(--theme-darkseagreen-color); }
 
 .franklin-content sup {
-  font-size: 70%;
+  font-size: var(--font-size-tiny);
   vertical-align: super;
   line-height: 0;
 }
@@ -289,12 +304,12 @@ td {
 
 .franklin-content .fndef td.fndef-backref {
   vertical-align: top;
-  font-size: 70%;
+  font-size: var(--font-size-tiny);
   padding-left: 5px;
 }
 
 .franklin-content .fndef td.fndef-content {
-  font-size: 80%;
+  font-size: var(--font-size-footnote);
   padding-left: 10px;
   width: 100%;
 }
@@ -371,7 +386,7 @@ code {
   padding: 0.1em 0.2em;
   border-radius: 2px;
   font-family: var(--monospace);
-  font-size: var(--small);
+  font-size: var(--font-size-small);
 }
 
 /* Franklin does not annotate code output with the
@@ -387,9 +402,8 @@ code {
 
 .hljs {
   font-family: var(--monospace);
-  font-size: var(--small);
-  font-weight: 400;
-  line-height: 1.35em;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-thick);
   border-radius: 10px;
   background: var(--background);
 }
@@ -438,7 +452,7 @@ nav li {
 nav li a {
   color: black;
   text-decoration: none;
-  font-size: 18px;
+  /* font-size: 18px; */
   /* font-weight: bold; */
   display: inline-block;
   float: center;
@@ -468,14 +482,14 @@ header .blog-name {
   width: 35%;
   display: inline-block;
   text-align: left;
-  font-size: 20px;
-  /* font-family: "Lucida Console", Monaco, monospace; */
+  font-size: var(--font-size-h5);
+  /* font-family: var(--monospace); */
   padding-top: 10px;
 }
 
 .active {
   color: var(--theme-darksilver-color);
-  font-weight: 400;
+  font-weight: var(--font-weight-thick);
 }
 
 header .blog-name a {
@@ -518,7 +532,7 @@ header li a:hover {
 /*
 medium display: nav goes under name
 */
-@media (max-width: 760px) {
+@media (max-width: 940px) {
   header { display: block; }
 
   header .blog-name {
@@ -536,7 +550,7 @@ medium display: nav goes under name
 narrow display: collapse the header (don't show the menu items)
 instead, display a burger menu.
 */
-@media (max-width: 500px) {
+@media (max-width: 760px) {
   header {
     height: 35px;
     display: flex;
@@ -621,9 +635,7 @@ table tbody tr td {
 ================================================================== */
 
 .franklin-content .title h1 {
-  font-size: 40px;
-  font-weight: 300;
-  line-height: 1.35em;
+  font-weight: var(--font-weight-normal);
   padding-bottom: 0.5em;
   border-bottom: none;
   margin-top: 0em;
@@ -631,11 +643,11 @@ table tbody tr td {
 }
 
 .franklin-content .title strong {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .pgp {
-  font-size: 16px;
+  font-size: var(--font-size-small);
   overflow-wrap: break-word;
 }
 
@@ -643,12 +655,11 @@ table tbody tr td {
   font-family: var(--monospace);
 }
 
-.address {
+.address p {
   font-family: var(--monospace);
-  font-size: 16px;
-  line-height: 0.75em;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  font-size: var(--font-size-small);
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
 }
 
 .franklin-content .container img.profile {
@@ -686,7 +697,7 @@ table tbody tr td {
 }
 
 .news table tbody tr td:first-of-type {
-  font-weight: 400;
+  font-weight: var(--font-weight-thick);
 }
 
 /* ==================================================================
@@ -706,7 +717,7 @@ table tbody tr td {
 }
 
 .tagged-posts table tbody tr th:first-of-type {
-  font-weight: 400;
+  font-weight: var(--font-weight-thick);
   border: none;
 }
 
@@ -715,9 +726,8 @@ table tbody tr td {
 ================================================================== */
 
 .blog-title h1 {
-  font-size: 4rem;
-  font-weight: 300;
-  line-height: 1.35em;
+  font-size: var(--font-size-huge);
+  font-weight: var(--font-weight-normal);
   text-align: center;
   padding-bottom: 0em;
   border-bottom: none;
@@ -726,9 +736,8 @@ table tbody tr td {
 }
 
 .blog-title h2 {
-  font-size: 1.5rem;
-  font-weight: 300;
-  line-height: 1.35em;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-normal);
   text-align: center;
   border-bottom: none;
   margin-top: 0em;
@@ -780,17 +789,17 @@ table tbody tr td {
 }
 
 .blog-posts p {
-  font-size: var(--small);
+  font-size: var(--font-size-small);
 }
 
 .blog-posts h3 {
-  font-size: 1.25rem;
-  font-weight: 300;
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-normal);
   margin-bottom: 0em;
 }
 
 .post-meta, .post-tags {
-  font-size: var(--small);
+  font-size: var(--font-size-small);
   color: var(--theme-darksilver-color);
 }
 
@@ -799,8 +808,8 @@ table tbody tr td {
 ================================================================== */
 
 .category h2 {
-  font-size: 1.5em;
-  font-weight: 300;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-normal);
   color: var(--theme-lightsilver-color);
   text-align: right;
   margin-top: 0;
@@ -854,8 +863,7 @@ table tbody tr td {
 }
 
 .card h2 {
-  font-size: 1.75em;
-  line-height: 1.2em;
+  font-size: var(--font-size-h2);
   text-transform: lowercase;
   margin-top: 0;
   margin-bottom: 0;
@@ -863,8 +871,8 @@ table tbody tr td {
 }
 
 .card p {
-  font-size: var(--small);
-  font-weight: 400;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-thick);
   color: var(--theme-darksilver-color);
   margin-top: 0;
   margin-bottom: 0;
@@ -875,8 +883,8 @@ table tbody tr td {
 ================================================================== */
 
 .year h2 {
-  font-size: 1.5em;
-  font-weight: 300;
+  font-size: var(--font-size-h3) ;
+  font-weight: var(--font-weight-normal);
   color: var(--theme-lightsilver-color);
   text-align: right;
   margin-top: 0;
