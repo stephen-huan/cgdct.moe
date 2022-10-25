@@ -3078,7 +3078,7 @@ def closest_pair(points: list) -> tuple:
 ### [Convex Hull](https://en.wikipedia.org/wiki/Convex_hull)
 [Graham scan](https://en.wikipedia.org/wiki/Graham_scan),
 specifically [Andrew's Monotone Chain](https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain) -
-[Verification: kattis convexhull](https://open.kattis.com/problems/convexhull) -
+[Verification: Kattis convexhull](https://open.kattis.com/problems/convexhull) -
 Complexity: $ \BigO(n \log n) $
 ```python
 def convex_hull(points: list) -> list:

@@ -165,9 +165,8 @@ the operator `gq` formats using the external program.
 
 ## Appendix
 
-The paragraph reformatting problem can be phrased
-in terms of three different [$ \ell^p $-norms
-](https://en.wikipedia.org/wiki/Lp_space#The_p-norm_in_finite_dimensions).
+The paragraph reformatting problem can be phrased in terms of three different
+[$ \ell^p $-norms](https://en.wikipedia.org/wiki/Lp_space#The_p-norm_in_finite_dimensions).
 
 If $ X $ is a vector that represents the length of each line for a given
 paragraph, we want the every line in the paragraph to be shorter than $ K $

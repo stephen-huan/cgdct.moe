@@ -3,7 +3,7 @@ title = "Cholesky factorization by greedy conditional selection"
 date = Date(2022, 9, 21)
 rss = "inference with conditional <em>k</em>-nearest neighbors?"
 rss_category = "inference and computation"
-preview_image = "{{assets}}oikura.webp"
+preview_image = "{{assets}}/oikura.webp"
 
 tags = ["math", "cs"]
 +++
