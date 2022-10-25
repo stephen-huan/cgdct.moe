@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  Tomato and egg noodle &#40;西红柿鸡蛋面&#41;  ]]>
   </title>
-  <link> https://stephen-huan.github.io/blog/2022-10-23-tomato-egg-noodle/index.html </link>
-  <guid> https://stephen-huan.github.io/blog/2022-10-23-tomato-egg-noodle/index.html </guid>
+  <link> https://stephen-huan.github.io/blog/tomato-egg-noodle/index.html </link>
+  <guid> https://stephen-huan.github.io/blog/tomato-egg-noodle/index.html </guid>
   <description>
     <![CDATA[  A simple and easy to make but tasty recipe for a classic dish.  ]]>
   </description>  
@@ -65,13 +65,32 @@
   <title>
     <![CDATA[  far: a &#40;f&#41;ast re-write of the Unix utility p&#40;ar&#41;  ]]>
   </title>
-  <link> https://stephen-huan.github.io/blog/2020-12-16-far/index.html </link>
-  <guid> https://stephen-huan.github.io/blog/2020-12-16-far/index.html </guid>
+  <link> https://stephen-huan.github.io/blog/far/index.html </link>
+  <guid> https://stephen-huan.github.io/blog/far/index.html </guid>
   <description>
     <![CDATA[  Optimal variance text reflow for aesthetically pleasing borders.  ]]>
   </description>  
     
   <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Stephen Huan</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Algorithms for competitive programming  ]]>
+  </title>
+  <link> https://stephen-huan.github.io/blog/algorithm-library/index.html </link>
+  <guid> https://stephen-huan.github.io/blog/algorithm-library/index.html </guid>
+  <description>
+    <![CDATA[  Implementations of some useful algorithms.  ]]>
+  </description>  
+    
+  <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>  
   
   
   <atom:author>
