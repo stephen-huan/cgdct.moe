@@ -41,6 +41,15 @@ headers = [("/", "about"),
 
 <!--
 Add here global LaTeX commands to use throughout your pages.
+-->
+\newcommand{\url}[1]{[#1](!#1)}
+<!-- images -->
+\newenvironment{figure}{~~~<figure>~~~}{~~~</figure>~~~}
+\newenvironment{figcaption}{~~~<figcaption>~~~}{~~~</figcaption>~~~}
+\newcommand{\caption}[1]{\begin{figcaption}#1\end{figcaption}}
+
+<!--
+LaTeX-like math macros.
 n.b.: these are parsed by Franklin, *not* KaTeX.
 KaTeX has its own macro system: https://katex.org/docs/supported.html#macros
 -->

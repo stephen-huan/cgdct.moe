@@ -11,7 +11,9 @@ tags = ["misc"]
 _This recipe is from [Daniel](https://blog.danielclu.com/)
 who also took the below photograph (of my cooking). Thanks!_
 
+@@img-large
 \figalt{tomato egg noodle}{./tomato_egg_noodles.jpg}
+@@
 
 ## ingredients
 
