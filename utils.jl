@@ -1,6 +1,15 @@
 using Franklin: LxCom
 
 """
+    formatdate(date::Date, format=globvar(:date_format))
+
+Format the date object as a html <time> tag according to the given format.
+"""
+function formatdate(date::Date, format=globvar(:date_format))
+    """<time datetime="$date">$(Dates.format(date, format))</time>"""
+end
+
+"""
     getvar(page, var; default=nothing)
 
 Get `var` from `page`, using the simplier `Franklin.locvar` if possible.
@@ -18,13 +27,25 @@ Get the title field for `page`, defaulting to the path if not defined.
 robust_title(page) = getvar(page, :title; default="/$page/")
 
 """
-    robust_date(page)
+    robust_date(page, format=globvar(:date_format))
 
 Get the date field for `page`, defaulting to date of creation if not defined.
 """
-robust_date(page) = getvar(page, :date;
-    default=Date(Dates.unix2datetime(stat(page * ".md").ctime))
-)
+function robust_date(page, format=globvar(:date_format))
+    date = getvar(page, :date;
+                  default=Date(Dates.unix2datetime(stat(page * ".md").ctime))
+                 )
+    formatdate(date, format)
+end
+
+"""
+    modification_date()
+
+Get the time of last modification for the current page.
+"""
+function modification_date()
+    """<time datetime="$(locvar(:fd_mtime_raw))">$(locvar(:fd_mtime))</time>"""
+end
 
 """
     write_header!(io, page; rss=true)
@@ -83,9 +104,10 @@ end
 Return the modification time, ignoring automatically generated pages.
 """
 function hfun_lastupdated()
+    date = locvar(:fd_mtime_raw)
     url = get_url(locvar(:fd_rpath))
-    exclude = Set(["/blog/", "/404/", "/projects/"])
-    (in(url, exclude)) ?  "" : "Last updated: $(locvar(:fd_mtime))."
+    exclude = Set(["/404/", "/blog/", "/projects/", "/publications/"])
+    (in(url, exclude)) ?  "" : "Last updated: $(formatdate(date))."
 end
 
 """
