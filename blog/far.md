@@ -11,6 +11,7 @@ tags = ["cs"]
 [[Video]](https://youtu.be/H3Agto3ZSnk)
 [[Source Code (C++)]]({{assets}}/far.cpp)
 [[Source Code (Python)]]({{assets}}/far.py)
+[[Source Code (Emacs Lisp) by esrh]](https://github.com/eshrh/far.el)
 
 [`par`](http://www.nicemice.net/par/) is a formatting tool that inserts line
 breaks to make the length of each line less than a set number of characters,
@@ -82,7 +83,7 @@ observed by using the variance identity
 along with the fact that $ \E{X} $ is constant.
 Indeed, we essentially repeated this derivation.
 
-That's it! The algorithm runs in $ \BigO(nK) $ where $ n $ is the number of
+That's it! The algorithm runs in $ \BigO(NK) $ where $ N $ is the number of
 characters in the input text and $ K $ is the desired width. Since $ K $ is
 usually fixed to some small constant (79, 72, etc.), this is essentially linear
 in $ n $ and I suspect most of the running time is bottlenecked by just I/O
@@ -181,10 +182,10 @@ $-"norm"](https://en.wikipedia.org/wiki/Lp_space#When_p_=_0).
 Finally, the goal of minimizing variance is equivalent to minimizing the
 $ \ell^2 $ norm of $ X $ since the $ \ell^2 $ norm is the sum of squares.
 In summary, we have the optimization problem taken over $ \mathcal{P} \defeq
-\{ \text{valid paragraphs $ X $ such that $ \norm{X}_\infty \leq K $ } \} $ of
+\{ \text{valid paragraphs $ X $ such that $ \norm{X}_\infty \leq K $} \} $ of
 \begin{align*}
-  \min_{\substack{X \in \mathcal{P} \\ \norm{X}_0 = N}} \; \norm{X}_2 \\
-  N = \min_{P \in \mathcal{P}} \; \norm{P}_0
+  \min_{\substack{X \in \mathcal{P} \\ \norm{X}_0 = n}} \; \norm{X}_2 \\
+  n = \min_{P \in \mathcal{P}} \; \norm{P}_0
 \end{align*}
 where we have written the problem entirely in terms of $
 \ell^p $-norms. This perspective doesn't really help when
