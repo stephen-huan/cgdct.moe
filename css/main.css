@@ -487,8 +487,12 @@ header .blog-name {
   padding-top: 10px;
 }
 
-.active {
-  color: var(--theme-darksilver-color);
+.font-weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+header .active {
+  color: black;
   font-weight: var(--font-weight-thick);
 }
 
@@ -498,7 +502,7 @@ header .blog-name a {
 }
 
 header li a:hover {
-  color: var(--theme-seagreen-color);
+  color: var(--theme-darksilver-color);
   /* border-bottom: 2px solid black; */
 }
 
