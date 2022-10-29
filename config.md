@@ -13,7 +13,7 @@ mintoclevel = 2
 # Base files such as LICENSE.md and README.md are ignored by default.
 ignore = ["Project.toml", "Manifest.toml",
           "node_modules/", "package-lock.json", "package.json",
-          "publish.sh", "update.sh"
+          "bin/",
          ]
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)

@@ -280,6 +280,20 @@ td {
 .franklin-content   .cref   { color: var(--theme-darkrust-color); }
 .franklin-content .bibref a { color: var(--theme-darkseagreen-color); }
 
+.references ol {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.references p {
+  text-indent: -4rem;
+  padding-left: 4rem;
+}
+
+.references h2 {
+  text-align: center;
+}
+
 .franklin-content sup {
   font-size: var(--font-size-tiny);
   vertical-align: super;

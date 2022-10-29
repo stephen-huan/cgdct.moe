@@ -276,3 +276,23 @@ function lx_cref(lxc::LxCom, _)
     return String(take!(io))
 end
 
+"""
+    lx_bibliography(com, _)
+
+Render the BibTeX bibliography with `pandoc`.
+
+See: https://ctroupin.github.io/posts/2019-12-19-bibtex-markdown/
+"""
+function lx_bibliography(com, _)
+    bib = Franklin.content(com.braces[1])
+    path = "/assets$(get_url(locvar(:fd_rpath)))"[begin:end - 1]
+    """
+    @@references
+    @@showhover
+    ## [References]($path/$bib.bib)
+    @@
+    \\textinput{$path/$bib.md}
+    @@
+    """
+end
+

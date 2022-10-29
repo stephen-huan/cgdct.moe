@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+"""
+Convert a BibTeX file to markdown with pandoc.
+
+See: https://ctroupin.github.io/posts/2019-12-19-bibtex-markdown/
+"""
+import argparse, subprocess
+
+STYLE = "/home/stephenhuan/programs/web/\
+stephen-huan.github.io/_assets/misc/ieee.csl"
+
+def replace(s: str) -> str:
+    """ Replace characters in s with different characters. """
+    chars = {
+        "\n": " ",
+        "“": '"',
+        "”": '"',
+    }
+    for char in chars:
+        s = s.replace(char, chars[char])
+    return s
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=\
+        "Convert a BibTeX file to markdown with pandoc")
+    parser.add_argument("-v", "--version", action="version", version="1.0")
+    parser.add_argument("path", help="path to BibTeX file")
+    parser.add_argument("-c", "--csl", default=STYLE,
+                        help="path to citation style file")
+    parser.add_argument("-o", "--output", default="references.md",
+                        help="output path")
+
+    args = parser.parse_args()
+    # get labels
+    with open(args.path) as f:
+        keys = [line.split("{")[1][:-2] for line in f if line[0] == "@"]
+    # run pandoc
+    subprocess.run(["pandoc",
+                     "--citeproc",
+                    f"--csl={args.csl}",
+                     "--to", "markdown_strict",
+                     "--output", args.output,
+                     args.path,
+                   ])
+    # load file
+    with open(args.output) as f:
+        entries, ref = [], []
+        for line in f:
+            line = line.strip()
+            if len(line) == 0:
+                entries.append(ref)
+                ref = []
+            else:
+                ref.append(line)
+        entries.append(ref)
+    # light post-processing to remove html elements
+    entries = [
+        "\n".join((entry[1].split(">")[-1],
+                   *entry[2:-1],
+                   entry[-1][:-len("</span>")]
+                  ))
+        for entry in entries
+    ]
+    # franklin post-processing
+    entries = [
+        f"{i + 1}. \\biblabel{{{keys[i]}}}{{{i + 1}}} [{i + 1}] {entry}"
+        for i, entry in enumerate(map(replace, entries))
+    ]
+    # overwrite
+    with open(args.output, "w") as f:
+        f.write("\n".join(entries))
+
