@@ -185,11 +185,11 @@ body {
 .franklin-content h6 { font-size: var(--font-size-h6); }
 
 .franklin-content h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.franklin-content h2,
+.franklin-content h3,
+.franklin-content h4,
+.franklin-content h5,
+.franklin-content h6 {
   text-align: left;
   font-weight: var(--font-weight-normal);
   margin-top: var(--font-size-normal);
@@ -228,6 +228,10 @@ h6 {
   margin-right: auto;
   border-collapse: collapse;
   text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--output-background);
 }
 
 .franklin-toc ol ol {
@@ -306,7 +310,7 @@ td {
 }
 
 .franklin-content .fndef tr,
-td {
+.franklin-content .fndef td {
   padding: 0;
   border: 0;
   text-align: left;
@@ -630,11 +634,12 @@ table {
 }
 
 tr:first-of-type {
-  background: #eae9f4;
+  /* background: #eae9f4; */
 }
 
 tr:first-of-type > th {
   text-align: center;
+  border: 1px solid lightgray;
 }
 
 tr,
@@ -718,6 +723,10 @@ table tbody tr td {
   font-weight: var(--font-weight-thick);
 }
 
+.news tbody tr:nth-child(even) {
+  background-color: var(--background);
+}
+
 /* ==================================================================
     TAG PAGES
 ================================================================== */
@@ -737,6 +746,10 @@ table tbody tr td {
 .tagged-posts table tbody tr th:first-of-type {
   font-weight: var(--font-weight-thick);
   border: none;
+}
+
+.tagged-posts tbody tr:nth-child(even) {
+  background-color: var(--background);
 }
 
 /* ==================================================================
