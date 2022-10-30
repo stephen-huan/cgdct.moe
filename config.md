@@ -45,7 +45,13 @@ Add here global LaTeX commands to use throughout your pages.
 \newcommand{\url}[1]{[#1](!#1)}
 <!-- images -->
 \newenvironment{figure}{\begin{wrap}{figure}}{\end{wrap}}
-\newcommand{\caption}[1]{\begin{wrap}{figcaption} #1 \end{wrap}}
+\newcommand{\caption}[1]{\begin{wrap}{figcaption}#1\end{wrap}}
+\newcommand{\figpreview}[3]{
+  \begin{wrap}{a href="!#3"}
+    \figalt{#1}{#2}
+  \end{wrap}
+}
+<!-- columns -->
 \newenvironment{columns}{
   \begin{wrap}{div class="row"}
 }{

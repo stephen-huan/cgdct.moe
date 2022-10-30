@@ -1,4 +1,4 @@
-using Franklin: LxCom
+using Franklin: LxCom, stent
 
 """
     formatdate(date::Date, format=globvar(:date_format))
@@ -215,7 +215,7 @@ end
 Get the `n` most recent news entries.
 """
 function lx_news(com, _)
-    n = parse(Int64, Franklin.content(com.braces[1]))
+    n = parse(Int64, stent(com.braces[1]))
     io = IOBuffer()
     i = -1
     open("news.md") do news
@@ -237,7 +237,7 @@ end
 Make a card for the given project page.
 """
 function lx_makecard(com, _)
-    page = Franklin.content(com.braces[1])
+    page = stent(com.braces[1])
     path = "projects/$page"
     image = pagevar(path, :preview_image)
     title = pagevar(path, :title)
@@ -281,7 +281,7 @@ Render the BibTeX bibliography with `pandoc`.
 See: https://ctroupin.github.io/posts/2019-12-19-bibtex-markdown/
 """
 function lx_bibliography(com, _)
-    bib = Franklin.content(com.braces[1])
+    bib = stent(com.braces[1])
     path = "/assets$(get_url(locvar(:fd_rpath)))"[begin:end - 1]
     """
     @@references
@@ -302,9 +302,9 @@ See: [convert_md](@ref), [reprocess](@ref),
 https://github.com/tlienart/Franklin.jl/issues/677
 """
 function env_wrap(com, _)
-    tag_data = Franklin.content(com.braces[1])
+    tag_data = stent(com.braces[1])
     tag, data... = split(tag_data, " ")
-    content = Franklin.content(com)
+    content = stent(com)
     lxdefs = collect(values(Franklin.GLOBAL_LXDEFS))
     # https://github.com/tlienart/Franklin.jl/blob/4ba6d9020367468bfb77b5bde9eabb2648ab8a21/src/converter/markdown/blocks.jl#L35-L37
     parsed = Franklin.reprocess(content, lxdefs;
