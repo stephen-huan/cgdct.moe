@@ -1,0 +1,6 @@
+#!/bin/bash
+# script to build the site locally
+
+julia --project="@." --optimize=0 --eval "using Franklin: optimize
+    optimize(prerender=true, minify=false)"
+

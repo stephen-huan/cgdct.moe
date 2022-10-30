@@ -2,13 +2,13 @@
 # script to check links
 
 # Franklin's built-in link checker
-julia --project="@." --optimize=0 --eval "using Franklin: verify_links;
+julia --project="@." --optimize=0 --eval "using Franklin: verify_links
     verify_links()" | grep --invert-match \
         --regexp "mailto:" \
         --regexp "浣"
 
 # broken-link-checker: https://github.com/stevenvachon/broken-link-checker
 # https://github.com/JuliaLang/www.julialang.org#looking-for-broken-links
-broken-link-checker https://stephen-huan.github.io/ -ro \
+broken-link-checker https://stephen-huan.github.io/ --recursive --ordered \
     --exclude "algorithm-library"
 

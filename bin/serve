@@ -1,0 +1,6 @@
+#!/bin/bash
+# script to serve the site locally
+
+julia --project="@." --optimize=0 --eval "using Franklin: serve
+    serve(prerender=true)"
+
