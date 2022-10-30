@@ -46,6 +46,16 @@ Add here global LaTeX commands to use throughout your pages.
 <!-- images -->
 \newenvironment{figure}{\begin{wrap}{figure}}{\end{wrap}}
 \newcommand{\caption}[1]{\begin{wrap}{figcaption} #1 \end{wrap}}
+\newenvironment{columns}{
+  \begin{wrap}{div class="row"}
+}{
+  ~~~<div style="clear: both"></div>~~~\end{wrap}
+}
+\newenvironment{column}[2]{
+  \begin{wrap}{div class="#1" style="width: #2;"}
+}{
+  \end{wrap}
+}
 
 <!--
 LaTeX-like math macros.

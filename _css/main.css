@@ -674,7 +674,7 @@ table tbody tr td {
   overflow-wrap: break-word;
 }
 
-.pgp tt {
+.pgp samp {
   font-family: var(--monospace);
 }
 
@@ -685,14 +685,14 @@ table tbody tr td {
   margin-bottom: 0rem;
 }
 
-.franklin-content .container img.profile {
+.franklin-content .profile img {
   width: 265px;
   border-radius: 4px;
   box-shadow: var(--box-shadow);
 }
 
 @media (max-width: 760px) {
-  .franklin-content .container img.profile {
+  .franklin-content .profile img {
     min-width: 100%;
   }
 

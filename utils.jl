@@ -302,12 +302,13 @@ See: [convert_md](@ref), [reprocess](@ref),
 https://github.com/tlienart/Franklin.jl/issues/677
 """
 function env_wrap(com, _)
-    tag = Franklin.content(com.braces[1])
+    tag_data = Franklin.content(com.braces[1])
+    tag, data... = split(tag_data, " ")
     content = Franklin.content(com)
     lxdefs = collect(values(Franklin.GLOBAL_LXDEFS))
     # https://github.com/tlienart/Franklin.jl/blob/4ba6d9020367468bfb77b5bde9eabb2648ab8a21/src/converter/markdown/blocks.jl#L35-L37
     parsed = Franklin.reprocess(content, lxdefs;
                                 nostripp=true) |> Franklin.simplify_ps
-    return "~~~<$tag>\n$parsed\n</$tag>~~~"
+    return "~~~<$tag $(join(data, ' '))>\n$parsed\n</$tag>~~~"
 end
 

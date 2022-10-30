@@ -8,16 +8,16 @@ title = "Stephen Huan"
 
 @@pgp
 ~~~
-PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><tt>0x{{pgp}}</tt></a>
+PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><samp>0x{{pgp}}</samp></a>
 ~~~
 @@
 
-@@row
-@@container
-@@right
+\begin{columns}
+\begin{column}{right}{auto}
+@@profile
 ~~~
 <a href="/assets/profile_picture.jpg">
-  <img src="/assets/profile_picture.webp" class="profile"></img>
+  <img alt="profile picture" src="/assets/profile_picture.webp"></img>
 </a>
 <div class="address">
   <p>S1320 CODA</p>
@@ -26,12 +26,13 @@ PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><tt>0x{{pgp}}</tt></a>
 </div>
 ~~~
 @@
-@@
+\end{column}
+
 I'm an undergraduate student studying computer science at [Georgia
 Tech](https://www.gatech.edu/), currently advised by [Florian
 Schäfer](https://f-t-s.github.io/) in the [School of Computational
 Science and Engineering](https://cse.gatech.edu/). Prior to Georgia
-Tech, I was at [TJHSST](https://user.tjhsst.edu/2021shuan/).
+Tech, I was at [TJHSST](https://tjhsst.edu/).
 
 My research exploits the interplay between numerical
 computation and statistical inference for faster algorithms.
@@ -47,10 +48,7 @@ I am best reached via [email](mailto:shuan@gatech.edu).
 - WCA: [2018HUAN21](https://www.worldcubeassociation.org/persons/2018HUAN21)
 - [YouTube](https://www.youtube.com/channel/UC3adQ7hzj_Ug2dr4KQp8V_w)
 
-~~~
-<div style="clear: both"></div>
-~~~
-@@
+\end{columns}
 
 @@showhover
 ## [news](/news/)
