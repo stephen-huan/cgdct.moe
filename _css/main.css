@@ -246,15 +246,17 @@ td {
 }
 
 .franklin-content blockquote {
-  background: var(--block-background);
-  border-left: 7px solid #a8a8a8;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  font-style: italic;
+  /* background: var(--output-background); */
+  border-left: 0.125rem solid var(--theme-darksilver-color);
+  margin: 0.5rem 0.625rem;
+  padding: 0.5rem 0.625rem;
+  /* font-style: italic; */
 }
 
 .franklin-content blockquote p {
-  display: inline;
+  /* display: inline; */
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* ==================================================================
