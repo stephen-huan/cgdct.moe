@@ -304,11 +304,12 @@ https://github.com/tlienart/Franklin.jl/issues/677
 function env_wrap(com, _)
     tag_data = stent(com.braces[1])
     tag, data... = split(tag_data, " ")
+    data = (length(data) > 0) ? " $(join(data, ' '))" : ""
     content = stent(com)
     lxdefs = collect(values(Franklin.GLOBAL_LXDEFS))
     # https://github.com/tlienart/Franklin.jl/blob/4ba6d9020367468bfb77b5bde9eabb2648ab8a21/src/converter/markdown/blocks.jl#L35-L37
     parsed = Franklin.reprocess(content, lxdefs;
                                 nostripp=true) |> Franklin.simplify_ps
-    return "~~~<$tag $(join(data, ' '))>\n$parsed\n</$tag>~~~"
+    return "~~~<$tag$data>\n$parsed\n</$tag>~~~"
 end
 

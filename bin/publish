@@ -11,7 +11,7 @@ git checkout "$build_branch" &&
 git merge --no-verify "$main_branch" &&
 
 # build site
-julia --project="@." -O0 -e "using Franklin: optimize; \
+julia --project="@." --optimize=0 --eval "using Franklin: optimize; \
     optimize(clear=true, prerender=true, minify=false)" &&
 
 # publish
