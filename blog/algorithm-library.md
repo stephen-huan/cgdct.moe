@@ -1605,7 +1605,9 @@ function](https://en.wikipedia.org/wiki/Ackermann_function).
 
 @@centering
 \begin{figure}
-  \figalt{Mikasa Ackerman}{./mikasa.webp}
+  \figpreview{Mikasa Ackerman}{./358414.webp}{
+    https://cdn.myanimelist.net/images/characters/15/358414.jpg
+  }
   \caption{
     [Mikasa Ackerman](https://myanimelist.net/character/40881/Mikasa_Ackerman).
   }
