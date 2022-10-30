@@ -63,6 +63,25 @@
 
 <item>
   <title>
+    <![CDATA[  Quotes  ]]>
+  </title>
+  <link> https://stephen-huan.github.io/blog/quotes/index.html </link>
+  <guid> https://stephen-huan.github.io/blog/quotes/index.html </guid>
+  <description>
+    <![CDATA[  A collection of miscellaneous quotes about research.  ]]>
+  </description>  
+    
+  <pubDate>Sat, 27 Mar 2021 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Stephen Huan</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
     <![CDATA[  far: a &#40;f&#41;ast re-write of the Unix utility p&#40;ar&#41;  ]]>
   </title>
   <link> https://stephen-huan.github.io/blog/far/index.html </link>

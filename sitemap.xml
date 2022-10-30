@@ -2,62 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-    <loc>https://stephen-huan.github.io/publications/index.html</loc>
-    <lastmod>2022-10-24</lastmod>
+    <loc>https://stephen-huan.github.io/blog/quotes/index.html</loc>
+    <lastmod>2022-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://stephen-huan.github.io/404/index.html</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://stephen-huan.github.io/blog/algorithm-library/index.html</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://stephen-huan.github.io/index.html</loc>
-    <lastmod>2022-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://stephen-huan.github.io/blog/tomato-egg-noodle/index.html</loc>
-    <lastmod>2022-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://stephen-huan.github.io/blog/far/index.html</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://stephen-huan.github.io/blog/index.html</loc>
-    <lastmod>2022-10-24</lastmod>
+    <lastmod>2022-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://stephen-huan.github.io/news/index.html</loc>
-    <lastmod>2022-10-24</lastmod>
+    <lastmod>2022-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://stephen-huan.github.io/publications/index.html</loc>
+    <lastmod>2022-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://stephen-huan.github.io/blog/tomato-egg-noodle/index.html</loc>
+    <lastmod>2022-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://stephen-huan.github.io/blog/index.html</loc>
+    <lastmod>2022-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://stephen-huan.github.io/projects/cholesky/index.html</loc>
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://stephen-huan.github.io/blog/far/index.html</loc>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://stephen-huan.github.io/projects/index.html</loc>
-    <lastmod>2022-10-24</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
