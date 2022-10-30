@@ -356,7 +356,7 @@ td {
 
 .franklin-content figcaption::before {
   counter-increment: fignum;
-  content: "Figure " counter(fignum) ":";
+  content: "Figure " counter(fignum) ": ";
 }
 
 .franklin-content .nonumber figcaption::before {
@@ -365,7 +365,7 @@ td {
 }
 
 .franklin-content figcaption {
-  text-align: center;
+  /* text-align: center; */
 }
 
 /* ==================================================================

@@ -44,9 +44,8 @@ Add here global LaTeX commands to use throughout your pages.
 -->
 \newcommand{\url}[1]{[#1](!#1)}
 <!-- images -->
-\newenvironment{figure}{~~~<figure>~~~}{~~~</figure>~~~}
-\newenvironment{figcaption}{~~~<figcaption>~~~}{~~~</figcaption>~~~}
-\newcommand{\caption}[1]{\begin{figcaption}#1\end{figcaption}}
+\newenvironment{figure}{\begin{wrap}{figure}}{\end{wrap}}
+\newcommand{\caption}[1]{\begin{wrap}{figcaption} #1 \end{wrap}}
 
 <!--
 LaTeX-like math macros.
