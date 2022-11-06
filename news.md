@@ -9,6 +9,7 @@ title = "older news"
 @@news
 | Date       | Description |
 |:-----------|:------------|
+| 2022-11-11 | [Poster](/assets/pdf/2022-11-11_cse-recruiting.pdf) session at Georgia Tech's [CSE Fall Recruiting Event](https://cse.gatech.edu/fall-2022-recruting-event). |
 | 2022-10-07 | [Slides](/assets/pdf/2022-09-28_mds.pdf) for a talk at Georgia Tech's [ACO Student Seminar](https://sites.google.com/view/aco-student-seminar-gatech/). |
 | 2022-09-28 | [Slides](/assets/pdf/2022-09-28_mds.pdf) for a talk at the [SIAM Conference on Mathematics of Data Science (MDS22)](https://meetings.siam.org/sess/dsp_talk.cfm?p=122967). |
 | 2022-09-23 | [Slides](/assets/pdf/2022-09-28_mds.pdf) for another talk at Georgia Tech's [Theory Club](https://theoryclub.github.io/). |
