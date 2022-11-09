@@ -38,7 +38,7 @@ My research exploits the interplay between numerical
 computation and statistical inference for faster algorithms.
 For example, my [previous work](/projects/) includes computing
 sparse Cholesky factors of dense covariance matrices using
-ideas from optimal experimental design and compressive sensing.
+ideas from optimal experimental design and compressed sensing.
 
 I am best reached via [email](mailto:shuan@gatech.edu).
 

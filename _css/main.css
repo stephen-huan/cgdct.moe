@@ -99,18 +99,12 @@ body {
 
 .franklin-content .left {
   float: left;
-  margin-right: 15px;
+  margin-right: 1rem;
 }
 
 .franklin-content .right {
   float: right;
-  margin-left: 15px;
-}
-
-.franklin-content .container img {
-  width: auto;
-  padding-left: 0;
-  border-radius: 10px;
+  margin-left: 1rem;
 }
 
 .franklin-content .footnote {
@@ -362,15 +356,20 @@ td {
   text-align: center;
 }
 
+.franklin-content .border img {
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+}
+
 .franklin-content .img-large img {
   width: 80%;
-  padding-left: 10%;
+  margin-left: 10%;
   text-align: center;
 }
 
 .franklin-content .img-small img {
   width: 60%;
-  padding-left: 20%;
+  margin-left: 20%;
   text-align: center;
 }
 

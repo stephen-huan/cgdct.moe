@@ -8,7 +8,7 @@ tags = ["anime", "misc"]
 
 {{maketitle}}
 
-@@img-small,nonumber
+@@img-small,border,nonumber
 \begin{figure}
   \figpreview{「夕立方程式」(Yuudachi Houteishiki)}{
     ./Oikura.Sodachi.full.2805028.webp
@@ -28,7 +28,7 @@ tags = ["anime", "misc"]
 \end{figure}
 @@
 
-@@img-small,nonumber
+@@img-small,border,nonumber
 \begin{figure}
   \figpreview{Yuru Camp teaser visual}{./g_visual_02.webp}{
     https://yurucamp.jp/second/images/g_visual_02.jpg
@@ -45,7 +45,7 @@ tags = ["anime", "misc"]
 \end{figure}
 @@
 
-@@img-small,nonumber
+@@img-small,border,nonumber
 \begin{figure}
   \figpreview{「ときめきポポロン♪」(Tokimeki Poporon♪)}{./001.webp}{
     https://gochiusa.com/core_sys/images/contents/00000256/base/001.jpg?1660869136
