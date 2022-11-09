@@ -123,12 +123,6 @@ body {
     FOOT / COPYRIGHT
 ================================================================== */
 
-.franklin-content .page-foot a {
-  text-decoration: none;
-  color: #a6a2a0;
-  text-decoration: underline;
-}
-
 .page-foot {
   font-size: var(--font-size-footnote);
   color: var(--theme-silver-color);
@@ -146,6 +140,10 @@ body {
 .franklin-toc li {
   /* Avoid clickable elements being too close together. */
   margin: 0.6em 0;
+}
+
+.franklin-toc li a {
+  text-decoration: none;
 }
 
 .franklin-content {
@@ -206,21 +204,23 @@ body {
   border-bottom: 1px solid lightgrey;
 }
 
-.franklin-content h1 a { color: inherit; }
-.franklin-content h1 a:hover { text-decoration: none; }
-.franklin-content h2 a { color: inherit; }
-.franklin-content h2 a:hover { text-decoration: none; }
-.franklin-content h3 a { color: inherit; }
-.franklin-content h3 a:hover { text-decoration: none; }
-.franklin-content h4 a { color: inherit; }
-.franklin-content h4 a:hover { text-decoration: none; }
-.franklin-content h5 a { color: inherit; }
-.franklin-content h5 a:hover { text-decoration: none; }
-.franklin-content h6 a { color: inherit; }
-.franklin-content h6 a:hover { text-decoration: none; }
+.franklin-content h1 a,
+.franklin-content h2 a,
+.franklin-content h3 a,
+.franklin-content h4 a,
+.franklin-content h5 a,
+.franklin-content h6 a {
+  color: inherit;
+  text-decoration: none;
+}
 
-.franklin-content .showhover a:hover {
-  text-decoration: var(--theme-darksilver-color) underline;
+.franklin-content h1 a:hover,
+.franklin-content h2 a:hover,
+.franklin-content h3 a:hover,
+.franklin-content h4 a:hover,
+.franklin-content h5 a:hover,
+.franklin-content h6 a:hover {
+  text-decoration: none;
 }
 
 .franklin-content table {
@@ -269,11 +269,17 @@ td {
 }
 
 .franklin-content a {
-  color: var(--theme-darksilver-color);
-  text-decoration: none;
+  color: inherit;
+  text-decoration: underline var(--theme-silver-color);
+  /* text-decoration: none; */
+  /* border-bottom: 1px solid var(--theme-silver-color); */
 }
 
 .franklin-content a:hover {
+  text-decoration: underline;
+}
+
+.franklin-content .showhover a:hover {
   text-decoration: underline;
 }
 
@@ -281,10 +287,22 @@ td {
     HYPERREFS AND FOOTNOTES
 ================================================================== */
 
-.franklin-content  .eqref a { color: var(--theme-darkrust-color); }
+/* inline citations and equation numbering */
+
+.franklin-content .eqref a {
+  color: var(--theme-darkrust-color);
+  text-decoration: none;
+}
 /* this may seem a bit odd but it's how SIAM \cref looks for equations */
-.franklin-content   .cref   { color: var(--theme-darkrust-color); }
-.franklin-content .bibref a { color: var(--theme-darkseagreen-color); }
+.franklin-content .cref {
+  color: var(--theme-darkrust-color);
+}
+.franklin-content .bibref a {
+  color: var(--theme-darkseagreen-color);
+  text-decoration: none;
+}
+
+/* references */
 
 .references ol {
   list-style: none;
@@ -299,6 +317,8 @@ td {
 .references h2 {
   text-align: center;
 }
+
+/* footnotes */
 
 .franklin-content sup {
   font-size: var(--font-size-tiny);
@@ -319,7 +339,7 @@ td {
 }
 
 .franklin-content .fndef tr {
-  border-left: 2px solid lightgray;
+  border-left: 2px solid lightgrey;
 }
 
 .franklin-content .fndef td.fndef-backref {
@@ -553,9 +573,7 @@ header li a:hover {
   }
 }
 
-/*
-medium display: nav goes under name
-*/
+/* medium display: nav goes under name */
 @media (max-width: 940px) {
   header { display: block; }
 
@@ -641,18 +659,18 @@ tr:first-of-type {
 
 tr:first-of-type > th {
   text-align: center;
-  border: 1px solid lightgray;
+  border: 1px solid lightgrey;
 }
 
 tr,
 th,
 td {
   padding: 10px;
-  border: 1px solid lightgray;
+  border: 1px solid lightgrey;
 }
 
 table tbody tr td {
-  border: 1px solid lightgray;
+  border: 1px solid lightgrey;
 }
 
 /* ==================================================================
@@ -678,6 +696,10 @@ table tbody tr td {
 
 .pgp samp {
   font-family: var(--monospace);
+}
+
+.pgp a {
+  text-decoration: none;
 }
 
 .address p {
@@ -732,6 +754,10 @@ table tbody tr td {
 /* ==================================================================
     TAG PAGES
 ================================================================== */
+
+.tagged-posts a {
+  text-decoration: none;
+}
 
 .tagged-posts table {
   margin-left: 0;
@@ -802,8 +828,9 @@ table tbody tr td {
    margin-right: 0.25em;
 }
 
-.blog-posts a:hover {
+.blog-tags a {
   color: var(--theme-darksilver-color);
+  text-decoration: none;
 }
 
 .blog-posts ul {
@@ -831,9 +858,17 @@ table tbody tr td {
   margin-bottom: 0em;
 }
 
-.post-meta, .post-tags {
-  font-size: var(--font-size-small);
+.blog-posts h3 a:hover {
   color: var(--theme-darksilver-color);
+}
+
+.post-meta, .post-tags {
+  color: var(--theme-darksilver-color);
+  font-size: var(--font-size-small);
+}
+
+.post-tags a {
+  text-decoration: none;
 }
 
 /* ==================================================================
@@ -879,6 +914,7 @@ table tbody tr td {
 .card a {
   color: var(--text-color);
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .card a:hover {
