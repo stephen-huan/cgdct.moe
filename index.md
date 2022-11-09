@@ -46,7 +46,7 @@ I am best reached via [email](mailto:shuan@gatech.edu).
 
 - GitHub: [stephen-huan](https://github.com/stephen-huan)
 - WCA: [2018HUAN21](https://www.worldcubeassociation.org/persons/2018HUAN21)
-- [YouTube](https://www.youtube.com/channel/UC3adQ7hzj_Ug2dr4KQp8V_w)
+- YouTube: [@stephenhuan](https://www.youtube.com/@stephenhuan)
 
 \end{columns}
 
