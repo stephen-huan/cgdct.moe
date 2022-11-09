@@ -91,38 +91,6 @@ body {
 }
 
 /* ==================================================================
-    BASIC GRID FOR PROFILE PIC
-================================================================== */
-
-.franklin-content .row {
-  display: block;
-}
-
-.franklin-content .left {
-  float: left;
-  margin-right: 1rem;
-}
-
-.franklin-content .right {
-  float: right;
-  margin-left: 1rem;
-}
-
-/* ==================================================================
-    FOOT / COPYRIGHT
-================================================================== */
-
-.page-foot {
-  font-size: var(--font-size-footnote);
-  color: var(--theme-silver-color);
-  text-align: right;
-  margin-top: 2em;
-  border-top: 1px solid lightgrey;
-  padding-top: 1em;
-  margin-bottom: 1em;
-}
-
-/* ==================================================================
     TEXT GEOMETRY
 ================================================================== */
 
@@ -150,6 +118,79 @@ body {
     padding-right: 6%;
   }
 }
+
+/* ==================================================================
+    GENERAL FORMATTING
+================================================================== */
+
+.centering { text-align: center; }
+
+.font-weight-bold { font-weight: var(--font-weight-bold); }
+
+/* links */
+
+.franklin-content a {
+  color: inherit;
+  text-decoration: underline var(--theme-silver-color);
+  /* text-decoration: none; */
+  /* border-bottom: 1px solid var(--theme-silver-color); */
+}
+
+.franklin-content            a:hover { text-decoration: underline; }
+.franklin-content .showhover a:hover { text-decoration: underline; }
+
+/* lists */
+
+/* Spacing between bullet points. */
+.franklin-content li p { margin: 0.5rem 0; }
+
+/* tables */
+
+.franklin-content table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  border-collapse: collapse;
+  text-align: center;
+  line-height: 1em;
+}
+
+.franklin-content th,
+.franklin-content td {
+  font-size: var(--font-size-small);
+  padding: 0.5rem;
+  border: var(--rule);
+}
+
+tbody tr:nth-child(even) { background-color: var(--output-background); }
+
+tr:first-of-type > th { text-align: center; /* background: #eae9f4; */ }
+
+.clean-table table { margin-left: 0; }
+
+.clean-table tr, .clean-table table tbody tr td { border: none; }
+
+.clean-table tbody tr:nth-child(even) { background-color: var(--background); }
+
+/* blockquote */
+
+.franklin-content blockquote {
+  /* background: var(--output-background); */
+  border-left: 0.125rem solid var(--theme-darksilver-color);
+  margin: 0.5rem 0.625rem;
+  padding: 0.5rem 0.625rem;
+  /* font-style: italic; */
+}
+
+.franklin-content blockquote p {
+  /* display: inline; */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* horizontal rule */
+
+hr { border-top: var(--rule); border-bottom: 0; }
 
 /* ==================================================================
     TITLES
@@ -180,8 +221,8 @@ body {
 }
 
 .franklin-content h2 {
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid lightgrey;
+  padding-bottom: 0.25rem;
+  border-bottom: var(--rule);
 }
 
 .franklin-content h1 a,
@@ -203,66 +244,15 @@ body {
   text-decoration: none;
 }
 
-.franklin-content table {
-  margin-left: auto;
-  margin-right: auto;
-  border-collapse: collapse;
-  text-align: center;
+.franklin-content .title h1 {
+  font-weight: var(--font-weight-normal);
+  padding-bottom: 0.5em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  border-bottom: none;
 }
 
-tbody tr:nth-child(even) {
-  background-color: var(--output-background);
-}
-
-.franklin-content th,
-td {
-  font-size: var(--font-size-small);
-  padding: 10px;
-  border: 1px solid black;
-}
-
-.franklin-content blockquote {
-  /* background: var(--output-background); */
-  border-left: 0.125rem solid var(--theme-darksilver-color);
-  margin: 0.5rem 0.625rem;
-  padding: 0.5rem 0.625rem;
-  /* font-style: italic; */
-}
-
-.franklin-content blockquote p {
-  /* display: inline; */
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* ==================================================================
-    GENERAL FORMATTING
-================================================================== */
-
-/* Spacing between bullet points. */
-.franklin-content li p {
-  margin: 10px 0;
-}
-
-.franklin-content a {
-  color: inherit;
-  text-decoration: underline var(--theme-silver-color);
-  /* text-decoration: none; */
-  /* border-bottom: 1px solid var(--theme-silver-color); */
-}
-
-.franklin-content a:hover {
-  text-decoration: underline;
-}
-
-.franklin-content .showhover a:hover {
-  text-decoration: underline;
-}
-
-hr {
-  border-top: var(--rule);
-  border-bottom: 0;
-}
+.franklin-content .title strong { font-weight: var(--font-weight-bold); }
 
 /* ==================================================================
     HYPERREFS AND FOOTNOTES
@@ -270,31 +260,20 @@ hr {
 
 /* table of contents */
 
-.franklin-toc li {
-  /* Avoid clickable elements being too close together. */
-  margin: 0.5rem 0;
-}
-
-.franklin-toc li a {
-  text-decoration: none;
-}
-
-.franklin-toc ol ol {
-  list-style-type: lower-alpha;
-}
+/* Avoid clickable elements being too close together. */
+.franklin-toc li    { margin: 0.5rem 0; }
+.franklin-toc li a  { text-decoration: none; }
+.franklin-toc ol ol { list-style-type: lower-alpha; }
 
 /* inline citations and equation numbering */
 
-.franklin-content .eqref a {
-  color: var(--theme-darkrust-color);
-  text-decoration: none;
-}
+.franklin-content .eqref  a { color: var(--theme-darkrust-color); }
 /* this may seem a bit odd but it's how SIAM \cref looks for equations */
-.franklin-content .cref {
-  color: var(--theme-darkrust-color);
-}
+.franklin-content .cref     { color: var(--theme-darkrust-color); }
+.franklin-content .bibref a { color: var(--theme-darkseagreen-color); }
+
+.franklin-content .eqref  a,
 .franklin-content .bibref a {
-  color: var(--theme-darkseagreen-color);
   text-decoration: none;
 }
 
@@ -305,14 +284,8 @@ hr {
   padding-left: 1rem;
 }
 
-.references p {
-  text-indent: -4rem;
-  padding-left: 4rem;
-}
-
-.references h2 {
-  text-align: center;
-}
+.references h2 { text-align: center; }
+.references p  { text-indent: -4rem; padding-left: 4rem; }
 
 /* footnotes */
 
@@ -329,9 +302,7 @@ hr {
   line-height: 0;
 }
 
-.franklin-content sup a {
-  text-decoration: none;
-}
+.franklin-content sup a { text-decoration: none; }
 
 .franklin-content table.fndef {
   margin: 0;
@@ -356,9 +327,7 @@ hr {
   padding-left: 0.25rem;
 }
 
-.franklin-content .fndef td.fndef-backref a {
-  text-decoration: none;
-}
+.franklin-content .fndef td.fndef-backref a { text-decoration: none; }
 
 .franklin-content .fndef td.fndef-content {
   font-size: var(--font-size-footnote);
@@ -367,12 +336,26 @@ hr {
 }
 
 /* ==================================================================
-    IMAGES in CONTENT
+    BASIC GRID FOR PROFILE PIC
 ================================================================== */
 
-.centering {
-  text-align: center;
+.franklin-content .row {
+  display: block;
 }
+
+.franklin-content .left {
+  float: left;
+  margin-right: 1rem;
+}
+
+.franklin-content .right {
+  float: right;
+  margin-left: 1rem;
+}
+
+/* ==================================================================
+    IMAGES in CONTENT
+================================================================== */
 
 .franklin-content .border img {
   border-radius: 4px;
@@ -426,7 +409,7 @@ hr {
   content: "(" counter(eqnum) ")";
   position: relative;
   float: left;
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .nonumber .katex-display::after {
@@ -454,7 +437,7 @@ code {
  */
 .plaintext {
   background: var(--output-background);
-  border: 1px dashed #dbdbdb;
+  border: 1px dashed lightgrey;
 }
 
 .hljs {
@@ -502,35 +485,35 @@ nav ul {
   margin-bottom: 0;
 }
 
-nav li {
-  display: inline-block;
-}
+nav li { display: inline-block; }
 
 nav li a {
   color: black;
   text-decoration: none;
-  /* font-size: 18px; */
-  /* font-weight: bold; */
   display: inline-block;
   float: center;
-  padding-top: 10px;
-  padding-right: 2px;
-  padding-left: 2px;
-  padding-bottom: 5px;
-  margin-left: 7px;
-  margin-right: 7px;
-  /* border-bottom: 2px solid #4c9cf1; */
+  padding-top: 0.5rem;
+  padding-right: 0.125rem;
+  padding-left: 0.125rem;
+  padding-bottom: 0.25rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   transition: color 0.3s ease;
 }
 
-nav li:last-of-type a {
-  margin-right: 0px;
+nav li:last-of-type a { margin-right: 0px; }
+
+nav .active {
+  color: var(--text-color);
+  font-weight: var(--font-weight-thick);
 }
+
+nav li a:hover { color: var(--theme-darksilver-color); }
 
 header {
   text-align: right;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   display: flex;
   align-items: center;
 }
@@ -541,31 +524,15 @@ header .blog-name {
   text-align: left;
   font-size: var(--font-size-h5);
   /* font-family: var(--monospace); */
-  padding-top: 10px;
-}
-
-.font-weight-bold {
-  font-weight: var(--font-weight-bold);
-}
-
-header .active {
-  color: black;
-  font-weight: var(--font-weight-thick);
+  padding-top: 0.5rem;
 }
 
 header .blog-name a {
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
 }
 
-header li a:hover {
-  color: var(--theme-darksilver-color);
-  /* border-bottom: 2px solid black; */
-}
-
-#menu-icon {
-  display: none;
-}
+#menu-icon { display: none; }
 
 @media (max-width: 480px) {
   header {
@@ -597,7 +564,7 @@ header li a:hover {
   header .blog-name {
     display: block;
     width: 100%;
-    padding-bottom: 10px;
+    padding-bottom: 0.5rem;
   }
 
   nav {
@@ -611,7 +578,7 @@ instead, display a burger menu.
 */
 @media (max-width: 760px) {
   header {
-    height: 35px;
+    height: 2rem;
     display: flex;
     align-items: center;
   }
@@ -631,12 +598,12 @@ instead, display a burger menu.
     display: none;
     position: absolute;
 
-    /* padding: 20px; */
-    background: #fff;
-    border: 1px solid #444;
-    right: 50px;
-    top: 60px;
-    width: 30%;
+    /* padding: 0.5rem; */
+    background: var(--background);
+    border: 1px solid black;
+    right: 12.5%;
+    top: 3.3rem;
+    width: 8rem;
     border-radius: 4px 0 4px 4px;
     z-index: 1;
   }
@@ -647,77 +614,39 @@ instead, display a burger menu.
     padding: 0;
     margin: 0;
   }
-  header li a { border-bottom: none; }
-  header li a:hover { border-bottom: none; }
 
-  nav:hover ul {
-    display: block;
-  }
+  nav:hover ul { display: block; }
 
   #menu-icon {
     display: inline-block;
-    margin-right: 10px;
-    margin-top: 5px;
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
   }
 }
 
-table {
-  line-height: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  border-collapse: collapse;
-  text-align: center;
-  margin-bottom: 1.5em;
-}
+/* ==================================================================
+    FOOT / COPYRIGHT
+================================================================== */
 
-tr:first-of-type {
-  /* background: #eae9f4; */
-}
-
-tr:first-of-type > th {
-  text-align: center;
-  border: 1px solid lightgrey;
-}
-
-tr,
-th,
-td {
-  padding: 10px;
-  border: 1px solid lightgrey;
-}
-
-table tbody tr td {
-  border: 1px solid lightgrey;
+.page-foot {
+  font-size: var(--font-size-footnote);
+  color: var(--theme-silver-color);
+  text-align: right;
+  margin-top: 2rem;
+  border-top: 1px solid lightgrey;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* ==================================================================
     ABOUT
 ================================================================== */
 
-.franklin-content .title h1 {
-  font-weight: var(--font-weight-normal);
-  padding-bottom: 0.5em;
-  border-bottom: none;
-  margin-top: 0em;
-  margin-bottom: 0em;
-}
+.pgp { font-size: var(--font-size-small); overflow-wrap: break-word; }
 
-.franklin-content .title strong {
-  font-weight: var(--font-weight-bold);
-}
+.pgp samp { font-family: var(--monospace); }
 
-.pgp {
-  font-size: var(--font-size-small);
-  overflow-wrap: break-word;
-}
-
-.pgp samp {
-  font-family: var(--monospace);
-}
-
-.pgp a {
-  text-decoration: none;
-}
+.pgp a { text-decoration: none; }
 
 .address p {
   font-family: var(--monospace);
@@ -748,67 +677,22 @@ table tbody tr td {
     NEWS
 ================================================================== */
 
-.news table {
-  margin-left: 0;
-}
+.news table tbody tr th { display: none; }
 
-.news table tbody tr th {
-  display: none;
-}
-
-.news tr, .news table tbody tr td {
-  border: none;
-}
-
-.news table tbody tr td:first-of-type {
-  font-weight: var(--font-weight-thick);
-}
-
-.news tbody tr:nth-child(even) {
-  background-color: var(--background);
-}
+.news td:first-of-type { font-weight: var(--font-weight-thick); }
 
 /* ==================================================================
-    TAG PAGES
-================================================================== */
-
-.tagged-posts a {
-  text-decoration: none;
-}
-
-.tagged-posts table {
-  margin-left: 0;
-}
-
-.tagged-posts tr:first-of-type {
-  background: var(--background);
-}
-
-.tagged-posts tr, .tagged-posts table tbody tr td {
-  border: none;
-}
-
-.tagged-posts table tbody tr th:first-of-type {
-  font-weight: var(--font-weight-thick);
-  border: none;
-}
-
-.tagged-posts tbody tr:nth-child(even) {
-  background-color: var(--background);
-}
-
-/* ==================================================================
-    BLOG POSTS
+    BLOG POSTS and TAG PAGES
 ================================================================== */
 
 .blog-title h1 {
   font-size: var(--font-size-huge);
   font-weight: var(--font-weight-normal);
   text-align: center;
-  padding-bottom: 0em;
+  padding-bottom: 0;
   border-bottom: none;
-  margin-top: 0em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .blog-title h2 {
@@ -816,34 +700,29 @@ table tbody tr td {
   font-weight: var(--font-weight-normal);
   text-align: center;
   border-bottom: none;
-  margin-top: 0em;
+  margin-top: 0;
 }
 
 .blog-tags {
   text-align: center;
   display: center;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  border-top:    1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-top: var(--rule);
+  border-bottom: var(--rule);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
-.blog-tags ul {
-  padding-left: 0em;
-}
+.blog-tags ul { padding-left: 0; margin-top: 0; margin-bottom: 0; }
 
 .blog-tags li, .blog-tags p {
    display: inline-block;
-   margin-top: 0em;
-   margin-bottom: 0em;
+   margin-top: 0;
+   margin-bottom: 0;
 }
 
-.blog-tags p {
-   margin-left: 0.25em;
-   margin-right: 0.25em;
-}
+.blog-tags p { margin-left: 0.25rem; margin-right: 0.25rem; }
 
 .blog-tags a {
   color: var(--theme-darksilver-color);
@@ -856,12 +735,12 @@ table tbody tr td {
 }
 
 .blog-posts li {
-  padding-bottom: 1em;
-  border-bottom: 1px solid lightgrey;
+  padding-bottom: var(--font-size-normal);
+  border-bottom: var(--rule);
 }
 
 .blog-posts li:last-of-type {
-  padding-bottom: 0em;
+  padding-bottom: 0;
   border-bottom: none;
 }
 
@@ -872,20 +751,25 @@ table tbody tr td {
 .blog-posts h3 {
   font-size: var(--font-size-h4);
   font-weight: var(--font-weight-normal);
-  margin-bottom: 0em;
+  margin-bottom: 0;
 }
 
-.blog-posts h3 a:hover {
-  color: var(--theme-darksilver-color);
-}
+.blog-posts h3 a:hover { color: var(--theme-darksilver-color); }
 
 .post-meta, .post-tags {
   color: var(--theme-darksilver-color);
   font-size: var(--font-size-small);
 }
 
-.post-tags a {
-  text-decoration: none;
+.post-tags a { text-decoration: none; }
+
+/* tag page */
+
+.tagged-posts a { text-decoration: none; }
+
+.tagged-posts th:first-of-type {
+  font-weight: var(--font-weight-thick);
+  border: none;
 }
 
 /* ==================================================================
@@ -898,6 +782,7 @@ table tbody tr td {
   color: var(--theme-lightsilver-color);
   text-align: right;
   margin-top: 0;
+  margin-bottom: 2rem;
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout */
@@ -913,7 +798,7 @@ table tbody tr td {
 .inference {
   display: grid;
   grid-auto-rows: auto;
-  gap: 1em;
+  gap: var(--font-size-normal);
 }
 
 .card {
@@ -945,7 +830,7 @@ table tbody tr td {
 }
 
 .card-body {
-  padding: 1em;
+  padding: var(--font-size-normal);
 }
 
 .card h2 {
@@ -969,14 +854,14 @@ table tbody tr td {
 ================================================================== */
 
 .year h2 {
-  font-size: var(--font-size-h3) ;
+  font-size: var(--font-size-h3);
   font-weight: var(--font-weight-normal);
   color: var(--theme-lightsilver-color);
   text-align: right;
   margin-top: 0;
-  padding-top: 0.3em;
-  padding-bottom: 0;
-  border-top: 1px solid lightgrey;
+  margin-bottom: 0;
+  /* padding-top: 1rem; */
+  border-top: var(--rule);
   border-bottom: none;
 }
 

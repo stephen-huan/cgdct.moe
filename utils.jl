@@ -118,9 +118,9 @@ Generate a custom tag list.
 See: https://tlienart.github.io/FranklinTemplates.jl/templates/basic/menu3/
 """
 function hfun_custom_taglist()
-    # -------------------------------------------------------------
-    # Part1: Retrieve all pages associated with the tag & sort them
-    # -------------------------------------------------------------
+    # --------------------------------------------------------------
+    # Part 1: Retrieve all pages associated with the tag & sort them
+    # --------------------------------------------------------------
     # retrieve the tag string
     tag = locvar(:fd_tag)
     # recover the relative paths to all pages that
@@ -130,13 +130,13 @@ function hfun_custom_taglist()
     # you could also only show the most recent 5 etc...
     sort!(rpaths, by=robust_date, rev=true)
 
-    # --------------------------------
-    # Part2: Write the HTML to plug in
-    # --------------------------------
+    # ---------------------------------
+    # Part 2: Write the HTML to plug in
+    # ---------------------------------
     # instantiate a buffer in which we will
     # write the HTML to plug in the tag page
     io = IOBuffer()
-    write(io, """<div class="tagged-posts"><table><tbody>\n""")
+    write(io, """<div class="tagged-posts clean-table"><table><tbody>\n""")
     # go over all paths
     for rpath in rpaths
         write(io, "<tr>")
@@ -220,7 +220,7 @@ function lx_news(com, _)
     i = -1
     open("news.md") do news
         for line in eachline(news)
-            if line == "@@news"
+            if line == "@@news,clean-table"
                 i = 0
             end
             i >= 0 && (i += 1)
