@@ -126,15 +126,6 @@ body {
     TEXT GEOMETRY
 ================================================================== */
 
-.franklin-toc li {
-  /* Avoid clickable elements being too close together. */
-  margin: 0.6em 0;
-}
-
-.franklin-toc li a {
-  text-decoration: none;
-}
-
 .franklin-content {
   position: relative;
   padding-left: 12.5%;
@@ -223,10 +214,6 @@ tbody tr:nth-child(even) {
   background-color: var(--output-background);
 }
 
-.franklin-toc ol ol {
-  list-style-type: lower-alpha;
-}
-
 .franklin-content th,
 td {
   font-size: var(--font-size-small);
@@ -280,6 +267,21 @@ hr {
 /* ==================================================================
     HYPERREFS AND FOOTNOTES
 ================================================================== */
+
+/* table of contents */
+
+.franklin-toc li {
+  /* Avoid clickable elements being too close together. */
+  margin: 0.5rem 0;
+}
+
+.franklin-toc li a {
+  text-decoration: none;
+}
+
+.franklin-toc ol ol {
+  list-style-type: lower-alpha;
+}
 
 /* inline citations and equation numbering */
 
