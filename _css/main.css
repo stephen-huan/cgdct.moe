@@ -50,14 +50,10 @@
   --font-size-huge:     4.75rem;
   --font-size-normal:   1.1875rem;
   --font-size-small:    1.00rem;
-  --font-size-footnote: 80%;
-  --font-size-tiny:     70%;
+  --font-size-footnote: 0.95rem;
   --font-weight-normal: 300;
   --font-weight-thick:  400;
   --font-weight-bold:   700;
-  --box-shadow:
-    0 2px  5px 0 rgba(0, 0, 0, 0.16),
-    0 2px 10px 0 rgba(0, 0, 0, 0.12);
   /* adding the Florian colorscheme colors */
   --theme-silver-color:        #9e9997;
   --theme-lightblue-color:     #a1b4c7;
@@ -71,6 +67,11 @@
   --theme-darkseagreen-color:  #1e4833;
   --theme-darkorange-color:    #c7740e;
   --theme-darkrust-color:      #9c380d;
+  /* styling */
+  --box-shadow:
+    0 2px  5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  --rule: 1px solid lightgrey;
 }
 
 body {
@@ -105,12 +106,6 @@ body {
 .franklin-content .right {
   float: right;
   margin-left: 1rem;
-}
-
-.franklin-content .footnote {
-  position: relative;
-  top: -0.5em;
-  font-size: var(--font-size-tiny);
 }
 
 /* ==================================================================
@@ -277,6 +272,11 @@ td {
   text-decoration: underline;
 }
 
+hr {
+  border-top: var(--rule);
+  border-bottom: 0;
+}
+
 /* ==================================================================
     HYPERREFS AND FOOTNOTES
 ================================================================== */
@@ -314,15 +314,26 @@ td {
 
 /* footnotes */
 
+.franklin-content .footnote {
+  position: relative;
+  top: -0.5rem;
+  font-size: var(--font-size-footnote);
+}
+
 .franklin-content sup {
-  font-size: var(--font-size-tiny);
+  color: var(--theme-darkrust-color);
+  font-size: var(--font-size-footnote);
   vertical-align: super;
   line-height: 0;
 }
 
+.franklin-content sup a {
+  text-decoration: none;
+}
+
 .franklin-content table.fndef {
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .franklin-content .fndef tr,
@@ -333,18 +344,23 @@ td {
 }
 
 .franklin-content .fndef tr {
-  border-left: 2px solid lightgrey;
+  /* border-left: 0.125rem solid var(--theme-darksilver-color); */
 }
 
 .franklin-content .fndef td.fndef-backref {
+  color: var(--theme-darkrust-color);
   vertical-align: top;
-  font-size: var(--font-size-tiny);
-  padding-left: 5px;
+  font-size: var(--font-size-footnote);
+  padding-left: 0.25rem;
+}
+
+.franklin-content .fndef td.fndef-backref a {
+  text-decoration: none;
 }
 
 .franklin-content .fndef td.fndef-content {
   font-size: var(--font-size-footnote);
-  padding-left: 10px;
+  padding-left: 0.5rem;
   width: 100%;
 }
 
