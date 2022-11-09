@@ -131,7 +131,8 @@ body {
 
 .franklin-content a {
   color: inherit;
-  text-decoration: underline var(--theme-silver-color);
+  text-decoration: underline;
+  text-decoration-color: var(--theme-silver-color);
   /* text-decoration: none; */
   /* border-bottom: 1px solid var(--theme-silver-color); */
 }
