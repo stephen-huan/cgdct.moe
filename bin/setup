@@ -1,0 +1,9 @@
+#!/bin/bash
+# script to perform initial setup
+
+main_branch="master"
+build_branch="build"
+push_branch="gh-pages"
+
+git branch "$build_branch"
+
