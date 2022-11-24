@@ -15,6 +15,9 @@ def replace(s: str) -> str:
         "\n": " ",
         "“": '"',
         "”": '"',
+        # prevent KaTeX from parsing this incorrectly
+        "\[": "[",
+        "\]": "]",
     }
     for char in chars:
         s = s.replace(char, chars[char])
