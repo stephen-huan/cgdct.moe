@@ -6,7 +6,7 @@ title = "older news"
 # older news
 @@
 
-@@news,clean-table
+@@news,clean-table,no-header
 | Date       | Description |
 |:-----------|:------------|
 | 2022-11-11 | [Poster](/assets/pdf/2022-11-11_cse-recruiting.pdf) session at Georgia Tech's [CSE Fall Recruiting Event](https://cse.gatech.edu/fall-2022-recruting-event). |
