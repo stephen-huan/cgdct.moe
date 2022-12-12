@@ -9,6 +9,8 @@ title = "older news"
 @@news,clean-table,no-header
 | Date       | Description |
 |:-----------|:------------|
+| 2022-11-17 | I will be a teaching assistant for CS 3510 (Design & Analysis of Algorithms) in Spring 2023. |
+| 2022-11-15 | I will be turning down the \$1500 [PURA Salary Award](https://urop.gatech.edu/pura-salary) due to a conflict with TA'ing. |
 | 2022-11-11 | [Poster](/assets/pdf/2022-11-11_cse-recruiting.pdf) session at Georgia Tech's [CSE Fall Recruiting Event](https://cse.gatech.edu/fall-2022-recruting-event). |
 | 2022-10-07 | [Slides](/assets/pdf/2022-09-28_mds.pdf) for a talk at Georgia Tech's [ACO Student Seminar](https://sites.google.com/view/aco-student-seminar-gatech/). |
 | 2022-09-28 | [Slides](/assets/pdf/2022-09-28_mds.pdf) for a talk at the [SIAM Conference on Mathematics of Data Science (MDS22)](https://meetings.siam.org/sess/dsp_talk.cfm?p=122967). |
