@@ -6,7 +6,7 @@ displaytags = ["math", "cs", "anime", "misc"]
 
 @@blog-title
 # cgdct stands for...
-## ...convex gradient descent congerence theorems
+## ...convex gradient descent convergence theorems
 @@
 
 @@blog-tags
