@@ -5,8 +5,8 @@ displaytags = ["math", "cs", "anime", "misc"]
 +++
 
 @@blog-title
-# cgdct stands for...
-## ...convex gradient descent convergence theorems
+\chapter{cgdct stands for...}
+\section{...convex gradient descent convergence theorems}
 @@
 
 @@blog-tags

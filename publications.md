@@ -3,7 +3,7 @@ title = "publications"
 +++
 
 @@title
-# publications
+\chapter{publications}
 @@
 
 @@year

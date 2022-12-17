@@ -3,7 +3,7 @@ title = "older news"
 +++
 
 @@title
-# older news
+\chapter{older news}
 @@
 
 @@news,clean-table,no-header

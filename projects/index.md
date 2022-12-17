@@ -18,7 +18,7 @@ title = "projects"
 }
 
 @@title
-# projects
+\chapter{projects}
 @@
 
 @@category
