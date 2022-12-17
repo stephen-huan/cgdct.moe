@@ -3,7 +3,7 @@ title = "Stephen Huan"
 +++
 
 @@title
-# **Stephen** Huan (浣苇杭)
+\chapter{**Stephen** Huan (浣苇杭)}
 @@
 
 @@pgp
@@ -17,7 +17,7 @@ PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><samp>0x{{pgp}}</samp></a>
 @@profile
 ~~~
 <a href="/assets/profile_picture.jpg">
-  <img alt="profile picture" src="/assets/profile_picture.webp"></img>
+  <img alt="profile picture" src="/assets/profile_picture.webp">
 </a>
 <div class="address">
   <p>S1320 CODA</p>
@@ -51,12 +51,12 @@ I am best reached via [email](mailto:shuan@gatech.edu).
 \end{columns}
 
 @@showhover
-## [news](/news/)
+\section{[news](/news/)}
 @@
 
 \news{5}
 
 @@showhover
-## [selected publications](/publications/)
+\section{[selected publications](/publications/)}
 @@
 

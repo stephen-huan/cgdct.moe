@@ -18,10 +18,12 @@ tags = ["anime", "misc"]
   > 向き不向きじゃないの。数学だけは私を裏切らないもの。
   \caption{
     ~~~---~~~老倉 育
-    ([Oikura "Euler" Sodachi](https://www.zerochan.net/2805028)) \\
+    ([Oikura "Euler" Sodachi](https://www.zerochan.net/2805028))
+    \newline
     TVアニメ「終物語」第三巻/そだちロスト
     ([Owarimonogatari/Sodachi Lost]
-     (https://www.monogatari-series.com/owarimonogatari/package/03.html)) \\
+     (https://www.monogatari-series.com/owarimonogatari/package/03.html))
+    \newline
     キャラクターコメンタリー
     ([character commentary](https://youtu.be/W-RqGvLPpwo?t=1489))
   }
@@ -38,7 +40,8 @@ tags = ["anime", "misc"]
     ~~~---~~~ティザービジュアル＜夜＞
     ([teaser visual<night>](https://yurucamp.jp/second/gallery/))
     キャッチコピー
-    ([catch copy](https://yurucamp.jp/news/information/5583)) \\
+    ([catch copy](https://yurucamp.jp/news/information/5583))
+    \newline
     TVアニメ「ゆるキャン△ SEASON２」
     ([Yuru Camp△ SEASON２](https://yurucamp.jp/second/))
   }
@@ -56,7 +59,8 @@ tags = ["anime", "misc"]
   \caption{
     ~~~---~~~EDテーマ
     チマメ隊／ときめきポポロン♪
-    ([Tokimeki Poporon♪](https://www.uta-net.com/song/197310/)) \\
+    ([Tokimeki Poporon♪](https://www.uta-net.com/song/197310/))
+    \newline
     TVアニメ「ご注文はうさぎですか？？」
     ([Is the order a rabbit??](https://gochiusa.com/series_cd/2/ed.html))
   }
@@ -72,7 +76,8 @@ tags = ["anime", "misc"]
   \end{wrap}
   > 読めないな…
   \caption{
-    ~~~---~~~チト ([Chito](http://girls-last-tour.com/character/)) \\
+    ~~~---~~~チト ([Chito](http://girls-last-tour.com/character/))
+    \newline
     少女終末旅行　1巻
     ([_Girls' Last Tour, Vol. 1_](https://www.shinchosha.co.jp/book/771781/))
     つくみず／著

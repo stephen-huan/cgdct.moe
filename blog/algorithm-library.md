@@ -749,7 +749,11 @@ def prune(h: list, x: list) -> list:
 
 ### Suffix Structures
 
-#### [Suffix Array](https://github.com/vladtepes1473/FM-Index/blob/master/readings/Linear%20Suffix%20Array%20Construction%20by%20Almost%20Pure%20Induced-Sorting.pdf)
+#### Suffix Array
+
+Reference paper:
+[_Linear Suffix Array Construction
+by Almost Pure Induced-Sorting_](https://doi.org/10.1109/DCC.2009.42).
 
 [Suffix Array by Induced Sorting](http://web.stanford.edu/class/cs166/lectures/04/Small04.pdf) -
 [Verification: SPOJ SARRAY](https://www.spoj.com/problems/SARRAY/) -
@@ -868,7 +872,11 @@ def suffix_array(s: list) -> list:
     return sa
 ```
 
-##### [LCP Array](http://web.cs.iastate.edu/~cs548/references/linear_lcp.pdf)
+##### LCP Array
+
+Reference paper:
+[_Linear-Time Longest-Common-Prefix Computation in Suffix Arrays
+and Its Applications_](https://doi.org/10.1007/3-540-48194-X_17)
 
 [Kasai](http://web.stanford.edu/class/cs166/lectures/03/Slides03.pdf) -
 [Verification: USACO Standing Out](http://www.usaco.org/index.php?page=viewproblem2&cpid=768) -
@@ -896,9 +904,9 @@ def lcp_array(s: str, sa: list) -> list:
     return lcp
 ```
 
-##### [Generalized Suffix Arrays](http://web.stanford.edu/class/cs166/lectures/02/Slides02.pdf)
+##### Generalized Suffix Arrays
 
-Generalized Suffix Arrays -
+[Generalized Suffix Arrays](http://web.stanford.edu/class/cs166/lectures/02/Slides02.pdf) -
 [Verification: SPOJ LPS](http://www.spoj.com/problems/LPS/) -
 Complexity: O(m)
 ```python
@@ -1103,7 +1111,7 @@ Lectures:
  - [CMU](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/suffixtrees.pdf)
  - [Stanford](https://web.stanford.edu/~mjkay/gusfield.pdf)
 
-##### [Generalized Suffix Tree](https://en.wikipedia.org/wiki/Generalized_suffix_tree)
+##### Generalized Suffix Tree
 
 [Generalized Suffix Tree](http://web.stanford.edu/class/archive/cs/cs166/cs166.1186/lectures/03/Small03.pdf) -
 [Verification]() -
@@ -1594,7 +1602,7 @@ def Astar(start):
         seen.add(n)
 ```
 
-### [Union-find](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)
+### Union-find
 
 [Union-find (or disjoint-set)](https://activities.tjhsst.edu/sct/lectures/1920/2019_10_18_Union_Find_and_MST.pdf) -
 [Verification: USACO Closing](http://usaco.org/index.php?page=viewproblem2&cpid=646) -
@@ -1652,7 +1660,7 @@ def find(parent: dict, u: int) -> int:
     return i
 ```
 
-### [Minimum Spanning Tree](https://en.wikipedia.org/wiki/Minimum_spanning_tree)
+### Minimum Spanning Tree
 
 [Kruskal](https://activities.tjhsst.edu/sct/lectures/1920/2019_10_18_Union_Find_and_MST.pdf) -
 [Verification: USACO Simplify](http://www.usaco.org/index.php?page=viewproblem2&cpid=101) -
@@ -1698,7 +1706,7 @@ def prim(m: list) -> float:
     return cost
 ```
 
-### [Connected Components](https://en.wikipedia.org/wiki/Component_(graph_theory))
+### Connected Components
 
 Important if using recursion
 ```python
@@ -1733,7 +1741,7 @@ def connected(graph):
     return ids, num
 ```
 
-#### [Directed (Strongly connected components)](https://en.wikipedia.org/wiki/Strongly_connected_component)
+#### Directed (Strongly connected components)
 
 Recursion bad - see iterative post-order/assign
 ```python
@@ -1812,8 +1820,9 @@ for key, value in ids.items():
 
 ### Tree
 
-#### [LCA](https://en.wikipedia.org/wiki/Lowest_common_ancestor)
-Lowest Common Ancestor -
+#### LCA
+
+[Lowest Common Ancestor](https://en.wikipedia.org/wiki/Lowest_common_ancestor) -
 [Verification: PClassic]() -
 Complexity: $ \langle 0, \BigO(n) \rangle $
 ```python
@@ -2064,7 +2073,7 @@ def dfs(u, seen=set()):
     return indexes
 ```
 
-### [Flow](https://en.wikipedia.org/wiki/Maximum_flow_problem)
+### Flow
 
 [Edmonds-Karp](https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm) -
 [Verification: SPOJ MTOTALF](https://www.spoj.com/problems/MTOTALF/) -
@@ -2304,7 +2313,10 @@ class MinQueue:
             raise ValueError("min() arg is an empty sequence")
 ```
 
-### [Range Minimum Query](http://web.stanford.edu/class/cs166/lectures/00/Slides00.pdf)
+### Range Minimum Query
+
+[Stanford lecture
+slides](http://web.stanford.edu/class/cs166/lectures/00/Slides00.pdf)
 
 [Fischer-Heun](http://web.stanford.edu/class/cs166/lectures/01/Slides01.pdf) -
 [Verification: SPOJ RMQSQ](https://www.spoj.com/problems/RMQSQ/) -
@@ -2419,6 +2431,7 @@ def rmq(o: list, b: int, a: list, indexes: list, ids: list,
 ### Trees
 
 #### Binary Indexed Trees (BITS)
+
 [Binary Indexed Trees](https://activities.tjhsst.edu/sct/lectures/1920/2019_11_01_Binary_Index_Trees.pdf) -
 [Verification]() -
 Complexity: $ \BigO(n \log n) $ construction, $ \BigO(\log n) $ query
@@ -2484,8 +2497,11 @@ class RBIT:
 ```
 
 
-#### [Segment Tree](https://activities.tjhsst.edu/sct/lectures/1920/2019_11_15_Segment_Trees.pdf)
+#### Segment Tree
 
+[Segment Tree](https://activities.tjhsst.edu/sct/lectures/1920/2019_11_15_Segment_Trees.pdf) -
+[Verification]() -
+Complexity: $ \BigO(n) $ construction, $ \BigO(\log n) $ query
 ```python
 class SegTree:
 
@@ -2562,8 +2578,11 @@ class SegTree:
             self.l[p] = self.l[pl] + self.l[pr]
 ```
 
-#### [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree)
+#### AVL Tree
 
+[AVL Tree](https://en.wikipedia.org/wiki/AVL_tree) -
+[Verification]() -
+Complexity: $ \BigO(n \log n) $ construction, $ \BigO(\log n) $ query
 ```python
 class Node:
 
@@ -2749,7 +2768,7 @@ class BST:
         return self.rotate_left(p, self.rotate_right(n, n.child[0]))
 ```
 
-#### [Cartesian Tree](https://en.wikipedia.org/wiki/Cartesian_tree)
+#### Cartesian Tree
 
 [Cartesian Tree](http://web.stanford.edu/class/cs166/lectures/01/Slides01.pdf) -
 [Verification: SPOJ RMQSQ](https://www.spoj.com/problems/RMQSQ/) -
@@ -2784,7 +2803,10 @@ def cartesian_tree(l: list) -> CartesianTree:
     return stk[0]
 ```
 
-#### [kd-Tree](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/kdtrees.pdf)
+#### kd-Tree
+
+[CMU
+lecture slides](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/kdtrees.pdf)
 
 [kd-Tree](https://activities.tjhsst.edu/computervision/lectures/kmeans_Handout.pdf) -
 [Verification]() -
@@ -3077,7 +3099,8 @@ def closest_pair(points: list) -> tuple:
                               sorted(points, key=lambda p: p[1]))
 ```
 
-### [Convex Hull](https://en.wikipedia.org/wiki/Convex_hull)
+### Convex Hull
+
 [Graham scan](https://en.wikipedia.org/wiki/Graham_scan),
 specifically [Andrew's Monotone Chain](https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain) -
 [Verification: Kattis convexhull](https://open.kattis.com/problems/convexhull) -

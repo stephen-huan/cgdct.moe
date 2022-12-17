@@ -7,7 +7,7 @@ title = "projects"
   ~~~
   <div class="card">
     <a href="/projects/!#1/">
-      <img src="!#2" alt="!#3" width="auto" height="auto"></img>
+      <img src="!#2" alt="!#3">
       <div class="card-body">
         <h2>#3</h2>
         <p>#4</p>
