@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "broken-link-checker": "^0.7.8",
+    "vnu-jar": "^22.9.29"
+  }
+}
