@@ -8,7 +8,7 @@
    <link rel="stylesheet" href="/libs/highlight/styles/atom-one-light.min.css">
  
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22-5 -5 100 100%22><text y=%22.9em%22 font-family=%22sans-serif%22 font-size=%2290%22>浣</text></svg>">
+  <link rel="icon" href="/assets/favicon.svg">
    <title>Algorithms for competitive programming</title> 
 </head>
 <body>
@@ -25,7 +25,7 @@
 <li><a href="/publications/" class="">publications</a></li>
 <li><a href="/assets/pdf/cv.pdf" class="">cv</a></li>
 </ul>
-    <span id="menu-icon"><?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg></span>
+    <img src="/assets/hamburger.svg" alt="menu icon" id="menu-icon">
   </nav>
 </header>
 
@@ -34,7 +34,7 @@
 <div class="franklin-content">
 <h1>Algorithms for competitive programming</h1>
 <span class="post-meta"><time datetime="2019-12-07">2019-12-07</time></span><span class="post-tags">&nbsp; &middot;&nbsp; <a href="/tag/cs/"><b>#</b> cs</a></span>
-<div class="franklin-toc"><ol><li><a href="#basics">Basics</a><ol><li><a href="#input">Input</a></li></ol></li><li><a href="#numerical_algorithms">Numerical Algorithms</a><ol><li><a href="#number_theory">Number Theory</a></li><li><a href="#binary">Binary</a></li><li><a href="#matrices">Matrices</a></li><li><a href="#linear_programming">Linear Programming</a></li><li><a href="#fast_fourier_transform">Fast Fourier Transform</a></li></ol></li><li><a href="#strings">Strings</a><ol><li><a href="#suffix_structures">Suffix Structures</a></li><li><a href="#matching">Matching</a></li></ol></li><li><a href="#dynamic_programming">Dynamic Programming</a><ol><li><a href="#memoization">Memoization</a></li></ol></li><li><a href="#graph_algorithms">Graph Algorithms</a><ol><li><a href="#traversals">Traversals</a></li><li><a href="#shortest_path">Shortest Path</a></li><li><a href="#a_hrefhttpsenwikipediaorgwikidisjoint-set_data_structureunion-find"><a href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure">Union-find</a></a></li><li><a href="#a_hrefhttpsenwikipediaorgwikiminimum_spanning_treeminimum_spanning_tree"><a href="https://en.wikipedia.org/wiki/Minimum_spanning_tree">Minimum Spanning Tree</a></a></li><li><a href="#a_hrefhttpsenwikipediaorgwikicomponent_graph_theoryconnected_components"><a href="https://en.wikipedia.org/wiki/Component_&#40;graph_theory&#41;">Connected Components</a></a></li><li><a href="#tree">Tree</a></li><li><a href="#a_hrefhttpsenwikipediaorgwikimaximum_flow_problemflow"><a href="https://en.wikipedia.org/wiki/Maximum_flow_problem">Flow</a></a></li></ol></li><li><a href="#sorting">Sorting</a></li><li><a href="#data_structures">Data Structures</a><ol><li><a href="#monotonic_query">Monotonic Query</a></li><li><a href="#a_hrefhttpwebstanfordeduclasscs166lectures00slides00pdfrange_minimum_query"><a href="http://web.stanford.edu/class/cs166/lectures/00/Slides00.pdf">Range Minimum Query</a></a></li><li><a href="#trees">Trees</a></li><li><a href="#prefix_sums">Prefix Sums</a></li></ol></li><li><a href="#computational_geometry">Computational Geometry</a><ol><li><a href="#closest_pair">Closest Pair</a></li><li><a href="#a_hrefhttpsenwikipediaorgwikiconvex_hullconvex_hull"><a href="https://en.wikipedia.org/wiki/Convex_hull">Convex Hull</a></a></li></ol></li><li><a href="#ad-hoc">Ad-hoc</a><ol><li><a href="#grid_bfs_problems">Grid BFS Problems</a></li></ol></li></ol></div>
+<div class="franklin-toc"><ol><li><a href="#basics">Basics</a><ol><li><a href="#input">Input</a></li></ol></li><li><a href="#numerical_algorithms">Numerical Algorithms</a><ol><li><a href="#number_theory">Number Theory</a></li><li><a href="#binary">Binary</a></li><li><a href="#matrices">Matrices</a></li><li><a href="#linear_programming">Linear Programming</a></li><li><a href="#fast_fourier_transform">Fast Fourier Transform</a></li></ol></li><li><a href="#strings">Strings</a><ol><li><a href="#suffix_structures">Suffix Structures</a></li><li><a href="#matching">Matching</a></li></ol></li><li><a href="#dynamic_programming">Dynamic Programming</a><ol><li><a href="#memoization">Memoization</a></li></ol></li><li><a href="#graph_algorithms">Graph Algorithms</a><ol><li><a href="#traversals">Traversals</a></li><li><a href="#shortest_path">Shortest Path</a></li><li><a href="#union-find">Union-find</a></li><li><a href="#minimum_spanning_tree">Minimum Spanning Tree</a></li><li><a href="#connected_components">Connected Components</a></li><li><a href="#tree">Tree</a></li><li><a href="#flow">Flow</a></li></ol></li><li><a href="#sorting">Sorting</a></li><li><a href="#data_structures">Data Structures</a><ol><li><a href="#monotonic_query">Monotonic Query</a></li><li><a href="#range_minimum_query">Range Minimum Query</a></li><li><a href="#trees">Trees</a></li><li><a href="#prefix_sums">Prefix Sums</a></li></ol></li><li><a href="#computational_geometry">Computational Geometry</a><ol><li><a href="#closest_pair">Closest Pair</a></li><li><a href="#convex_hull">Convex Hull</a></li></ol></li><li><a href="#ad-hoc">Ad-hoc</a><ol><li><a href="#grid_bfs_problems">Grid BFS Problems</a></li></ol></li></ol></div>
 <h2 id="basics"><a href="#basics" class="header-anchor">Basics</a></h2>
 <p>Running: <code>python</code>.</p>
 <p>Profiling: <code>python -m cProfile -s tottime</code>.</p>
@@ -638,7 +638,8 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
     <span class="hljs-keyword">return</span> [row[pad:-pad] <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> m[pad:-pad]]</code></pre>
 <h2 id="strings"><a href="#strings" class="header-anchor">Strings</a></h2>
 <h3 id="suffix_structures"><a href="#suffix_structures" class="header-anchor">Suffix Structures</a></h3>
-<h4 id="a_hrefhttpsgithubcomvladtepes1473fm-indexblobmasterreadingslinear20suffix20array20construction20by20almost20pure20induced-sortingpdfsuffix_array"><a href="#a_hrefhttpsgithubcomvladtepes1473fm-indexblobmasterreadingslinear20suffix20array20construction20by20almost20pure20induced-sortingpdfsuffix_array" class="header-anchor"><a href="https://github.com/vladtepes1473/FM-Index/blob/master/readings/Linear&#37;20Suffix&#37;20Array&#37;20Construction&#37;20by&#37;20Almost&#37;20Pure&#37;20Induced-Sorting.pdf">Suffix Array</a></a></h4>
+<h4 id="suffix_array"><a href="#suffix_array" class="header-anchor">Suffix Array</a></h4>
+<p>Reference paper: <a href="https://doi.org/10.1109/DCC.2009.42"><em>Linear Suffix Array Construction by Almost Pure Induced-Sorting</em></a>.</p>
 <p><a href="http://web.stanford.edu/class/cs166/lectures/04/Small04.pdf">Suffix Array by Induced Sorting</a> - <a href="https://www.spoj.com/problems/SARRAY/">Verification: SPOJ SARRAY</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(m) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></p>
 <pre><code class="python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">lms_block</span>(<span class="hljs-params">s: <span class="hljs-built_in">list</span>, t: <span class="hljs-built_in">list</span>, i: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">str</span>:
     <span class="hljs-string">&quot;&quot;&quot; Label each character of s with L (False) or S (True). &quot;&quot;&quot;</span>
@@ -751,7 +752,8 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 
     sa = induced_sort(s, t, blocks)
     <span class="hljs-keyword">return</span> sa</code></pre>
-<h5 id="a_hrefhttpwebcsiastateeducs548referenceslinear_lcppdflcp_array"><a href="#a_hrefhttpwebcsiastateeducs548referenceslinear_lcppdflcp_array" class="header-anchor"><a href="http://web.cs.iastate.edu/~cs548/references/linear_lcp.pdf">LCP Array</a></a></h5>
+<h5 id="lcp_array"><a href="#lcp_array" class="header-anchor">LCP Array</a></h5>
+<p>Reference paper: <a href="https://doi.org/10.1007/3-540-48194-X_17"><em>Linear-Time Longest-Common-Prefix Computation in Suffix Arrays and Its Applications</em></a></p>
 <p><a href="http://web.stanford.edu/class/cs166/lectures/03/Slides03.pdf">Kasai</a> - <a href="http://www.usaco.org/index.php?page&#61;viewproblem2&amp;cpid&#61;768">Verification: USACO Standing Out</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(m) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></p>
 <pre><code class="python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">lcp_array</span>(<span class="hljs-params">s: <span class="hljs-built_in">str</span>, sa: <span class="hljs-built_in">list</span></span>) -&gt; <span class="hljs-built_in">list</span>:
     <span class="hljs-string">&quot;&quot;&quot;&quot; Construct the LCP array given a string s and its suffix array sa. &quot;&quot;&quot;</span>
@@ -773,8 +775,8 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
                 h -= <span class="hljs-number">1</span>
 
     <span class="hljs-keyword">return</span> lcp</code></pre>
-<h5 id="a_hrefhttpwebstanfordeduclasscs166lectures02slides02pdfgeneralized_suffix_arrays"><a href="#a_hrefhttpwebstanfordeduclasscs166lectures02slides02pdfgeneralized_suffix_arrays" class="header-anchor"><a href="http://web.stanford.edu/class/cs166/lectures/02/Slides02.pdf">Generalized Suffix Arrays</a></a></h5>
-<p>Generalized Suffix Arrays - <a href="http://www.spoj.com/problems/LPS/">Verification: SPOJ LPS</a> - Complexity: O&#40;m&#41;</p>
+<h5 id="generalized_suffix_arrays"><a href="#generalized_suffix_arrays" class="header-anchor">Generalized Suffix Arrays</a></h5>
+<p><a href="http://web.stanford.edu/class/cs166/lectures/02/Slides02.pdf">Generalized Suffix Arrays</a> - <a href="http://www.spoj.com/problems/LPS/">Verification: SPOJ LPS</a> - Complexity: O&#40;m&#41;</p>
 <pre><code class="python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">generalized_suffix_array</span>(<span class="hljs-params">words: <span class="hljs-built_in">list</span></span>) -&gt; <span class="hljs-built_in">tuple</span>:
     <span class="hljs-string">&quot;&quot;&quot; Build a single suffix array on the concatenation of multiple words. &quot;&quot;&quot;</span>
     n = [v <span class="hljs-keyword">for</span> i, word <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(words)
@@ -970,7 +972,7 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 <li><p><a href="https://web.stanford.edu/~mjkay/gusfield.pdf">Stanford</a></p>
 </li>
 </ul>
-<h5 id="a_hrefhttpsenwikipediaorgwikigeneralized_suffix_treegeneralized_suffix_tree"><a href="#a_hrefhttpsenwikipediaorgwikigeneralized_suffix_treegeneralized_suffix_tree" class="header-anchor"><a href="https://en.wikipedia.org/wiki/Generalized_suffix_tree">Generalized Suffix Tree</a></a></h5>
+<h5 id="generalized_suffix_tree"><a href="#generalized_suffix_tree" class="header-anchor">Generalized Suffix Tree</a></h5>
 <p><a href="http://web.stanford.edu/class/archive/cs/cs166/cs166.1186/lectures/03/Small03.pdf">Generalized Suffix Tree</a> - <a href="">Verification</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(n) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
 <pre><code class="python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">generalized_suffix_tree</span>(<span class="hljs-params">words: <span class="hljs-built_in">list</span></span>) -&gt; SuffixTree:
     <span class="hljs-string">&quot;&quot;&quot; Construct a suffix tree on the concatenation of multiple words. &quot;&quot;&quot;</span>
@@ -1372,16 +1374,10 @@ sys.setrecursionlimit(<span class="hljs-number">10</span>**<span class="hljs-num
                            (heuristic(child) + moves + <span class="hljs-number">1</span>, child, moves + <span class="hljs-number">1</span>)
                           )
         seen.add(n)</code></pre>
-<h3 id="a_hrefhttpsenwikipediaorgwikidisjoint-set_data_structureunion-find"><a href="#a_hrefhttpsenwikipediaorgwikidisjoint-set_data_structureunion-find" class="header-anchor"><a href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure">Union-find</a></a></h3>
+<h3 id="union-find"><a href="#union-find" class="header-anchor">Union-find</a></h3>
 <p><a href="https://activities.tjhsst.edu/sct/lectures/1920/2019_10_18_Union_Find_and_MST.pdf">Union-find &#40;or disjoint-set&#41;</a> - <a href="http://usaco.org/index.php?page&#61;viewproblem2&amp;cpid&#61;646">Verification: USACO Closing</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>α</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(\alpha(N)) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">))</span></span></span></span></p>
 <p>where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex"> \alpha </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span> is the inverse <a href="https://en.wikipedia.org/wiki/Ackermann_function">Ackermann function</a>.</p>
-<div class="centering"><figure>
-<a href="https://cdn.myanimelist.net/images/characters/15/358414.jpg">
-<img src="/assets/blog/algorithm-library/358414.webp" alt="Mikasa Ackerman">
-</a> <figcaption>
-<a href="https://myanimelist.net/character/40881/Mikasa_Ackerman">Mikasa Ackerman</a>.
-</figcaption>
-</figure></div>
+<div class="centering"><figure><a href="https://cdn.myanimelist.net/images/characters/15/358414.jpg"><img src="/assets/blog/algorithm-library/358414.webp" alt="Mikasa Ackerman"></a> <figcaption><a href="https://myanimelist.net/character/40881/Mikasa_Ackerman">Mikasa Ackerman</a>.</figcaption></figure></div>
 <pre><code class="python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">union_init</span>(<span class="hljs-params">n: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">tuple</span>:
     <span class="hljs-string">&quot;&quot;&quot; Initialize the union-find data structure. &quot;&quot;&quot;</span>
     <span class="hljs-keyword">return</span> {i: i <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)}, {i: <span class="hljs-number">1</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)}
@@ -1414,7 +1410,7 @@ sys.setrecursionlimit(<span class="hljs-number">10</span>**<span class="hljs-num
         parent[u] = i
         u = p
     <span class="hljs-keyword">return</span> i</code></pre>
-<h3 id="a_hrefhttpsenwikipediaorgwikiminimum_spanning_treeminimum_spanning_tree"><a href="#a_hrefhttpsenwikipediaorgwikiminimum_spanning_treeminimum_spanning_tree" class="header-anchor"><a href="https://en.wikipedia.org/wiki/Minimum_spanning_tree">Minimum Spanning Tree</a></a></h3>
+<h3 id="minimum_spanning_tree"><a href="#minimum_spanning_tree" class="header-anchor">Minimum Spanning Tree</a></h3>
 <p><a href="https://activities.tjhsst.edu/sct/lectures/1920/2019_10_18_Union_Find_and_MST.pdf">Kruskal</a> - <a href="http://www.usaco.org/index.php?page&#61;viewproblem2&amp;cpid&#61;101">Verification: USACO Simplify</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>E</mi><mi>log</mi><mo>⁡</mo><mi>E</mi><mo stretchy="false">)</mo><mo>=</mo><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>E</mi><mi>log</mi><mo>⁡</mo><mi>V</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(E \log E) = \mathcal{O}(E \log V) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span></span></span></span></p>
 <pre><code class="python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">kruskal</span>(<span class="hljs-params">graph: <span class="hljs-built_in">dict</span></span>) -&gt; <span class="hljs-built_in">list</span>:
     <span class="hljs-string">&quot;&quot;&quot; Find the minimum spanning tree of the graph with Kruskal&#x27;s. &quot;&quot;&quot;</span>
@@ -1449,7 +1445,7 @@ sys.setrecursionlimit(<span class="hljs-number">10</span>**<span class="hljs-num
                 distances[j] = m[i][j]
                 paths[j] = i
     <span class="hljs-keyword">return</span> cost</code></pre>
-<h3 id="a_hrefhttpsenwikipediaorgwikicomponent_graph_theoryconnected_components"><a href="#a_hrefhttpsenwikipediaorgwikicomponent_graph_theoryconnected_components" class="header-anchor"><a href="https://en.wikipedia.org/wiki/Component_&#40;graph_theory&#41;">Connected Components</a></a></h3>
+<h3 id="connected_components"><a href="#connected_components" class="header-anchor">Connected Components</a></h3>
 <p>Important if using recursion</p>
 <pre><code class="python hljs"><span class="hljs-keyword">import</span> sys
 sys.setrecursionlimit(<span class="hljs-number">10</span>**<span class="hljs-number">6</span>)</code></pre>
@@ -1474,7 +1470,7 @@ sys.setrecursionlimit(<span class="hljs-number">10</span>**<span class="hljs-num
             assign(u, num, ids)
             num += <span class="hljs-number">1</span>
     <span class="hljs-keyword">return</span> ids, num</code></pre>
-<h4 id="a_hrefhttpsenwikipediaorgwikistrongly_connected_componentdirected_strongly_connected_components"><a href="#a_hrefhttpsenwikipediaorgwikistrongly_connected_componentdirected_strongly_connected_components" class="header-anchor"><a href="https://en.wikipedia.org/wiki/Strongly_connected_component">Directed &#40;Strongly connected components&#41;</a></a></h4>
+<h4 id="directed_strongly_connected_components"><a href="#directed_strongly_connected_components" class="header-anchor">Directed &#40;Strongly connected components&#41;</a></h4>
 <p>Recursion bad - see iterative post-order/assign</p>
 <pre><code class="python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">visit</span>(<span class="hljs-params">u, seen=<span class="hljs-built_in">set</span>(<span class="hljs-params"></span>), l=deque(<span class="hljs-params">[]</span>)</span>):
     <span class="hljs-string">&quot;&quot;&quot; Visit u and its children. &quot;&quot;&quot;</span>
@@ -1540,8 +1536,8 @@ sys.setrecursionlimit(<span class="hljs-number">10</span>**<span class="hljs-num
 <span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> ids.items():
     comps[value].append(key)</code></pre>
 <h3 id="tree"><a href="#tree" class="header-anchor">Tree</a></h3>
-<h4 id="a_hrefhttpsenwikipediaorgwikilowest_common_ancestorlca"><a href="#a_hrefhttpsenwikipediaorgwikilowest_common_ancestorlca" class="header-anchor"><a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor">LCA</a></a></h4>
-<p>Lowest Common Ancestor - <a href="">Verification: PClassic</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⟨</mo><mn>0</mn><mo separator="true">,</mo><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">⟩</mo></mrow><annotation encoding="application/x-tex"> \langle 0, \mathcal{O}(n) \rangle </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)⟩</span></span></span></span></p>
+<h4 id="lca"><a href="#lca" class="header-anchor">LCA</a></h4>
+<p><a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor">Lowest Common Ancestor</a> - <a href="">Verification: PClassic</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⟨</mo><mn>0</mn><mo separator="true">,</mo><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">⟩</mo></mrow><annotation encoding="application/x-tex"> \langle 0, \mathcal{O}(n) \rangle </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)⟩</span></span></span></span></p>
 <pre><code class="python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">bfs</span>(<span class="hljs-params">graph, start</span>):
     <span class="hljs-string">&quot;&quot;&quot; Breadth-first search on graph from start. &quot;&quot;&quot;</span>
     heights = {}
@@ -1764,7 +1760,7 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
                 stk.append((child, <span class="hljs-number">0</span>))
                 seen.add(child)
     <span class="hljs-keyword">return</span> indexes</code></pre>
-<h3 id="a_hrefhttpsenwikipediaorgwikimaximum_flow_problemflow"><a href="#a_hrefhttpsenwikipediaorgwikimaximum_flow_problemflow" class="header-anchor"><a href="https://en.wikipedia.org/wiki/Maximum_flow_problem">Flow</a></a></h3>
+<h3 id="flow"><a href="#flow" class="header-anchor">Flow</a></h3>
 <p><a href="https://en.wikipedia.org/wiki/Edmonds&#37;E2&#37;80&#37;93Karp_algorithm">Edmonds-Karp</a> - <a href="https://www.spoj.com/problems/MTOTALF/">Verification: SPOJ MTOTALF</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>V</mi><msup><mi>E</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(V E^2) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
 <pre><code class="python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">bfs</span>(<span class="hljs-params">c, f, s, t</span>):
     <span class="hljs-string">&quot;&quot;&quot; Breadth-first search on graph from start. &quot;&quot;&quot;</span>
@@ -1798,25 +1794,25 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
 <p>Problems:</p>
 <p>Max Flow</p>
 <ul>
-<li><p><a href="http://poj.org/problem?id&#61;1273"> http://poj.org/problem?id&#61;1273</a> &#40;USACO Drainage Ditches&#41;</p>
+<li><p><a href="http://poj.org/problem?id=1273">http://poj.org/problem?id&#61;1273</a> &#40;USACO Drainage Ditches&#41;</p>
 </li>
-<li><p><a href="https://codeforces.com/problemset/problem/843/E"> https://codeforces.com/problemset/problem/843/E</a></p>
+<li><p><a href="https://codeforces.com/problemset/problem/843/E">https://codeforces.com/problemset/problem/843/E</a></p>
 </li>
-<li><p><a href="https://www.spoj.com/problems/POTHOLE/"> https://www.spoj.com/problems/POTHOLE/</a></p>
+<li><p><a href="https://www.spoj.com/problems/POTHOLE/">https://www.spoj.com/problems/POTHOLE/</a></p>
 </li>
-<li><p><a href="https://www.spoj.com/problems/FASTFLOW/"> https://www.spoj.com/problems/FASTFLOW/</a></p>
+<li><p><a href="https://www.spoj.com/problems/FASTFLOW/">https://www.spoj.com/problems/FASTFLOW/</a></p>
 </li>
-<li><p><a href="https://open.kattis.com/problems/maxflow"> https://open.kattis.com/problems/maxflow</a></p>
+<li><p><a href="https://open.kattis.com/problems/maxflow">https://open.kattis.com/problems/maxflow</a></p>
 </li>
 </ul>
 <p>Dynamic</p>
 <ul>
-<li><p><a href="https://codeforces.com/problemset/problem/903/G"> https://codeforces.com/problemset/problem/903/G</a></p>
+<li><p><a href="https://codeforces.com/problemset/problem/903/G">https://codeforces.com/problemset/problem/903/G</a></p>
 </li>
 </ul>
 <p>Min-cost</p>
 <ul>
-<li><p><a href="https://open.kattis.com/problems/mincostmaxflow"> https://open.kattis.com/problems/mincostmaxflow</a></p>
+<li><p><a href="https://open.kattis.com/problems/mincostmaxflow">https://open.kattis.com/problems/mincostmaxflow</a></p>
 </li>
 </ul>
 <p>Extensions</p>
@@ -1835,10 +1831,10 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
 <li><p>Multiple sources/sinks: make supersource connected to each source with infinite capacity and each sink connected to supersink with infinite capacity</p>
 </li>
 </ul>
-<a href="https://en.wikipedia.org/wiki/Push&#37;E2&#37;80&#37;93relabel_maximum_flow_algorithm"> https://en.wikipedia.org/wiki/Push&#37;E2&#37;80&#37;93relabel<em>maximum</em>flow_algorithm</a>
+<a href="https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm">https://en.wikipedia.org/wiki/Push&#37;E2&#37;80&#37;93relabel<em>maximum</em>flow_algorithm</a>
 <h4 id="matching__2"><a href="#matching__2" class="header-anchor">Matching</a></h4>
 <p>Problems:</p>
-<a href="https://www.spoj.com/problems/MATCHING/"> https://www.spoj.com/problems/MATCHING/</a>
+<a href="https://www.spoj.com/problems/MATCHING/">https://www.spoj.com/problems/MATCHING/</a>
 <p>Notes:</p>
 <ul>
 <li><p>Reduce into max flow by assigning each edge a capacity of 1, add source connected to each left vertex and sink connected to each right vertex.</p>
@@ -1984,7 +1980,8 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
             <span class="hljs-keyword">return</span> self.instk.<span class="hljs-built_in">min</span>()
         <span class="hljs-keyword">else</span>:
             <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;min() arg is an empty sequence&quot;</span>)</code></pre>
-<h3 id="a_hrefhttpwebstanfordeduclasscs166lectures00slides00pdfrange_minimum_query"><a href="#a_hrefhttpwebstanfordeduclasscs166lectures00slides00pdfrange_minimum_query" class="header-anchor"><a href="http://web.stanford.edu/class/cs166/lectures/00/Slides00.pdf">Range Minimum Query</a></a></h3>
+<h3 id="range_minimum_query"><a href="#range_minimum_query" class="header-anchor">Range Minimum Query</a></h3>
+<p><a href="http://web.stanford.edu/class/cs166/lectures/00/Slides00.pdf">Stanford lecture slides</a></p>
 <p><a href="http://web.stanford.edu/class/cs166/lectures/01/Slides01.pdf">Fischer-Heun</a> - <a href="https://www.spoj.com/problems/RMQSQ/">Verification: SPOJ RMQSQ</a> - Complexity: &lt;O&#40;n&#41;, O&#40;1&#41;&gt;</p>
 <pre><code class="python hljs"><span class="hljs-keyword">import</span> math
 
@@ -2151,7 +2148,8 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
         self.t1.update(j + <span class="hljs-number">1</span>, -v)
         self.t2.update(i, -(i - <span class="hljs-number">1</span>)*v)
         self.t2.update(j + <span class="hljs-number">1</span>, j*v)</code></pre>
-<h4 id="a_hrefhttpsactivitiestjhsstedusctlectures19202019_11_15_segment_treespdfsegment_tree"><a href="#a_hrefhttpsactivitiestjhsstedusctlectures19202019_11_15_segment_treespdfsegment_tree" class="header-anchor"><a href="https://activities.tjhsst.edu/sct/lectures/1920/2019_11_15_Segment_Trees.pdf">Segment Tree</a></a></h4>
+<h4 id="segment_tree"><a href="#segment_tree" class="header-anchor">Segment Tree</a></h4>
+<p><a href="https://activities.tjhsst.edu/sct/lectures/1920/2019_11_15_Segment_Trees.pdf">Segment Tree</a> - <a href="">Verification</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(n) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> construction, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(\log n) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> query</p>
 <pre><code class="python hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">SegTree</span>:
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, n</span>) -&gt; <span class="hljs-literal">None</span>:
@@ -2225,7 +2223,8 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
             self.subupdate(i, j, pl, l, m, v)
             self.subupdate(i, j, pr, m + <span class="hljs-number">1</span>, r, v)
             self.l[p] = self.l[pl] + self.l[pr]</code></pre>
-<h4 id="a_hrefhttpsenwikipediaorgwikiavl_treeavl_tree"><a href="#a_hrefhttpsenwikipediaorgwikiavl_treeavl_tree" class="header-anchor"><a href="https://en.wikipedia.org/wiki/AVL_tree">AVL Tree</a></a></h4>
+<h4 id="avl_tree"><a href="#avl_tree" class="header-anchor">AVL Tree</a></h4>
+<p><a href="https://en.wikipedia.org/wiki/AVL_tree">AVL Tree</a> - <a href="">Verification</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(n \log n) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> construction, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(\log n) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> query</p>
 <pre><code class="python hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span>:
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, key, value=<span class="hljs-literal">None</span>, parent=<span class="hljs-literal">None</span>, left=<span class="hljs-literal">None</span>, right=<span class="hljs-literal">None</span></span>):
@@ -2408,7 +2407,7 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">rotate_right_left</span>(<span class="hljs-params">self, p, n</span>):
         <span class="hljs-keyword">return</span> self.rotate_left(p, self.rotate_right(n, n.child[<span class="hljs-number">0</span>]))</code></pre>
-<h4 id="a_hrefhttpsenwikipediaorgwikicartesian_treecartesian_tree"><a href="#a_hrefhttpsenwikipediaorgwikicartesian_treecartesian_tree" class="header-anchor"><a href="https://en.wikipedia.org/wiki/Cartesian_tree">Cartesian Tree</a></a></h4>
+<h4 id="cartesian_tree"><a href="#cartesian_tree" class="header-anchor">Cartesian Tree</a></h4>
 <p><a href="http://web.stanford.edu/class/cs166/lectures/01/Slides01.pdf">Cartesian Tree</a> - <a href="https://www.spoj.com/problems/RMQSQ/">Verification: SPOJ RMQSQ</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(n) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
 <pre><code class="python hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">CartesianTree</span>:
 
@@ -2437,7 +2436,8 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
         <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(stk) &gt; <span class="hljs-number">1</span>:
             stk[-<span class="hljs-number">2</span>].child[<span class="hljs-number">1</span>] = stk[-<span class="hljs-number">1</span>]
     <span class="hljs-keyword">return</span> stk[<span class="hljs-number">0</span>]</code></pre>
-<h4 id="a_hrefhttpswwwcscmueduckingsfbioinfo-lectureskdtreespdfkd-tree"><a href="#a_hrefhttpswwwcscmueduckingsfbioinfo-lectureskdtreespdfkd-tree" class="header-anchor"><a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/kdtrees.pdf">kd-Tree</a></a></h4>
+<h4 id="kd-tree"><a href="#kd-tree" class="header-anchor">kd-Tree</a></h4>
+<p><a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/kdtrees.pdf">CMU lecture slides</a></p>
 <p><a href="https://activities.tjhsst.edu/computervision/lectures/kmeans_Handout.pdf">kd-Tree</a> - <a href="">Verification</a> - Complexity:</p>
 <ul>
 <li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(n \log n) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> construction</p>
@@ -2707,7 +2707,7 @@ prefix = [[<span class="hljs-number">0</span>]*(M + <span class="hljs-number">1<
     <span class="hljs-keyword">return</span> recur_closest_pair(points,
                               <span class="hljs-built_in">sorted</span>(points, key=<span class="hljs-keyword">lambda</span> p: p[<span class="hljs-number">0</span>]),
                               <span class="hljs-built_in">sorted</span>(points, key=<span class="hljs-keyword">lambda</span> p: p[<span class="hljs-number">1</span>]))</code></pre>
-<h3 id="a_hrefhttpsenwikipediaorgwikiconvex_hullconvex_hull"><a href="#a_hrefhttpsenwikipediaorgwikiconvex_hullconvex_hull" class="header-anchor"><a href="https://en.wikipedia.org/wiki/Convex_hull">Convex Hull</a></a></h3>
+<h3 id="convex_hull"><a href="#convex_hull" class="header-anchor">Convex Hull</a></h3>
 <p><a href="https://en.wikipedia.org/wiki/Graham_scan">Graham scan</a>, specifically <a href="https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain">Andrew&#39;s Monotone Chain</a> - <a href="https://open.kattis.com/problems/convexhull">Verification: Kattis convexhull</a> - Complexity: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> \mathcal{O}(n \log n) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
 <pre><code class="python hljs"><span class="hljs-keyword">def</span> <span class="hljs-title function_">convex_hull</span>(<span class="hljs-params">points: <span class="hljs-built_in">list</span></span>) -&gt; <span class="hljs-built_in">list</span>:
     <span class="hljs-string">&quot;&quot;&quot; Finds the convex hull of the point list. &quot;&quot;&quot;</span>
@@ -2736,7 +2736,7 @@ prefix = [[<span class="hljs-number">0</span>]*(M + <span class="hljs-number">1<
     <span class="hljs-keyword">return</span> [child <span class="hljs-keyword">for</span> child <span class="hljs-keyword">in</span> [(i + <span class="hljs-number">1</span>, j), (i - <span class="hljs-number">1</span>, j), (i, j + <span class="hljs-number">1</span>), (i, j - <span class="hljs-number">1</span>)]
             <span class="hljs-keyword">if</span> is_valid(*child)]</code></pre>
 <div class="page-foot">
-  さみしいも、たのしい。Last updated: <time datetime="2022-10-30">2022-10-30</time>.
+  さみしいも、たのしい。Last updated: <time datetime="2022-12-17">2022-12-17</time>.
   <!-- Powered by <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. -->
 </div>
 </div><!-- CONTENT ENDS HERE -->
