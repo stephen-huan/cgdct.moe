@@ -27,9 +27,6 @@ div_content = "franklin-content"
 
 auto_code_path = true
 
-# character for the icon
-icon = "浣"
-
 # header structure (url, display name)
 headers = [("/", "about"),
            ("/blog/", "blog"),
