@@ -1,11 +1,10 @@
 #!/bin/bash
-# script to validate html/css/svg with the Nu Html Checker (v.Nu)
-# https://github.com/validator/validator
+# script to validate html/css/svg, ignoring known issues
 
-vnu="$(dirname "$0")/node_modules/vnu-jar/build/dist/vnu.jar"
-java -jar "$vnu" \
-    --asciiquotes \
-    --also-check-css \
-    --also-check-svg \
-    "$@"
+vnu="$(dirname "$0")/vnu"
+"$vnu" "$@" |& grep --invert-match \
+    --regexp 'error: The "align" attribute on the "td" element is obsolete.' \
+    --regexp 'error: The "align" attribute on the "th" element is obsolete.' \
+    --regexp 'error: Bad value "" for attribute "columnspacing" on element "mtable".' \
+    --regexp 'error: Element "mi" not allowed as child of element "mo"'
 
