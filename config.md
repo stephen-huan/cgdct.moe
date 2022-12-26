@@ -42,7 +42,7 @@ Add here global LaTeX commands to use throughout your pages.
 <!-- text formatting -->
 \newcommand{\newline}{~~~<br>~~~} <!-- avoid self-closing tag <br/> -->
 \newcommand{\href}[2]{\begin{wrap}{a href="!#1"}#2\end{wrap}}
-\newcommand{\url }[1]{\href{!#1}{#1}}
+\newcommand{\url }[1]{\href{!#1}{~~~#1~~~}}
 \newcommand{\chapter      }[1]{\begin{wrap}{h1}#1\end{wrap}}
 \newcommand{\section      }[1]{\begin{wrap}{h2}#1\end{wrap}}
 \newcommand{\subsection   }[1]{\begin{wrap}{h3}#1\end{wrap}}
