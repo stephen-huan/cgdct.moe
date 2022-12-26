@@ -101,14 +101,31 @@ function hfun_makeheader()
 end
 
 """
+    hfun_pagesource()
+
+Return the page source, ignoring automatically generated pages.
+"""
+function hfun_pagesource()
+    # early exit for tag pages
+    !isempty(locvar(:fd_tag)) && return ""
+    repo = "$(globvar(:git_repo))/$(locvar(:fd_rpath))"
+    return (
+        "<a href=\"$(repo)\">Page source</a>." *
+        (isempty(hfun_lastupdated()) ? "" : " ")
+    )
+end
+
+"""
     hfun_lastupdated()
 
 Return the modification time, ignoring automatically generated pages.
 """
 function hfun_lastupdated()
     date = locvar(:fd_mtime_raw)
+    # early exit for tag pages
+    !isempty(locvar(:fd_tag)) && return ""
     url = get_url(locvar(:fd_rpath))
-    exclude = Set(["/404/", "/blog/", "/projects/", "/publications/"])
+    exclude = globvar(:footer_exclude)
     (in(url, exclude)) ?  "" : "Last updated: $(formatdate(date))."
 end
 

@@ -34,6 +34,14 @@ headers = [("/", "about"),
            ("/publications/", "publications"),
            ("/assets/pdf/cv.pdf", "cv"),
           ]
+
+# git repo for page source
+git_repo = "https://github.com/stephen-huan/stephen-huan.github.io/blob/master"
+
+# footer exclude
+footer_exclude = Set(
+  ["/404/", "/blog/", "/projects/", "/publications/"]
+)
 +++
 
 <!--
