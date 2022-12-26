@@ -87,7 +87,9 @@ hfun_assets() = "/assets$(get_url(locvar(:fd_rpath)))"[begin:end - 1]
 Make the header list for the website.
 """
 function hfun_makeheader()
-    current_url = get_url(locvar(:fd_rpath))
+    # if tag page, default to highlighting blog
+    path = isempty(locvar(:fd_tag)) ? locvar(:fd_rpath) : "blog/index.md"
+    current_url = get_url(path)
     io = IOBuffer()
     write(io, "<ul>")
     for (url, name) in globvar(:headers)
