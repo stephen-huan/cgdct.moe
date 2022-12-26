@@ -12,8 +12,8 @@ _This recipe is from [Daniel](https://blog.danielclu.com/)
 who also took the below photograph (of my cooking). Thanks!_
 
 @@img-large
-\figpreview{tomato egg noodle}{./tomato_egg_noodles.webp}{
-  /assets/blog/tomato-egg-noodle/tomato_egg_noodles.jpg
+\figpreview{tomato egg noodle}{tomato_egg_noodles.webp}{812}{611}{
+  {{assets}}/tomato_egg_noodles.jpg
 }
 @@
 

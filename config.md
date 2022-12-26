@@ -51,10 +51,13 @@ Add here global LaTeX commands to use throughout your pages.
 \newcommand{\subparagraph }[1]{\begin{wrap}{h6}#1\end{wrap}}
 <!-- images -->
 \newenvironment{figure}{\begin{wrap}{figure}}{\end{wrap}}
+\newcommand{\includegraphics}[4]{
+  ~~~<img alt="!#1" src="!#2" width="!#3" height="!#4">~~~
+}
 \newcommand{\caption}[1]{\begin{wrap}{figcaption}#1\end{wrap}}
-\newcommand{\figpreview}[3]{
-  \begin{wrap}{a href="!#3"}
-    \figalt{#1}{#2}
+\newcommand{\figpreview}[5]{
+  \begin{wrap}{a href="!#5"}
+    \includegraphics{!#1}{{{assets}}/!#2}{!#3}{!#4}
   \end{wrap}
 }
 <!-- columns -->

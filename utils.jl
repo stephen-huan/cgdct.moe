@@ -79,7 +79,7 @@ end
 
 Get a path to the assets directory for the current page.
 """
-hfun_assets() = "/assets/$(get_url(locvar(:fd_rpath))[begin + 1:end - 1])"
+hfun_assets() = "/assets$(get_url(locvar(:fd_rpath)))"[begin:end - 1]
 
 """
     hfun_makeheader()

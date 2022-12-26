@@ -15,16 +15,16 @@ PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><samp>0x{{pgp}}</samp></a>
 \begin{columns}
 \begin{column}{right}{auto}
 @@profile
-~~~
-<a href="/assets/profile_picture.jpg">
-  <img alt="profile picture" src="/assets/profile_picture.webp">
-</a>
-<div class="address">
-  <p>S1320 CODA</p>
-  <p>756 W Peachtree St</p>
-  <p>Atlanta, GA 30332</p>
-</div>
-~~~
+\figpreview{profile picture}{profile_picture.webp}{530}{749}{
+  {{assets}}/profile_picture.jpg
+}
+@@address
+  S1320 CODA
+
+  756 W Peachtree St
+
+  Atlanta, GA 30332
+@@
 @@
 \end{column}
 

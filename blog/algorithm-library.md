@@ -1613,7 +1613,7 @@ function](https://en.wikipedia.org/wiki/Ackermann_function).
 
 @@centering
 \begin{figure}
-  \figpreview{Mikasa Ackerman}{./358414.webp}{
+  \figpreview{Mikasa Ackerman}{358414.webp}{225}{350}{
     https://cdn.myanimelist.net/images/characters/15/358414.jpg
   }
   \caption{
@@ -2138,7 +2138,7 @@ Extensions
 - Multiple sources/sinks: make supersource connected to each source with
   infinite capacity and each sink connected to supersink with infinite capacity
 
-\url{https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm}
+\url{https://en.wikipedia.org/wiki/Push–relabel_maximum_flow_algorithm}
 
 #### Matching
 

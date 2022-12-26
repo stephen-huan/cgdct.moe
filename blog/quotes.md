@@ -11,8 +11,8 @@ tags = ["anime", "misc"]
 @@img-small,border,nonumber
 \begin{figure}
   \figpreview{「夕立方程式」(Yuudachi Houteishiki)}{
-    ./Oikura.Sodachi.full.2805028.webp
-  }{
+    Oikura.Sodachi.full.2805028.webp
+  }{512}{702}{
     https://static.zerochan.net/Oikura.Sodachi.full.2805028.jpg
   }
   > 向き不向きじゃないの。数学だけは私を裏切らないもの。
@@ -32,7 +32,7 @@ tags = ["anime", "misc"]
 
 @@img-small,border,nonumber
 \begin{figure}
-  \figpreview{Yuru Camp teaser visual}{./g_visual_02.webp}{
+  \figpreview{Yuru Camp teaser visual}{g_visual_02.webp}{512}{726}{
     https://yurucamp.jp/second/images/g_visual_02.jpg
   }
   > さみしいも、たのしい。
@@ -50,7 +50,7 @@ tags = ["anime", "misc"]
 
 @@img-small,border,nonumber
 \begin{figure}
-  \figpreview{「ときめきポポロン♪」(Tokimeki Poporon♪)}{./001.webp}{
+  \figpreview{「ときめきポポロン♪」(Tokimeki Poporon♪)}{001.webp}{512}{508}{
     https://gochiusa.com/core_sys/images/contents/00000256/base/001.jpg?1660869136
   }
   > まだ知らないこと　たくさんある　見つけちゃったなら
@@ -70,7 +70,7 @@ tags = ["anime", "misc"]
 @@img-small,border,nonumber
 \begin{figure}
   \begin{wrap}{span title="第七十二&#010;地上発電所"}
-  \figpreview{読めないな…}{./yomenaina.webp}{
+  \figpreview{読めないな…}{yomenaina.webp}{512}{543}{
     {{assets}}/yomenaina.jpg
   }
   \end{wrap}
