@@ -286,9 +286,8 @@ function lx_bibliography(com, _)
     path = "/assets$(get_url(locvar(:fd_rpath)))"[begin:end - 1]
     """
     @@references
-    @@showhover
-    ## [References]($path/$bib.bib)
-    @@
+    ## References
+    [BibTeX]($path/$bib.bib)
     \\textinput{$path/$bib.md}
     @@
     """
