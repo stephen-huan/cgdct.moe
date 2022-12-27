@@ -20,7 +20,7 @@ ignore = ["Project.toml", "Manifest.toml",
 generate_rss = true
 website_title = "Stephen Huan"
 website_descr = "Stephen Huan's personal website"
-website_url   = "https://stephen-huan.github.io/"
+website_url   = "https://cgdct.moe/"
 
 # doesn't seem to have a default value for tag pages
 div_content = "franklin-content"
