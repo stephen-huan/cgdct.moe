@@ -11,12 +11,12 @@
     <title>
       <![CDATA[  Stephen Huan  ]]>
     </title>
-    <link> https://stephen-huan.github.io/ </link>
+    <link> https://cgdct.moe/ </link>
     <description>
       <![CDATA[  Stephen Huan&#39;s personal website  ]]>
     </description>
     <atom:link
-      href="https://stephen-huan.github.io/feed.xml"
+      href="https://cgdct.moe/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  Tomato and egg noodle &#40;西红柿鸡蛋面&#41;  ]]>
   </title>
-  <link> https://stephen-huan.github.io/blog/tomato-egg-noodle/index.html </link>
-  <guid> https://stephen-huan.github.io/blog/tomato-egg-noodle/index.html </guid>
+  <link> https://cgdct.moe/blog/tomato-egg-noodle/index.html </link>
+  <guid> https://cgdct.moe/blog/tomato-egg-noodle/index.html </guid>
   <description>
     <![CDATA[  A simple and easy to make but tasty recipe for a classic dish.  ]]>
   </description>  
@@ -44,8 +44,8 @@
   <title>
     <![CDATA[  Cholesky factorization by greedy conditional selection  ]]>
   </title>
-  <link> https://stephen-huan.github.io/projects/cholesky/index.html </link>
-  <guid> https://stephen-huan.github.io/projects/cholesky/index.html </guid>
+  <link> https://cgdct.moe/projects/cholesky/index.html </link>
+  <guid> https://cgdct.moe/projects/cholesky/index.html </guid>
   <description>
     <![CDATA[  inference with conditional &lt;em&gt;k&lt;/em&gt;-nearest neighbors?  ]]>
   </description>  
@@ -65,8 +65,8 @@
   <title>
     <![CDATA[  Quotes  ]]>
   </title>
-  <link> https://stephen-huan.github.io/blog/quotes/index.html </link>
-  <guid> https://stephen-huan.github.io/blog/quotes/index.html </guid>
+  <link> https://cgdct.moe/blog/quotes/index.html </link>
+  <guid> https://cgdct.moe/blog/quotes/index.html </guid>
   <description>
     <![CDATA[  A collection of miscellaneous quotes about research.  ]]>
   </description>  
@@ -84,8 +84,8 @@
   <title>
     <![CDATA[  far: a &#40;f&#41;ast re-write of the Unix utility p&#40;ar&#41;  ]]>
   </title>
-  <link> https://stephen-huan.github.io/blog/far/index.html </link>
-  <guid> https://stephen-huan.github.io/blog/far/index.html </guid>
+  <link> https://cgdct.moe/blog/far/index.html </link>
+  <guid> https://cgdct.moe/blog/far/index.html </guid>
   <description>
     <![CDATA[  Optimal variance text reflow for aesthetically pleasing borders.  ]]>
   </description>  
@@ -103,8 +103,8 @@
   <title>
     <![CDATA[  Algorithms for competitive programming  ]]>
   </title>
-  <link> https://stephen-huan.github.io/blog/algorithm-library/index.html </link>
-  <guid> https://stephen-huan.github.io/blog/algorithm-library/index.html </guid>
+  <link> https://cgdct.moe/blog/algorithm-library/index.html </link>
+  <guid> https://cgdct.moe/blog/algorithm-library/index.html </guid>
   <description>
     <![CDATA[  Implementations of some useful algorithms.  ]]>
   </description>  

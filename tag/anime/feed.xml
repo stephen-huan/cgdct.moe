@@ -11,12 +11,12 @@
     <title>
       <![CDATA[  Stephen Huan  ]]>
     </title>
-    <link> https://stephen-huan.github.io/ </link>
+    <link> https://cgdct.moe/ </link>
     <description>
       <![CDATA[  Stephen Huan&#39;s personal website  ]]>
     </description>
     <atom:link
-      href="https://stephen-huan.github.io/feed.xml"
+      href="https://cgdct.moe/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  Quotes  ]]>
   </title>
-  <link> https://stephen-huan.github.io/blog/quotes/index.html </link>
-  <guid> https://stephen-huan.github.io/blog/quotes/index.html </guid>
+  <link> https://cgdct.moe/blog/quotes/index.html </link>
+  <guid> https://cgdct.moe/blog/quotes/index.html </guid>
   <description>
     <![CDATA[  A collection of miscellaneous quotes about research.  ]]>
   </description>  
