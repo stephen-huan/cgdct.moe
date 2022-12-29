@@ -61,6 +61,25 @@
 
 <item>
   <title>
+    <![CDATA[  Miscellaneous mathematical observations  ]]>
+  </title>
+  <link> https://cgdct.moe/blog/misc-math/index.html </link>
+  <guid> https://cgdct.moe/blog/misc-math/index.html </guid>
+  <description>
+    <![CDATA[  Self-contained observations that aren&#39;t long enough for their own post.  ]]>
+  </description>  
+    
+  <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Stephen Huan</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
     <![CDATA[  Cholesky factorization by greedy conditional selection  ]]>
   </title>
   <link> https://cgdct.moe/projects/cholesky/index.html </link>
