@@ -142,6 +142,13 @@ KaTeX has its own macro system: https://katex.org/docs/supported.html#macros
 \newcommand{\T}{\top}
 \newcommand{\dd}{\, \text{d}}
 \newcommand{\Reverse}{\updownarrow}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Int}{\mathbb{Z}}
+\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\Rationals}{\mathbb{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+<!-- \Reals and \Complex already provided by KaTeX -->
+\newcommand{\C}{\mathbb{C}}
 
 <!-- paired delimiters -->
 \newcommand{\norm}[1]{\lVert #1 \rVert}
