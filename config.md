@@ -156,6 +156,8 @@ KaTeX has its own macro system: https://katex.org/docs/supported.html#macros
 \newcommand{\card}[1]{\lvert #1 \rvert}
 \newcommand{\abs}[1]{\lvert #1 \rvert}
 \newcommand{\inner}[2]{\langle #1, #2 \rangle}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
 
 <!-- operators -->
 \newcommand{\argmin}{\operatorname*{argmin}}
@@ -168,7 +170,6 @@ KaTeX has its own macro system: https://katex.org/docs/supported.html#macros
 
 <!-- probability -->
 \newcommand{\p}{\pi}
-\newcommand{\E}[1]{\mathbb{E}[#1]}
 \newcommand{\Var}[1]{\mathbb{V}\text{ar}[#1]}
 \newcommand{\Cov}[2]{\mathbb{C}\text{ov}[#1, #2]}
 \newcommand{\Corr}[2]{\mathbb{C}\text{orr}[#1, #2]}
@@ -180,12 +181,18 @@ the extra level of indirection is necessary to parse as a KaTeX macro. see:
 - https://latexref.xyz/_005c_0040ifstar.html
 - https://katex.org/docs/supported.html#macros
 -->
+\newcommand{\E}{
+  \providecommand{\Ehelper}{\@ifstar{\Estar}{\Enostar}}
+  \providecommand{\Enostar}[1]{\mathbb{E}       [ #1        ]}
+  \providecommand{\Estar  }[1]{\mathbb{E} \left [ #1 \right ]}
+  \Ehelper
+}
 \newcommand{\KL}{
-  \newcommand{\KLhelper}{\@ifstar{\KLstar}{\KLnostar}}
-  \newcommand{\KLnostar}[2]{
+  \providecommand{\KLhelper}{\@ifstar{\KLstar}{\KLnostar}}
+  \providecommand{\KLnostar}[2]{
     \mathbb{D}_{\operatorname{KL}}       ( #1 \;         \| \; #2        )
   }
-  \newcommand{\KLstar  }[2]{
+  \providecommand{\KLstar  }[2]{
     \mathbb{D}_{\operatorname{KL}} \left ( #1 \; \middle \| \; #2 \right )
   }
   \KLhelper
