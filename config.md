@@ -48,6 +48,7 @@ footer_exclude = Set(
 Add here global LaTeX commands to use throughout your pages.
 -->
 <!-- text formatting -->
+\newcommand{\emph}[1]{_!#1_}
 \newcommand{\newline}{~~~<br>~~~} <!-- avoid self-closing tag <br/> -->
 \newcommand{\href}[2]{\begin{wrap}{a href="!#1"}#2\end{wrap}}
 \newcommand{\url }[1]{\href{!#1}{~~~#1~~~}}
@@ -77,6 +78,38 @@ Add here global LaTeX commands to use throughout your pages.
 \newenvironment{column}[2]{
   \begin{wrap}{div class="#1" style="width: #2;"}
 }{
+  \end{wrap}
+}
+<!-- math -->
+\newenvironment{definition}{
+  \begin{wrap}{div class="definition"}
+  **Definition**.
+}{
+  \end{wrap}
+}
+\newenvironment{lemma}{
+  \begin{wrap}{div class="lemma"}
+  **Lemma**.
+}{
+  \end{wrap}
+}
+\newenvironment{theorem}{
+  \begin{wrap}{div class="theorem"}
+  **Theorem**.
+}{
+  \end{wrap}
+}
+\newenvironment{corollary}{
+  \begin{wrap}{div class="corollary"}
+  **Corollary**.
+}{
+  \end{wrap}
+}
+\newenvironment{proof}{
+  \begin{wrap}{div class="proof"}
+  _Proof_.
+}{
+  \begin{wrap}{span class="qedsymbol"}$ \square $\end{wrap}
   \end{wrap}
 }
 
