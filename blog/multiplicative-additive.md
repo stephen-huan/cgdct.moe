@@ -206,10 +206,12 @@ is identity on the rationals so we can conclude $ T(x) = x $
 for all real $ x $. In summary, we have the following theorem:
 \begin{theorem}
 Suppose some \emph{continuous} function $ T: \R \to \R $ satisfies both
+
 \begin{align*}
   T(x   y) &= T(x)   T(y) && \text{[multiplicative structure]} \\
   T(x + y) &= T(x) + T(y) &&       \text{[additive structure]}
 \end{align*}
+
 for all $ x, y \in \R $. Then either
 1. $ T(x) = 0 $ for all $ x \in \R $ or
 2. $ T(x) = x $ for all $ x \in \R $.
