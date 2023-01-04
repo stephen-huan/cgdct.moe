@@ -20,6 +20,6 @@ title = "older news"
 | 2022-04-12 | Our poster wins [2nd place](https://cpn-us-w2.wpmucdn.com/sites.gatech.edu/dist/d/1901/files/2022/04/2022-SPRING-UNDERGRADUATE-RESEARCH-SYMPOSIUM-AWARDS.pdf) in the College of Computing! |
 | 2022-04-12 | [Poster](/assets/pdf/2022-04-12_spring-symposium.pdf) session at Georgia Tech's [Undergraduate Research Spring Symposium](https://symposium.urop.gatech.edu/). |
 | 2022-02-28 | [Slides](/assets/pdf/2022-02-28_theory.pdf) for a lecture at Georgia Tech's computer science [Theory Club](https://theoryclub.github.io/). |
-| 2022-02-19 | [Slides](/assets/pdf/2022-02-19_gscs.pdf) for a lightning talk at the [Georgia Scientific Computing Symposium](https://comp-physics.group/GSCS22/). |
+| 2022-02-19 | [Slides](/assets/pdf/2022-02-19_gscs.pdf) for a [lightning talk](https://youtu.be/iMLrkEzIBMA) at the [Georgia Scientific Computing Symposium](https://comp-physics.group/GSCS22/). |
 @@
 
