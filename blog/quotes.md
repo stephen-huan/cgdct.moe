@@ -87,3 +87,21 @@ tags = ["anime", "misc"]
 \end{figure}
 @@
 
+@@img-small,border,nonumber
+\begin{figure}
+  \figpreview{TrySail azure}{azure.webp}{512}{512}{
+    https://youtu.be/hLnv7XuOqjw
+  }
+  > 明日　世界が終わるとしたら
+  >
+  > 今夜は何を食べよう
+  \caption{
+    ~~~---~~~EDテーマ
+    [TrySail 『azure』](https://www.uta-net.com/song/258811/)
+    \newline
+    TVアニメ「続・終物語」
+    ([Zoku Owarimonogatari](https://www.monogatari-series.com/zokuowarimonogatari/music/))
+  }
+\end{figure}
+@@
+
