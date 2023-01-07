@@ -1611,7 +1611,7 @@ Complexity: $ \BigO(\alpha(N)) $
 where $ \alpha $ is the inverse [Ackermann
 function](https://en.wikipedia.org/wiki/Ackermann_function).
 
-@@centering
+@@centering,border
 \begin{figure}
   \figpreview{Mikasa Ackerman}{358414.webp}{225}{350}{
     https://cdn.myanimelist.net/images/characters/15/358414.jpg

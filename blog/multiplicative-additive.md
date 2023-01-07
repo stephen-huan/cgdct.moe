@@ -245,7 +245,7 @@ approximation for the derivative.
     \end{pmatrix}
 \end{align}
 
-@@img-large
+@@img-large,border
 \begin{figure}
   \figpreview{
       121 cupcakes with Gilbert Strang's favorite -1, 2, -1 matrix.
