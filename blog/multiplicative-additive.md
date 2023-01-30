@@ -86,6 +86,21 @@ a multiple of the identity, that is, trying to factor $ \Theta + \sigma^2
 \Id $ requires somewhat sophisticated tricks \cite{schafer2021sparse},
 even if one is able to factor $ \Theta $ efficiently.
 
+Finally, the $ \trace(\cdot) $ and $ \det(\cdot) $ operators
+have additive and multiplicative structure, respectively.
+That is, for all square matrices $ A, B $ of the same size,
+\begin{align}
+  \label{eq:trdet}
+  \trace(A + B) &= \trace(A) + \trace(B) \\
+  \det(AB) &= \det(A) \det(B)
+\end{align}
+However, there are not as nice decompositions for $ \trace(AB) $
+or $ \det(A + B) $. Although it is possible to turn $ \trace(AB)
+$ into additive structure by expanding the matrix-matrix product
+and to turn $ \det(A + B) $ into multiplicative structure by the
+Sherman–Morrison–Woodbury identity, this is more of a conversion
+and a bit less natural than applying \cref{eq:trdet} directly.
+
 ### Problem statement
 
 Throughout these examples it seems although multiplicative and
