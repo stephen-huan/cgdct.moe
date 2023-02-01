@@ -9,7 +9,7 @@ title = "older news"
 @@news,clean-table,no-header
 | Date       | Description |
 |:-----------|:------------|
-| 2022-02-18 | I will be attending the [2023 Georgia Scientific Computing Symposium](https://math.gsu.edu/jkong/public/gscs/gscs2023.html). |
+| 2023-02-18 | I will be attending the [2023 Georgia Scientific Computing Symposium](https://math.gsu.edu/jkong/public/gscs/gscs2023.html). |
 | 2022-11-17 | I will be a teaching assistant for CS 3510 (Design & Analysis of Algorithms) in Spring 2023. |
 | 2022-11-15 | I will be turning down the \$1500 [PURA Salary Award](https://urop.gatech.edu/pura-salary) due to a conflict with TA'ing. |
 | 2022-11-11 | [Poster](/assets/pdf/2022-11-11_cse-recruiting.pdf) session at Georgia Tech's [CSE Fall Recruiting Event](https://cse.gatech.edu/fall-2022-recruting-event). |
