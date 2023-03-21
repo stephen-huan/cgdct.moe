@@ -41,7 +41,7 @@ headers = [
 ]
 
 # git repo for page source
-git_repo = "https://github.com/stephen-huan/stephen-huan.github.io/blob/master"
+git_repo = "https://github.com/stephen-huan/cgdct.moe/blob/master"
 
 # footer exclude
 footer_exclude = Set(
