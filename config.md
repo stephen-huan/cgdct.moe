@@ -11,10 +11,14 @@ mintoclevel = 2
 # these files might be copied and, if markdown, processed by Franklin which
 # you might not want. Indicate directories by ending the name with a `/`.
 # Base files such as LICENSE.md and README.md are ignored by default.
-ignore = ["Project.toml", "Manifest.toml",
-          "node_modules/", "package-lock.json", "package.json",
-          "bin/",
-         ]
+ignore = [
+    "Project.toml",
+    "Manifest.toml",
+    "node_modules/",
+    "package-lock.json",
+    "package.json",
+    "bin/",
+]
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)
 generate_rss = true
@@ -28,19 +32,20 @@ div_content = "franklin-content"
 auto_code_path = true
 
 # header structure (url, display name)
-headers = [("/", "about"),
-           ("/blog/", "blog"),
-           ("/projects/", "projects"),
-           ("/publications/", "publications"),
-           ("/assets/pdf/cv.pdf", "cv"),
-          ]
+headers = [
+    ("/", "about"),
+    ("/blog/", "blog"),
+    ("/projects/", "projects"),
+    ("/publications/", "publications"),
+    ("/assets/pdf/cv.pdf", "cv"),
+]
 
 # git repo for page source
 git_repo = "https://github.com/stephen-huan/stephen-huan.github.io/blob/master"
 
 # footer exclude
 footer_exclude = Set(
-  ["/404/", "/blog/", "/projects/", "/publications/"]
+    ["/404/", "/blog/", "/projects/", "/publications/"]
 )
 +++
 
