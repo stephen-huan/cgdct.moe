@@ -319,9 +319,11 @@ hr { border-top: var(--rule); border-bottom: 0; }
   text-align: left;
 }
 
-.franklin-content .fndef tr {
-  /* border-left: 0.125rem solid var(--theme-darksilver-color); */
-}
+/*
+ * .franklin-content .fndef tr {
+ *   border-left: 0.125rem solid var(--theme-darksilver-color);
+ * }
+ */
 
 .franklin-content .fndef td.fndef-backref {
   color: var(--theme-darkrust-color);
@@ -393,9 +395,11 @@ hr { border-top: var(--rule); border-bottom: 0; }
   content: "";
 }
 
-.franklin-content figcaption {
-  /* text-align: center; */
-}
+/*
+ * .franklin-content figcaption {
+ *   text-align: center;
+ * }
+ */
 
 /* ==================================================================
     KATEX
@@ -528,7 +532,7 @@ code {
 }
 
 .qedsymbol {
-  display: inline-block;
+  /* display: inline-block; */
   float: right;
 }
 
