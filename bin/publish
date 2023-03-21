@@ -3,7 +3,7 @@
 
 main_branch="master"
 build_branch="build"
-push_branch="gh-pages"
+push_branch="cloudflare-pages"
 commit="$(git rev-parse --short HEAD)"
 
 git checkout "$build_branch" &&
