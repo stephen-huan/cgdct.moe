@@ -17,7 +17,8 @@ Get `var` from `page`, using the simplier `Franklin.locvar` if possible.
 """
 function getvar(page, var; default=nothing)
     (page == locvar(:fd_rpath)) ?
-        locvar(var; default) : pagevar(page, var; default)
+        locvar(var; default) :
+        pagevar(page, var; default)
 end
 
 """
@@ -33,9 +34,11 @@ robust_title(page) = getvar(page, :title; default="/$page/")
 Get the date field for `page`, defaulting to date of creation if not defined.
 """
 function robust_date(page, format=globvar(:date_format))
-    date = getvar(page, :date;
-                  default=Date(Dates.unix2datetime(stat(page * ".md").ctime))
-                 )
+    date = getvar(
+        page,
+        :date;
+        default=Date(Dates.unix2datetime(stat(page * ".md").ctime))
+    )
     formatdate(date, format)
 end
 
@@ -111,8 +114,8 @@ function hfun_pagesource()
     !isempty(locvar(:fd_tag)) && return ""
     repo = "$(globvar(:git_repo))/$(locvar(:fd_rpath))"
     return (
-        "<a href=\"$(repo)\">Page source</a>." *
-        (isempty(hfun_lastupdated()) ? "" : " ")
+        "<a href=\"$(repo)\">Page source</a>."
+        * (isempty(hfun_lastupdated()) ? "" : " ")
     )
 end
 
@@ -329,8 +332,11 @@ function env_wrap(com, _)
     content = stent(com)
     lxdefs = collect(values(Franklin.GLOBAL_LXDEFS))
     # https://github.com/tlienart/Franklin.jl/blob/4ba6d9020367468bfb77b5bde9eabb2648ab8a21/src/converter/markdown/blocks.jl#L35-L37
-    parsed = Franklin.reprocess(content, lxdefs;
-                                nostripp=true) |> Franklin.simplify_ps
+    parsed = Franklin.reprocess(
+        content,
+        lxdefs;
+        nostripp=true
+    ) |> Franklin.simplify_ps
     return "~~~<$tag$data>$parsed</$tag>~~~"
 end
 
