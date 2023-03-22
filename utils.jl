@@ -1,4 +1,5 @@
-using Franklin: LxCom, stent
+using Dates: Dates, Date
+using Franklin: Franklin, LxCom, stent
 
 """
     formatdate(date::Date, format=globvar(:date_format))
