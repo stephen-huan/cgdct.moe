@@ -59,7 +59,6 @@ Add here global LaTeX commands to use throughout your pages.
   \begin{wrap}{span class="font-weight-bold"}#1\end{wrap}
 }
 \newcommand{\emph}[1]{_!#1_}
-\newcommand{\newline}{~~~<br>~~~} <!-- avoid self-closing tag <br/> -->
 \newcommand{\href}[2]{\begin{wrap}{a href="!#1"}#2\end{wrap}}
 \newcommand{\url }[1]{\href{!#1}{~~~#1~~~}}
 \newcommand{\chapter      }[1]{\begin{wrap}{h1}#1\end{wrap}}

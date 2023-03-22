@@ -204,7 +204,7 @@ This is precisely condition (iii) of Theorem 4.3.2. of
 >
 > three conditions is met:
 >
-> ... \newline
+> ... \\
 >
 > (iii) For all $ (x_n) \to c $ (with $ x_n \in A $),
 > it follows that $ f(x_n) \to f(c) $.
