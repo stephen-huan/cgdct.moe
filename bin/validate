@@ -1,11 +1,15 @@
 #!/bin/bash
 # script to validate html/css/svg, ignoring known issues
 
+# https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
 vnu="$(dirname "$0")/vnu"
-"$vnu" "$@" |& grep --invert-match \
-    --regexp 'error: The "align" attribute on the "td" element is obsolete.' \
-    --regexp 'error: The "align" attribute on the "th" element is obsolete.' \
-    --regexp 'error: Bad value "" for attribute "columnspacing" on element "mtable".' \
-    --regexp 'element "mi"' \
-    --regexp 'element "mo"'
+"$vnu" \
+    --filterpattern \
+'.*Self-closing tag syntax in text/html documents is widely discouraged.*'\
+'|.*The “align” attribute on the “td” element is obsolete.*'\
+'|.*The “align” attribute on the “th” element is obsolete.*'\
+'|.*Bad value “” for attribute “columnspacing” on element “mtable”.*'\
+'|.*Element “mi” not allowed as child of element “m(i|o)” in this context.*'\
+'|.*Element “mpadded” not allowed as child of element “mi” in this context.*'\
+    "$@"
 

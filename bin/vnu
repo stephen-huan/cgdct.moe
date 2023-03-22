@@ -7,5 +7,6 @@ java -jar "$vnu" \
     --asciiquotes \
     --also-check-css \
     --also-check-svg \
+    --skip-non-html \
     "$@"
 
