@@ -13,6 +13,7 @@ git merge --no-verify "$main_branch" &&
 # build site
 julia --project="@." --optimize=0 --eval "using Franklin: optimize
     optimize(clear=true, prerender=true, minify=false)" &&
+npx prettier --write . &&
 
 # publish
 git add --force __site &&
