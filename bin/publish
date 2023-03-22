@@ -13,7 +13,10 @@ git merge --no-verify "$main_branch" &&
 # build site
 julia --project="@." --optimize=0 --eval "using Franklin: optimize
     optimize(clear=true, prerender=true, minify=false)" &&
+# post-processing
 npx prettier --write . &&
+# https://github.com/tlienart/Franklin.jl/issues/1001
+rm __site/.prettierignore &&
 
 # publish
 git add --force __site &&

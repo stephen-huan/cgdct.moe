@@ -17,6 +17,8 @@ ignore = [
     "node_modules/",
     "package-lock.json",
     "package.json",
+    ".prettierrc.json",
+    ".prettierignore",
     "bin/",
 ]
 

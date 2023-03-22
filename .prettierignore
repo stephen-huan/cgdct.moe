@@ -2,4 +2,6 @@ node_modules
 _libs
 __site/libs
 _layout
+_rss
+bin/ieee.csl
 *.md
