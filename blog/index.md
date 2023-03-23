@@ -1,5 +1,6 @@
 +++
 title = "blog"
+meta_description = "A list of all my blog posts."
 
 displaytags = ["math", "cs", "anime", "misc"]
 +++

@@ -1,5 +1,6 @@
 +++
 title = "Stephen Huan"
+meta_description = "Stephen Huan's personal website."
 stylesheets = ["/css/root/news.css"]
 +++
 

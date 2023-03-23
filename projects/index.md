@@ -1,5 +1,6 @@
 +++
 title = "projects"
+meta_description = "A list of all my projects."
 +++
 
 <!-- \card{url}{preview image}{title}{description} -->
