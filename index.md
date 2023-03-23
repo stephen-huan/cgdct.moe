@@ -14,7 +14,7 @@ PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><samp>0x{{pgp}}</samp></a>
 @@
 
 \begin{columns}
-\begin{column}{right}{auto}
+\begin{column}{right}{index-column-right}
 @@profile
 \figpreview{profile picture}{profile_picture.webp}{530}{749}{
   {{assets}}/profile_picture.jpg

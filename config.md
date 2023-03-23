@@ -82,10 +82,10 @@ Add here global LaTeX commands to use throughout your pages.
 \newenvironment{columns}{
   \begin{wrap}{div class="row"}
 }{
-  ~~~<div style="clear: both"></div>~~~\end{wrap}
+  ~~~<div class="column-end"></div>~~~\end{wrap}
 }
 \newenvironment{column}[2]{
-  \begin{wrap}{div class="#1" style="width: #2;"}
+  \begin{wrap}{div class="#1 #2"}
 }{
   \end{wrap}
 }
