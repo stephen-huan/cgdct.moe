@@ -19,7 +19,12 @@ ignore = [
     "package.json",
     ".prettierrc.json",
     ".prettierignore",
+    "pyproject.toml",
+    "poetry.lock",
+    ".venv/",
+    "__pycache__/",
     "bin/",
+    "src/",
 ]
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)
