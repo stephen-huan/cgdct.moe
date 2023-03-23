@@ -147,7 +147,10 @@ function hfun_makeheader()
     io = IOBuffer()
     write(io, "<ul>")
     for (url, name) in globvar(:headers)
-        is_active = (url == current_url) ? "active" : ""
+        is_active = (
+            (url != "/" && startswith(current_url, url))
+            || (url == "/" && current_url == url)
+        ) ? "active" : ""
         write(io, """<li><a href="$url" class="$is_active">$name</a></li>\n""")
     end
     write(io, "</ul>")
