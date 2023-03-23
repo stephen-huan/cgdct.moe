@@ -7,7 +7,7 @@ See: https://ctroupin.github.io/posts/2019-12-19-bibtex-markdown/
 import argparse
 import subprocess
 
-STYLE = "/home/stephenhuan/programs/web/cgdct.moe/bin/ieee.csl"
+STYLE = "/home/stephenhuan/programs/web/cgdct.moe/src/ieee.csl"
 
 
 def replace(s: str) -> str:

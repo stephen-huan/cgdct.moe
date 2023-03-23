@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+"""
+Remove inline style from all elements.
+"""
+import argparse
+import glob
+import hashlib
+
+from bs4 import BeautifulSoup
+
+PREFIX = "katex"
+
+
+def get_class(style: str, length: int) -> str:
+    """Hash the provided style into a CSS class."""
+    hash = hashlib.sha256(style.encode("utf-8"))
+    return f"{PREFIX}-{hash.hexdigest()[:length]}"
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Remove inline style from all elements"
+    )
+    parser.add_argument(
+        "-v",
+        "--version",
+        action="version",
+        version="1.0",
+    )
+    parser.add_argument(
+        "path",
+        help="path to site folder",
+    )
+    parser.add_argument(
+        "-l",
+        "--length",
+        type=int,
+        # https://en.wikipedia.org/wiki/Birthday_attack
+        default=16,
+        help="length of hash prefix",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        default="__site/libs/katex/katex.min.css",
+        help="output path",
+    )
+    parser.add_argument(
+        "-V",
+        "--verbose",
+        action="store_true",
+        help="increase verbosity",
+    )
+
+    args = parser.parse_args()
+
+    styles = {}
+    for file in glob.glob(f"{args.path}/**/*.html", recursive=True):
+        if args.verbose:
+            print(f"processing {file}")
+        modified = False
+        with open(file) as f:
+            soup = BeautifulSoup(f, "lxml")
+            for child in soup.find_all(style=True):
+                value = child["style"]
+                key = get_class(value, args.length)
+                assert styles.get(key, value) == value, (
+                    f'Hash collision between "{value}" and "{styles[key]}";'
+                    f' both hash to "{key}". Recommend increasing --length.'
+                )
+                styles[key] = value
+                del child["style"]
+                child["class"] = child.get("class", []) + [key]
+                modified = True
+        if modified:
+            with open(file, "w") as f:
+                f.write(str(soup))
+
+    if len(styles) > 0:
+        with open(args.output, "a") as f:
+            f.write(
+                "\n".join(
+                    f".{cls}{{{style}}}"
+                    for cls, style in sorted(styles.items())
+                )
+            )

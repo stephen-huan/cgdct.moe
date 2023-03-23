@@ -6,6 +6,8 @@ build_branch="build"
 push_branch="cloudflare-pages"
 commit="$(git rev-parse --short HEAD)"
 
+inline_style="$(dirname "$0")/../src/inline-style"
+
 git checkout "$build_branch" &&
 # sync changes
 git merge --no-verify "$main_branch" &&
@@ -14,6 +16,7 @@ git merge --no-verify "$main_branch" &&
 julia --project="@." --optimize=0 --eval "using Franklin: optimize
     optimize(clear=true, prerender=true, minify=false)" &&
 # post-processing
+"$inline_style" __site &&
 npx prettier --write __site &&
 
 # publish

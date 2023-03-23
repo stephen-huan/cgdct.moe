@@ -3,5 +3,6 @@ _libs
 __site/libs
 _layout
 _rss
-bin/ieee.csl
+.venv
+src
 *.md
