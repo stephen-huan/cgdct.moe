@@ -1,5 +1,5 @@
 #!/bin/bash
-# script to deploy the site to GitHub pages
+# script to deploy the site to Cloudflare pages
 
 main_branch="master"
 build_branch="build"
@@ -14,9 +14,7 @@ git merge --no-verify "$main_branch" &&
 julia --project="@." --optimize=0 --eval "using Franklin: optimize
     optimize(clear=true, prerender=true, minify=false)" &&
 # post-processing
-npx prettier --write . &&
-# https://github.com/tlienart/Franklin.jl/issues/1001
-rm __site/.prettierignore &&
+npx prettier --write __site &&
 
 # publish
 git add --force __site &&
