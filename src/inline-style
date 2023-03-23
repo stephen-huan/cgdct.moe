@@ -56,8 +56,6 @@ if __name__ == "__main__":
 
     styles = {}
     for file in glob.glob(f"{args.path}/**/*.html", recursive=True):
-        if args.verbose:
-            print(f"processing {file}")
         modified = False
         with open(file) as f:
             soup = BeautifulSoup(f, "lxml")
@@ -73,10 +71,14 @@ if __name__ == "__main__":
                 child["class"] = child.get("class", []) + [key]
                 modified = True
         if modified:
+            if args.verbose:
+                print(f"Processing {file}")
             with open(file, "w") as f:
                 f.write(str(soup))
 
     if len(styles) > 0:
+        if args.verbose:
+            print(f"Adding {len(styles)} new rules to {args.output}")
         with open(args.output, "a") as f:
             f.write(
                 "\n".join(
@@ -84,3 +86,6 @@ if __name__ == "__main__":
                     for cls, style in sorted(styles.items())
                 )
             )
+    else:
+        if args.verbose:
+            print("No inline styles found, nothing to do!")
