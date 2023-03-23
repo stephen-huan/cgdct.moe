@@ -121,6 +121,13 @@ function hfun_stylesheets()
         paths,
         pagevar(page, :stylesheets; default=String[]),
     )
+    # tag page, fd_rpath not set correctly
+    if !isempty(locvar(:fd_tag))
+        paths = [
+            "/css/main.css",
+            "/css/tag.css",
+        ]
+    end
     io = IOBuffer()
     for path in paths
         write(io, """<link rel="stylesheet" href="$path">\n""")
