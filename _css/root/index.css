@@ -1,0 +1,39 @@
+.pgp {
+  font-size: var(--font-size-small);
+  overflow-wrap: break-word;
+}
+
+.pgp samp {
+  font-family: var(--monospace);
+}
+
+.pgp a {
+  text-decoration: none;
+}
+
+.address p {
+  font-family: var(--monospace);
+  font-size: var(--font-size-small);
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+}
+
+.franklin-content .profile img {
+  width: 265px;
+  height: 375.5px;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+}
+
+@media (max-width: 760px) {
+  .franklin-content .profile img {
+    min-width: 100%;
+    height: auto;
+  }
+
+  .franklin-content .right {
+    margin-left: 0;
+    float: none;
+    text-align: center;
+  }
+}

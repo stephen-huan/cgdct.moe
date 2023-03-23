@@ -37,7 +37,7 @@ function robust_date(page, format=globvar(:date_format))
     date = getvar(
         page,
         :date;
-        default=Date(Dates.unix2datetime(stat(page * ".md").ctime))
+        default=Date(Dates.unix2datetime(stat(page * ".md").ctime)),
     )
     formatdate(date, format)
 end
@@ -84,6 +84,49 @@ end
 Get a path to the assets directory for the current page.
 """
 hfun_assets() = "/assets$(get_url(locvar(:fd_rpath)))"[begin:end - 1]
+
+"""
+    hfun_stylesheets()
+
+Return a list of CSS stylesheets.
+"""
+function hfun_stylesheets()
+    page = locvar(:fd_rpath)
+    name = splitext(page)[1]
+    # add library styles
+    paths = []
+    if locvar(:hasmath)
+        paths = push!(
+            paths,
+            "/libs/katex/katex.min.css",
+            "/css/katex.css",
+        )
+    end
+    if locvar(:hascode)
+        paths = push!(
+            paths,
+            "/libs/highlight/styles/atom-one-light.min.css",
+            "/css/highlight.css",
+        )
+    end
+    # add main default style
+    paths = push!(paths, "/css/main.css")
+    # add implictly determined path
+    if ispath("_css/root/$name.css")
+        push!(paths, "/css/root/$name.css")
+    end
+    # add page-defined list of paths
+    # this allows avoiding @import, for example
+    paths = append!(
+        paths,
+        pagevar(page, :stylesheets; default=String[]),
+    )
+    io = IOBuffer()
+    for path in paths
+        write(io, """<link rel="stylesheet" href="$path">\n""")
+    end
+    return String(take!(io))
+end
 
 """
     hfun_makeheader()
@@ -260,7 +303,7 @@ end
 
 Make a card for the given project page.
 """
-function lx_makecard(com, _)
+@delay function lx_makecard(com, _)
     page = stent(com.braces[1])
     path = "projects/$page"
     image = pagevar(path, :preview_image)
@@ -335,7 +378,7 @@ function env_wrap(com, _)
     parsed = Franklin.reprocess(
         content,
         lxdefs;
-        nostripp=true
+        nostripp=true,
     ) |> Franklin.simplify_ps
     return "~~~<$tag$data>$parsed</$tag>~~~"
 end

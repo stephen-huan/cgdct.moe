@@ -1,0 +1,11 @@
+.year h2 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-normal);
+  color: var(--theme-lightsilver-color);
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* padding-top: 1rem; */
+  border-top: var(--rule);
+  border-bottom: none;
+}

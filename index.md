@@ -1,5 +1,6 @@
 +++
 title = "Stephen Huan"
+stylesheets = ["/css/root/news.css"]
 +++
 
 @@title
