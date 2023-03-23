@@ -1,6 +1,6 @@
 +++
 title = "blog"
-meta_description = "A list of all my blog posts."
+meta_description = "convex gradient descent convergence theorems"
 
 displaytags = ["math", "cs", "anime", "misc"]
 +++
