@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/libs/katex/katex.min.css" />
-    <link rel="stylesheet" href="/css/katex.css" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="/libs/katex/katex.min.css" rel="stylesheet" />
+    <link href="/css/katex.css" rel="stylesheet" />
     <link
-      rel="stylesheet"
       href="/libs/highlight/styles/atom-one-light.min.css"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/highlight.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-
-    <link rel="icon" href="/assets/favicon.svg" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/assets/favicon.svg" rel="icon" />
     <title>far: a (f)ast re-write of the Unix utility p(ar)</title>
     <meta
-      name="description"
       content="Optimal variance text reflow for aesthetically pleasing borders."
+      name="description"
     />
   </head>
   <body>
@@ -26,54 +25,48 @@
       </div>
       <nav>
         <ul>
-          <li><a href="/" class="">about</a></li>
-          <li><a href="/blog/" class="active">blog</a></li>
-          <li><a href="/projects/" class="">projects</a></li>
-          <li><a href="/publications/" class="">publications</a></li>
-          <li><a href="/assets/pdf/cv.pdf" class="">cv</a></li>
+          <li><a class="" href="/">about</a></li>
+          <li><a class="active" href="/blog/">blog</a></li>
+          <li><a class="" href="/projects/">projects</a></li>
+          <li><a class="" href="/publications/">publications</a></li>
+          <li><a class="" href="/assets/pdf/cv.pdf">cv</a></li>
         </ul>
         <img
           alt="menu icon"
-          src="/assets/hamburger.svg"
-          width="32"
           height="32"
           id="menu-icon"
+          src="/assets/hamburger.svg"
+          width="32"
         />
       </nav>
     </header>
-
     <!-- Content appended here -->
     <div class="franklin-content">
       <h1>far: a (f)ast re-write of the Unix utility p(ar)</h1>
       <span class="post-meta"
         ><time datetime="2020-12-16">2020-12-16</time></span
       ><span class="post-tags"
-        >&nbsp; &middot;&nbsp; <a href="/tag/cs/"><b>#</b> cs</a></span
+        >  ·  <a href="/tag/cs/"><b>#</b> cs</a></span
       >
       <p>
-        <a href="https://youtu.be/H3Agto3ZSnk">&#91;Video&#93;</a>
-        <a href="/assets/blog/far/far.cpp"
-          >&#91;Source Code &#40;C&#43;&#43;&#41;&#93;</a
-        >
-        <a href="/assets/blog/far/far.py"
-          >&#91;Source Code &#40;Python&#41;&#93;</a
-        >
+        <a href="https://youtu.be/H3Agto3ZSnk">[Video]</a>
+        <a href="/assets/blog/far/far.cpp">[Source Code (C++)]</a>
+        <a href="/assets/blog/far/far.py">[Source Code (Python)]</a>
         <a href="https://github.com/eshrh/far.el"
-          >&#91;Source Code &#40;Emacs Lisp&#41; by esrh&#93;</a
+          >[Source Code (Emacs Lisp) by esrh]</a
         >
       </p>
       <p>
         <a href="http://www.nicemice.net/par/"><code>par</code></a> is a
         formatting tool that inserts line breaks to make the length of each line
-        less than a set number of characters, usually 79 &#40;terminals
-        historically have 80 width&#41;. Unfortunately, <code>par</code> is
-        incredibly complicated and introduces random whitespace. So I made my
-        own.
+        less than a set number of characters, usually 79 (terminals historically
+        have 80 width). Unfortunately, <code>par</code> is incredibly
+        complicated and introduces random whitespace. So I made my own.
       </p>
       <p>
         For <code>far</code> to make the paragraphs look good, it minimizes the
-        variance of each line. However, it&#39;s constrained to use the fewest
-        number of lines possible, so it doesn&#39;t generate really short lines.
+        variance of each line. However, it's constrained to use the fewest
+        number of lines possible, so it doesn't generate really short lines.
         Finally, it ignores the last line when minimizing variance and tries to
         make the last line shorter than average, because a typical paragraph
         usually looks better if the last line is shorter. To summarize,
@@ -87,8 +80,7 @@
         </li>
         <li>
           <p>
-            Ignore the last line, while making sure it&#39;s shorter than
-            average
+            Ignore the last line, while making sure it's shorter than average
           </p>
         </li>
       </ol>
@@ -106,10 +98,10 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6833em"></span
-              ><span class="mord mathnormal" style="margin-right: 0.07847em"
+              ><span class="strut katex-efc4334bbb360ea4"></span
+              ><span class="mord mathnormal katex-85eed73405d3da53"
                 >X</span
               ></span
             ></span
@@ -129,21 +121,17 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1em; vertical-align: -0.25em"
-              ></span
+              ><span class="strut katex-fc02a23bcdeac7fb"></span
               ><span class="mopen">∣</span
-              ><span class="mord mathnormal" style="margin-right: 0.07847em"
-                >X</span
+              ><span class="mord mathnormal katex-85eed73405d3da53">X</span
               ><span class="mclose">∣</span
-              ><span class="mspace" style="margin-right: 0.2778em"></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span
               ><span class="mrel">=</span
-              ><span class="mspace" style="margin-right: 0.2778em"></span></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span></span
             ><span class="base"
-              ><span class="strut" style="height: 0.4306em"></span
+              ><span class="strut katex-85c92d966084c2b4"></span
               ><span class="mord mathnormal">n</span></span
             ></span
           ></span
@@ -154,15 +142,15 @@
         <span class="katex-display"
           ><span class="katex"
             ><span class="katex-mathml"
-              ><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+              ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
                 ><semantics
                   ><mtable
-                    rowspacing="0.25em"
                     columnalign="right left"
                     columnspacing="0em"
+                    rowspacing="0.25em"
                     ><mtr
                       ><mtd
-                        ><mstyle scriptlevel="0" displaystyle="true"
+                        ><mstyle displaystyle="true" scriptlevel="0"
                           ><mrow
                             ><mi mathvariant="double-struck">V</mi
                             ><mtext>ar</mtext><mo stretchy="false">[</mo
@@ -170,7 +158,7 @@
                           ></mstyle
                         ></mtd
                       ><mtd
-                        ><mstyle scriptlevel="0" displaystyle="true"
+                        ><mstyle displaystyle="true" scriptlevel="0"
                           ><mrow
                             ><mrow></mrow><mo>=</mo
                             ><mi mathvariant="double-struck">E</mi
@@ -218,22 +206,18 @@
                   ></semantics
                 ></math
               ></span
-            ><span class="katex-html" aria-hidden="true"
+            ><span aria-hidden="true" class="katex-html"
               ><span class="base"
-                ><span
-                  class="strut"
-                  style="height: 3.5757em; vertical-align: -1.5379em"
-                ></span
+                ><span class="strut katex-e905da22bc1dba57"></span
                 ><span class="mord"
                   ><span class="mtable"
                     ><span class="col-align-r"
                       ><span class="vlist-t vlist-t2"
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 2.0379em"
-                            ><span style="top: -4.0379em"
+                          ><span class="vlist katex-7d8bd14132e2ecb2"
+                            ><span class="katex-065c6c80c95aeab2"
                               ><span
-                                class="pstrut"
-                                style="height: 3.954em"
+                                class="pstrut katex-fde4180f80cbbe24"
                               ></span
                               ><span class="mord"
                                 ><span class="mord mathbb">V</span
@@ -241,56 +225,48 @@
                                   ><span class="mord">ar</span></span
                                 ><span class="mopen">[</span
                                 ><span
-                                  class="mord mathnormal"
-                                  style="margin-right: 0.07847em"
+                                  class="mord mathnormal katex-85eed73405d3da53"
                                   >X</span
                                 ><span class="mclose">]</span></span
                               ></span
                             ></span
                           ><span class="vlist-s">​</span></span
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 1.5379em"
+                          ><span class="vlist katex-8b6a0c991359b86a"
                             ><span></span></span></span></span></span
                     ><span class="col-align-l"
                       ><span class="vlist-t vlist-t2"
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 2.0379em"
-                            ><span style="top: -4.0379em"
+                          ><span class="vlist katex-7d8bd14132e2ecb2"
+                            ><span class="katex-065c6c80c95aeab2"
                               ><span
-                                class="pstrut"
-                                style="height: 3.954em"
+                                class="pstrut katex-fde4180f80cbbe24"
                               ></span
                               ><span class="mord"
                                 ><span class="mord"></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mrel">=</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mord mathbb">E</span
                                 ><span class="mopen">[(</span
                                 ><span
-                                  class="mord mathnormal"
-                                  style="margin-right: 0.07847em"
+                                  class="mord mathnormal katex-85eed73405d3da53"
                                   >X</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">−</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord mathbb">E</span
                                 ><span class="mopen">[</span
                                 ><span
-                                  class="mord mathnormal"
-                                  style="margin-right: 0.07847em"
+                                  class="mord mathnormal katex-85eed73405d3da53"
                                   >X</span
                                 ><span class="mclose">]</span
                                 ><span class="mclose"
@@ -299,16 +275,10 @@
                                     ><span class="vlist-t"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -323,13 +293,11 @@
                                   ></span
                                 ><span class="mclose">]</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mrel">=</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mord"
                                   ><span class="mopen nulldelimiter"></span
@@ -337,33 +305,26 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 1.3214em"
-                                          ><span style="top: -2.314em"
+                                          class="vlist katex-9a73793a40249f30"
+                                          ><span class="katex-0f6908c112f43b43"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 3em"
+                                              class="pstrut katex-3ac4c1d77ccd6fb1"
                                             ></span
                                             ><span class="mord"
                                               ><span class="mord mathnormal"
                                                 >n</span
                                               ></span
                                             ></span
-                                          ><span style="top: -3.23em"
+                                          ><span class="katex-9f7a5e28a2396138"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 3em"
+                                              class="pstrut katex-3ac4c1d77ccd6fb1"
                                             ></span
                                             ><span
-                                              class="frac-line"
-                                              style="
-                                                border-bottom-width: 0.04em;
-                                              "
+                                              class="frac-line katex-c48da9d2507298b7"
                                             ></span></span
-                                          ><span style="top: -3.677em"
+                                          ><span class="katex-9d16fbcc9118ba6e"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 3em"
+                                              class="pstrut katex-3ac4c1d77ccd6fb1"
                                             ></span
                                             ><span class="mord"
                                               ><span class="mord">1</span></span
@@ -372,30 +333,22 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.686em"
+                                          class="vlist katex-72a5f3c452eee551"
                                           ><span></span></span></span></span></span
                                   ><span
                                     class="mclose nulldelimiter"
                                   ></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.1667em"
+                                  class="mspace katex-d9c1af4877255043"
                                 ></span
                                 ><span class="mop op-limits"
                                   ><span class="vlist-t vlist-t2"
                                     ><span class="vlist-r"
                                       ><span
-                                        class="vlist"
-                                        style="height: 1.05em"
-                                        ><span
-                                          style="
-                                            top: -1.8557em;
-                                            margin-left: 0em;
-                                          "
+                                        class="vlist katex-09b0c7c075e7b2f4"
+                                        ><span class="katex-70157168c1ed5bfb"
                                           ><span
-                                            class="pstrut"
-                                            style="height: 3.05em"
+                                            class="pstrut katex-f4167b184d54d957"
                                           ></span
                                           ><span
                                             class="sizing reset-size6 size3 mtight"
@@ -405,16 +358,14 @@
                                                 >x</span
                                               ><span class="mrel mtight">∈</span
                                               ><span
-                                                class="mord mathnormal mtight"
-                                                style="margin-right: 0.07847em"
+                                                class="mord mathnormal mtight katex-85eed73405d3da53"
                                                 >X</span
                                               ></span
                                             ></span
                                           ></span
-                                        ><span style="top: -3.05em"
+                                        ><span class="katex-e14b4956e33f8747"
                                           ><span
-                                            class="pstrut"
-                                            style="height: 3.05em"
+                                            class="pstrut katex-f4167b184d54d957"
                                           ></span
                                           ><span
                                             ><span
@@ -426,30 +377,25 @@
                                       ><span class="vlist-s">​</span></span
                                     ><span class="vlist-r"
                                       ><span
-                                        class="vlist"
-                                        style="height: 1.3217em"
+                                        class="vlist katex-7261757fac41437e"
                                         ><span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.1667em"
+                                  class="mspace katex-d9c1af4877255043"
                                 ></span
                                 ><span class="minner"
                                   ><span class="minner"
                                     ><span
-                                      class="mopen delimcenter"
-                                      style="top: 0em"
+                                      class="mopen delimcenter katex-5ad82611a44e4c58"
                                       ><span class="delimsizing size4"
                                         >(</span
                                       ></span
                                     ><span class="mord mathnormal">x</span
                                     ><span
-                                      class="mspace"
-                                      style="margin-right: 0.2222em"
+                                      class="mspace katex-74dc427d3e42f308"
                                     ></span
                                     ><span class="mbin">−</span
                                     ><span
-                                      class="mspace"
-                                      style="margin-right: 0.2222em"
+                                      class="mspace katex-74dc427d3e42f308"
                                     ></span
                                     ><span class="mord"
                                       ><span class="mopen nulldelimiter"></span
@@ -457,33 +403,29 @@
                                         ><span class="vlist-t vlist-t2"
                                           ><span class="vlist-r"
                                             ><span
-                                              class="vlist"
-                                              style="height: 1.3214em"
-                                              ><span style="top: -2.314em"
+                                              class="vlist katex-9a73793a40249f30"
+                                              ><span
+                                                class="katex-0f6908c112f43b43"
                                                 ><span
-                                                  class="pstrut"
-                                                  style="height: 3em"
+                                                  class="pstrut katex-3ac4c1d77ccd6fb1"
                                                 ></span
                                                 ><span class="mord"
                                                   ><span class="mord mathnormal"
                                                     >n</span
                                                   ></span
                                                 ></span
-                                              ><span style="top: -3.23em"
+                                              ><span
+                                                class="katex-9f7a5e28a2396138"
                                                 ><span
-                                                  class="pstrut"
-                                                  style="height: 3em"
+                                                  class="pstrut katex-3ac4c1d77ccd6fb1"
                                                 ></span
                                                 ><span
-                                                  class="frac-line"
-                                                  style="
-                                                    border-bottom-width: 0.04em;
-                                                  "
+                                                  class="frac-line katex-c48da9d2507298b7"
                                                 ></span></span
-                                              ><span style="top: -3.677em"
+                                              ><span
+                                                class="katex-9d16fbcc9118ba6e"
                                                 ><span
-                                                  class="pstrut"
-                                                  style="height: 3em"
+                                                  class="pstrut katex-3ac4c1d77ccd6fb1"
                                                 ></span
                                                 ><span class="mord"
                                                   ><span class="mord"
@@ -496,30 +438,23 @@
                                             ></span
                                           ><span class="vlist-r"
                                             ><span
-                                              class="vlist"
-                                              style="height: 0.686em"
+                                              class="vlist katex-72a5f3c452eee551"
                                               ><span></span></span></span></span></span
                                       ><span
                                         class="mclose nulldelimiter"
                                       ></span></span
                                     ><span
-                                      class="mspace"
-                                      style="margin-right: 0.1667em"
+                                      class="mspace katex-d9c1af4877255043"
                                     ></span
                                     ><span class="mop op-limits"
                                       ><span class="vlist-t vlist-t2"
                                         ><span class="vlist-r"
                                           ><span
-                                            class="vlist"
-                                            style="height: 1.05em"
+                                            class="vlist katex-09b0c7c075e7b2f4"
                                             ><span
-                                              style="
-                                                top: -1.8557em;
-                                                margin-left: 0em;
-                                              "
+                                              class="katex-70157168c1ed5bfb"
                                               ><span
-                                                class="pstrut"
-                                                style="height: 3.05em"
+                                                class="pstrut katex-f4167b184d54d957"
                                               ></span
                                               ><span
                                                 class="sizing reset-size6 size3 mtight"
@@ -530,18 +465,15 @@
                                                   ><span class="mrel mtight"
                                                     >∈</span
                                                   ><span
-                                                    class="mord mathnormal mtight"
-                                                    style="
-                                                      margin-right: 0.07847em;
-                                                    "
+                                                    class="mord mathnormal mtight katex-85eed73405d3da53"
                                                     >X</span
                                                   ></span
                                                 ></span
                                               ></span
-                                            ><span style="top: -3.05em"
+                                            ><span
+                                              class="katex-e14b4956e33f8747"
                                               ><span
-                                                class="pstrut"
-                                                style="height: 3.05em"
+                                                class="pstrut katex-f4167b184d54d957"
                                               ></span
                                               ><span
                                                 ><span
@@ -553,17 +485,14 @@
                                           ><span class="vlist-s">​</span></span
                                         ><span class="vlist-r"
                                           ><span
-                                            class="vlist"
-                                            style="height: 1.3217em"
+                                            class="vlist katex-7261757fac41437e"
                                             ><span></span></span></span></span></span
                                     ><span
-                                      class="mspace"
-                                      style="margin-right: 0.1667em"
+                                      class="mspace katex-d9c1af4877255043"
                                     ></span
                                     ><span class="mord mathnormal">x</span
                                     ><span
-                                      class="mclose delimcenter"
-                                      style="top: 0em"
+                                      class="mclose delimcenter katex-5ad82611a44e4c58"
                                       ><span class="delimsizing size4"
                                         >)</span
                                       ></span
@@ -572,16 +501,10 @@
                                     ><span class="vlist-t"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 1.954em"
-                                          ><span
-                                            style="
-                                              top: -4.2029em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-1ad057433a4b253d"
+                                          ><span class="katex-1da2b1a2b57f12bb"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -599,7 +522,7 @@
                             ></span
                           ><span class="vlist-s">​</span></span
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 1.5379em"
+                          ><span class="vlist katex-8b6a0c991359b86a"
                             ><span></span></span></span></span></span></span></span></span></span></span
         ></span>
       </div>
@@ -615,9 +538,9 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.4306em"></span
+              ><span class="strut katex-85c92d966084c2b4"></span
               ><span class="mord mathnormal">n</span></span
             ></span
           ></span
@@ -636,35 +559,24 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1.0771em; vertical-align: -0.3271em"
-              ></span
+              ><span class="strut katex-93e7d25a53e26266"></span
               ><span class="mop"
-                ><span
-                  class="mop op-symbol small-op"
-                  style="position: relative; top: 0em"
+                ><span class="mop op-symbol small-op katex-77838eb3fae025b9"
                   >∑</span
                 ><span class="msupsub"
                   ><span class="vlist-t vlist-t2"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.1786em"
-                        ><span
-                          style="
-                            top: -2.4003em;
-                            margin-left: 0em;
-                            margin-right: 0.05em;
-                          "
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-8f7de690bd939872"
+                        ><span class="katex-0f6be76b9d962139"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight"
                               ><span class="mord mathnormal mtight">x</span
                               ><span class="mrel mtight">∈</span
                               ><span
-                                class="mord mathnormal mtight"
-                                style="margin-right: 0.07847em"
+                                class="mord mathnormal mtight katex-85eed73405d3da53"
                                 >X</span
                               ></span
                             ></span
@@ -672,21 +584,21 @@
                         ></span
                       ><span class="vlist-s">​</span></span
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.3271em"
+                      ><span class="vlist katex-ab096d5b4bfa2d30"
                         ><span></span></span></span></span></span></span
-              ><span class="mspace" style="margin-right: 0.1667em"></span
+              ><span class="mspace katex-d9c1af4877255043"></span
               ><span class="mord mathnormal">x</span></span
             ></span
           ></span
         >
         because it is determined by two things: the characters in the tokens and
-        the number of spaces introduced by merging two tokens &#40;combining the
-        words &quot;hello&quot; and &quot;world&quot; onto the same line gives
-        &quot;hello world&quot;, with an additional space&#41;. The characters
-        stay the same, and the number of spaces is fixed if the number of lines
-        is fixed. Each token starts off as its own line, and each merge reduces
-        the number of lines by 1, so if two solutions have the same number of
-        lines, they must have done the same number of merges.
+        the number of spaces introduced by merging two tokens (combining the
+        words "hello" and "world" onto the same line gives "hello world", with
+        an additional space). The characters stay the same, and the number of
+        spaces is fixed if the number of lines is fixed. Each token starts off
+        as its own line, and each merge reduces the number of lines by 1, so if
+        two solutions have the same number of lines, they must have done the
+        same number of merges.
       </p>
       <p>
         Thus, minimizing
@@ -703,17 +615,13 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1em; vertical-align: -0.25em"
-              ></span
+              ><span class="strut katex-fc02a23bcdeac7fb"></span
               ><span class="mord mathbb">V</span
               ><span class="mord text"><span class="mord">ar</span></span
               ><span class="mopen">[</span
-              ><span class="mord mathnormal" style="margin-right: 0.07847em"
-                >X</span
+              ><span class="mord mathnormal katex-85eed73405d3da53">X</span
               ><span class="mclose">]</span></span
             ></span
           ></span
@@ -732,35 +640,24 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1.1412em; vertical-align: -0.3271em"
-              ></span
+              ><span class="strut katex-d3bbb0e002b4aa0e"></span
               ><span class="mop"
-                ><span
-                  class="mop op-symbol small-op"
-                  style="position: relative; top: 0em"
+                ><span class="mop op-symbol small-op katex-77838eb3fae025b9"
                   >∑</span
                 ><span class="msupsub"
                   ><span class="vlist-t vlist-t2"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.1786em"
-                        ><span
-                          style="
-                            top: -2.4003em;
-                            margin-left: 0em;
-                            margin-right: 0.05em;
-                          "
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-8f7de690bd939872"
+                        ><span class="katex-0f6be76b9d962139"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight"
                               ><span class="mord mathnormal mtight">x</span
                               ><span class="mrel mtight">∈</span
                               ><span
-                                class="mord mathnormal mtight"
-                                style="margin-right: 0.07847em"
+                                class="mord mathnormal mtight katex-85eed73405d3da53"
                                 >X</span
                               ></span
                             ></span
@@ -768,17 +665,17 @@
                         ></span
                       ><span class="vlist-s">​</span></span
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.3271em"
+                      ><span class="vlist katex-ab096d5b4bfa2d30"
                         ><span></span></span></span></span></span></span
-              ><span class="mspace" style="margin-right: 0.1667em"></span
+              ><span class="mspace katex-d9c1af4877255043"></span
               ><span class="mord"
                 ><span class="mord mathnormal">x</span
                 ><span class="msupsub"
                   ><span class="vlist-t"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.8141em"
-                        ><span style="top: -3.063em; margin-right: 0.05em"
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-b3aa06341d751ec2"
+                        ><span class="katex-00abc151c90866a2"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight">2</span></span
                           ></span
@@ -812,34 +709,22 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 0.625em; vertical-align: -0.1944em"
-              ></span
+              ><span class="strut katex-0b48a9ef2786725a"></span
               ><span class="mord mathnormal">μ</span
-              ><span class="mspace" style="margin-right: 0.2778em"></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span
               ><span class="mrel"
                 ><span class="mrel"
-                  ><span class="mop" style="position: relative; top: -0.0347em"
-                    >:</span
-                  ></span
+                  ><span class="mop katex-7c44e1f6d37440e1">:</span></span
                 ><span class="mrel"
-                  ><span
-                    class="mspace"
-                    style="margin-right: -0.0667em"
-                  ></span></span
+                  ><span class="mspace katex-dfc79d54c093c27e"></span></span
                 ><span class="mrel">=</span></span
-              ><span class="mspace" style="margin-right: 0.2778em"></span></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span></span
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1em; vertical-align: -0.25em"
-              ></span
+              ><span class="strut katex-fc02a23bcdeac7fb"></span
               ><span class="mord mathbb">E</span><span class="mopen">[</span
-              ><span class="mord mathnormal" style="margin-right: 0.07847em"
-                >X</span
+              ><span class="mord mathnormal katex-85eed73405d3da53">X</span
               ><span class="mclose">]</span></span
             ></span
           ></span
@@ -856,30 +741,24 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1em; vertical-align: -0.25em"
-              ></span
+              ><span class="strut katex-fc02a23bcdeac7fb"></span
               ><span class="mopen">(</span><span class="mord mathnormal">x</span
-              ><span class="mspace" style="margin-right: 0.2222em"></span
+              ><span class="mspace katex-74dc427d3e42f308"></span
               ><span class="mbin">−</span
-              ><span class="mspace" style="margin-right: 0.2222em"></span></span
+              ><span class="mspace katex-74dc427d3e42f308"></span></span
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1.0641em; vertical-align: -0.25em"
-              ></span
+              ><span class="strut katex-d91866fb678685cf"></span
               ><span class="mord mathnormal">μ</span
               ><span class="mclose"
                 ><span class="mclose">)</span
                 ><span class="msupsub"
                   ><span class="vlist-t"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.8141em"
-                        ><span style="top: -3.063em; margin-right: 0.05em"
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-b3aa06341d751ec2"
+                        ><span class="katex-00abc151c90866a2"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight">2</span></span
                           ></span
@@ -892,21 +771,21 @@
             ></span
           ></span
         >
-        to the overall paragraph&#39;s variance. So we want to minimize
+        to the overall paragraph's variance. So we want to minimize
       </p>
       <div class="nonumber">
         <span class="katex-display"
           ><span class="katex"
             ><span class="katex-mathml"
-              ><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+              ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
                 ><semantics
                   ><mtable
-                    rowspacing="0.25em"
                     columnalign="right"
                     columnspacing=""
+                    rowspacing="0.25em"
                     ><mtr
                       ><mtd
-                        ><mstyle scriptlevel="0" displaystyle="true"
+                        ><mstyle displaystyle="true" scriptlevel="0"
                           ><mrow
                             ><mo stretchy="false">(</mo
                             ><msub><mi>x</mi><mn>1</mn></msub
@@ -933,20 +812,19 @@
                   ></semantics
                 ></math
               ></span
-            ><span class="katex-html" aria-hidden="true"
+            ><span aria-hidden="true" class="katex-html"
               ><span class="base"
-                ><span
-                  class="strut"
-                  style="height: 1.5241em; vertical-align: -0.5121em"
-                ></span
+                ><span class="strut katex-8593ed4d817b9c4c"></span
                 ><span class="mord"
                   ><span class="mtable"
                     ><span class="col-align-r"
                       ><span class="vlist-t vlist-t2"
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 1.0121em"
-                            ><span style="top: -3.1479em"
-                              ><span class="pstrut" style="height: 3em"></span
+                          ><span class="vlist katex-8c8487539359205b"
+                            ><span class="katex-7e380ff2587b57a5"
+                              ><span
+                                class="pstrut katex-3ac4c1d77ccd6fb1"
+                              ></span
                               ><span class="mord"
                                 ><span class="mopen">(</span
                                 ><span class="mord"
@@ -955,17 +833,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.3011em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-419c46662ab8ba17"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -977,17 +848,14 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">−</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord mathnormal">μ</span
                                 ><span class="mclose"
@@ -996,16 +864,10 @@
                                     ><span class="vlist-t"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1019,13 +881,11 @@
                                     ></span
                                   ></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mopen">(</span
                                 ><span class="mord"
@@ -1034,17 +894,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.3011em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-419c46662ab8ba17"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1056,17 +909,14 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">−</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord mathnormal">μ</span
                                 ><span class="mclose"
@@ -1075,16 +925,10 @@
                                     ><span class="vlist-t"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1098,23 +942,19 @@
                                     ></span
                                   ></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="minner">⋯</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mopen">(</span
                                 ><span class="mord"
@@ -1123,17 +963,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.1514em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-f4226b085e535dd9"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1146,17 +979,14 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">−</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord mathnormal">μ</span
                                 ><span class="mclose"
@@ -1165,16 +995,10 @@
                                     ><span class="vlist-t"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1192,7 +1016,7 @@
                             ></span
                           ><span class="vlist-s">​</span></span
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 0.5121em"
+                          ><span class="vlist katex-f2fa3d342cc4daee"
                             ><span></span></span></span></span></span></span></span></span></span></span
         ></span>
       </div>
@@ -1209,32 +1033,24 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 0.5806em; vertical-align: -0.15em"
-              ></span
+              ><span class="strut katex-4891f18275a5744f"></span
               ><span class="mord"
                 ><span class="mord mathnormal">x</span
                 ><span class="msupsub"
                   ><span class="vlist-t vlist-t2"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.3117em"
-                        ><span
-                          style="
-                            top: -2.55em;
-                            margin-left: 0em;
-                            margin-right: 0.05em;
-                          "
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-cb441605c9cc3b95"
+                        ><span class="katex-0d6ec2eaa2456336"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mathnormal mtight">i</span></span
                           ></span
                         ></span
                       ><span class="vlist-s">​</span></span
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.15em"
+                      ><span class="vlist katex-2506ec288336126a"
                         ><span></span></span></span></span></span></span></span></span
         ></span>
         is the length of the
@@ -1248,9 +1064,9 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6595em"></span
+              ><span class="strut katex-6e303fe1e23b5cc1"></span
               ><span class="mord mathnormal">i</span></span
             ></span
           ></span
@@ -1260,15 +1076,15 @@
         <span class="katex-display"
           ><span class="katex"
             ><span class="katex-mathml"
-              ><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+              ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
                 ><semantics
                   ><mtable
-                    rowspacing="0.25em"
                     columnalign="right"
                     columnspacing=""
+                    rowspacing="0.25em"
                     ><mtr
                       ><mtd
-                        ><mstyle scriptlevel="0" displaystyle="true"
+                        ><mstyle displaystyle="true" scriptlevel="0"
                           ><mrow
                             ><mo stretchy="false">[</mo
                             ><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup
@@ -1294,20 +1110,19 @@
                   ></semantics
                 ></math
               ></span
-            ><span class="katex-html" aria-hidden="true"
+            ><span aria-hidden="true" class="katex-html"
               ><span class="base"
-                ><span
-                  class="strut"
-                  style="height: 1.5241em; vertical-align: -0.5121em"
-                ></span
+                ><span class="strut katex-8593ed4d817b9c4c"></span
                 ><span class="mord"
                   ><span class="mtable"
                     ><span class="col-align-r"
                       ><span class="vlist-t vlist-t2"
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 1.0121em"
-                            ><span style="top: -3.1479em"
-                              ><span class="pstrut" style="height: 3em"></span
+                          ><span class="vlist katex-8c8487539359205b"
+                            ><span class="katex-7e380ff2587b57a5"
+                              ><span
+                                class="pstrut katex-3ac4c1d77ccd6fb1"
+                              ></span
                               ><span class="mord"
                                 ><span class="mopen">[</span
                                 ><span class="mord"
@@ -1316,17 +1131,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -2.453em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-ef2450be3f55fd91"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1334,14 +1142,9 @@
                                                 >1</span
                                               ></span
                                             ></span
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1353,17 +1156,14 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.247em"
+                                          class="vlist katex-8cc0a6e221348e4a"
                                           ><span></span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">−</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord">2</span
                                 ><span class="mord"
@@ -1372,17 +1172,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.3011em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-419c46662ab8ba17"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1394,18 +1187,15 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span
                                 ><span class="mord mathnormal">μ</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord"
                                   ><span class="mord mathnormal">μ</span
@@ -1413,16 +1203,10 @@
                                     ><span class="vlist-t"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1437,23 +1221,19 @@
                                   ></span
                                 ><span class="mclose">]</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="minner">⋯</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mopen">[</span
                                 ><span class="mord"
@@ -1462,17 +1242,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -2.453em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-ef2450be3f55fd91"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1481,14 +1254,9 @@
                                                 >n</span
                                               ></span
                                             ></span
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1500,17 +1268,14 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.247em"
+                                          class="vlist katex-8cc0a6e221348e4a"
                                           ><span></span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">−</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord">2</span
                                 ><span class="mord"
@@ -1519,17 +1284,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.1514em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-f4226b085e535dd9"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1542,18 +1300,15 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span
                                 ><span class="mord mathnormal">μ</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord"
                                   ><span class="mord mathnormal">μ</span
@@ -1561,16 +1316,10 @@
                                     ><span class="vlist-t"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1588,7 +1337,7 @@
                             ></span
                           ><span class="vlist-s">​</span></span
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 0.5121em"
+                          ><span class="vlist katex-f2fa3d342cc4daee"
                             ><span></span></span></span></span></span></span></span></span></span></span
         ></span>
       </div>
@@ -1605,20 +1354,17 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1.0085em; vertical-align: -0.1944em"
-              ></span
+              ><span class="strut katex-e9128e0323a9ecc1"></span
               ><span class="mord"
                 ><span class="mord mathnormal">μ</span
                 ><span class="msupsub"
                   ><span class="vlist-t"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.8141em"
-                        ><span style="top: -3.063em; margin-right: 0.05em"
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-b3aa06341d751ec2"
+                        ><span class="katex-00abc151c90866a2"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight">2</span></span
                           ></span
@@ -1646,29 +1392,23 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 0.625em; vertical-align: -0.1944em"
-              ></span
+              ><span class="strut katex-0b48a9ef2786725a"></span
               ><span class="mord mathnormal">μ</span
-              ><span class="mspace" style="margin-right: 0.2778em"></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span
               ><span class="mrel">=</span
-              ><span class="mspace" style="margin-right: 0.2778em"></span></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span></span
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1.1901em; vertical-align: -0.345em"
-              ></span
+              ><span class="strut katex-0e2c239603cc3e61"></span
               ><span class="mord"
                 ><span class="mopen nulldelimiter"></span
                 ><span class="mfrac"
                   ><span class="vlist-t vlist-t2"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.8451em"
-                        ><span style="top: -2.655em"
-                          ><span class="pstrut" style="height: 3em"></span
+                      ><span class="vlist katex-e4bf76b5344371ef"
+                        ><span class="katex-aae519bbe9edfb64"
+                          ><span class="pstrut katex-3ac4c1d77ccd6fb1"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight"
                               ><span class="mord mathnormal mtight"
@@ -1676,14 +1416,13 @@
                               ></span
                             ></span
                           ></span
-                        ><span style="top: -3.23em"
-                          ><span class="pstrut" style="height: 3em"></span
+                        ><span class="katex-9f7a5e28a2396138"
+                          ><span class="pstrut katex-3ac4c1d77ccd6fb1"></span
                           ><span
-                            class="frac-line"
-                            style="border-bottom-width: 0.04em"
+                            class="frac-line katex-c48da9d2507298b7"
                           ></span></span
-                        ><span style="top: -3.394em"
-                          ><span class="pstrut" style="height: 3em"></span
+                        ><span class="katex-b6fb51ac2ad9d6ed"
+                          ><span class="pstrut katex-3ac4c1d77ccd6fb1"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight"
                               ><span class="mord mtight">1</span></span
@@ -1692,33 +1431,25 @@
                         ></span
                       ><span class="vlist-s">​</span></span
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.345em"
+                      ><span class="vlist katex-570f3cb2019dcc4c"
                         ><span></span></span></span></span></span
                 ><span class="mclose nulldelimiter"></span></span
-              ><span class="mspace" style="margin-right: 0.1667em"></span
+              ><span class="mspace katex-d9c1af4877255043"></span
               ><span class="mop"
-                ><span
-                  class="mop op-symbol small-op"
-                  style="position: relative; top: 0em"
+                ><span class="mop op-symbol small-op katex-77838eb3fae025b9"
                   >∑</span
                 ><span class="msupsub"
                   ><span class="vlist-t vlist-t2"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.1786em"
-                        ><span
-                          style="
-                            top: -2.4003em;
-                            margin-left: 0em;
-                            margin-right: 0.05em;
-                          "
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-8f7de690bd939872"
+                        ><span class="katex-0f6be76b9d962139"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight"
                               ><span class="mord mathnormal mtight">x</span
                               ><span class="mrel mtight">∈</span
                               ><span
-                                class="mord mathnormal mtight"
-                                style="margin-right: 0.07847em"
+                                class="mord mathnormal mtight katex-85eed73405d3da53"
                                 >X</span
                               ></span
                             ></span
@@ -1726,14 +1457,14 @@
                         ></span
                       ><span class="vlist-s">​</span></span
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.3271em"
+                      ><span class="vlist katex-ab096d5b4bfa2d30"
                         ><span></span></span></span></span></span></span
-              ><span class="mspace" style="margin-right: 0.1667em"></span
+              ><span class="mspace katex-d9c1af4877255043"></span
               ><span class="mord mathnormal">x</span></span
             ></span
           ></span
         >
-        is constant from the aforementioned logic &#40;both
+        is constant from the aforementioned logic (both
         <span class="katex"
           ><span class="katex-mathml"
             ><math xmlns="http://www.w3.org/1998/Math/MathML"
@@ -1744,28 +1475,28 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.4306em"></span
+              ><span class="strut katex-85c92d966084c2b4"></span
               ><span class="mord mathnormal">n</span></span
             ></span
           ></span
         >
-        and the total number of characters is constant&#41; and reorganize into
+        and the total number of characters is constant) and reorganize into
       </p>
       <div class="nonumber">
         <span class="katex-display"
           ><span class="katex"
             ><span class="katex-mathml"
-              ><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+              ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
                 ><semantics
                   ><mtable
-                    rowspacing="0.25em"
                     columnalign="right"
                     columnspacing=""
+                    rowspacing="0.25em"
                     ><mtr
                       ><mtd
-                        ><mstyle scriptlevel="0" displaystyle="true"
+                        ><mstyle displaystyle="true" scriptlevel="0"
                           ><mrow
                             ><mo stretchy="false">[</mo
                             ><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup
@@ -1787,20 +1518,19 @@
                   ></semantics
                 ></math
               ></span
-            ><span class="katex-html" aria-hidden="true"
+            ><span aria-hidden="true" class="katex-html"
               ><span class="base"
-                ><span
-                  class="strut"
-                  style="height: 1.5241em; vertical-align: -0.5121em"
-                ></span
+                ><span class="strut katex-8593ed4d817b9c4c"></span
                 ><span class="mord"
                   ><span class="mtable"
                     ><span class="col-align-r"
                       ><span class="vlist-t vlist-t2"
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 1.0121em"
-                            ><span style="top: -3.1479em"
-                              ><span class="pstrut" style="height: 3em"></span
+                          ><span class="vlist katex-8c8487539359205b"
+                            ><span class="katex-7e380ff2587b57a5"
+                              ><span
+                                class="pstrut katex-3ac4c1d77ccd6fb1"
+                              ></span
                               ><span class="mord"
                                 ><span class="mopen">[</span
                                 ><span class="mord"
@@ -1809,17 +1539,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -2.453em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-ef2450be3f55fd91"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1827,14 +1550,9 @@
                                                 >1</span
                                               ></span
                                             ></span
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1846,27 +1564,22 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.247em"
+                                          class="vlist katex-8cc0a6e221348e4a"
                                           ><span></span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="minner">⋯</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord"
                                   ><span class="mord mathnormal">x</span
@@ -1874,17 +1587,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -2.453em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-ef2450be3f55fd91"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1893,14 +1599,9 @@
                                                 >n</span
                                               ></span
                                             ></span
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1912,18 +1613,15 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.247em"
+                                          class="vlist katex-8cc0a6e221348e4a"
                                           ><span></span></span></span></span></span></span
                                 ><span class="mclose">]</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">−</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord">2</span
                                 ><span class="mord mathnormal">μ</span
@@ -1934,17 +1632,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.3011em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-419c46662ab8ba17"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -1956,27 +1647,22 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="minner">⋯</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">+</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord"
                                   ><span class="mord mathnormal">x</span
@@ -1984,17 +1670,10 @@
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.1514em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-f4226b085e535dd9"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -2007,28 +1686,26 @@
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span
                                 ><span class="mclose">)</span></span
                               ></span
                             ></span
                           ><span class="vlist-s">​</span></span
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 0.5121em"
+                          ><span class="vlist katex-f2fa3d342cc4daee"
                             ><span></span></span></span></span></span></span></span></span></span></span
         ></span>
       </div>
       <p>
         The last term is a constant, so minimizing the variance of the overall
         paragraph is equivalent to minimizing the variance for a suffix of the
-        paragraph &#40;both are minimizing the sum of squares&#41;. This is just
-        the variance of the subproblem, so the dynamic programming is valid
-        since optimal substructure holds. In practice, I skip calculating
-        variance entirely and simply compute the sum of squares. I also do
-        dynamic programming on the variance of each <em>prefix</em> instead of
-        each suffix so it&#39;s easier to ignore the contribution of the last
-        line.
+        paragraph (both are minimizing the sum of squares). This is just the
+        variance of the subproblem, so the dynamic programming is valid since
+        optimal substructure holds. In practice, I skip calculating variance
+        entirely and simply compute the sum of squares. I also do dynamic
+        programming on the variance of each <em>prefix</em> instead of each
+        suffix so it's easier to ignore the contribution of the last line.
       </p>
       <p>
         Note that the reduction could have been quickly observed by using the
@@ -2038,15 +1715,15 @@
         <span class="katex-display"
           ><span class="katex"
             ><span class="katex-mathml"
-              ><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+              ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
                 ><semantics
                   ><mtable
-                    rowspacing="0.25em"
                     columnalign="right left"
                     columnspacing="0em"
+                    rowspacing="0.25em"
                     ><mtr
                       ><mtd
-                        ><mstyle scriptlevel="0" displaystyle="true"
+                        ><mstyle displaystyle="true" scriptlevel="0"
                           ><mrow
                             ><mi mathvariant="double-struck">V</mi
                             ><mtext>ar</mtext><mo stretchy="false">[</mo
@@ -2054,7 +1731,7 @@
                           ></mstyle
                         ></mtd
                       ><mtd
-                        ><mstyle scriptlevel="0" displaystyle="true"
+                        ><mstyle displaystyle="true" scriptlevel="0"
                           ><mrow
                             ><mrow></mrow><mo>=</mo
                             ><mi mathvariant="double-struck">E</mi
@@ -2083,74 +1760,65 @@
                   ></semantics
                 ></math
               ></span
-            ><span class="katex-html" aria-hidden="true"
+            ><span aria-hidden="true" class="katex-html"
               ><span class="base"
-                ><span
-                  class="strut"
-                  style="height: 1.5241em; vertical-align: -0.5121em"
-                ></span
+                ><span class="strut katex-8593ed4d817b9c4c"></span
                 ><span class="mord"
                   ><span class="mtable"
                     ><span class="col-align-r"
                       ><span class="vlist-t vlist-t2"
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 1.0121em"
-                            ><span style="top: -3.1479em"
-                              ><span class="pstrut" style="height: 3em"></span
+                          ><span class="vlist katex-8c8487539359205b"
+                            ><span class="katex-7e380ff2587b57a5"
+                              ><span
+                                class="pstrut katex-3ac4c1d77ccd6fb1"
+                              ></span
                               ><span class="mord"
                                 ><span class="mord mathbb">V</span
                                 ><span class="mord text"
                                   ><span class="mord">ar</span></span
                                 ><span class="mopen">[</span
                                 ><span
-                                  class="mord mathnormal"
-                                  style="margin-right: 0.07847em"
+                                  class="mord mathnormal katex-85eed73405d3da53"
                                   >X</span
                                 ><span class="mclose">]</span></span
                               ></span
                             ></span
                           ><span class="vlist-s">​</span></span
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 0.5121em"
+                          ><span class="vlist katex-f2fa3d342cc4daee"
                             ><span></span></span></span></span></span
                     ><span class="col-align-l"
                       ><span class="vlist-t vlist-t2"
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 1.0121em"
-                            ><span style="top: -3.1479em"
-                              ><span class="pstrut" style="height: 3em"></span
+                          ><span class="vlist katex-8c8487539359205b"
+                            ><span class="katex-7e380ff2587b57a5"
+                              ><span
+                                class="pstrut katex-3ac4c1d77ccd6fb1"
+                              ></span
                               ><span class="mord"
                                 ><span class="mord"></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mrel">=</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mord mathbb">E</span
                                 ><span class="mopen">[</span
                                 ><span class="mord"
                                   ><span
-                                    class="mord mathnormal"
-                                    style="margin-right: 0.07847em"
+                                    class="mord mathnormal katex-85eed73405d3da53"
                                     >X</span
                                   ><span class="msupsub"
                                     ><span class="vlist-t"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -2165,19 +1833,16 @@
                                   ></span
                                 ><span class="mclose">]</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mbin">−</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2222em"
+                                  class="mspace katex-74dc427d3e42f308"
                                 ></span
                                 ><span class="mord mathbb">E</span
                                 ><span class="mopen">[</span
                                 ><span
-                                  class="mord mathnormal"
-                                  style="margin-right: 0.07847em"
+                                  class="mord mathnormal katex-85eed73405d3da53"
                                   >X</span
                                 ><span class="mclose"
                                   ><span class="mclose">]</span
@@ -2185,16 +1850,10 @@
                                     ><span class="vlist-t"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.8641em"
-                                          ><span
-                                            style="
-                                              top: -3.113em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-d92824a307aa7af4"
+                                          ><span class="katex-6aad141153b69237"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -2212,7 +1871,7 @@
                             ></span
                           ><span class="vlist-s">​</span></span
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 0.5121em"
+                          ><span class="vlist katex-f2fa3d342cc4daee"
                             ><span></span></span></span></span></span></span></span></span></span></span
         ></span>
       </div>
@@ -2234,15 +1893,11 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1em; vertical-align: -0.25em"
-              ></span
+              ><span class="strut katex-fc02a23bcdeac7fb"></span
               ><span class="mord mathbb">E</span><span class="mopen">[</span
-              ><span class="mord mathnormal" style="margin-right: 0.07847em"
-                >X</span
+              ><span class="mord mathnormal katex-85eed73405d3da53">X</span
               ><span class="mclose">]</span></span
             ></span
           ></span
@@ -2250,7 +1905,7 @@
         is constant. Indeed, we essentially repeated this derivation.
       </p>
       <p>
-        That&#39;s it&#33; The algorithm runs in
+        That's it! The algorithm runs in
         <span class="katex"
           ><span class="katex-mathml"
             ><math xmlns="http://www.w3.org/1998/Math/MathML"
@@ -2263,19 +1918,13 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1em; vertical-align: -0.25em"
-              ></span
-              ><span class="mord mathcal" style="margin-right: 0.02778em"
-                >O</span
+              ><span class="strut katex-fc02a23bcdeac7fb"></span
+              ><span class="mord mathcal katex-41b20525125e978b">O</span
               ><span class="mopen">(</span
-              ><span class="mord mathnormal" style="margin-right: 0.10903em"
-                >N</span
-              ><span class="mord mathnormal" style="margin-right: 0.07153em"
-                >K</span
+              ><span class="mord mathnormal katex-469634f8cda7614d">N</span
+              ><span class="mord mathnormal katex-d08bd31ba88fcfc4">K</span
               ><span class="mclose">)</span></span
             ></span
           ></span
@@ -2291,10 +1940,10 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6833em"></span
-              ><span class="mord mathnormal" style="margin-right: 0.10903em"
+              ><span class="strut katex-efc4334bbb360ea4"></span
+              ><span class="mord mathnormal katex-469634f8cda7614d"
                 >N</span
               ></span
             ></span
@@ -2311,10 +1960,10 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6833em"></span
-              ><span class="mord mathnormal" style="margin-right: 0.07153em"
+              ><span class="strut katex-efc4334bbb360ea4"></span
+              ><span class="mord mathnormal katex-d08bd31ba88fcfc4"
                 >K</span
               ></span
             ></span
@@ -2331,16 +1980,16 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6833em"></span
-              ><span class="mord mathnormal" style="margin-right: 0.07153em"
+              ><span class="strut katex-efc4334bbb360ea4"></span
+              ><span class="mord mathnormal katex-d08bd31ba88fcfc4"
                 >K</span
               ></span
             ></span
           ></span
         >
-        is usually fixed to some small constant &#40;79, 72, etc.&#41;, this is
+        is usually fixed to some small constant (79, 72, etc.), this is
         essentially linear in
         <span class="katex"
           ><span class="katex-mathml"
@@ -2352,25 +2001,24 @@
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.4306em"></span
+              ><span class="strut katex-85c92d966084c2b4"></span
               ><span class="mord mathnormal">n</span></span
             ></span
           ></span
         >
         and I suspect most of the running time is bottlenecked by just I/O
-        &#40;reading the input text and printing out the formatted text&#41;.
-        Running with a width of 79 on a 1 MB file with over 20,000 lines takes
-        under 200 milliseconds. For 100 MB, <code>fmt</code> takes around 11.9
-        seconds, <code>par</code> takes 15.7, and <code>far</code> takes 16.6.
-        So <code>far</code> is slightly slower than the others, but certainly
-        not enough to be noticeable for &quot;reasonable&quot; inputs,
-        especially if output is redirected into a file rather than displayed to
-        terminal.
+        (reading the input text and printing out the formatted text). Running
+        with a width of 79 on a 1 MB file with over 20,000 lines takes under 200
+        milliseconds. For 100 MB, <code>fmt</code> takes around 11.9 seconds,
+        <code>par</code> takes 15.7, and <code>far</code> takes 16.6. So
+        <code>far</code> is slightly slower than the others, but certainly not
+        enough to be noticeable for "reasonable" inputs, especially if output is
+        redirected into a file rather than displayed to terminal.
       </p>
       <h2 id="examples">
-        <a href="#examples" class="header-anchor">Examples</a>
+        <a class="header-anchor" href="#examples">Examples</a>
       </h2>
       <p>original paragraph:</p>
       <pre><code class="plaintext hljs">xxxxx xxx xxx xxxx xxxxxxxxx xx x xxxxxxxxx x xxxx xxxx xxxxxxx xxxxxxxx xxx
@@ -2379,7 +2027,7 @@ xxx xxxx xxxx xxx xxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxx xxx xxxxx xx xxxx x xxxx
 xxxxxxxx xxxx xxxx xx xxxxx xxxx xxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxx
 xxx xxxxxxxxx xxxx xxxx xx x xx xxxx xxx xxxx xx xxx xxx xxxxxxxxxxx xxxx xxxxx
 x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
-      <p><code>fmt -w 72</code> &#40;greedy algorithm&#41;:</p>
+      <p><code>fmt -w 72</code> (greedy algorithm):</p>
       <pre><code class="plaintext hljs">xxxxx xxx xxx xxxx xxxxxxxxx xx x xxxxxxxxx x xxxx xxxx xxxxxxx xxxxxxxx
 xxx xxxxxxxxx xxxxxxxx xx xx xxxxx xxxxx xxxx xx x xxxx xx xxxxxxxx
 xxxxxxxx xxxx xxx xxxx xxxx xxx xxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxx xxx
@@ -2390,13 +2038,13 @@ xxxxxx xx xxxxx</code></pre>
       <p>
         Looking at the output of the greedy algorithm, because it always forms a
         line if it fits, it creates highly variable line lengths. For example,
-        there are many &quot;valleys&quot; where a line is shorter than the
-        lines adjacent to it, like lines 2 and lines 4, giving the paragraph a
-        jagged appearance overall.
+        there are many "valleys" where a line is shorter than the lines adjacent
+        to it, like lines 2 and lines 4, giving the paragraph a jagged
+        appearance overall.
       </p>
       <p>
-        <code>par 72</code> &#40;with <code>PARINIT</code> set to
-        <code>rTbgqR B&#61;.,?&#39;_A_a_@ Q&#61;_s&gt;|</code>&#41;:
+        <code>par 72</code> (with <code>PARINIT</code> set to
+        <code>rTbgqR B=.,?'_A_a_@ Q=_s&gt;|</code>):
       </p>
       <pre><code class="plaintext hljs">xxxxx xxx xxx xxxx xxxxxxxxx xx x xxxxxxxxx x xxxx xxxx xxxxxxx xxxxxxxx
 xxx xxxxxxxxx xxxxxxxx xx xx xxxxx xxxxx xxxx xx x xxxx xx xxxxxxxx
@@ -2423,25 +2071,24 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
         creating the smoothest paragraph edge.
       </p>
       <p>
-        It&#39;s probably possible to modify <code>PARINIT</code> for
+        It's probably possible to modify <code>PARINIT</code> for
         <code>par</code> to work properly on this example, and in general
-        <code>par</code> works quite well, but it&#39;s hard to work through the
+        <code>par</code> works quite well, but it's hard to work through the
         documentation to find precisely what to do and the recommended
         <code>PARINIT</code> in the man page should work well. In contrast
-        <code>far</code> works well &quot;out of the box&quot; and for better or
-        for worse, only has a single configuration option –- the desired line
-        width.
+        <code>far</code> works well "out of the box" and for better or for
+        worse, only has a single configuration option –- the desired line width.
       </p>
-      <h2 id="uses"><a href="#uses" class="header-anchor">Uses</a></h2>
+      <h2 id="uses"><a class="header-anchor" href="#uses">Uses</a></h2>
       <p>
         This program is useful whenever writing plaintext in a monospace text
         editor, e.g. when editing LaTeX, markdown files, college essays, and
-        emails. It&#39;s especially useful in <code>vim</code>, which lets you
-        set the option <code>&#39;formatprg&#39;</code> so the operator
+        emails. It's especially useful in <code>vim</code>, which lets you set
+        the option <code>'formatprg'</code> so the operator
         <code>gq</code> formats using the external program.
       </p>
       <h2 id="appendix">
-        <a href="#appendix" class="header-anchor">Appendix</a>
+        <a class="header-anchor" href="#appendix">Appendix</a>
       </h2>
       <p>
         The paragraph reformatting problem can be phrased in terms of three
@@ -2461,17 +2108,17 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                   </annotation></semantics
                 ></math
               ></span
-            ><span class="katex-html" aria-hidden="true"
+            ><span aria-hidden="true" class="katex-html"
               ><span class="base"
-                ><span class="strut" style="height: 0.6944em"></span
+                ><span class="strut katex-1443dcef7dd0be4f"></span
                 ><span class="mord"
                   ><span class="mord">ℓ</span
                   ><span class="msupsub"
                     ><span class="vlist-t"
                       ><span class="vlist-r"
-                        ><span class="vlist" style="height: 0.6644em"
-                          ><span style="top: -3.063em; margin-right: 0.05em"
-                            ><span class="pstrut" style="height: 2.7em"></span
+                        ><span class="vlist katex-8727367727c49b7f"
+                          ><span class="katex-00abc151c90866a2"
+                            ><span class="pstrut katex-1527d00b389b9857"></span
                             ><span class="sizing reset-size6 size3 mtight"
                               ><span class="mord mathnormal mtight"
                                 >p</span
@@ -2500,10 +2147,10 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6833em"></span
-              ><span class="mord mathnormal" style="margin-right: 0.07847em"
+              ><span class="strut katex-efc4334bbb360ea4"></span
+              ><span class="mord mathnormal katex-85eed73405d3da53"
                 >X</span
               ></span
             ></span
@@ -2521,10 +2168,10 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6833em"></span
-              ><span class="mord mathnormal" style="margin-right: 0.07153em"
+              ><span class="strut katex-efc4334bbb360ea4"></span
+              ><span class="mord mathnormal katex-d08bd31ba88fcfc4"
                 >K</span
               ></span
             ></span
@@ -2548,54 +2195,41 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1em; vertical-align: -0.25em"
-              ></span
+              ><span class="strut katex-fc02a23bcdeac7fb"></span
               ><span class="mop">max</span><span class="mopen">(</span
-              ><span class="mord mathnormal" style="margin-right: 0.07847em"
-                >X</span
+              ><span class="mord mathnormal katex-85eed73405d3da53">X</span
               ><span class="mclose">)</span
-              ><span class="mspace" style="margin-right: 0.2778em"></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span
               ><span class="mrel">=</span
-              ><span class="mspace" style="margin-right: 0.2778em"></span></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span></span
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1em; vertical-align: -0.25em"
-              ></span
+              ><span class="strut katex-fc02a23bcdeac7fb"></span
               ><span class="mopen">∥</span
-              ><span class="mord mathnormal" style="margin-right: 0.07847em"
-                >X</span
+              ><span class="mord mathnormal katex-85eed73405d3da53">X</span
               ><span class="mclose"
                 ><span class="mclose">∥</span
                 ><span class="msupsub"
                   ><span class="vlist-t vlist-t2"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.1514em"
-                        ><span
-                          style="
-                            top: -2.55em;
-                            margin-left: 0em;
-                            margin-right: 0.05em;
-                          "
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-f4226b085e535dd9"
+                        ><span class="katex-0d6ec2eaa2456336"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight">∞</span></span
                           ></span
                         ></span
                       ><span class="vlist-s">​</span></span
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.15em"
+                      ><span class="vlist katex-2506ec288336126a"
                         ><span></span></span></span></span></span></span
-              ><span class="mspace" style="margin-right: 0.2778em"></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span
               ><span class="mrel">≤</span
-              ><span class="mspace" style="margin-right: 0.2778em"></span></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span></span
             ><span class="base"
-              ><span class="strut" style="height: 0.6833em"></span
-              ><span class="mord mathnormal" style="margin-right: 0.07153em"
+              ><span class="strut katex-efc4334bbb360ea4"></span
+              ><span class="mord mathnormal katex-d08bd31ba88fcfc4"
                 >K</span
               ></span
             ></span
@@ -2612,10 +2246,10 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6833em"></span
-              ><span class="mord mathnormal" style="margin-right: 0.13889em"
+              ><span class="strut katex-efc4334bbb360ea4"></span
+              ><span class="mord mathnormal katex-87bb948d627adca1"
                 >P</span
               ></span
             ></span
@@ -2627,15 +2261,15 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
         <span class="katex-display"
           ><span class="katex"
             ><span class="katex-mathml"
-              ><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+              ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
                 ><semantics
                   ><mtable
-                    rowspacing="0.25em"
                     columnalign="right"
                     columnspacing=""
+                    rowspacing="0.25em"
                     ><mtr
                       ><mtd
-                        ><mstyle scriptlevel="0" displaystyle="true"
+                        ><mstyle displaystyle="true" scriptlevel="0"
                           ><mrow
                             ><mo stretchy="false">∥</mo><mi>X</mi
                             ><msub><mo stretchy="false">∥</mo><mn>0</mn></msub
@@ -2666,25 +2300,23 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                   ></semantics
                 ></math
               ></span
-            ><span class="katex-html" aria-hidden="true"
+            ><span aria-hidden="true" class="katex-html"
               ><span class="base"
-                ><span
-                  class="strut"
-                  style="height: 2.106em; vertical-align: -0.803em"
-                ></span
+                ><span class="strut katex-8555e5bada9d4045"></span
                 ><span class="mord"
                   ><span class="mtable"
                     ><span class="col-align-r"
                       ><span class="vlist-t vlist-t2"
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 1.303em"
-                            ><span style="top: -3.463em"
-                              ><span class="pstrut" style="height: 3em"></span
+                          ><span class="vlist katex-7cdbe36bec2d5f98"
+                            ><span class="katex-5790254d4eb33326"
+                              ><span
+                                class="pstrut katex-3ac4c1d77ccd6fb1"
+                              ></span
                               ><span class="mord"
                                 ><span class="mopen">∥</span
                                 ><span
-                                  class="mord mathnormal"
-                                  style="margin-right: 0.07847em"
+                                  class="mord mathnormal katex-85eed73405d3da53"
                                   >X</span
                                 ><span class="mclose"
                                   ><span class="mclose">∥</span
@@ -2692,17 +2324,10 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.3011em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-419c46662ab8ba17"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -2714,50 +2339,38 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mrel">=</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mop op-limits"
                                   ><span class="vlist-t vlist-t2"
                                     ><span class="vlist-r"
                                       ><span
-                                        class="vlist"
-                                        style="height: 0.6679em"
-                                        ><span
-                                          style="
-                                            top: -2.309em;
-                                            margin-left: 0em;
-                                          "
+                                        class="vlist katex-a51f135ff03c83c9"
+                                        ><span class="katex-9035900f79f10b37"
                                           ><span
-                                            class="pstrut"
-                                            style="height: 3em"
+                                            class="pstrut katex-3ac4c1d77ccd6fb1"
                                           ></span
                                           ><span
                                             class="sizing reset-size6 size3 mtight"
                                             ><span class="mord mtight"
                                               ><span
-                                                class="mord mathnormal mtight"
-                                                style="margin-right: 0.13889em"
+                                                class="mord mathnormal mtight katex-87bb948d627adca1"
                                                 >P</span
                                               ><span class="mrel mtight">:</span
                                               ><span
-                                                class="mspace mtight"
-                                                style="margin-right: 0.1952em"
+                                                class="mspace mtight katex-c2c6ccbb9a43e8b7"
                                               ></span
                                               ><span class="mopen mtight"
                                                 >∥</span
                                               ><span
-                                                class="mord mathnormal mtight"
-                                                style="margin-right: 0.13889em"
+                                                class="mord mathnormal mtight katex-87bb948d627adca1"
                                                 >P</span
                                               ><span class="mclose mtight"
                                                 ><span class="mclose mtight"
@@ -2767,19 +2380,11 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                                     class="vlist-t vlist-t2"
                                                     ><span class="vlist-r"
                                                       ><span
-                                                        class="vlist"
-                                                        style="height: 0.1645em"
+                                                        class="vlist katex-6e2b124f6a733faa"
                                                         ><span
-                                                          style="
-                                                            top: -2.357em;
-                                                            margin-left: 0em;
-                                                            margin-right: 0.0714em;
-                                                          "
+                                                          class="katex-312ee5c75ee3a006"
                                                           ><span
-                                                            class="pstrut"
-                                                            style="
-                                                              height: 2.5em;
-                                                            "
+                                                            class="pstrut katex-30f1852ae721d9ae"
                                                           ></span
                                                           ><span
                                                             class="sizing reset-size3 size1 mtight"
@@ -2794,21 +2399,18 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                                       ></span
                                                     ><span class="vlist-r"
                                                       ><span
-                                                        class="vlist"
-                                                        style="height: 0.143em"
+                                                        class="vlist katex-698887e62561da60"
                                                         ><span></span></span></span></span></span></span
                                               ><span class="mrel mtight">≤</span
                                               ><span
-                                                class="mord mathnormal mtight"
-                                                style="margin-right: 0.07153em"
+                                                class="mord mathnormal mtight katex-d08bd31ba88fcfc4"
                                                 >K</span
                                               ></span
                                             ></span
                                           ></span
-                                        ><span style="top: -3em"
+                                        ><span class="katex-48bfdc4f0cc83b58"
                                           ><span
-                                            class="pstrut"
-                                            style="height: 3em"
+                                            class="pstrut katex-3ac4c1d77ccd6fb1"
                                           ></span
                                           ><span
                                             ><span class="mop">min</span></span
@@ -2817,17 +2419,14 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                       ><span class="vlist-s">​</span></span
                                     ><span class="vlist-r"
                                       ><span
-                                        class="vlist"
-                                        style="height: 0.966em"
+                                        class="vlist katex-f07783683100adc1"
                                         ><span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mopen">∥</span
                                 ><span
-                                  class="mord mathnormal"
-                                  style="margin-right: 0.13889em"
+                                  class="mord mathnormal katex-87bb948d627adca1"
                                   >P</span
                                 ><span class="mclose"
                                   ><span class="mclose">∥</span
@@ -2835,17 +2434,10 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.3011em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-419c46662ab8ba17"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -2857,18 +2449,17 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span></span></span></span
                           ><span class="vlist-s">​</span></span
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 0.803em"
+                          ><span class="vlist katex-f7336e4186829d82"
                             ><span></span></span></span></span></span></span></span></span></span></span
         ></span>
       </div>
       <p>
         where we abuse the
-        <a href="https://en.wikipedia.org/wiki/Lp_space#When_p_&#61;_0"
+        <a href="https://en.wikipedia.org/wiki/Lp_space#When_p_=_0"
           ><span class="katex"
             ><span class="katex-mathml"
               ><math xmlns="http://www.w3.org/1998/Math/MathML"
@@ -2882,17 +2473,17 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                   </annotation></semantics
                 ></math
               ></span
-            ><span class="katex-html" aria-hidden="true"
+            ><span aria-hidden="true" class="katex-html"
               ><span class="base"
-                ><span class="strut" style="height: 0.8141em"></span
+                ><span class="strut katex-b3aa06341d751ec2"></span
                 ><span class="mord"
                   ><span class="mord">ℓ</span
                   ><span class="msupsub"
                     ><span class="vlist-t"
                       ><span class="vlist-r"
-                        ><span class="vlist" style="height: 0.8141em"
-                          ><span style="top: -3.063em; margin-right: 0.05em"
-                            ><span class="pstrut" style="height: 2.7em"></span
+                        ><span class="vlist katex-b3aa06341d751ec2"
+                          ><span class="katex-00abc151c90866a2"
+                            ><span class="pstrut katex-1527d00b389b9857"></span
                             ><span class="sizing reset-size6 size3 mtight"
                               ><span class="mord mtight">0</span></span
                             ></span
@@ -2904,7 +2495,7 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                 ></span
               ></span
             ></span
-          >-&quot;norm&quot;</a
+          >-"norm"</a
         >. Finally, the goal of minimizing variance is equivalent to minimizing
         the
         <span class="katex"
@@ -2918,17 +2509,17 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.8141em"></span
+              ><span class="strut katex-b3aa06341d751ec2"></span
               ><span class="mord"
                 ><span class="mord">ℓ</span
                 ><span class="msupsub"
                   ><span class="vlist-t"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.8141em"
-                        ><span style="top: -3.063em; margin-right: 0.05em"
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-b3aa06341d751ec2"
+                        ><span class="katex-00abc151c90866a2"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight">2</span></span
                           ></span
@@ -2952,10 +2543,10 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6833em"></span
-              ><span class="mord mathnormal" style="margin-right: 0.07847em"
+              ><span class="strut katex-efc4334bbb360ea4"></span
+              ><span class="mord mathnormal katex-85eed73405d3da53"
                 >X</span
               ></span
             ></span
@@ -2973,17 +2564,17 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.8141em"></span
+              ><span class="strut katex-b3aa06341d751ec2"></span
               ><span class="mord"
                 ><span class="mord">ℓ</span
                 ><span class="msupsub"
                   ><span class="vlist-t"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.8141em"
-                        ><span style="top: -3.063em; margin-right: 0.05em"
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-b3aa06341d751ec2"
+                        ><span class="katex-00abc151c90866a2"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mtight">2</span></span
                           ></span
@@ -3008,10 +2599,10 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                   ><mo stretchy="false">{</mo
                   ><mrow
                     ><mtext>valid paragraphs </mtext
-                    ><mstyle scriptlevel="0" displaystyle="false"
+                    ><mstyle displaystyle="false" scriptlevel="0"
                       ><mi>X</mi></mstyle
                     ><mtext> such that </mtext
-                    ><mstyle scriptlevel="0" displaystyle="false"
+                    ><mstyle displaystyle="false" scriptlevel="0"
                       ><mo stretchy="false">∥</mo><mi>X</mi
                       ><msub
                         ><mo stretchy="false">∥</mo
@@ -3025,63 +2616,47 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6833em"></span
-              ><span class="mord mathcal" style="margin-right: 0.08222em"
-                >P</span
-              ><span class="mspace" style="margin-right: 0.2778em"></span
+              ><span class="strut katex-efc4334bbb360ea4"></span
+              ><span class="mord mathcal katex-3ead7d987ac181e8">P</span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span
               ><span class="mrel"
                 ><span class="mrel"
-                  ><span class="mop" style="position: relative; top: -0.0347em"
-                    >:</span
-                  ></span
+                  ><span class="mop katex-7c44e1f6d37440e1">:</span></span
                 ><span class="mrel"
-                  ><span
-                    class="mspace"
-                    style="margin-right: -0.0667em"
-                  ></span></span
+                  ><span class="mspace katex-dfc79d54c093c27e"></span></span
                 ><span class="mrel">=</span></span
-              ><span class="mspace" style="margin-right: 0.2778em"></span></span
+              ><span class="mspace katex-b9d9edcedd93f43c"></span></span
             ><span class="base"
-              ><span
-                class="strut"
-                style="height: 1em; vertical-align: -0.25em"
-              ></span
+              ><span class="strut katex-fc02a23bcdeac7fb"></span
               ><span class="mopen">{</span
               ><span class="mord text"
                 ><span class="mord">valid paragraphs </span
-                ><span class="mord mathnormal" style="margin-right: 0.07847em"
-                  >X</span
+                ><span class="mord mathnormal katex-85eed73405d3da53">X</span
                 ><span class="mord"> such that </span
                 ><span class="mopen">∥</span
-                ><span class="mord mathnormal" style="margin-right: 0.07847em"
-                  >X</span
+                ><span class="mord mathnormal katex-85eed73405d3da53">X</span
                 ><span class="mclose"
                   ><span class="mclose">∥</span
                   ><span class="msupsub"
                     ><span class="vlist-t vlist-t2"
                       ><span class="vlist-r"
-                        ><span class="vlist" style="height: 0.1514em"
-                          ><span
-                            style="
-                              top: -2.55em;
-                              margin-left: 0em;
-                              margin-right: 0.05em;
-                            "
-                            ><span class="pstrut" style="height: 2.7em"></span
+                        ><span class="vlist katex-f4226b085e535dd9"
+                          ><span class="katex-0d6ec2eaa2456336"
+                            ><span class="pstrut katex-1527d00b389b9857"></span
                             ><span class="sizing reset-size6 size3 mtight"
                               ><span class="mord mtight">∞</span></span
                             ></span
                           ></span
                         ><span class="vlist-s">​</span></span
                       ><span class="vlist-r"
-                        ><span class="vlist" style="height: 0.15em"
+                        ><span class="vlist katex-2506ec288336126a"
                           ><span></span></span></span></span></span></span
-                ><span class="mspace" style="margin-right: 0.2778em"></span
+                ><span class="mspace katex-b9d9edcedd93f43c"></span
                 ><span class="mrel">≤</span
-                ><span class="mspace" style="margin-right: 0.2778em"></span
-                ><span class="mord mathnormal" style="margin-right: 0.07153em"
+                ><span class="mspace katex-b9d9edcedd93f43c"></span
+                ><span class="mord mathnormal katex-d08bd31ba88fcfc4"
                   >K</span
                 ></span
               ><span class="mclose">}</span></span
@@ -3094,28 +2669,28 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
         <span class="katex-display"
           ><span class="katex"
             ><span class="katex-mathml"
-              ><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+              ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
                 ><semantics
                   ><mtable
-                    rowspacing="0.25em"
                     columnalign="right"
                     columnspacing=""
+                    rowspacing="0.25em"
                     ><mtr
                       ><mtd
-                        ><mstyle scriptlevel="0" displaystyle="true"
+                        ><mstyle displaystyle="true" scriptlevel="0"
                           ><mrow
                             ><munder
                               ><mrow><mi>min</mi><mo>⁡</mo></mrow
                               ><mstyle scriptlevel="1"
                                 ><mtable
-                                  rowspacing="0.1em"
                                   columnalign="center"
                                   columnspacing="1em"
+                                  rowspacing="0.1em"
                                   ><mtr
                                     ><mtd
                                       ><mstyle
-                                        scriptlevel="1"
                                         displaystyle="false"
+                                        scriptlevel="1"
                                         ><mrow
                                           ><mi>X</mi><mo>∈</mo
                                           ><mi mathvariant="script">P</mi></mrow
@@ -3125,8 +2700,8 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                   ><mtr
                                     ><mtd
                                       ><mstyle
-                                        scriptlevel="1"
                                         displaystyle="false"
+                                        scriptlevel="1"
                                         ><mrow
                                           ><mo stretchy="false">∥</mo><mi>X</mi
                                           ><msub
@@ -3149,7 +2724,7 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                       ></mtr
                     ><mtr
                       ><mtd
-                        ><mstyle scriptlevel="0" displaystyle="true"
+                        ><mstyle displaystyle="true" scriptlevel="0"
                           ><mrow
                             ><mi>n</mi><mo>=</mo
                             ><munder
@@ -3174,35 +2749,28 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                   ></semantics
                 ></math
               ></span
-            ><span class="katex-html" aria-hidden="true"
+            ><span aria-hidden="true" class="katex-html"
               ><span class="base"
-                ><span
-                  class="strut"
-                  style="height: 4.622em; vertical-align: -2.061em"
-                ></span
+                ><span class="strut katex-52d26b5dcd14028b"></span
                 ><span class="mord"
                   ><span class="mtable"
                     ><span class="col-align-r"
                       ><span class="vlist-t vlist-t2"
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 2.561em"
-                            ><span style="top: -4.721em"
-                              ><span class="pstrut" style="height: 3em"></span
+                          ><span class="vlist katex-93bf9af2b075d96b"
+                            ><span class="katex-de0c70bbd16de957"
+                              ><span
+                                class="pstrut katex-3ac4c1d77ccd6fb1"
+                              ></span
                               ><span class="mord"
                                 ><span class="mop op-limits"
                                   ><span class="vlist-t vlist-t2"
                                     ><span class="vlist-r"
                                       ><span
-                                        class="vlist"
-                                        style="height: 0.6679em"
-                                        ><span
-                                          style="
-                                            top: -2.0068em;
-                                            margin-left: 0em;
-                                          "
+                                        class="vlist katex-a51f135ff03c83c9"
+                                        ><span class="katex-171759c92bf4b431"
                                           ><span
-                                            class="pstrut"
-                                            style="height: 3em"
+                                            class="pstrut katex-3ac4c1d77ccd6fb1"
                                           ></span
                                           ><span
                                             class="sizing reset-size6 size3 mtight"
@@ -3214,48 +2782,29 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                                       class="vlist-t vlist-t2"
                                                       ><span class="vlist-r"
                                                         ><span
-                                                          class="vlist"
-                                                          style="
-                                                            height: 1.1817em;
-                                                          "
+                                                          class="vlist katex-54c975a535d265c0"
                                                           ><span
-                                                            style="
-                                                              top: -3.2483em;
-                                                            "
+                                                            class="katex-e58a58724b890ecc"
                                                             ><span
-                                                              class="pstrut"
-                                                              style="
-                                                                height: 2.75em;
-                                                              "
+                                                              class="pstrut katex-126b25298b406a6f"
                                                             ></span
                                                             ><span
                                                               class="mord mtight"
                                                               ><span
-                                                                class="mord mathnormal mtight"
-                                                                style="
-                                                                  margin-right: 0.07847em;
-                                                                "
+                                                                class="mord mathnormal mtight katex-85eed73405d3da53"
                                                                 >X</span
                                                               ><span
                                                                 class="mrel mtight"
                                                                 >∈</span
                                                               ><span
-                                                                class="mord mathcal mtight"
-                                                                style="
-                                                                  margin-right: 0.08222em;
-                                                                "
+                                                                class="mord mathcal mtight katex-3ead7d987ac181e8"
                                                                 >P</span
                                                               ></span
                                                             ></span
                                                           ><span
-                                                            style="
-                                                              top: -2.3183em;
-                                                            "
+                                                            class="katex-4231b871f621334f"
                                                             ><span
-                                                              class="pstrut"
-                                                              style="
-                                                                height: 2.75em;
-                                                              "
+                                                              class="pstrut katex-126b25298b406a6f"
                                                             ></span
                                                             ><span
                                                               class="mord mtight"
@@ -3263,10 +2812,7 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                                                 class="mopen mtight"
                                                                 >∥</span
                                                               ><span
-                                                                class="mord mathnormal mtight"
-                                                                style="
-                                                                  margin-right: 0.07847em;
-                                                                "
+                                                                class="mord mathnormal mtight katex-85eed73405d3da53"
                                                                 >X</span
                                                               ><span
                                                                 class="mclose mtight"
@@ -3280,21 +2826,11 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                                                     ><span
                                                                       class="vlist-r"
                                                                       ><span
-                                                                        class="vlist"
-                                                                        style="
-                                                                          height: 0.3173em;
-                                                                        "
+                                                                        class="vlist katex-36aaa2dd3333a172"
                                                                         ><span
-                                                                          style="
-                                                                            top: -2.357em;
-                                                                            margin-left: 0em;
-                                                                            margin-right: 0.0714em;
-                                                                          "
+                                                                          class="katex-312ee5c75ee3a006"
                                                                           ><span
-                                                                            class="pstrut"
-                                                                            style="
-                                                                              height: 2.5em;
-                                                                            "
+                                                                            class="pstrut katex-30f1852ae721d9ae"
                                                                           ></span
                                                                           ><span
                                                                             class="sizing reset-size3 size1 mtight"
@@ -3311,10 +2847,7 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                                                     ><span
                                                                       class="vlist-r"
                                                                       ><span
-                                                                        class="vlist"
-                                                                        style="
-                                                                          height: 0.143em;
-                                                                        "
+                                                                        class="vlist katex-698887e62561da60"
                                                                         ><span></span></span></span></span></span></span
                                                               ><span
                                                                 class="mrel mtight"
@@ -3330,15 +2863,11 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                                         ></span
                                                       ><span class="vlist-r"
                                                         ><span
-                                                          class="vlist"
-                                                          style="
-                                                            height: 0.6817em;
-                                                          "
+                                                          class="vlist katex-99bec6bed6eb5031"
                                                           ><span></span></span></span></span></span></span></span></span></span></span
-                                        ><span style="top: -3em"
+                                        ><span class="katex-48bfdc4f0cc83b58"
                                           ><span
-                                            class="pstrut"
-                                            style="height: 3em"
+                                            class="pstrut katex-3ac4c1d77ccd6fb1"
                                           ></span
                                           ><span
                                             ><span class="mop">min</span></span
@@ -3347,17 +2876,14 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                       ><span class="vlist-s">​</span></span
                                     ><span class="vlist-r"
                                       ><span
-                                        class="vlist"
-                                        style="height: 1.5703em"
+                                        class="vlist katex-e1a788678c38bc2a"
                                         ><span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mopen">∥</span
                                 ><span
-                                  class="mord mathnormal"
-                                  style="margin-right: 0.07847em"
+                                  class="mord mathnormal katex-85eed73405d3da53"
                                   >X</span
                                 ><span class="mclose"
                                   ><span class="mclose">∥</span
@@ -3365,17 +2891,10 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.3011em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-419c46662ab8ba17"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -3387,56 +2906,46 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span></span></span
-                            ><span style="top: -2.0107em"
-                              ><span class="pstrut" style="height: 3em"></span
+                            ><span class="katex-0867eff9b8c2bf17"
+                              ><span
+                                class="pstrut katex-3ac4c1d77ccd6fb1"
+                              ></span
                               ><span class="mord"
                                 ><span class="mord mathnormal">n</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mrel">=</span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mop op-limits"
                                   ><span class="vlist-t vlist-t2"
                                     ><span class="vlist-r"
                                       ><span
-                                        class="vlist"
-                                        style="height: 0.6679em"
-                                        ><span
-                                          style="
-                                            top: -2.3557em;
-                                            margin-left: 0em;
-                                          "
+                                        class="vlist katex-a51f135ff03c83c9"
+                                        ><span class="katex-777a1a2ac5ce8fb5"
                                           ><span
-                                            class="pstrut"
-                                            style="height: 3em"
+                                            class="pstrut katex-3ac4c1d77ccd6fb1"
                                           ></span
                                           ><span
                                             class="sizing reset-size6 size3 mtight"
                                             ><span class="mord mtight"
                                               ><span
-                                                class="mord mathnormal mtight"
-                                                style="margin-right: 0.13889em"
+                                                class="mord mathnormal mtight katex-87bb948d627adca1"
                                                 >P</span
                                               ><span class="mrel mtight">∈</span
                                               ><span
-                                                class="mord mathcal mtight"
-                                                style="margin-right: 0.08222em"
+                                                class="mord mathcal mtight katex-3ead7d987ac181e8"
                                                 >P</span
                                               ></span
                                             ></span
                                           ></span
-                                        ><span style="top: -3em"
+                                        ><span class="katex-48bfdc4f0cc83b58"
                                           ><span
-                                            class="pstrut"
-                                            style="height: 3em"
+                                            class="pstrut katex-3ac4c1d77ccd6fb1"
                                           ></span
                                           ><span
                                             ><span class="mop">min</span></span
@@ -3445,17 +2954,14 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                       ><span class="vlist-s">​</span></span
                                     ><span class="vlist-r"
                                       ><span
-                                        class="vlist"
-                                        style="height: 0.7717em"
+                                        class="vlist katex-a1e803d9f293ba75"
                                         ><span></span></span></span></span></span
                                 ><span
-                                  class="mspace"
-                                  style="margin-right: 0.2778em"
+                                  class="mspace katex-b9d9edcedd93f43c"
                                 ></span
                                 ><span class="mopen">∥</span
                                 ><span
-                                  class="mord mathnormal"
-                                  style="margin-right: 0.13889em"
+                                  class="mord mathnormal katex-87bb948d627adca1"
                                   >P</span
                                 ><span class="mclose"
                                   ><span class="mclose">∥</span
@@ -3463,17 +2969,10 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                     ><span class="vlist-t vlist-t2"
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.3011em"
-                                          ><span
-                                            style="
-                                              top: -2.55em;
-                                              margin-left: 0em;
-                                              margin-right: 0.05em;
-                                            "
+                                          class="vlist katex-419c46662ab8ba17"
+                                          ><span class="katex-0d6ec2eaa2456336"
                                             ><span
-                                              class="pstrut"
-                                              style="height: 2.7em"
+                                              class="pstrut katex-1527d00b389b9857"
                                             ></span
                                             ><span
                                               class="sizing reset-size6 size3 mtight"
@@ -3485,12 +2984,11 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                                         ><span class="vlist-s">​</span></span
                                       ><span class="vlist-r"
                                         ><span
-                                          class="vlist"
-                                          style="height: 0.15em"
+                                          class="vlist katex-2506ec288336126a"
                                           ><span></span></span></span></span></span></span></span></span></span
                           ><span class="vlist-s">​</span></span
                         ><span class="vlist-r"
-                          ><span class="vlist" style="height: 2.061em"
+                          ><span class="vlist katex-ce40bbd6e984816d"
                             ><span></span></span></span></span></span></span></span></span></span></span
         ></span>
       </div>
@@ -3507,17 +3005,17 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
                 </annotation></semantics
               ></math
             ></span
-          ><span class="katex-html" aria-hidden="true"
+          ><span aria-hidden="true" class="katex-html"
             ><span class="base"
-              ><span class="strut" style="height: 0.6944em"></span
+              ><span class="strut katex-1443dcef7dd0be4f"></span
               ><span class="mord"
                 ><span class="mord">ℓ</span
                 ><span class="msupsub"
                   ><span class="vlist-t"
                     ><span class="vlist-r"
-                      ><span class="vlist" style="height: 0.6644em"
-                        ><span style="top: -3.063em; margin-right: 0.05em"
-                          ><span class="pstrut" style="height: 2.7em"></span
+                      ><span class="vlist katex-8727367727c49b7f"
+                        ><span class="katex-00abc151c90866a2"
+                          ><span class="pstrut katex-1527d00b389b9857"></span
                           ><span class="sizing reset-size6 size3 mtight"
                             ><span class="mord mathnormal mtight">p</span></span
                           ></span
@@ -3529,8 +3027,8 @@ x xxxxx xxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx</code></pre>
               ></span
             ></span
           ></span
-        >-norms. This perspective doesn&#39;t really help when coming up with an
-        efficient algorithm, but it&#39;s kind of cute.
+        >-norms. This perspective doesn't really help when coming up with an
+        efficient algorithm, but it's kind of cute.
       </p>
       <div class="page-foot">
         さみしいも、たのしい。<a
