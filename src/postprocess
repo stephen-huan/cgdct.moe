@@ -89,10 +89,12 @@ if __name__ == "__main__":
         with open(file) as f:
             soup = BeautifulSoup(f, "lxml")
         modified = any(
-            f(soup)
-            for f in [
-                inline_style,
-                table_align,
+            [
+                f(soup)
+                for f in (
+                    inline_style,
+                    table_align,
+                )
             ]
         )
         if modified:
