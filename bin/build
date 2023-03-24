@@ -1,6 +1,13 @@
 #!/bin/bash
 # script to build the site locally
 
+path="$(dirname "$0")"
+inline_style="$path/../src/inline-style"
+
+# build site
 julia --project="@." --optimize=0 --eval "using Franklin: optimize
-    optimize(prerender=true, minify=false)"
+    optimize(clear=true, prerender=true, minify=false)" &&
+# post-processing
+poetry --directory "$path" run python "$inline_style" --verbose __site &&
+npx prettier --write __site
 

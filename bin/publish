@@ -6,19 +6,14 @@ build_branch="build"
 push_branch="cloudflare-pages"
 commit="$(git rev-parse --short HEAD)"
 
-path="$(dirname "$0")"
-inline_style="$path/../src/inline-style"
+build="$(dirname "$0")/build"
 
 git checkout "$build_branch" &&
 # sync changes
 git merge --no-verify "$main_branch" &&
 
 # build site
-julia --project="@." --optimize=0 --eval "using Franklin: optimize
-    optimize(clear=true, prerender=true, minify=false)" &&
-# post-processing
-poetry --directory "$path" run python "$inline_style" --verbose __site &&
-npx prettier --write __site &&
+"$build"
 
 # publish
 git add --force __site &&
