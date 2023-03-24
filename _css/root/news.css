@@ -1,3 +1,8 @@
 .news td:first-of-type {
   font-weight: var(--font-weight-thick);
 }
+
+.news th,
+.news td {
+  text-align: left;
+}

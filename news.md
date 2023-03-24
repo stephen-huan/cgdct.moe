@@ -9,7 +9,7 @@ meta_description = "A list of all the noteworthy things I've done."
 
 @@news,clean-table,no-header
 | Date       | Description |
-|:-----------|:------------|
+|------------|-------------|
 | 2023-03-09 | Poster session at (another) CSE student recruitment event. |
 | 2023-02-18 | I will be attending the [2023 Georgia Scientific Computing Symposium](https://math.gsu.edu/jkong/public/gscs/gscs2023.html). |
 | 2022-11-17 | I will be a teaching assistant for CS 3510 (Design & Analysis of Algorithms) in Spring 2023. |
