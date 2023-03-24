@@ -10,7 +10,7 @@ build="$(dirname "$0")/build"
 
 git checkout "$build_branch" &&
 # sync changes
-git rebase "$main_branch" &&
+git merge "$main_branch" &&
 
 # build site
 "$build" &&
