@@ -5,6 +5,7 @@ Post-process the result of Franklin.jl
 import argparse
 import glob
 import hashlib
+import subprocess
 
 from bs4 import BeautifulSoup
 
@@ -15,6 +16,21 @@ def get_css_class(style: str, length: int) -> str:
     """Hash the provided style into a CSS class."""
     hash = hashlib.sha256(style.encode("utf-8"))
     return f"{PREFIX}-{hash.hexdigest()[:length]}"
+
+
+def rewrite(_: BeautifulSoup) -> bool:
+    """Whether the html is well-formed."""
+    modified = (
+        subprocess.run(
+            ["npx", "prettier", "--check", file],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        ).returncode
+        == 2
+    )
+    if modified and args.verbose:
+        print(f"Detected invalid html in {file}")
+    return modified
 
 
 def inline_style(soup: BeautifulSoup) -> bool:
@@ -92,6 +108,7 @@ if __name__ == "__main__":
             [
                 f(soup)
                 for f in (
+                    rewrite,
                     inline_style,
                     table_align,
                 )
