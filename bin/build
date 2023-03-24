@@ -2,12 +2,12 @@
 # script to build the site locally
 
 path="$(dirname "$0")/.."
-inline_style="$path/src/inline-style"
+postprocess="$path/src/postprocess"
 
 # build site
 julia --project="@." --optimize=0 --eval "using Franklin: optimize
     optimize(clear=true, prerender=true, minify=false)" &&
 # post-processing
-poetry --directory "$path" run python "$inline_style" --verbose __site &&
+poetry --directory "$path" run python "$postprocess" --verbose __site &&
 npx prettier --write __site
 
