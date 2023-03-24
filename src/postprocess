@@ -36,6 +36,17 @@ def inline_style(soup: BeautifulSoup) -> bool:
     return modified
 
 
+def table_align(soup: BeautifulSoup) -> bool:
+    """Remove table align attributes from the html."""
+    modified = False
+    for child in soup.find_all(["th", "td"], align=True):
+        del child["align"]
+        modified = True
+    if modified and args.verbose:
+        print(f"Found table align attribute in {file}")
+    return modified
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Post-process the result of Franklin.jl"
@@ -81,6 +92,7 @@ if __name__ == "__main__":
             f(soup)
             for f in [
                 inline_style,
+                table_align,
             ]
         )
         if modified:

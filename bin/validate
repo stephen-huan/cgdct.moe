@@ -6,8 +6,6 @@ vnu="$(dirname "$0")/vnu"
 "$vnu" \
     --filterpattern \
 '.*Self-closing tag syntax in text/html documents is widely discouraged.*'\
-'|.*The “align” attribute on the “td” element is obsolete.*'\
-'|.*The “align” attribute on the “th” element is obsolete.*'\
 '|.*Bad value “” for attribute “columnspacing” on element “mtable”.*'\
 '|.*Element “mi” not allowed as child of element “m(i|o)” in this context.*'\
 '|.*Element “mpadded” not allowed as child of element “mi” in this context.*'\
