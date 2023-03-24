@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Remove inline style from all elements.
+Post-process the result of Franklin.jl
 """
 import argparse
 import glob
@@ -11,15 +11,34 @@ from bs4 import BeautifulSoup
 PREFIX = "katex"
 
 
-def get_class(style: str, length: int) -> str:
+def get_css_class(style: str, length: int) -> str:
     """Hash the provided style into a CSS class."""
     hash = hashlib.sha256(style.encode("utf-8"))
     return f"{PREFIX}-{hash.hexdigest()[:length]}"
 
 
+def inline_style(soup: BeautifulSoup) -> bool:
+    """Remove inline style from the html."""
+    modified = False
+    for child in soup.find_all(style=True):
+        value = child["style"]
+        key = get_css_class(value, args.length)
+        assert styles.get(key, value) == value, (
+            f'Hash collision between "{value}" and "{styles[key]}";'
+            f' both hash to "{key}". Recommend increasing --length.'
+        )
+        styles[key] = value
+        del child["style"]
+        child["class"] = child.get("class", []) + [key]
+        modified = True
+    if modified and args.verbose:
+        print(f"Found inline style in {file}")
+    return modified
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Remove inline style from all elements"
+        description="Post-process the result of Franklin.jl"
     )
     parser.add_argument(
         "-v",
@@ -41,9 +60,9 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "-o",
-        "--output",
+        "--katex-output",
         default="__site/libs/katex/katex.min.css",
-        help="output path",
+        help="output path for modified katex css",
     )
     parser.add_argument(
         "-V",
@@ -56,30 +75,22 @@ if __name__ == "__main__":
 
     styles = {}
     for file in glob.glob(f"{args.path}/**/*.html", recursive=True):
-        modified = False
         with open(file) as f:
             soup = BeautifulSoup(f, "lxml")
-            for child in soup.find_all(style=True):
-                value = child["style"]
-                key = get_class(value, args.length)
-                assert styles.get(key, value) == value, (
-                    f'Hash collision between "{value}" and "{styles[key]}";'
-                    f' both hash to "{key}". Recommend increasing --length.'
-                )
-                styles[key] = value
-                del child["style"]
-                child["class"] = child.get("class", []) + [key]
-                modified = True
+        modified = any(
+            f(soup)
+            for f in [
+                inline_style,
+            ]
+        )
         if modified:
-            if args.verbose:
-                print(f"Processing {file}")
             with open(file, "w") as f:
                 f.write(str(soup))
 
     if len(styles) > 0:
         if args.verbose:
-            print(f"Adding {len(styles)} new rules to {args.output}")
-        with open(args.output, "a") as f:
+            print(f"Adding {len(styles)} new rules to {args.katex_output}")
+        with open(args.katex_output, "a") as f:
             f.write(
                 "\n".join(
                     f".{cls}{{{style}}}"
