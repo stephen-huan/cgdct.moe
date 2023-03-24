@@ -1,8 +1,8 @@
 #!/bin/bash
 # script to build the site locally
 
-path="$(dirname "$0")"
-inline_style="$path/../src/inline-style"
+path="$(dirname "$0")/.."
+inline_style="$path/src/inline-style"
 
 # build site
 julia --project="@." --optimize=0 --eval "using Franklin: optimize
