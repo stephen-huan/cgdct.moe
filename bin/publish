@@ -13,13 +13,13 @@ git checkout "$build_branch" &&
 git merge --no-verify "$main_branch" &&
 
 # build site
-"$build"
+"$build" &&
 
 # publish
 git add --force __site &&
 git commit --message "Deploying to $push_branch from @ $commit" &&
 # https://gist.github.com/cobyism/4730490
-git subtree push --prefix __site origin "$push_branch"
+git subtree push --prefix __site origin "$push_branch" &&
 
 git checkout "$main_branch"
 
