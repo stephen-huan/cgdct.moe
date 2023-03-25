@@ -1,15 +1,9 @@
 #!/bin/bash
 # script to perform initial setup
 
-main_branch="master"
-build_branch="build"
+remote="origin"
 push_branch="cloudflare-pages"
 
-git checkout "$main_branch" &&
-git branch "$build_branch" &&
-git checkout "$build_branch" &&
 # use remote as a base if it exists
-rm --recursive --force __site &&
-git subtree add --prefix __site origin "$push_branch" &&
-git checkout "$main_branch"
+git branch -f "$push_branch" "$remote/$push_branch"
 
