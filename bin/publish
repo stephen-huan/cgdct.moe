@@ -9,8 +9,8 @@ commit="$(git rev-parse --short HEAD)"
 build="$(dirname "$0")/build"
 
 git checkout "$build_branch" &&
-# sync changes
-git merge "$main_branch" &&
+# sync changes: https://stackoverflow.com/q/12858199
+git rebase --rebase-merges --strategy subtree "$main_branch" &&
 
 # build site
 "$build" &&
