@@ -12,6 +12,7 @@ build="$(dirname "$0")/build"
 
 git checkout -B "$build_branch" "$main_branch" &&
 # sync changes: https://stackoverflow.com/q/12858199
+rm --recursive --force "$site_dir" &&
 git subtree add --prefix "$site_dir" "$push_branch" &&
 
 # build site
