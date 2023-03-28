@@ -88,7 +88,7 @@ tags = ["anime", "misc"]
     https://youtu.be/hLnv7XuOqjw
   }
   > 明日　世界が終わるとしたら
-  >
+  > 
   > 今夜は何を食べよう
   \caption{
     ~~~---~~~EDテーマ
@@ -100,3 +100,21 @@ tags = ["anime", "misc"]
 \end{figure}
 @@
 
+@@img-large,border,nonumber
+\begin{figure}
+  \figpreview{TrySail azure}{kousaka.webp}{1024}{576}{
+    {{assets}}/kousaka.png
+  }
+  > なれる　もっと練習してもっとうまくなれば　もっと特別になれる
+  > 
+  > 自分は特別だと思ってるだけのやつじゃない
+  > 
+  > 本物の特別になる
+  \caption{
+    ~~~---~~~高坂麗奈
+    ([Kousaka Reina](http://tv.anime-eupho.com/character/#/reina)) \\
+    TVアニメ「響け！ユーフォニアム」
+    ([Hibike! Euphonium](http://tv.anime-eupho.com/))
+  }
+\end{figure}
+@@
