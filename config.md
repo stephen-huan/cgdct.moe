@@ -51,6 +51,8 @@ headers = [
 # git repo for page source
 git_repo = "https://github.com/stephen-huan/cgdct.moe/blob/master"
 
+footer_text = "さみしいも、たのしい。"
+
 # footer exclude
 footer_exclude = Set(
     ["/404/", "/blog/", "/projects/", "/publications/"]
