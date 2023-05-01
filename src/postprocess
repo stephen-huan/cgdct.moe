@@ -18,16 +18,24 @@ def get_css_class(style: str, length: int) -> str:
     return f"{PREFIX}-{hash.hexdigest()[:length]}"
 
 
+def prettier_check(path: str) -> set[str]:
+    """Return a set of paths on which prettier errors."""
+    return {
+        file[:-1]
+        for line in subprocess.run(
+            ["npx", "prettier", "--check", path],
+            check=False,
+            capture_output=True,
+        )
+        .stderr.decode()
+        .splitlines()
+        if line.startswith("[error]") and path in (file := line.split()[1])
+    }
+
+
 def rewrite(_: BeautifulSoup) -> bool:
     """Whether the html is well-formed."""
-    modified = (
-        subprocess.run(
-            ["npx", "prettier", "--check", file],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        ).returncode
-        == 2
-    )
+    modified = file in prettier_failed
     if modified and args.verbose:
         print(f"Detected invalid html in {file}")
     return modified
@@ -100,6 +108,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    prettier_failed = prettier_check(args.path)
     styles = {}
     for file in glob.glob(f"{args.path}/**/*.html", recursive=True):
         with open(file) as f:
