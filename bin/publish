@@ -19,7 +19,7 @@ git subtree add --prefix "$site_dir" "$push_branch" &&
 "$build" &&
 
 # publish
-git add --force __site &&
+git add --force "$site_dir" &&
 git commit --message "Deploying to $push_branch from @ $commit" &&
 # https://gist.github.com/cobyism/4730490
 git subtree split --prefix "$site_dir" --branch="$push_branch" &&
