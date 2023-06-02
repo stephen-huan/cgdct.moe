@@ -1,6 +1,12 @@
 #!/bin/bash
 # script to serve the site locally
 
-julia --project="@." --optimize=0 --eval "using Franklin: serve
-    serve(prerender=true)"
+# https://unix.stackexchange.com/a/7080
+julia --project="@." --optimize=0 --color=yes --eval "using Franklin: serve
+    serve(prerender=true)" 2> >(grep --invert-match \
+        --regexp 'Unicode text character "女" used in math mode' \
+        --regexp 'Unicode text character "時" used in math mode' \
+        --regexp 'Unicode text character "金" used in math mode' \
+        --regexp 'Unicode text character "悪" used in math mode' \
+    >&2)
 

@@ -186,4 +186,41 @@ need only to apply the lemma for $ r = 1 $.
   have $ \det(M_2) = \E{X^2} - \E{X}^2 \geq 0 $, showing $ \Var{X} \geq 0 $.
 \end{proof}
 
+# 証明は絶対
+
+\date{2023-06-02}
+
+_A joke transcribed from page 9 of
+[『数学女子: 1』](https://www.takeshobo.co.jp/book\_d/shohin/2036201)
+(著者名：[安田まさえ](https://bentobooks.com/styled/))
+\cite{yasudamasae.2010suugakujosi}._
+
+* 女は時間と金が \\
+  かかる
+
+  $ \boxed{\sf 女 = 時 \times 金} $
+* 「時は金なり」から
+
+  $ \boxed{\sf 時= 金} $
+* これを代入して
+
+  $ \boxed{
+    \begin{aligned}
+      & \sf 女 = 金 \times 金 \\
+      & \sf \hphantom{女} = 金^2
+    \end{aligned}} $
+* 「金は諸悪の根源」から \\
+  根源 $ \Rightarrow \textsf{root} \Rightarrow \sqrt{\hphantom{x}} $
+
+  $ \boxed{\sf 金= \sqrt{\hphantom{x}} 悪} $
+* これを先ほどの式に代入
+
+  $ \boxed{
+    \begin{aligned}
+      & \sf 女 = (\sqrt{\hphantom{x}} 悪)^2 \\
+      & \sf \therefore 女 = 悪
+    \end{aligned}
+  } $
+
+\bibliography{references_証明は絶対}
 
