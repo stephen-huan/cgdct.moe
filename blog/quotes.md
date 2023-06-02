@@ -102,7 +102,7 @@ tags = ["anime", "misc"]
 
 @@img-large,border,nonumber
 \begin{figure}
-  \figpreview{TrySail azure}{kousaka.webp}{1024}{576}{
+  \figpreview{Reina looking directly at the camera}{kousaka.webp}{1024}{576}{
     https://misc.cgdct.moe/anime/kousaka.png
   }
   > なれる　もっと練習してもっとうまくなれば　もっと特別になれる
