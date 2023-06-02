@@ -118,3 +118,19 @@ tags = ["anime", "misc"]
   }
 \end{figure}
 @@
+
+@@img-large,border,nonumber
+\begin{figure}
+  \figpreview{Cocoa looking slyly at Rize}{victims.webp}{1024}{576}{
+    https://misc.cgdct.moe/anime/victims.png
+  }
+  > 被害者…
+  > 人数は多いほうが楽しいよ
+  \caption{
+    ~~~---~~~ココア
+    ([Cocoa](https://gochiusa.com/chara/cocoa.html)) \\
+    TVアニメ「ご注文はうさぎですか？」
+    ([Is the order a rabbit?](https://gochiusa.com/01/))
+  }
+\end{figure}
+@@
