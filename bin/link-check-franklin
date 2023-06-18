@@ -1,0 +1,13 @@
+#!/bin/bash
+# script to check links with Franklin's built-in link checker
+# https://github.com/JuliaLang/www.julialang.org#looking-for-broken-links
+
+julia \
+    --project="@." \
+    --optimize=0 \
+    --eval 'using Franklin: verify_links; verify_links()' \
+| grep \
+    --invert-match \
+    --regexp "mailto:" \
+    --regexp "浣"
+
