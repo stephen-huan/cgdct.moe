@@ -3,10 +3,12 @@
 
 path="$(dirname "$0")/.."
 postprocess="$path/src/postprocess"
+filter="$(dirname "$0")/filter"
 
 # build site
-julia --project="@." --optimize=0 --eval "using Franklin: optimize
-    optimize(clear=true, prerender=true, minify=false)" &&
+julia --project="@." --optimize=0 --color=yes --eval "using Franklin: optimize
+    optimize(clear=true, prerender=true, minify=false)" 2> >("$filter" >&2) &&
+
 # post-processing
 poetry --directory "$path" run python "$postprocess" --verbose __site &&
 npx prettier --write __site

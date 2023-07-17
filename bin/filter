@@ -1,0 +1,7 @@
+#!/bin/sh
+# filter spurious warning messages during build
+
+grep \
+    --invert-match \
+    --regexp 'Unicode text character "[女時金悪]" used in math mode' \
+    "$@"
