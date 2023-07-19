@@ -11,5 +11,5 @@ julia --project="@." --optimize=0 --color=yes --eval "using Franklin: optimize
 
 # post-processing
 poetry --directory "$path" run python "$postprocess" --verbose __site &&
-npx prettier --write __site
+npx prettier --write __site --ignore-path=.prettierignore
 
