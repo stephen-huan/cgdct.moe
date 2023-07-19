@@ -1,41 +1,42 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss
-  version="2.0"
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
   xmlns:content="http://purl.org/rss/1.0/modules/content/"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:media="http://search.yahoo.com/mrss/"
   xmlns:atom="http://www.w3.org/2005/Atom"
-  xmlns:georss="http://www.georss.org/georss"
->
+  xmlns:georss="http://www.georss.org/georss">
+
   <channel>
     <title>
       <![CDATA[Stephen Huan]]>
     </title>
-    <link>https://cgdct.moe/</link>
+    <link> https://cgdct.moe/ </link>
     <description>
       <![CDATA[Stephen Huan&#39;s personal website]]>
     </description>
     <atom:link
       href="https://cgdct.moe/feed.xml"
       rel="self"
-      type="application/rss+xml"
-    />
+      type="application/rss+xml" />
 
-    <item>
-      <title>
+
+<item>
+  <title>
     <![CDATA[Quotes]]>
   </title>
-      <link>https://cgdct.moe/blog/quotes/index.html</link>
-      <guid>https://cgdct.moe/blog/quotes/index.html</guid>
-      <description>
+  <link> https://cgdct.moe/blog/quotes/index.html </link>
+  <guid> https://cgdct.moe/blog/quotes/index.html </guid>
+  <description>
     <![CDATA[A collection of miscellaneous quotes about research.]]>
-  </description>
-
-      <pubDate>Sat, 27 Mar 2021 00:00:00 +0000</pubDate>
-
-      <atom:author>
-        <atom:name>Stephen Huan</atom:name>
-      </atom:author>
-    </item>
-  </channel>
-</rss>
+  </description>  
+    
+  <pubDate>Sat, 27 Mar 2021 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Stephen Huan</atom:name>
+  </atom:author>
+        
+</item>
+</channel></rss>
