@@ -6,7 +6,7 @@ root="node_modules"
 
 julia --project="@." --optimize=0 --eval "using Pkg: update; update()"
 
-npm update
+npm update --save
 # copy files from node_modules to _libs
 mkdir --parents "$libs/katex/"
 cp -r "$root/katex/dist/fonts/"        "$libs/katex/"
