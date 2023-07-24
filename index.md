@@ -49,7 +49,7 @@ I am best reached via [email](mailto:shuan@gatech.edu).
 @@
 
 - GitHub: [stephen-huan](https://github.com/stephen-huan)
-- WCA: [2018HUAN21](https://www.worldcubeassociation.org/persons/2018HUAN21)
+- ORCID: [0009-0009-6309-4415](https://orcid.org/0009-0009-6309-4415)
 - YouTube: [@stephenhuan](https://www.youtube.com/@stephenhuan)
 
 \end{columns}
