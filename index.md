@@ -44,7 +44,9 @@ ideas from optimal experimental design and compressed sensing.
 
 I am best reached via [email](mailto:shuan@gatech.edu).
 
-### external links
+@@links
+## external links
+@@
 
 - GitHub: [stephen-huan](https://github.com/stephen-huan)
 - WCA: [2018HUAN21](https://www.worldcubeassociation.org/persons/2018HUAN21)
