@@ -1,7 +1,7 @@
 +++
 title = "Stephen Huan"
 meta_description = "Stephen Huan's personal website."
-stylesheets = ["/css/root/news.css"]
+stylesheets = ["/css/root/news.css", "/css/root/publications.css"]
 +++
 
 @@title
@@ -62,5 +62,9 @@ I am best reached via [email](mailto:shuan@gatech.edu).
 
 @@showhover
 \section{[selected publications](/publications/)}
+@@
+
+@@publications
+{{selectedpublications}}
 @@
 

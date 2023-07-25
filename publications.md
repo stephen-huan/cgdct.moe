@@ -7,7 +7,7 @@ meta_description = "A list of all my publications."
 \chapter{publications}
 @@
 
-@@year
-## 2022
+@@publications
+{{publications}}
 @@
 

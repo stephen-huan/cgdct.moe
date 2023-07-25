@@ -60,4 +60,7 @@ footer_text = "さみしいも、たのしい。"
 footer_exclude = Set(
     ["/404/", "/blog/", "/projects/", "/publications/"]
 )
+
+# path to publications data
+publications = "_assets/publications.json"
 +++

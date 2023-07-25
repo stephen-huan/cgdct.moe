@@ -1,5 +1,6 @@
 using Dates: Dates, Date
 using Franklin: Franklin, LxCom, stent, locvar, pagevar, globvar, @delay
+using JSON: JSON
 
 """
     formatdate(date, format=globvar(:date_format))
@@ -84,6 +85,27 @@ function write_header!(io, page; rss=true)
         end
         write(io, "</span>")
     end
+end
+
+"""
+    write_paper!(io, paper)
+
+Render the metadata about the `paper` to `io`.
+"""
+function write_paper!(io, paper)
+    title = "<cite>$(paper["title"])</cite>"
+    write(io, """<div class="paper-title">$title</div>""")
+    author = globvar(:author)
+    authors = replace(paper["authors"], author => "<em>$author</em>")
+    authors = join(authors, ", ", ", and ")
+    write(io, """<div class="paper-authors">$authors</div>""")
+    journal = """<span class="paper-journal">$(paper["journal"])</span>"""
+    write(io, """<div class="paper-venue">$journal, $(paper["year"])</div>""")
+    write(io, """<div class="paper-metadata">""")
+    for (i, (name, link)) in enumerate(paper["metadata"])
+        write(io, (i > 1 ? "&nbsp;" : "") * """<a href="$link">$name</a>""")
+    end
+    return write(io, "</div>")
 end
 
 """
@@ -317,6 +339,58 @@ function hfun_maketitle()
     title = robust_title(post)
     write(io, "<h1>$title</h1>\n")
     write_header!(io, post; rss=false)
+    return String(take!(io))
+end
+
+"""
+    hfun_publications()
+
+Get a list of publications by year.
+
+See also: [hfun_selectedpublications](@ref).
+"""
+function hfun_publications()
+    io = IOBuffer()
+    papers = JSON.parsefile(globvar(:publications))
+    current_year = nothing
+    # assume sorted in reverse chronological order
+    for paper in papers
+        year = paper["year"]
+        if year != current_year
+            !isnothing(current_year) && write(io, "</ol>")
+            link = """<a href="#$year" class="header-anchor">$year</a>"""
+            write(io, """<div class="year"><h2 id="$year">$link</h2></div>""")
+            current_year = year
+            write(io, "<ol>")
+        end
+        write(io, "<li>")
+        write_paper!(io, paper)
+        write(io, "</li>")
+    end
+    write(io, "</ol>")
+    return String(take!(io))
+end
+
+"""
+    hfun_selectedpublications()
+
+Get a list of selected publications.
+
+See also: [hfun_publications](@ref).
+"""
+function hfun_selectedpublications()
+    io = IOBuffer()
+    papers = JSON.parsefile(globvar(:publications))
+    # assume sorted in reverse chronological order
+    write(io, "<ol>")
+    for paper in papers
+        if paper["selected"]
+            write(io, "<li>")
+            write_paper!(io, paper)
+            write(io, "</li>")
+        end
+    end
+    write(io, "</ol>")
     return String(take!(io))
 end
 
