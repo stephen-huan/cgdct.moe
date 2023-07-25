@@ -166,7 +166,9 @@ function hfun_stylesheets()
     io = IOBuffer()
     stylesheets = []
     # include math independently (vendored dependency)
-    locvar(:hasmath) && push!(stylesheets, "/libs/katex/katex.min.css")
+    if locvar(:hasmath) && isempty(locvar(:fd_tag))
+        push!(stylesheets, "/libs/katex/katex.min.css")
+    end
     tokens = splitpath(derivation)
     tokens[begin] = "/"
     push!(stylesheets, joinpath(tokens))
