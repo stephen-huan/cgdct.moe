@@ -23,6 +23,27 @@
 
 <item>
   <title>
+    <![CDATA[Cholesky factorization by greedy conditional selection]]>
+  </title>
+  <link> https://cgdct.moe/projects/cholesky/index.html </link>
+  <guid> https://cgdct.moe/projects/cholesky/index.html </guid>
+  <description>
+    <![CDATA[inference with conditional &lt;em&gt;k&lt;/em&gt;-nearest neighbors?]]>
+  </description>  
+    
+  <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>Stephen Huan</atom:name>
+  </atom:author>
+    
+  <category> inference and computation </category>
+      
+</item>
+
+<item>
+  <title>
     <![CDATA[Multiplicative and additive functions]]>
   </title>
   <link> https://cgdct.moe/blog/multiplicative-additive/index.html </link>
@@ -76,27 +97,6 @@
     <atom:name>Stephen Huan</atom:name>
   </atom:author>
         
-</item>
-
-<item>
-  <title>
-    <![CDATA[Cholesky factorization by greedy conditional selection]]>
-  </title>
-  <link> https://cgdct.moe/projects/cholesky/index.html </link>
-  <guid> https://cgdct.moe/projects/cholesky/index.html </guid>
-  <description>
-    <![CDATA[inference with conditional &lt;em&gt;k&lt;/em&gt;-nearest neighbors?]]>
-  </description>  
-    
-  <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>  
-  
-  
-  <atom:author>
-    <atom:name>Stephen Huan</atom:name>
-  </atom:author>
-    
-  <category> inference and computation </category>
-      
 </item>
 
 <item>

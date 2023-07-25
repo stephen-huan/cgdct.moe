@@ -687,3 +687,10 @@ instead, display a burger menu.
 .post-tags a {
   text-decoration: none;
 }
+.news td:first-of-type {
+  font-weight: var(--font-weight-thick);
+}
+
+.news td {
+  text-align: left;
+}
