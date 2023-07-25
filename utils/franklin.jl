@@ -1,6 +1,8 @@
 using Dates: Dates, Date
-using Franklin: Franklin, LxCom, stent, locvar, pagevar, globvar, @delay
+using SHA: sha256
+
 using JSON: JSON
+using Franklin: Franklin, LxCom, stent, locvar, pagevar, globvar, @delay
 
 """
     formatdate(date, format=globvar(:date_format))
@@ -125,15 +127,7 @@ function hfun_stylesheets()
     name = splitext(page)[1]
     # add library styles
     paths = []
-    if locvar(:hasmath)
-        #! format: off
-        paths = push!(
-            paths,
-            "/libs/katex/katex.min.css",
-            "/css/katex.css",
-        )
-        #! format: on
-    end
+    locvar(:hasmath) && push!(paths, "/css/katex.css")
     if locvar(:hascode)
         paths = push!(
             paths,
@@ -152,16 +146,32 @@ function hfun_stylesheets()
     paths = append!(paths, pagevar(page, :stylesheets; default=String[]))
     # tag page, fd_rpath not set correctly
     if !isempty(locvar(:fd_tag))
-        #! format: off
-        paths = [
-            "/css/main.css",
-            "/css/tag.css",
-        ]
-        #! format: on
+        paths = ["/css/main.css", "/css/tag.css"]
+        name = "tag/$(locvar(:fd_tag))"
     end
-    io = IOBuffer()
+    # create compilation of all declared styles
+    store = "__site/css/store"
+    mkpath(store)
+    key = bytes2hex(sha256(join(paths, "|")))
+    derivation = "$store/$(key[begin:(begin + 16)]).css"
+    f = open(derivation, "w")
     for path in paths
-        write(io, """<link rel="stylesheet" href="$path">\n""")
+        tokens = splitpath(path)[(begin + 1):end]
+        tokens[begin] = "_$(tokens[begin])"
+        css = open(io -> read(io, String), joinpath(tokens))
+        write(f, css)
+    end
+    close(f)
+
+    io = IOBuffer()
+    stylesheets = []
+    # include math independently (vendored dependency)
+    locvar(:hasmath) && push!(stylesheets, "/libs/katex/katex.min.css")
+    tokens = splitpath(derivation)
+    tokens[begin] = "/"
+    push!(stylesheets, joinpath(tokens))
+    for stylesheet in stylesheets
+        write(io, """<link rel="stylesheet" href="$stylesheet">\n""")
     end
     return String(take!(io))
 end
