@@ -54,6 +54,7 @@
 .card img {
   padding-left: 0;
   width: 100%;
+  height: auto;
 }
 
 .card-body {
