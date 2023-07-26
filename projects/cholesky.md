@@ -4,6 +4,7 @@ date = Date(2023, 7, 25)
 rss = "inference with conditional <em>k</em>-nearest neighbors?"
 rss_category = "inference and computation"
 preview_image = "/assets/projects/cholesky/oikura.webp"
+preview_size = (812, 1181)
 maxtoclevel = 3
 
 tags = ["math", "cs"]

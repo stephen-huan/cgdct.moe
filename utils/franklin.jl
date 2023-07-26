@@ -437,9 +437,10 @@ Make a card for the given project page.
     page = stent(com.braces[1])
     path = "projects/$page"
     image = pagevar(path, :preview_image)
+    width, height = pagevar(path, :preview_size)
     title = pagevar(path, :title)
     description = pagevar(path, :rss_description)
-    return "\\card{$page}{$image}{$title}{$description}"
+    return "\\card{$page}{$image}{$width}{$height}{$title}{$description}"
 end
 
 """
