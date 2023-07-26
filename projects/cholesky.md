@@ -100,10 +100,10 @@ more distant points have very little influence on the prediction.
 
 @@img-half,centering
 \begin{figure}
-  \figpreview{Unconditional covariance}{figures/screen1.svg}{203.811}{157.984}{
+  \figpreview{Unconditional covariance}{figures/screen1.svg}{203811}{157984}{
     {{assets}}/figures/screen1.pdf
   }
-  \figpreview{Conditional covariance}{figures/screen2.svg}{203.811}{157.984}{
+  \figpreview{Conditional covariance}{figures/screen2.svg}{203811}{157984}{
     {{assets}}/figures/screen2.pdf
   }
   \caption{
@@ -298,7 +298,7 @@ factor and $ L' $ is the fully conditional factor.
 
 @@img-large
 \begin{figure}
-  \figpreview{Partial Cholesky factor}{figures/partial.svg}{221.103}{85.039}{
+  \figpreview{Partial Cholesky factor}{figures/partial.svg}{221103}{85039}{
     {{assets}}/figures/partial.pdf
   }
   \caption{
@@ -377,10 +377,10 @@ $ \textcolor{\seagreen}{\text{selecting}} $ will determine the prediction.
 
 @@img-half,centering
 \begin{figure}
-  \figpreview{Nearest neighbors}{figures/select1.svg}{177.143}{152.792}{
+  \figpreview{Nearest neighbors}{figures/select1.svg}{177143}{152792}{
     {{assets}}/figures/select1.pdf
   }
-  \figpreview{Conditional selection}{figures/select2.svg}{177.143}{152.792}{
+  \figpreview{Conditional selection}{figures/select2.svg}{177143}{152792}{
     {{assets}}/figures/select2.pdf
   }
   \caption{
@@ -436,10 +436,10 @@ the sparsity pattern of Cholesky factors.
 
 @@img-half,centering
 \begin{figure}
-  \figpreview{Cholesky factor}{figures/chol.svg}{113.784}{113.784}{
+  \figpreview{Cholesky factor}{figures/chol.svg}{113784}{113784}{
     {{assets}}/figures/chol.pdf
   }
-  \figpreview{Point selection}{figures/points.svg}{113.386}{113.382}{
+  \figpreview{Point selection}{figures/points.svg}{113386}{113382}{
     {{assets}}/figures/points.pdf
   }
   \caption{
@@ -450,12 +450,12 @@ the sparsity pattern of Cholesky factors.
 @@
 
 For a column of a Cholesky factor in isolation, the
-$ \textcolor{orange}{\text{target}} $ point is the
-$ \textcolor{orange}{\text{diagonal}} $ entry, $
-\textcolor{lightblue}{\text{candidates}} $ are $
-\textcolor{lightblue}{\text{below}} $ it, and the $
-\textcolor{seagreen}{\text{selected}} $ entries are added to the $
-\textcolor{seagreen}{\text{sparsity pattern}} $. Points violating lower
+$ \textcolor{\orange}{\text{target}} $ point is the
+$ \textcolor{\orange}{\text{diagonal}} $ entry, $
+\textcolor{\lightblue}{\text{candidates}} $ are $
+\textcolor{\lightblue}{\text{below}} $ it, and the $
+\textcolor{\seagreen}{\text{selected}} $ entries are added to the $
+\textcolor{\seagreen}{\text{sparsity pattern}} $. Points violating lower
 triangularity are not shown. Thus, sparsity selection in Cholesky
 factorization (left panel) is analogous to training point selection
 in directed Gaussian process regression (right panel).
@@ -475,7 +475,7 @@ occurring label in the selected images, and use that as the predicted label.
 
 @@img-small
 \begin{figure}
-  \figpreview{MNIST classification}{figures/mnist.svg}{179.784}{143.356}{
+  \figpreview{MNIST classification}{figures/mnist.svg}{179784}{143356}{
     {{assets}}/figures/mnist.pdf
   }
   \caption{Classification accuracy of $ k $-NN variants on the MNIST dataset.}
@@ -511,10 +511,10 @@ over union (IOU) of the sparsity patterns.
 
 @@img-half,centering
 \begin{figure}
-  \figpreview{Nearest neighbors}{figures/omp1.svg}{175.697}{144.856}{
+  \figpreview{Nearest neighbors}{figures/omp1.svg}{175697}{144856}{
     {{assets}}/figures/omp1.pdf
   }
-  \figpreview{Conditional selection}{figures/omp2.svg}{161.911}{144.197}{
+  \figpreview{Conditional selection}{figures/omp2.svg}{161911}{144197}{
     {{assets}}/figures/omp2.pdf
   }
   \caption{
@@ -538,7 +538,7 @@ precision within a fixed number of iterations (here, 50).
 
 @@img-small
 \begin{figure}
-  \figpreview{Conjugate gradient}{figures/cg.svg}{172.514}{143.264}{
+  \figpreview{Conjugate gradient}{figures/cg.svg}{172514}{143264}{
     {{assets}}/figures/cg.pdf
   }
   \caption{Number of nonzeros per column to converge within 50 iterations.}
