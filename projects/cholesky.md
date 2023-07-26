@@ -586,7 +586,7 @@ to any s.p.d. matrix.
 \begin{figure}
   \figpreview{
     Two portraits with Euler on the left and Gauss on the right
-  }{gauss.jpg}{2560}{1440}{
+  }{gauss.webp}{1024}{576}{
     https://misc.cgdct.moe/anime/gauss.png
   }
   > …けれど私が１等尊敬してるのはガウス先生だよ。
