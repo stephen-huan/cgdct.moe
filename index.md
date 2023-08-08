@@ -50,7 +50,7 @@ I am best reached via [email](mailto:shuan@gatech.edu).
 
 - GitHub: [stephen-huan](https://github.com/stephen-huan)
 - ORCID: [0009-0009-6309-4415](https://orcid.org/0009-0009-6309-4415)
-- YouTube: [@stephenhuan](https://www.youtube.com/@stephenhuan)
+- [Google Scholar](https://scholar.google.com/citations?user=CKjDUWwAAAAJ)
 
 \end{columns}
 
