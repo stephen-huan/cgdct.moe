@@ -10,6 +10,7 @@ meta_description = "A list of all the noteworthy things I've done."
 @@news,clean-table,no-header
 | Date       | Description |
 |------------|-------------|
+| 2023-08-15 | I will be advertising for [Florian Schäfer](https://f-t-s.github.io) at the [UROC](https://www.cc.gatech.edu/undergraduate-research-opportunities-computing-uroc) virtual job fair.|
 | 2023-07-21 | New [paper](https://arxiv.org/abs/2307.11648) on information-theoretic conditional selection improving sparsity patterns on arXiv! Joint work with [Joseph Guinness](https://guinness.cals.cornell.edu), [Matthias Katzfuss](https://sites.google.com/view/katzfuss/), [Houman Owhadi](http://users.cms.caltech.edu/~owhadi/index.htm), and [Florian Schäfer](https://f-t-s.github.io).|
 | 2023-07-14 | I am awarded the \$1500 [PURA Salary Award](https://urop.gatech.edu/pura-salary) for Fall 2023! |
 | 2023-04-03 | I will be particpating in Caltech's [SURF](https://sfp.caltech.edu/undergraduate-research/programs/surf) summer program under [Houman Owhadi](http://users.cms.caltech.edu/~owhadi/index.htm).
