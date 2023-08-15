@@ -31,9 +31,9 @@ _This post summarizes joint work with [Joseph
 Guinness](https://guinness.cals.cornell.edu), [Matthias
 Katzfuss](https://sites.google.com/view/katzfuss/), [Houman
 Owhadi](http://users.cms.caltech.edu/~owhadi/index.htm), and
-[Florian Schäfer](https://f-t-s.github.io). For additional
-details, see the [paper](https://arxiv.org/abs/2307.11648)
-or [source code](https://github.com/stephen-huan/cholesky-by-selection)_.
+[Florian Schäfer](https://f-t-s.github.io). For additional details,
+see the [paper](https://arxiv.org/abs/2307.11648) or [source
+code](https://github.com/stephen-huan/conditional-knn)_.
 
 _Thanks [Seulgi](https://www.dagmarsmithart.com/) for
 drawing the preview image! The full resolution image may be
