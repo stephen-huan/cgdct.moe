@@ -29,6 +29,7 @@ ignore = [
     "bin/",
     "src/",
     "utils/",
+    "_css/",
 ]
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)
