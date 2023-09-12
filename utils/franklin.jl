@@ -143,7 +143,8 @@ function hfun_stylesheets()
     end
     # add page-defined list of paths
     # this allows avoiding @import, for example
-    paths = append!(paths, pagevar(page, :stylesheets; default=String[]))
+    add_paths = pagevar(page, :stylesheets; default=String[])
+    !isnothing(add_paths) && (paths = append!(paths, add_paths))
     # tag page, fd_rpath not set correctly
     if !isempty(locvar(:fd_tag))
         paths = ["/css/main.css", "/css/tag.css"]
