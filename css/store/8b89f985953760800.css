@@ -687,3 +687,78 @@ instead, display a burger menu.
 .post-tags a {
   text-decoration: none;
 }
+:root {
+  --white: #ffffff;
+  --green: #007f24;
+  --font: IPAGothic, "Noto Sans CJK JP", sans-serif;
+}
+
+body {
+  background: var(--green);
+  color: var(--white);
+  font-family: var(--font);
+}
+
+div.wrapper {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+div.outer {
+  border: 2px solid var(--white);
+  border-radius: 4px;
+  padding: 23px 32px 32px;
+}
+
+div.inner {
+  height: 175px;
+  border: 2px solid var(--white);
+  border-radius: 4px;
+  margin-top: -16px;
+  padding: 32px;
+  display: flex;
+  justify-content: left;
+}
+
+div.block {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-align: left;
+  display: inline-block;
+}
+
+h1 {
+  /* chosen to be approximately 256px x 32px */
+  font-size: 31px;
+  margin-top: 55px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  /* chosen to be approximately 95px x 30px */
+  font-size: 23px;
+  color: var(--green);
+  background: var(--white);
+  border-radius: 2px;
+  margin: 0 auto;
+  padding: 3px;
+  text-align: center;
+  width: 94px;
+}
+
+h3 {
+  /* chosen to be approximately 22px x 82px for "酒井とも" */
+  font-size: 22px;
+}
+
+img {
+  width: 155px;
+  height: 175px;
+  border-radius: 2px;
+}
+
+p {
+  font-size: 12px;
+}
