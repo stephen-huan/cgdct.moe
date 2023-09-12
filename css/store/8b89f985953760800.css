@@ -751,14 +751,18 @@ h2 {
 h3 {
   /* chosen to be approximately 22px x 82px for "酒井とも" */
   font-size: 22px;
+  margin-left: 5px;
+  margin-right: 0;
 }
 
 img {
   width: 155px;
   height: 175px;
   border-radius: 2px;
+  margin-right: 10px;
 }
 
 p {
   font-size: 12px;
+  margin: 0 3px;
 }
