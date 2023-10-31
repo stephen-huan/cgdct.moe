@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # script to validate html/css/svg with the Nu Html Checker (v.Nu)
 # https://github.com/validator/validator
 

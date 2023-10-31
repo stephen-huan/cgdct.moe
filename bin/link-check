@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # script to check links
 
 # lychee: https://github.com/lycheeverse/lychee

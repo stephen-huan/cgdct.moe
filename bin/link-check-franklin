@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # script to check links with Franklin's built-in link checker
 # https://github.com/JuliaLang/www.julialang.org#looking-for-broken-links
 
