@@ -12,7 +12,7 @@
     "year": 2023,
     "metadata": [
       ["arxiv", "https://arxiv.org/abs/2307.11648"],
-      ["blog", "/projects/cholesky"],
+      ["blog", "/projects/cholesky/"],
       ["code", "https://github.com/stephen-huan/conditional-knn"],
       ["poster", "/assets/pdf/2022-11-11_cse-recruiting.pdf"],
       ["slides", "/assets/pdf/2022-09-28_mds.pdf"]
