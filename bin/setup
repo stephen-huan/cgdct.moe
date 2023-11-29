@@ -6,4 +6,3 @@ push_branch="cloudflare-pages"
 
 # use remote as a base if it exists
 git branch -f "$push_branch" "$remote/$push_branch"
-

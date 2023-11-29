@@ -3,4 +3,3 @@
 
 # lychee: https://github.com/lycheeverse/lychee
 lychee --cache --exclude-mail "$@"
-

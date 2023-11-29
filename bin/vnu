@@ -2,11 +2,11 @@
 # script to validate html/css/svg with the Nu Html Checker (v.Nu)
 # https://github.com/validator/validator
 
-vnu="$(dirname "$0")/node_modules/vnu-jar/build/dist/vnu.jar"
-java -jar "$vnu" \
-    --asciiquotes \
-    --also-check-css \
-    --also-check-svg \
-    --skip-non-html \
-    "$@"
+set -o errexit
 
+vnu_config=".vnurc"
+
+# https://github.com/validator/validator/issues/1667
+vnu --Werror --skip-non-html --filterfile "$vnu_config" "$@"
+vnu --Werror --skip-non-css --filterfile "$vnu_config" "$@"
+vnu --Werror --skip-non-svg --filterfile "$vnu_config" "$@"

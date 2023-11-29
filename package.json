@@ -1,4 +1,5 @@
 {
+  "name": "cgdct.moe",
   "dependencies": {
     "highlight.js": "^11.8.0",
     "katex": "^0.16.8"

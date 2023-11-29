@@ -5,9 +5,8 @@
 julia \
     --project="@." \
     --optimize=0 \
-    --eval 'using Franklin: verify_links; verify_links()' \
-| grep \
-    --invert-match \
-    --regexp "mailto:" \
-    --regexp "浣"
-
+    --eval 'using Franklin: verify_links; verify_links()' |
+    grep \
+        --invert-match \
+        --regexp "mailto:" \
+        --regexp "浣"
