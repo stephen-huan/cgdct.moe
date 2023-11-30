@@ -4,13 +4,13 @@
 
 let
   sources = {
-    "@prettier/plugin-xml-3.2.1" = {
+    "@prettier/plugin-xml-3.2.2" = {
       name = "_at_prettier_slash_plugin-xml";
       packageName = "@prettier/plugin-xml";
-      version = "3.2.1";
+      version = "3.2.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@prettier/plugin-xml/-/plugin-xml-3.2.1.tgz";
-        sha512 = "DvwnQPf8FsczapBVDm54IhR+Pryt3DbPZSNtUb9gOuFtgoUUPbPN69f3nQBMF5BEqh4ZjZjTaHBmsVno3UnAXQ==";
+        url = "https://registry.npmjs.org/@prettier/plugin-xml/-/plugin-xml-3.2.2.tgz";
+        sha512 = "SoE70SQF1AKIvK7LVK80JcdAe6wrDcbodFFjcoqb1FkOqV0G0oSlgAFDwoRXPqkUE5p/YF2nGsnUbnfm6471sw==";
       };
     };
     "@xml-tools/parser-1.0.11" = {
@@ -40,31 +40,31 @@ let
         sha512 = "OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==";
       };
     };
-    "highlight.js-11.8.0" = {
+    "highlight.js-11.9.0" = {
       name = "highlight.js";
       packageName = "highlight.js";
-      version = "11.8.0";
+      version = "11.9.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/highlight.js/-/highlight.js-11.8.0.tgz";
-        sha512 = "MedQhoqVdr0U6SSnWPzfiadUcDHfN/Wzq25AkXiQv9oiOO/sG0S7XkvpFIqWBl9Yq1UYyYOOVORs5UW2XlPyzg==";
+        url = "https://registry.npmjs.org/highlight.js/-/highlight.js-11.9.0.tgz";
+        sha512 = "fJ7cW7fQGCYAkgv4CPfwFHrfd/cLS4Hau96JuJ+ZTOWhjnhoeN1ub1tFmALm/+lW5z4WCAuAV9bm05AP0mS6Gw==";
       };
     };
-    "katex-0.16.8" = {
+    "katex-0.16.9" = {
       name = "katex";
       packageName = "katex";
-      version = "0.16.8";
+      version = "0.16.9";
       src = fetchurl {
-        url = "https://registry.npmjs.org/katex/-/katex-0.16.8.tgz";
-        sha512 = "ftuDnJbcbOckGY11OO+zg3OofESlbR5DRl2cmN8HeWeeFIV7wTXvAOx8kEjZjobhA+9wh2fbKeO6cdcA9Mnovg==";
+        url = "https://registry.npmjs.org/katex/-/katex-0.16.9.tgz";
+        sha512 = "fsSYjWS0EEOwvy81j3vRA8TEAhQhKiqO+FQaKWp0m39qwOzHVBgAUBIXWj1pB+O2W3fIpNa6Y9KSKCVbfPhyAQ==";
       };
     };
-    "prettier-3.0.3" = {
+    "prettier-3.1.0" = {
       name = "prettier";
       packageName = "prettier";
-      version = "3.0.3";
+      version = "3.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/prettier/-/prettier-3.0.3.tgz";
-        sha512 = "L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==";
+        url = "https://registry.npmjs.org/prettier/-/prettier-3.1.0.tgz";
+        sha512 = "TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==";
       };
     };
     "regexp-to-ast-0.5.0" = {
@@ -82,13 +82,13 @@ let
     packageName = "cgdct.moe";
     src = ./.;
     dependencies = [
-      sources."@prettier/plugin-xml-3.2.1"
+      sources."@prettier/plugin-xml-3.2.2"
       sources."@xml-tools/parser-1.0.11"
       sources."chevrotain-7.1.1"
       sources."commander-8.3.0"
-      sources."highlight.js-11.8.0"
-      sources."katex-0.16.8"
-      sources."prettier-3.0.3"
+      sources."highlight.js-11.9.0"
+      sources."katex-0.16.9"
+      sources."prettier-3.1.0"
       sources."regexp-to-ast-0.5.0"
     ];
     buildInputs = globalBuildInputs;
