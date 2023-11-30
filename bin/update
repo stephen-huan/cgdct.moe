@@ -7,7 +7,6 @@ root="node_modules"
 julia --project="@." --optimize=0 --eval "using Pkg: update; update()"
 
 npm update --save --lockfile-version 2
-node2nix --nodejs-18 --development --lock package-lock.json
 # copy files from node_modules to _libs
 install -Dm644 "$root/katex/dist/katex.min.js" -t "$libs/katex"
 install -Dm644 "$root/katex/dist/katex.min.css" -t "$libs/katex"
@@ -15,5 +14,6 @@ cp -r "$root/katex/dist/fonts" "$libs/katex"
 install -Dm644 "$root/highlight.js/styles/atom-one-light.css" -T \
   "$libs/highlight/styles/atom-one-light.min.css"
 rm -rf node_modules
+node2nix --nodejs-18 --development --lock package-lock.json
 
 poetry update
