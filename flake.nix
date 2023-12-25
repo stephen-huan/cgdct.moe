@@ -1,5 +1,5 @@
 {
-  description = "dotfiles";
+  description = "cgdct.moe";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
