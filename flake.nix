@@ -21,9 +21,16 @@
           beautifulsoup4
           lxml
         ]);
+        julia' = pkgs.julia.withPackages [
+          "Dates"
+          "Franklin"
+          "JSON"
+          "JuliaFormatter"
+          "SHA"
+        ];
         linters = [ pkgs.validator-nu pkgs.lychee ];
         node-packages = [ pkgs.nodejs pkgs.node2nix nodeDependencies ];
-        site-builders = [ pkgs.julia-bin python' ];
+        site-builders = [ julia' python' ];
       in
       {
         formatter.${system} = pkgs.writeShellScriptBin "prettier" ''
@@ -89,6 +96,9 @@
             ln -sf "${node-env}" node-env.nix
             # clear nodejs and node2nix from $NODE_PATH
             export NODE_PATH=${nodeDependencies}/lib/node_modules
+            # give a valid node binary to Franklin.jl
+            # https://github.com/tlienart/Franklin.jl/pull/1069
+            export NODE=${lib.getExe pkgs.nodejs}
           '';
         };
       }
