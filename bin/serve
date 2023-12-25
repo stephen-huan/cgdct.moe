@@ -5,4 +5,4 @@ filter="bin/filter"
 
 # https://unix.stackexchange.com/a/7080
 julia --project="@." --optimize=0 --color=yes --eval "using Franklin: serve
-  serve(prerender=true)" 2> >("$filter" >&2)
+  serve(prerender=true)" 2> >(sh "$filter" >&2)

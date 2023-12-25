@@ -7,7 +7,7 @@ filter="bin/filter"
 
 # build site
 julia --project="@." --optimize=0 --color=yes --eval "using Franklin: optimize
-  optimize(clear=true, prerender=true, minify=false)" 2> >("$filter" >&2) &&
+  optimize(clear=true, prerender=true, minify=false)" 2> >(sh "$filter" >&2) &&
 
 # post-processing
 python "$postprocess" --verbose "$site_dir" &&
