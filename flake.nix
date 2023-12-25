@@ -15,6 +15,8 @@
         pkgs = nixpkgs.legacyPackages.${system};
         generated = import ./default.nix { inherit pkgs system; };
         inherit (generated) nodeDependencies;
+        node-env =
+          "${nixpkgs.outPath}/pkgs/development/node-packages/node-env.nix";
         python' = pkgs.python3.withPackages (ps: with ps; [
           beautifulsoup4
           lxml
@@ -22,8 +24,6 @@
         linters = [ pkgs.validator-nu pkgs.lychee ];
         node-packages = [ pkgs.nodejs pkgs.node2nix nodeDependencies ];
         site-builders = [ pkgs.julia-bin python' ];
-        node-env =
-          "${nixpkgs.outPath}/pkgs/development/node-packages/node-env.nix";
       in
       {
         formatter.${system} = pkgs.writeShellScriptBin "prettier" ''
