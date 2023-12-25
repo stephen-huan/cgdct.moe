@@ -1,2 +1,3 @@
 style = "blue"
 margin = 79
+ignore = [".direnv"]
