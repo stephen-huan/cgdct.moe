@@ -22,6 +22,8 @@
         linters = [ pkgs.validator-nu pkgs.lychee ];
         node-packages = [ pkgs.nodejs pkgs.node2nix nodeDependencies ];
         site-builders = [ pkgs.julia-bin python' ];
+        node-env =
+          "${nixpkgs.outPath}/pkgs/development/node-packages/node-env.nix";
       in
       {
         formatter.${system} = pkgs.writeShellScriptBin "prettier" ''
@@ -83,9 +85,10 @@
           packages = linters
             ++ node-packages
             ++ site-builders;
-          # clear nodejs and node2nix from $NODE_PATH
           shellHook = ''
+            # clear nodejs and node2nix from $NODE_PATH
             export NODE_PATH=${nodeDependencies}/lib/node_modules
+            ln -sf "${node-env}" node-env.nix
           '';
         };
       }
