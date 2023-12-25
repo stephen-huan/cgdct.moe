@@ -1,8 +1,8 @@
 #!/bin/sh
 # script to validate html/css/svg with the Nu Html Checker (v.Nu)
 # https://github.com/validator/validator
-
 set -o errexit
+set -o nounset
 
 vnu_config=".vnurc"
 

@@ -1,5 +1,7 @@
 #!/bin/sh
 # filter spurious warning messages during build
+set -o errexit
+set -o nounset
 
 grep \
   --invert-match \

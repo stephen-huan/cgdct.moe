@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # script to serve the site locally
+set -o errexit
+set -o nounset
+set -o pipefail
 
 filter="bin/filter"
 
