@@ -17,17 +17,9 @@
         inherit (generated) nodeDependencies;
         node-env =
           "${nixpkgs.outPath}/pkgs/development/node-packages/node-env.nix";
-        python' = pkgs.python3.withPackages (ps: with ps; [
-          beautifulsoup4
-          lxml
-        ]);
-        julia' = pkgs.julia.withPackages [
-          "Dates"
-          "Franklin"
-          "JSON"
-          "JuliaFormatter"
-          "SHA"
-        ];
+        inherit (self.packages.${system}.default)
+          julia'
+          python';
         linters = [ pkgs.validator-nu pkgs.lychee ];
         node-packages = [ pkgs.nodejs pkgs.node2nix nodeDependencies ];
         site-builders = [ julia' python' ];
