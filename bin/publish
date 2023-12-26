@@ -10,6 +10,9 @@ build_branch="build"
 push_branch="cloudflare-pages"
 commit="$(git rev-parse --short HEAD)"
 
+# ensure information is up to date
+python src/last-updated
+
 git checkout -B "$build_branch" "$main_branch"
 # sync changes: https://stackoverflow.com/q/12858199
 rm --recursive --force "$site_dir"
