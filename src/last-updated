@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+"""
+Feed information from git to the Nix store.
+"""
+import glob
+import json
+import subprocess
+
+OUT = "src/last-updated.json"
+
+timestamps = {}
+
+include = lambda ext: glob.glob(f"**/*.{ext}", recursive=True)  # noqa: E731
+for file in include("md") + include("html"):
+    if file.split("/")[0] not in ["_assets", "_layout", "result", "__site"]:
+        # https://www.git-scm.com/docs/git-log#_pretty_formats
+        timestamps[file] = int(
+            subprocess.run(
+                ["git", "log", "--pretty=%at", "-1", file], capture_output=True
+            ).stdout.decode()
+        )
+
+with open(OUT, "w") as f:
+    json.dump(timestamps, f, indent=4, sort_keys=True)

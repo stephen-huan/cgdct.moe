@@ -71,4 +71,7 @@ footer_exclude = Set(
 
 # path to publications data
 publications = "_assets/publications.json"
+
+# path to last updated data
+last_updated = "src/last-updated.json"
 +++

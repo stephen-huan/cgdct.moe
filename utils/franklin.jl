@@ -54,9 +54,10 @@ Get the time of the last git modification, defaulting to filesystem.
 """
 function modification_date()
     # https://www.git-scm.com/docs/git-log#_pretty_formats
-    timestamp = readchomp(`git log --pretty="%at" -1 $(locvar(:fd_rpath))`)
-    return if !isempty(timestamp)
-        Dates.unix2datetime(parse(Int, timestamp))
+    dates = JSON.parsefile(globvar(:last_updated))
+    timestamp = get(dates, locvar(:fd_rpath), 0)
+    return if timestamp != 0
+        Dates.unix2datetime(timestamp)
     else
         locvar(:fd_mtime_raw)
     end
