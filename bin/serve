@@ -7,5 +7,6 @@ set -o pipefail
 filter="bin/filter"
 
 # https://unix.stackexchange.com/a/7080
-julia --optimize=0 --color=yes --eval "using Franklin: serve
-  serve(prerender=true)" 2> >(sh "$filter" >&2)
+julia --optimize=0 --color=yes --eval "
+  using Franklin: serve; serve(prerender=true)
+" 2> >(sh "$filter" >&2)

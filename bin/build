@@ -9,8 +9,9 @@ postprocess="src/postprocess"
 filter="bin/filter"
 
 # build site
-julia --optimize=0 --color=yes --eval "using Franklin: optimize
-  optimize(clear=true, prerender=true, minify=false)" 2> >(sh "$filter" >&2)
+julia --optimize=0 --color=yes --eval "
+  using Franklin: optimize; optimize(clear=true, prerender=true, minify=false)
+" 2> >(sh "$filter" >&2)
 
 # post-processing
 python "$postprocess" --verbose "$site_dir"
