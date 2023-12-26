@@ -33,6 +33,10 @@
         site-builders = [ julia' python' ];
       in
       {
+        packages.${system} = let inherit (pkgs) callPackage; in {
+          default = callPackage ./pkgs/cgdct-moe { };
+        };
+
         formatter.${system} = pkgs.writeShellScriptBin "prettier" ''
           ${nodeDependencies}/bin/prettier --write "$@"
         '';
