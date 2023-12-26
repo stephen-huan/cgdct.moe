@@ -33,6 +33,7 @@ ignore = [
     ".lycheecache",
     "lychee.toml",
     "bin/",
+    "pkgs/",
     "src/",
     "utils/",
     "_css/",
