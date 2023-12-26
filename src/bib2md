@@ -6,8 +6,9 @@ See: https://ctroupin.github.io/posts/2019-12-19-bibtex-markdown/
 """
 import argparse
 import subprocess
+from pathlib import Path
 
-STYLE = "/home/stephenhuan/programs/web/cgdct.moe/src/ieee.csl"
+STYLE = Path(__file__).parent / "ieee.csl"
 
 
 def replace(s: str) -> str:
