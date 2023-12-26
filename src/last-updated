@@ -12,7 +12,13 @@ timestamps = {}
 
 include = lambda ext: glob.glob(f"**/*.{ext}", recursive=True)  # noqa: E731
 for file in include("md") + include("html"):
-    if file.split("/")[0] not in ["_assets", "_layout", "result", "__site"]:
+    if file.split("/")[0] not in [
+        "_assets",
+        "config.md",
+        "_layout",
+        "result",
+        "__site",
+    ]:
         # https://www.git-scm.com/docs/git-log#_pretty_formats
         timestamps[file] = int(
             subprocess.run(
