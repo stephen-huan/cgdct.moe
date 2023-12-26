@@ -21,8 +21,6 @@ ignore = [
     ".prettierrc.json",
     ".prettierignore",
     "pyproject.toml",
-    "poetry.lock",
-    ".venv/",
     "__pycache__/",
     "flake.nix",
     "flake.lock",

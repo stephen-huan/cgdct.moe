@@ -81,7 +81,7 @@
             type = "app";
             program = "${lib.getExe (pkgs.writeShellApplication {
               name = "update";
-              runtimeInputs = node-packages ++ lib.singleton pkgs.poetry;
+              runtimeInputs = node-packages;
               text = builtins.readFile bin/update;
             })}";
           };

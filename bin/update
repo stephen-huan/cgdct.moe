@@ -17,5 +17,3 @@ install -Dm644 "$root/highlight.js/styles/atom-one-light.min.css" -t \
   "$libs/highlight/styles"
 rm -rf node_modules
 node2nix --nodejs-18 --development --lock package-lock.json --no-copy-node-env
-
-poetry update
