@@ -16,6 +16,7 @@ for file in include("md") + include("html"):
         "_assets",
         "config.md",
         "_layout",
+        "node_modules",
         "result",
         "__site",
     ]:
