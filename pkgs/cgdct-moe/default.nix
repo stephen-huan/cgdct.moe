@@ -16,7 +16,7 @@ buildNpmPackage rec {
 
   src = ../..;
 
-  npmDepsHash = "sha256-VNu10Jd2LbuHVmwIVJHmN/JsK5BtANYdLZPIbsPGgEI=";
+  npmDepsHash = "sha256-f6pB/41myaAQceZq3qTRey528hrm0HFFsUnhIp9F9EI=";
 
   julia' = julia.withPackages [
     "Dates"
