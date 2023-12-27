@@ -38,13 +38,22 @@ buildNpmPackage rec {
 
   # filter spurious warning messages during build
   filter = writeShellScriptBin "filter" ''
-    export LOCALE_ARCHIVE="${glibcLocales}/lib/locale/locale-archive"
-    export LANG=en_US.UTF-8
-
     ${lib.getExe gnugrep} \
       --invert-match \
       --regexp 'Unicode text character "[女時金悪]" used in math mode' \
       "$@"
+  '';
+
+  configurePhase = ''
+    runHook preConfigure
+
+    export LOCALE_ARCHIVE="${glibcLocales}/lib/locale/locale-archive"
+    export LANG=en_US.UTF-8
+    # give a valid node binary to Franklin.jl
+    # https://github.com/tlienart/Franklin.jl/pull/1069
+    export NODE="$(which node)"
+
+    runHook postConfigure
   '';
 
   strictDeps = true;
@@ -53,9 +62,6 @@ buildNpmPackage rec {
   buildPhase = ''
     runHook preBuild
 
-    # give a valid node binary to Franklin.jl
-    # https://github.com/tlienart/Franklin.jl/pull/1069
-    export NODE="$(which node)"
     julia --optimize=0 --color=yes --eval "
       using Franklin: optimize
       optimize(clear=true, prerender=true, minify=false)
