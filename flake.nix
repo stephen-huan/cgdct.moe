@@ -14,6 +14,7 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         inherit (self.packages.${system}.default)
+          filter
           julia'
           python';
         linters = [ pkgs.validator-nu pkgs.lychee ];
@@ -57,7 +58,14 @@
             program = "${lib.getExe (pkgs.writeShellApplication {
               name = "serve";
               runtimeInputs = site-builders;
-              text = builtins.readFile bin/serve;
+              text = ''
+                NODE="$(which node)"
+                export NODE
+                # https://unix.stackexchange.com/a/7080
+                julia --optimize=0 --color=yes --eval "
+                  using Franklin: serve; serve(prerender=true)
+                " 2> >("${lib.getExe filter}" >&2)
+              '';
             })}";
           };
           update = {

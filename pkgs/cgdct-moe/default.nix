@@ -8,15 +8,14 @@
 , which
 }:
 
-let
-  site = "__site";
-in
 buildNpmPackage rec {
   name = "cgdct-moe";
 
   src = ../..;
 
   npmDepsHash = "sha256-f6pB/41myaAQceZq3qTRey528hrm0HFFsUnhIp9F9EI=";
+
+  site = "__site";
 
   julia' = julia.withPackages [
     "Dates"
@@ -46,7 +45,8 @@ buildNpmPackage rec {
     export LANG=en_US.UTF-8
     # give a valid node binary to Franklin.jl
     # https://github.com/tlienart/Franklin.jl/pull/1069
-    export NODE="$(which node)"
+    NODE="$(which node)"
+    export NODE
 
     runHook postConfigure
   '';
