@@ -1,1 +1,0 @@
-/nix/store/50bgi74d890mpkp90w1jwc5g0dw4dccr-source/pkgs/development/node-packages/node-env.nix

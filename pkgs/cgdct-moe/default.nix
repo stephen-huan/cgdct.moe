@@ -31,11 +31,6 @@ buildNpmPackage rec {
     lxml
   ]);
 
-  # spoof `git log --pretty=%at -1`
-  git' = writeShellScriptBin "git" ''
-    echo 0
-  '';
-
   # filter spurious warning messages during build
   filter = writeShellScriptBin "filter" ''
     ${lib.getExe gnugrep} \
@@ -57,7 +52,7 @@ buildNpmPackage rec {
   '';
 
   strictDeps = true;
-  nativeBuildInputs = [ julia' python' git' which ];
+  nativeBuildInputs = [ julia' python' which ];
 
   buildPhase = ''
     runHook preBuild

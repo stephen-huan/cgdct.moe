@@ -13,15 +13,11 @@
     eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        generated = import ./default.nix { inherit pkgs system; };
-        inherit (generated) nodeDependencies;
-        node-env =
-          "${nixpkgs.outPath}/pkgs/development/node-packages/node-env.nix";
         inherit (self.packages.${system}.default)
           julia'
           python';
         linters = [ pkgs.validator-nu pkgs.lychee ];
-        node-packages = [ pkgs.nodejs pkgs.node2nix nodeDependencies ];
+        node-packages = [ pkgs.nodejs ];
         site-builders = [ julia' python' ];
       in
       {
@@ -30,7 +26,7 @@
         };
 
         formatter.${system} = pkgs.writeShellScriptBin "prettier" ''
-          ${nodeDependencies}/bin/prettier --write "$@"
+          npx prettier --write "$@"
         '';
 
         checks.${system}.lint = pkgs.stdenvNoCC.mkDerivation {
@@ -39,7 +35,6 @@
           doCheck = true;
           nativeCheckInputs = linters ++ node-packages ++ site-builders;
           checkPhase = ''
-            export NODE_PATH=${nodeDependencies}/lib/node_modules
             source .envrc || true
             prettier --check .
             source ./bin/build
@@ -81,24 +76,6 @@
               text = builtins.readFile bin/update;
             })}";
           };
-        };
-
-        devShells.${system}.default = (pkgs.mkShellNoCC.override {
-          stdenv = pkgs.stdenvNoCC.override {
-            initialPath = [ pkgs.coreutils ];
-          };
-        }) {
-          packages = linters
-            ++ node-packages
-            ++ site-builders;
-          shellHook = ''
-            ln -sf "${node-env}" node-env.nix
-            # clear nodejs and node2nix from $NODE_PATH
-            export NODE_PATH=${nodeDependencies}/lib/node_modules
-            # give a valid node binary to Franklin.jl
-            # https://github.com/tlienart/Franklin.jl/pull/1069
-            export NODE=${lib.getExe pkgs.nodejs}
-          '';
         };
       }
     );
