@@ -44,14 +44,6 @@
         };
 
         apps.${system} = {
-          build = {
-            type = "app";
-            program = "${lib.getExe (pkgs.writeShellApplication {
-              name = "build";
-              runtimeInputs = node-packages ++ site-builders;
-              text = builtins.readFile bin/build;
-            })}";
-          };
           publish = {
             type = "app";
             program = "${lib.getExe (pkgs.writeShellApplication {

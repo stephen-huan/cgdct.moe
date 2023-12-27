@@ -19,7 +19,7 @@ rm --recursive --force "$site_dir"
 git subtree add --prefix "$site_dir" "$push_branch"
 
 # build site
-nix run .#build
+nix build .
 
 # publish
 git add --force "$site_dir"
