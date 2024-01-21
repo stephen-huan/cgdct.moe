@@ -7,43 +7,49 @@ That's it! Runs in O(NK) where N = # characters and K = width
 """
 import sys
 
-PREFIX = set(" >:-*|#$%'\"") # characters allowed to be in a prefix
+Block = tuple[list[str], int, str]
+State = tuple[int, float, int, int]
 
-def get_lines(par: list, width: int) -> list:
-    """ Compute optimal line lengths with forward greedy. """
-    lines, i, count = [0], 0, 0
+# characters allowed to be in a prefix
+PREFIX = set(" >:-*|#$%'\"")
+
+
+def get_lines(par: list[str], width: int) -> list[int]:
+    """Compute optimal line lengths with forward greedy."""
+    lines, count, i = [0], 0, 0
     while i < len(par):
-        x, v = 0, len(par[i])
+        # break onto a new line
+        line_width = len(par[i])
         count += 1
-        while i + 1 < len(par) and v <= width:
+        while i + 1 < len(par) and line_width <= width:
             i += 1
-            x, v = v, v + 1 + len(par[i])
             lines.append(count)
-        if v <= width:
+            line_width += 1 + len(par[i])
+        if line_width <= width:
             i += 1
             lines.append(count)
 
     return lines
 
-def vardp(par: list, lines: list, width: int) -> list:
-    """ Computes the minimum variance, constrained to use optimal lines. """
+
+def vardp(par: list[str], lines: list[int], width: int) -> list[State]:
+    """Computes the minimum variance, constrained to use optimal lines."""
     # state (index, variance, sum of x^2 terms, sum of x)
-    dp = [None]*(len(par) + 1)
-    dp[0] = (0, 0, 0, 0)
+    dp: list[State] = [(0, 0.0, 0, 0)] * (len(par) + 1)
     for i in range(1, len(par) + 1):
-        k, best, sum_x2, sum_x, x = 0, float("inf"), 0, 0, 0
+        k, best, sum_x2, sum_x, x = -1, float("inf"), 0, 0, 0
         for j in range(i - 1, -1, -1):
             # add 1 for space, if the current line isn't empty
-            v = x + (x != 0) + len(par[j])
-            if v <= width:
-                x = v
+            line_width = x + (x != 0) + len(par[j])
+            if line_width <= width:
+                x = line_width
                 _, _, sum_x2j, sum_xj = dp[j]
                 n = 1 + lines[j]
-                sum_x2j += x*x
+                sum_x2j += x * x
                 sum_xj += x
                 # Var[X] = E[X^2] - E[X]^2
-                mean = sum_xj/n
-                var = sum_x2j/n - mean*mean
+                mean = sum_xj / n
+                var = sum_x2j / n - mean * mean
                 if var < best and n == lines[i]:
                     k, best, sum_x2, sum_x = j, var, sum_x2j, sum_xj
             else:
@@ -52,10 +58,11 @@ def vardp(par: list, lines: list, width: int) -> list:
 
     return dp
 
-def process(par: list, width: int, prefix: str) -> str:
-    """ Takes in a paragraph and returns a string with a new line width. """
+
+def process(par: list[str], width: int, prefix: str) -> str:
+    """Takes in a paragraph and returns a string with a new line width."""
     if len(par) == 0:
-        return ""
+        return prefix
     assert max(map(len, par)) <= width, "line too long"
 
     lines = get_lines(par, width)
@@ -64,12 +71,12 @@ def process(par: list, width: int, prefix: str) -> str:
     if lines[-1] <= 3:
         k = len(par)
     else:
-        best, k, x = [float("inf")]*2, [0]*2, 0
+        best, k, x = [float("inf")] * 2, [0] * 2, 0
         for i in range(len(par) - 1, -1, -1):
             x += (x != 0) + len(par[i])
             if x > width:
                 break
-            b = x <= dp[i][-1]/lines[i]
+            b = x <= dp[i][-1] / lines[i]
             if lines[i] + 1 == lines[-1] and dp[i][1] < best[b]:
                 best[b], k[b] = dp[i][1], i
         k = k[1] if best[1] != float("inf") else k[0]
@@ -84,8 +91,9 @@ def process(par: list, width: int, prefix: str) -> str:
     # add prefix to each line
     return "\n".join(map(lambda x: prefix + x, out[::-1]))
 
-def parse_prefix(lines: list) -> tuple:
-    """ Parses lines into a list of tokens, taking into account prefixes. """
+
+def get_prefix(lines: list[str]) -> str:
+    """Finds the common prefix for the lines."""
     # find prefix, where a prefix is defined as a series
     # of the same character, if the character is in PREFIX
     prefix = []
@@ -98,32 +106,42 @@ def parse_prefix(lines: list) -> tuple:
             prefix.append(lines[0][ch])
             continue
         break
-    prefix = "".join(prefix)
+    return "".join(prefix)
 
-    par = []
+
+def parse_prefix(lines: list[str], width: int) -> list[Block]:
+    """Parses lines into a list of tokens, taking into account prefixes."""
+    prefix = get_prefix(lines)
+    if len(prefix) == 0:
+        par = []
+        for line in lines:
+            par += line.split()
+        return [(par, width, prefix)]
+    else:
+        lines = [line[len(prefix) :] for line in lines]
+        return [
+            (par, width, prefix)
+            for par, width, _ in parse_lines(lines, width - len(prefix))
+        ]
+
+
+def parse_lines(lines, width: int) -> list[Block]:
+    """Read input lines into paragraphs, making empty lines []."""
+    pars, par = [], []
     for line in lines:
-        par += line[len(prefix):].split()
+        if line != "\n":
+            par.append(line)
+        else:
+            if len(par) > 0:
+                pars += parse_prefix(par, width)
+            pars.append(([], width, ""))
+            par, par = [], []
+    if len(par) > 0:
+        pars += parse_prefix(par, width)
+    return pars
 
-    return par, prefix
 
 if __name__ == "__main__":
     # read command line arguments - one parameter, width
     width = int(sys.argv[1]) if len(sys.argv) > 1 else 79
-
-    # read input into paragraph blocks, making empty lines []
-    pars, lines = [], []
-    for line in sys.stdin:
-        if line != "\n":
-            lines.append(line)
-        else:
-            if len(lines) > 0:
-                par, prefix = parse_prefix(lines)
-                pars.append((par, width - len(prefix), prefix))
-            pars.append(([], width, ""))
-            par, lines = [], []
-    if len(lines) > 0:
-        par, prefix = parse_prefix(lines)
-        pars.append((par, width - len(prefix), prefix))
-
-    print("\n".join(map(lambda x: process(*x), pars)))
-
+    print("\n".join(map(lambda x: process(*x), parse_lines(sys.stdin, width))))
