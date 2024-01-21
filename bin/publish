@@ -20,6 +20,7 @@ git subtree add --prefix "$site_dir" "$push_branch"
 
 # build site
 nix build .
+cp --recursive "result/" -T "$site_dir"
 
 # publish
 git add --force "$site_dir"
