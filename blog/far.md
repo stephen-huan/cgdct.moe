@@ -9,9 +9,10 @@ tags = ["cs"]
 {{maketitle}}
 
 [[Video]](https://youtu.be/H3Agto3ZSnk)
-[[Source Code (C++)]]({{assets}}/far.cpp)
-[[Source Code (Python)]]({{assets}}/far.py)
-[[Source Code (Emacs Lisp) by esrh]](https://github.com/eshrh/far.el)
+[[Source code]](https://github.com/stephen-huan/inflow)
+[[Python]]({{assets}}/far.py)
+[[C++]]({{assets}}/far.cpp)
+[[Emacs Lisp by esrh]](https://github.com/eshrh/far.el)
 
 [`par`](http://www.nicemice.net/par/) is a formatting tool that inserts line
 breaks to make the length of each line less than a set number of characters,
