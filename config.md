@@ -29,6 +29,7 @@ ignore = [
     "default.nix",
     "node-env.nix",
     "node-packages.nix",
+    ".editorconfig",
     ".vnurc",
     ".lycheecache",
     "lychee.toml",
