@@ -13,7 +13,7 @@ buildNpmPackage rec {
 
   src = ../..;
 
-  npmDepsHash = "sha256-f6pB/41myaAQceZq3qTRey528hrm0HFFsUnhIp9F9EI=";
+  npmDepsHash = "sha256-iqUwXXAQSjKgghyavvwqoTukqSMG57OUFJFDDmMsmSg=";
 
   site = "__site";
 
