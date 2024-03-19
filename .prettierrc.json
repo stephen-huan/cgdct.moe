@@ -1,0 +1,4 @@
+{
+  "plugins": ["@prettier/plugin-xml/src/plugin.js"],
+  "xmlWhitespaceSensitivity": "ignore"
+}
