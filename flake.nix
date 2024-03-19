@@ -26,8 +26,13 @@
           default = callPackage ./pkgs/cgdct-moe { };
         };
 
-        formatter.${system} = pkgs.writeShellScriptBin "prettier" ''
+        formatter.${system} = pkgs.writeShellScriptBin "formatter" ''
           npx prettier --write "$@"
+          ${julia'}/bin/julia --eval "using JuliaFormatter; format(\"$1\")"
+          ${lib.getExe pkgs.isort} "$@"
+          ${lib.getExe pkgs.black} "$@"
+          ${lib.getExe pkgs.shfmt} --write "$@"
+          ${lib.getExe pkgs.nixpkgs-fmt} "$@"
         '';
 
         checks.${system}.lint = pkgs.stdenvNoCC.mkDerivation {
