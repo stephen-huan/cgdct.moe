@@ -3,7 +3,10 @@ line-length = 79
 
 [tool.black]
 line-length = 79
+# https://github.com/psf/black/issues/491
+include = "src/bib2md|src/last-updated$|src/postprocess"
 
 [tool.isort]
 profile = "black"
 line_length = 79
+extend_skip = ["result"]
