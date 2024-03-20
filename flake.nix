@@ -13,13 +13,9 @@
     eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        inherit (self.packages.${system}.default)
-          filter
-          julia'
-          python';
-        linters = [ pkgs.validator-nu pkgs.lychee ];
-        node-packages = [ pkgs.nodejs ];
-        site-builders = [ julia' python' ];
+        site = self.packages.${system}.default;
+        inherit (site) filter julia';
+        site-dependencies = site.nativeBuildInputs;
       in
       {
         packages.${system} = let inherit (pkgs) callPackage; in {
@@ -35,16 +31,23 @@
           ${lib.getExe pkgs.nixpkgs-fmt} "$@"
         '';
 
-        checks.${system}.lint = pkgs.stdenvNoCC.mkDerivation {
+        checks.${system}.lint = pkgs.buildNpmPackage {
           name = "lint";
           src = ./.;
+          inherit (site) npmDepsHash;
+          dontNpmBuild = true;
           doCheck = true;
-          nativeCheckInputs = linters ++ node-packages ++ site-builders;
+          nativeCheckInputs = site-dependencies;
           checkPhase = ''
-            source .envrc || true
-            prettier --check .
-            source ./bin/build
-            source ./bin/vnu __site
+            npx prettier --check .
+            ${lib.getExe pkgs.isort} --check --diff .
+            ${lib.getExe pkgs.black} --check --diff .
+            ${lib.getExe pkgs.ruff} check .
+            ${lib.getExe pkgs.shfmt} --diff .
+            ${lib.getExe pkgs.statix} check
+            source ./bin/vnu _assets
+            source ./bin/vnu _css
+            source ./bin/vnu _libs
           '';
           installPhase = "touch $out";
         };
@@ -54,7 +57,7 @@
             type = "app";
             program = "${lib.getExe (pkgs.writeShellApplication {
               name = "publish";
-              runtimeInputs = node-packages ++ site-builders;
+              runtimeInputs = site-dependencies;
               text = builtins.readFile bin/publish;
             })}";
           };
@@ -62,7 +65,7 @@
             type = "app";
             program = "${lib.getExe (pkgs.writeShellApplication {
               name = "serve";
-              runtimeInputs = site-builders;
+              runtimeInputs = site-dependencies;
               text = ''
                 NODE="$(which node)"
                 export NODE
@@ -77,7 +80,7 @@
             type = "app";
             program = "${lib.getExe (pkgs.writeShellApplication {
               name = "update";
-              runtimeInputs = node-packages;
+              runtimeInputs = site-dependencies;
               text = builtins.readFile bin/update;
             })}";
           };
