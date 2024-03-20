@@ -6,6 +6,8 @@
 , glibcLocales
 , gnugrep
 , which
+, validator-nu
+, lychee
 }:
 
 buildNpmPackage rec {
@@ -69,6 +71,16 @@ buildNpmPackage rec {
     python src/postprocess --verbose ${site}
     # don't ignore files in .gitignore
     npx prettier --write ${site} --ignore-path=.prettierignore
+  '';
+
+  doCheck = true;
+  nativeCheckInputs = [ validator-nu lychee ];
+  checkPhase = ''
+    runHook preCheck
+
+    source bin/vnu ${site}
+
+    runHook postCheck
   '';
 
   installPhase = ''
