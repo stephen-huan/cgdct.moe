@@ -1,5 +1,6 @@
 [tool.ruff]
 line-length = 79
+extend-include = ["src/bib2md", "src/last-updated", "src/postprocess"]
 
 [tool.black]
 line-length = 79
