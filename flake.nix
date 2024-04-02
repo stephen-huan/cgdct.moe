@@ -16,20 +16,26 @@
         site = self.packages.${system}.default;
         inherit (site) filter julia';
         site-dependencies = site.nativeBuildInputs;
+        formatters = with pkgs; [ julia' isort black shfmt nixpkgs-fmt ];
+        linters = with pkgs; [ ruff statix ];
       in
       {
         packages.${system} = let inherit (pkgs) callPackage; in {
           default = callPackage ./pkgs/cgdct-moe { };
         };
 
-        formatter.${system} = pkgs.writeShellScriptBin "formatter" ''
-          npx prettier --write "$@"
-          ${julia'}/bin/julia --eval "using JuliaFormatter; format(\"$1\")"
-          ${lib.getExe pkgs.isort} "$@"
-          ${lib.getExe pkgs.black} "$@"
-          ${lib.getExe pkgs.shfmt} --write "$@"
-          ${lib.getExe pkgs.nixpkgs-fmt} "$@"
-        '';
+        formatter.${system} = pkgs.writeShellApplication {
+          name = "formatter";
+          runtimeInputs = formatters;
+          text = ''
+            npx prettier --write "$@"
+            julia --eval "using JuliaFormatter; format(\"$1\")"
+            isort "$@"
+            black "$@"
+            shfmt --write "$@"
+            nixpkgs-fmt "$@"
+          '';
+        };
 
         checks.${system}.lint = pkgs.buildNpmPackage {
           name = "lint";
@@ -37,14 +43,14 @@
           inherit (site) npmDepsHash;
           dontNpmBuild = true;
           doCheck = true;
-          nativeCheckInputs = site-dependencies;
+          nativeCheckInputs = site-dependencies ++ formatters ++ linters;
           checkPhase = ''
             npx prettier --check .
-            ${lib.getExe pkgs.isort} --check --diff .
-            ${lib.getExe pkgs.black} --check --diff .
-            ${lib.getExe pkgs.ruff} check .
-            ${lib.getExe pkgs.shfmt} --diff .
-            ${lib.getExe pkgs.statix} check
+            isort --check --diff .
+            black --check --diff .
+            ruff check .
+            shfmt --diff .
+            statix check
             source ./bin/vnu _assets
             source ./bin/vnu _css
             source ./bin/vnu _libs
