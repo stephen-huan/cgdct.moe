@@ -1,0 +1,7 @@
+throw_on_error = false
+
+[macros]
+"\\card" = "\\mathsf{card}"
+"\\Var" = "\\mathsf{Var}"
+"\\E" = "\\mathsf{E}"
+"\\norm" = "\\mathsf{norm}"
