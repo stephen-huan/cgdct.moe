@@ -18,7 +18,11 @@ import shutil
 import subprocess
 from pathlib import Path
 
+from watchfiles import watch
+
 source = Path("src")
+css = source / "css"
+lib = source / "lib"
 
 build = Path("build")
 
@@ -30,7 +34,7 @@ metadata = Path("metadata.json")
 with Path("extensions.json").open() as f:
     extensions = "".join(sorted(json.load(f)))
 
-katex = Path("lib/katex")
+katex = lib / "katex"
 katex_config = Path("katex.toml")
 highlight = Path("atom-one-light.theme")
 
@@ -101,3 +105,9 @@ if __name__ == "__main__":
     # TODO: Path.walk
     for path in source.glob("**/*"):
         process_file(path)
+    if args.watch:
+        print("Watching for changes...")
+        for changes in watch(source, raise_interrupt=False):
+            _, paths = zip(*changes)
+            for path in paths:
+                process_file(Path(path).relative_to(source.parent.absolute()))
