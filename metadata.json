@@ -1,6 +1,16 @@
 {
   "author": "Stephen Huan",
   "lang": "en-us",
-  "document-css": true,
-  "maxwidth": "50em"
+  "document-css": false,
+  "maxwidth": "50em",
+  "git-repo": "https://github.com/stephen-huan/cgdct.moe/blob/master/",
+  "timezone": "US/Eastern",
+  "date-format": "%Y-%M-%d",
+  "footer-text": "さみしいも、たのしい。",
+  "footer-exclude": [
+    "src/404.md",
+    "src/blog/index.md",
+    "src/projects/index.md",
+    "src/publications/index.md"
+  ]
 }

@@ -16,7 +16,9 @@ import json
 import os
 import shutil
 import subprocess
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from watchfiles import watch
 
@@ -28,7 +30,11 @@ build = Path("build")
 
 # `pandoc --print-default-template=html`
 template = Path("pandoc-templates/default.html5")
-metadata = Path("metadata.json")
+metadata_path = Path("metadata.json")
+with metadata_path.open() as f:
+    metadata = json.load(f)
+
+templates = Path("templates")
 
 # `pandoc --list-extensions=markdown`
 with Path("extensions.json").open() as f:
@@ -37,6 +43,14 @@ with Path("extensions.json").open() as f:
 katex = lib / "katex"
 katex_config = Path("katex.toml")
 highlight = Path("atom-one-light.theme")
+
+with (Path(__file__).parent / "last-updated.json").open() as f:
+    last_updated = json.load(f)
+    tzinfo = ZoneInfo(metadata["timezone"])
+    last_updated = {
+        Path(path): datetime.fromtimestamp(timestamp, tz=tzinfo)
+        for path, timestamp in last_updated.items()
+    }
 
 # TODO: https://pandoc.org/filters.html
 # https://github.com/pandoc-ext/section-bibliographies
@@ -52,6 +66,16 @@ def render(
     toc_depth: int = 3,
 ) -> int:
     """Render a path to html."""
+    if path in last_updated and path not in metadata["footer-exclude"]:
+        dt = last_updated[path]
+        date = dt.strftime(metadata["date-format"])
+        timestamp = f'<time datetime="{dt.isoformat()}">{date}</time>'
+        lastupdated = f"Last updated: {timestamp}."
+    else:
+        lastupdated = ""
+    url = f"{metadata['git-repo']}{path}"
+    space = " " if len(lastupdated) > 0 else ""
+    pagesource = f'<a href="{url}">Page source</a>.{space}'
     return subprocess.run(
         [
             "pandoc",
@@ -62,10 +86,11 @@ def render(
             f"--output={out}",
             f"--table-of-contents={table_of_contents}",
             f"--toc-depth={toc_depth}",
-            f"--metadata-file={metadata}",
+            f"--metadata-file={metadata_path}",
             f"--highlight-style={highlight}",
             "--filter=pandoc-katex",
-            f"--css={katex / 'katex.min.css'}",
+            f"--variable=git-pagesource:{pagesource}",
+            f"--variable=git-lastupdated:{lastupdated}",
             path,
         ],
         env=os.environ
