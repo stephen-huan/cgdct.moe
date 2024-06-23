@@ -82,13 +82,12 @@ def process_file(path: Path) -> None:
     if path.is_file():
         dst = Path(str(path).replace(str(source), str(build)))
         if path.suffix == ".md":
-            dst = Path(str(dst).replace("md", "html"))
             dst.parent.mkdir(exist_ok=True, parents=True)
-            render(path, out=dst)
+            render(path, out=dst.with_suffix(".html"))
         else:
             if not dst.exists() or hash_file(dst) != hash_file(path):
                 dst.parent.mkdir(exist_ok=True, parents=True)
-                shutil.copyfile(path, dst)
+                shutil.copy(path, dst)
 
 
 if __name__ == "__main__":
