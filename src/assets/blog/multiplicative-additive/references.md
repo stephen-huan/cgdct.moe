@@ -1,0 +1,3 @@
+1. \biblabel{abbott2015understanding}{1} [1] S. Abbott, *Understanding Analysis*. New York, NY: Springer New York, 2015. doi: [10.1007/978-1-4939-2712-8](https://doi.org/10.1007/978-1-4939-2712-8).
+2. \biblabel{bezanson2017julia}{2} [2] J. Bezanson, A. Edelman, S. Karpinski, and V. B. Shah, "Julia: A Fresh Approach to Numerical Computing," *SIAM Review*, vol. 59, no. 1, pp. 65–98, Jan. 2017, doi: [10.1137/141000671](https://doi.org/10.1137/141000671).
+3. \biblabel{schafer2021sparse}{3} [3] F. Schäfer, M. Katzfuss, and H. Owhadi, "Sparse Cholesky factorization by Kullback-Leibler minimization," *arXiv:2004.14455 [cs, math, stat]*, Oct. 2021, Available: <https://arxiv.org/abs/2004.14455>

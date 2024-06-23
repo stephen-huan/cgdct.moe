@@ -1,0 +1,29 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Canonical: https://cgdct.moe/.well-known/security.txt
+Contact: https://cgdct.moe/
+Contact: mailto:security@cgdct.moe
+Encryption: https://cgdct.moe/assets/misc/EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E.asc
+Preferred-Languages: en, ja
+Acknowledgments: https://cgdct.moe/security/acknowledgments/
+Policy: https://cgdct.moe/security/
+Hiring: https://cgdct.moe/
+Expires: 2024-03-23T18:30:00-04:00
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE6m4nlIx9v10N8IWhD7wuO6md1g4FAmQc2U4ACgkQD7wuO6md
+1g5kTRAAnMAmxILibQ/F1zbJ75/vI6Gc/g5INDJtczhCg/WP9iHh9rJnF7wx/HBh
+lHdpGJxBsy63626NodwmG/bq56llO0p4WsXEW/QcBroxErm+7Gy5i5U13L1V4ZAd
+r2iFLlEdNA+60SHGfUd2EeOShqMFbjprsut1s6UYFg6xgPn6fcDYH4FoQXQIrCcV
+hooCRn2qPgMZokY7w/D5pLy4YmhjEhp4DjzP2AxRYvfNCirbh9t0lTTOGP7NPr5a
+kVlOGPA/UCkTPJBpFfp5CkT8lK4eSeOE4ZW31P4MJLGBXd4XOLBAV1kf+5lI7EHF
+2sORmcQ8XVCUsuFRQ43aihif61AcYfrBzmzte2ILnPJJro+HUj0EiZQvndRHMcHX
+udvk7oz+eDSIoCygT+OrBAM0QKQr9Vk0moX9BYFsbUvnv31Je1caC63ZodGz0dZX
+32NPUaZvSGv+yCV0ZBAI8rr/4W/s4+YSPH3jm2Il7mWRdSa7dOcW+qy++WMBWDw+
+b8Knnm+VmJ70lgal/wBUmx+HptHMnX+D0Ff/TjqPqTxIj7KZ2TVOLZFm7h33G3+9
+yhcBGdzC+OMtpJIqatPEJg4S0Qg3hkr4O/oQYmx9p6jlye5QNBHoCfXozbQWgQHN
+0pqWCwDWKrbCYKkZiO0x5VDWKr8i2wEhEJCvf4W2vB6t1OFHLvs=
+=3dVb
+-----END PGP SIGNATURE-----
