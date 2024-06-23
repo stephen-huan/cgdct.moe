@@ -1,0 +1,18 @@
+#!/bin/sh
+# script to update dependencies
+set -o errexit
+set -o nounset
+
+libs="_libs"
+root="node_modules"
+
+julia --project="@." --optimize=0 --eval "using Pkg: update; update()"
+
+npm update --save
+# copy files from node_modules to _libs
+install -Dm644 "$root/katex/dist/katex.min.js" -t "$libs/katex"
+install -Dm644 "$root/katex/dist/katex.min.css" -t "$libs/katex"
+cp -r "$root/katex/dist/fonts" "$libs/katex"
+install -Dm644 "$root/highlight.js/styles/atom-one-light.min.css" \
+  -t "$libs/highlight/styles"
+rm -rf node_modules

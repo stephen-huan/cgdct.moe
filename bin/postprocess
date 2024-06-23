@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""
+Post-process the result of Franklin.jl
+"""
+import argparse
+import glob
+import hashlib
+import subprocess
+
+from bs4 import BeautifulSoup
+
+PREFIX = "katex"
+
+
+def get_css_class(style: str, length: int) -> str:
+    """Hash the provided style into a CSS class."""
+    hash = hashlib.sha256(style.encode("utf-8"))
+    return f"{PREFIX}-{hash.hexdigest()[:length]}"
+
+
+def prettier_check(path: str) -> set[str]:
+    """Return a set of paths on which prettier errors."""
+    return {
+        file[:-1]
+        for line in subprocess.run(
+            ["npx", "prettier", "--check", path],
+            check=False,
+            capture_output=True,
+        )
+        .stderr.decode()
+        .splitlines()
+        if line.startswith("[error]") and path in (file := line.split()[1])
+    }
+
+
+def rewrite(_: BeautifulSoup) -> bool:
+    """Whether the html is well-formed."""
+    modified = file in prettier_failed
+    if modified and args.verbose:
+        print(f"Detected invalid html in {file}")
+    return modified
+
+
+def inline_style(soup: BeautifulSoup) -> bool:
+    """Remove inline style from the html."""
+    modified = False
+    for child in soup.find_all(style=True):
+        value = child["style"]
+        key = get_css_class(value, args.length)
+        assert styles.get(key, value) == value, (
+            f'Hash collision between "{value}" and "{styles[key]}";'
+            f' both hash to "{key}". Recommend increasing --length.'
+        )
+        styles[key] = value
+        del child["style"]
+        child["class"] = child.get("class", []) + [key]
+        modified = True
+    if modified and args.verbose:
+        print(f"Found inline style in {file}")
+    return modified
+
+
+def table_align(soup: BeautifulSoup) -> bool:
+    """Remove table align attributes from the html."""
+    modified = False
+    for child in soup.find_all(["th", "td"], align=True):
+        del child["align"]
+        modified = True
+    if modified and args.verbose:
+        print(f"Found table align attribute in {file}")
+    return modified
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Post-process the result of Franklin.jl"
+    )
+    parser.add_argument(
+        "-v",
+        "--version",
+        action="version",
+        version="1.0",
+    )
+    parser.add_argument(
+        "path",
+        help="path to site folder",
+    )
+    parser.add_argument(
+        "-l",
+        "--length",
+        type=int,
+        # https://en.wikipedia.org/wiki/Birthday_attack
+        default=16,
+        help="length of hash prefix",
+    )
+    parser.add_argument(
+        "-o",
+        "--katex-output",
+        default="__site/libs/katex/katex.min.css",
+        help="output path for modified katex css",
+    )
+    parser.add_argument(
+        "-V",
+        "--verbose",
+        action="store_true",
+        help="increase verbosity",
+    )
+
+    args = parser.parse_args()
+
+    prettier_failed = prettier_check(args.path)
+    styles = {}
+    for file in glob.glob(f"{args.path}/**/*.html", recursive=True):
+        with open(file) as f:
+            soup = BeautifulSoup(f, "lxml", from_encoding="utf-8")
+        modified = any(
+            [
+                f(soup)
+                for f in (
+                    rewrite,
+                    inline_style,
+                    table_align,
+                )
+            ]
+        )
+        if modified:
+            with open(file, "w") as f:
+                f.write(str(soup))
+
+    if len(styles) > 0:
+        if args.verbose:
+            print(f"Adding {len(styles)} new rules to {args.katex_output}")
+        with open(args.katex_output, "a") as f:
+            f.write(
+                "\n".join(
+                    f".{cls}{{{style}}}"
+                    for cls, style in sorted(styles.items())
+                )
+            )
+    else:
+        if args.verbose:
+            print("No inline styles found, nothing to do!")
