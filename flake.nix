@@ -17,6 +17,9 @@
         # inherit (site) filter julia';
         # site-dependencies = site.nativeBuildInputs;
         site-dependencies = [ ];
+        python' = pkgs.python3.withPackages (ps: with ps; [
+          watchfiles
+        ]);
       in
       {
         packages.${system} = let inherit (pkgs) callPackage; in {
@@ -96,6 +99,7 @@
           packages = [
             pkgs.pandoc
             pkgs.pandoc-katex
+            python'
           ];
         };
       }
