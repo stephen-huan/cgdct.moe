@@ -10,13 +10,17 @@ Filters
 - https://codeberg.org/NomisIV/pandoc-tree-sitter-filter
 """
 
+import argparse
+import hashlib
 import json
 import os
+import shutil
 import subprocess
 from pathlib import Path
 
+source = Path("src")
+
 build = Path("build")
-build.mkdir(exist_ok=True)
 
 # `pandoc --print-default-template=html`
 template = Path("pandoc-templates/default.html5")
@@ -67,7 +71,34 @@ def render(
     ).returncode
 
 
+def hash_file(path: Path) -> bytes:
+    """Hash the file."""
+    with path.open("rb") as f:
+        return hashlib.file_digest(f, "sha256").digest()
+
+
+def process_file(path: Path) -> None:
+    """Process the file."""
+    if path.is_file():
+        dst = Path(str(path).replace(str(source), str(build)))
+        if path.suffix == ".md":
+            dst = Path(str(dst).replace("md", "html"))
+            dst.parent.mkdir(exist_ok=True, parents=True)
+            render(path, out=dst)
+        else:
+            if not dst.exists() or hash_file(dst) != hash_file(path):
+                dst.parent.mkdir(exist_ok=True, parents=True)
+                shutil.copyfile(path, dst)
+
+
 if __name__ == "__main__":
-    render(Path("src/blog/tomato-egg-noodle.md"))
-    # render(Path("src/blog/algorithm-library.md"))
-    # render(Path("src/blog/far.md"))
+    parser = argparse.ArgumentParser(description="Build a static site")
+    parser.add_argument(
+        "-w", "--watch", action="store_true", help="watch for changes"
+    )
+
+    args = parser.parse_args()
+
+    # TODO: Path.walk
+    for path in source.glob("**/*"):
+        process_file(path)
