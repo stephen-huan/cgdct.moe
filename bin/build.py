@@ -25,26 +25,23 @@ from zoneinfo import ZoneInfo
 from watchfiles import watch
 
 source = Path("src")
-css = source / "css"
-lib = source / "lib"
-
+config = Path("config")
 build = Path("build")
 
 # `pandoc --print-default-template=html`
 template = Path("pandoc-templates/default.html5")
 templates = Path("templates")
 
-metadata_path = Path("metadata.json")
+metadata_path = config / "metadata.json"
 with metadata_path.open() as f:
     metadata = json.load(f)
 
 # `pandoc --list-extensions=markdown`
-with Path("extensions.json").open() as f:
+with (config / "extensions.json").open() as f:
     extensions = "".join(sorted(json.load(f)))
 
-katex = lib / "katex"
-katex_config = Path("katex.toml")
-highlight = Path("atom-one-light.theme")
+katex_config = config / "katex.toml"
+highlight = config / "atom-one-light.theme"
 
 with (Path(__file__).parent / "last-updated.json").open() as f:
     last_updated = json.load(f)
