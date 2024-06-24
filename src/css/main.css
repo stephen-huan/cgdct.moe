@@ -232,6 +232,21 @@ code {
   padding: 0.1em 0.2em;
 }
 
+pre > code {
+  font-family: var(--monospace);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-thick);
+  background-color: var(--background);
+  border-radius: 10px;
+}
+
+pre.plaintext {
+  background-color: var(--background);
+  border: 1px dashed lightgrey;
+  border-radius: 10px;
+  padding: 1em;
+}
+
 /* ruby */
 
 rt {
