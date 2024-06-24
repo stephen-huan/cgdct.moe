@@ -20,6 +20,13 @@ $endif$
   <style>
     $styles.html()$
   </style>
+$if(displaymath-css)$
+  <link rel="stylesheet" href="$katex-vendor-css$" />
+  <link rel="stylesheet" href="$katex-css$" />
+$endif$
+$if(highlighting-css)$
+  <link rel="stylesheet" href="$highlight-css$" />
+$endif$
 $for(css)$
   <link rel="stylesheet" href="$css$" />
 $endfor$
