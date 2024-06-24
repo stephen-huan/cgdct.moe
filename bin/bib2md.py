@@ -34,7 +34,7 @@ if __name__ == "__main__":
         "-v",
         "--version",
         action="version",
-        version="1.0"
+        version="1.0",
     )
     parser.add_argument(
         "path",

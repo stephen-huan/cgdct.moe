@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+"""
+Modify a pandoc highlight style.
+"""
 import json
 
 name = "atom-one-light.theme"

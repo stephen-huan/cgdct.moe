@@ -1,3 +1,4 @@
-#!/run/current-system/sw/bin/sh
+#!/bin/sh
+# script to serve the website locally
 
 python -m http.server --directory build

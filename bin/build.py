@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Render a markdown document to html.
 
@@ -56,6 +57,9 @@ with (Path(__file__).parent / "last-updated.json").open() as f:
 
 # TODO: https://tree-sitter.github.io/tree-sitter/syntax-highlighting
 # https://codeberg.org/NomisIV/pandoc-tree-sitter-filter
+
+# TODO: parse header with pandoc
+# TODO: generate from stdin
 
 
 def render(
@@ -152,6 +156,7 @@ if __name__ == "__main__":
     # TODO: Path.walk
     for path in source.glob("**/*"):
         process_file(path)
+    # process_file(source / "index.md")
     if args.watch:
         print("Watching for changes...")
         for changes in watch(source, raise_interrupt=False):
