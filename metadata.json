@@ -5,7 +5,7 @@
   "maxwidth": "50em",
   "git-repo": "https://github.com/stephen-huan/cgdct.moe/blob/master/",
   "timezone": "US/Eastern",
-  "date-format": "%Y-%M-%d",
+  "date-format": "%Y-%m-%d",
   "footer-text": "さみしいも、たのしい。",
   "footer-exclude": [
     "src/404.md",
