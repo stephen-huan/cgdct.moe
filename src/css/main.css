@@ -555,7 +555,7 @@ nav li a:hover {
   color: var(--theme-darksilver-color);
 }
 
-header {
+body > header {
   text-align: right;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -563,7 +563,7 @@ header {
   align-items: center;
 }
 
-header .blog-name {
+body > header .blog-name {
   width: 35%;
   display: inline-block;
   text-align: left;
@@ -572,7 +572,7 @@ header .blog-name {
   padding-top: 0.5rem;
 }
 
-header .blog-name a {
+body > header .blog-name a {
   color: var(--text-color);
   text-decoration: none;
 }
@@ -582,14 +582,14 @@ header .blog-name a {
 }
 
 @media (max-width: 480px) {
-  header {
+  body > header {
     padding-left: 6%;
     padding-right: 6%;
   }
 }
 
 @media (min-width: 481px) {
-  header {
+  body > header {
     padding-left: 12.5%;
     padding-right: 12.5%;
   }
@@ -597,7 +597,7 @@ header .blog-name a {
 
 /* wide display: enforce maximum width of header to match content */
 @media (min-width: 940px) {
-  header {
+  body > header {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -606,11 +606,11 @@ header .blog-name a {
 
 /* medium display: nav goes under name */
 @media (max-width: 940px) {
-  header {
+  body > header {
     display: block;
   }
 
-  header .blog-name {
+  body > header .blog-name {
     display: block;
     width: 100%;
     padding-bottom: 0.5rem;
@@ -626,13 +626,13 @@ narrow display: collapse the header (don't show the menu items)
 instead, display a burger menu.
 */
 @media (max-width: 760px) {
-  header {
+  body > header {
     height: 2rem;
     display: flex;
     align-items: center;
   }
 
-  header .blog-name {
+  body > header .blog-name {
     display: inline-block;
     width: 70%;
   }
