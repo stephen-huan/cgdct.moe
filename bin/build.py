@@ -11,11 +11,13 @@ Filters
 """
 
 import argparse
+import copy
 import hashlib
 import json
 import os
 import shutil
 import subprocess
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -30,11 +32,11 @@ build = Path("build")
 
 # `pandoc --print-default-template=html`
 template = Path("pandoc-templates/default.html5")
+templates = Path("templates")
+
 metadata_path = Path("metadata.json")
 with metadata_path.open() as f:
     metadata = json.load(f)
-
-templates = Path("templates")
 
 # `pandoc --list-extensions=markdown`
 with Path("extensions.json").open() as f:
@@ -76,28 +78,38 @@ def render(
     url = f"{metadata['git-repo']}{path}"
     space = " " if len(lastupdated) > 0 else ""
     pagesource = f'<a href="{url}">Page source</a>.{space}'
-    return subprocess.run(
-        [
-            "pandoc",
-            f"--from=markdown{extensions}",
-            "--to=html",
-            "--standalone",
-            f"--template={template}",
-            f"--output={out}",
-            f"--table-of-contents={table_of_contents}",
-            f"--toc-depth={toc_depth}",
-            f"--metadata-file={metadata_path}",
-            f"--highlight-style={highlight}",
-            "--filter=pandoc-katex",
-            f"--variable=git-pagesource:{pagesource}",
-            f"--variable=git-lastupdated:{lastupdated}",
-            path,
-        ],
-        env=os.environ
-        | {
-            "PANDOC_KATEX_CONFIG_FILE": katex_config,
-        },
-    ).returncode
+    headers = copy.deepcopy(metadata["headers"])
+    for header in headers:
+        if header["url"] == "/":
+            header["active"] = path == source / "index.md"
+        elif header["url"] in str(path):
+            header["active"] = True
+    with tempfile.NamedTemporaryFile(mode="w+", suffix=".json") as tmpfile:
+        json.dump({"headers": headers}, tmpfile)
+        tmpfile.flush()
+        return subprocess.run(
+            [
+                "pandoc",
+                f"--from=markdown{extensions}",
+                "--to=html",
+                "--standalone",
+                f"--template={template}",
+                f"--output={out}",
+                f"--table-of-contents={table_of_contents}",
+                f"--toc-depth={toc_depth}",
+                f"--metadata-file={metadata_path}",
+                f"--metadata-file={tmpfile.name}",
+                f"--highlight-style={highlight}",
+                "--filter=pandoc-katex",
+                f"--variable=git-pagesource:{pagesource}",
+                f"--variable=git-lastupdated:{lastupdated}",
+                path,
+            ],
+            env=os.environ
+            | {
+                "PANDOC_KATEX_CONFIG_FILE": katex_config,
+            },
+        ).returncode
 
 
 def hash_file(path: Path) -> bytes:

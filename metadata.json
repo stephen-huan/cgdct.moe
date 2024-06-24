@@ -12,5 +12,12 @@
     "src/blog/index.md",
     "src/projects/index.md",
     "src/publications/index.md"
+  ],
+  "headers": [
+    { "url": "/", "name": "about" },
+    { "url": "/blog/", "name": "blog" },
+    { "url": "/projects/", "name": "projects" },
+    { "url": "/publications/", "name": "publications" },
+    { "url": "/assets/pdf/cv.pdf", "name": "cv" }
   ]
 }
