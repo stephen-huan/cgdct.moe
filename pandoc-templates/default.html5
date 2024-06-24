@@ -35,9 +35,11 @@ $if(math)$
 $endif$
 </head>
 <body>
+$../templates/header.html()$
 $for(include-before)$
 $include-before$
 $endfor$
+<article class="franklin-content">
 $if(title)$
 <header id="title-block-header">
 $if(title-lang)$
@@ -71,8 +73,10 @@ $table-of-contents$
 </nav>
 $endif$
 $body$
+</article>
 $for(include-after)$
 $include-after$
 $endfor$
+$../templates/footer.html()$
 </body>
 </html>
