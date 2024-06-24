@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{stylesheets}}
+    <link rel="icon" href="/assets/favicon.svg" />
+    <title>Tag: {{fill fd_tag}}</title>
+    <meta
+      name="description"
+      content="All blog posts tagged with #{{fill fd_tag}}"
+    />
+  </head>
+  <body>
+    {{insert header.html}}
+    <div class="{{div_content}}">
+      <h1>Tag: {{fill fd_tag}}</h1>
+      {{custom_taglist}} {{insert page_foot.html}}
+    </div>
+  </body>
+</html>

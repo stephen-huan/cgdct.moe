@@ -1,0 +1,25 @@
+<header>
+  <div class="blog-name">
+    $if(disable-blog-name)$ $else$
+    <a href="/"><b class="font-weight-bold">Stephen</b> Huan</a>
+    $endif$
+  </div>
+  <nav>
+    <ul>
+      $for(headers)$
+      <li>
+        <a href="$headers.url$" $if(headers.active)$class="active" $endif$
+          >$headers.name$</a
+        >
+      </li>
+      $endfor$
+    </ul>
+    <img
+      alt="menu icon"
+      src="/assets/hamburger.svg"
+      width="32"
+      height="32"
+      id="menu-icon"
+    />
+  </nav>
+</header>
