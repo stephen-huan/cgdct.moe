@@ -120,6 +120,8 @@ def process_file(path: Path) -> None:
     if path.is_file():
         dst = Path(str(path).replace(str(source), str(build)))
         if path.suffix == ".md":
+            if path.name not in ["index.md", "404.md"]:
+                dst = dst.parent / path.stem / "index.md"
             dst.parent.mkdir(exist_ok=True, parents=True)
             render(path, out=dst.with_suffix(".html"))
         else:
