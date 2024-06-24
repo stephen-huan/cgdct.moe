@@ -81,8 +81,18 @@ def render(
             header["active"] = path == source / "index.md"
         elif header["url"] in str(path):
             header["active"] = True
+    css = ["/css/main.css"]
+    css_path = Path(
+        str(path).replace(str(source), "src/css/root")
+    ).with_suffix(".css")
+    if css_path.exists():
+        css.append(f"/{css_path.relative_to(source)}")
+    metadata_tmp = {
+        "headers": headers,
+        "css": css,
+    }
     with tempfile.NamedTemporaryFile(mode="w+", suffix=".json") as tmpfile:
-        json.dump({"headers": headers}, tmpfile)
+        json.dump(metadata_tmp, tmpfile)
         tmpfile.flush()
         return subprocess.run(
             [
