@@ -101,6 +101,7 @@ def render(
                 "--to=html",
                 "--standalone",
                 f"--template={template}",
+                f"--include-in-header={templates / 'favicon.html'}",
                 f"--output={out}",
                 f"--table-of-contents={table_of_contents}",
                 f"--toc-depth={toc_depth}",
