@@ -6,7 +6,7 @@
   "katex-vendor-css": "/lib/katex/katex.min.css",
   "katex-css": "/css/katex.css",
   "git-repo": "https://github.com/stephen-huan/cgdct.moe/blob/master/",
-  "timezone": "US/Eastern",
+  "timezone": "Antarctica/Syowa",
   "date-format": "%Y-%m-%d",
   "footer-text": "さみしいも、たのしい。",
   "footer-exclude": [
