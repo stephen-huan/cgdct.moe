@@ -125,7 +125,7 @@ def render(
     for header in headers:
         if header["url"] == "/":
             header["active"] = path == source / "index.md"
-        elif header["url"] in str(path):
+        elif header["url"] in str(out):
             header["active"] = True
     css = ["/css/main.css"]
     css_path = Path(
