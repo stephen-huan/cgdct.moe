@@ -14,7 +14,7 @@ is-template: true
 :::{.news .clean-table .no-header}
 
 ```{=html}
-$ ../templates/news.html() $
+$../templates/news.html()$
 
 ```
 
