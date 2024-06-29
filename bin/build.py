@@ -71,9 +71,34 @@ def get_metadata(path: Path) -> dict:
     )
 
 
-def render(path: Path, out: Path = build / "out.html") -> int:
+def render(
+    path: Path, out: Path = build / "out.html", src: Path | None = None
+) -> int:
     """Render a path to html."""
     path_metadata = get_metadata(path)
+    # evaluate file as template and re-evaluate
+    # https://github.com/jgm/pandoc/issues/1950#issuecomment-74613325
+    if path_metadata.get("is-template", False) and src is None:
+        metadata_tmp = {}
+        with tempfile.NamedTemporaryFile(mode="w+", suffix=".md") as tmpfile:
+            with tempfile.NamedTemporaryFile(
+                mode="w+", suffix=".json"
+            ) as metadata_tmpfile:
+                json.dump(metadata_tmp, metadata_tmpfile)
+                metadata_tmpfile.flush()
+                subprocess.run(
+                    [
+                        "pandoc",
+                        f"--template={path}",
+                        f"--output={tmpfile.name}",
+                        f"--metadata-file={metadata_path}",
+                        f"--metadata-file={metadata_tmpfile.name}",
+                        path,
+                    ]
+                )
+                return render(path, out, Path(tmpfile.name))
+    if src is None:
+        src = path
     table_of_contents = path_metadata.get("toc", metadata.get("toc", False))
     toc_depth = path_metadata.get("toc-depth", metadata.get("toc-depth", 4))
     if path in last_updated and path not in metadata.get("footer-exclude", []):
@@ -122,7 +147,7 @@ def render(path: Path, out: Path = build / "out.html") -> int:
                 "--filter=pandoc-katex",
                 f"--variable=git-pagesource:{pagesource}",
                 f"--variable=git-lastupdated:{lastupdated}",
-                path,
+                src,
             ],
             env=os.environ
             | {
@@ -163,7 +188,6 @@ if __name__ == "__main__":
     # TODO: Path.walk
     for path in source.glob("**/*"):
         process_file(path)
-    # process_file(source / "index.md")
     if args.watch:
         print("Watching for changes...")
         for changes in watch(source, raise_interrupt=False):
