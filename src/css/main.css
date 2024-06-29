@@ -195,7 +195,7 @@ tr:first-of-type > th {
   background-color: var(--background);
 }
 
-.no-header table tbody tr th {
+.no-header table thead {
   display: none;
 }
 
