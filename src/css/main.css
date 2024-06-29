@@ -517,22 +517,22 @@ rt {
     HEADER AND NAV
 ================================================================== */
 
-nav {
+body > header > nav {
   width: 65%;
   display: inline-block;
 }
 
-nav ul {
+body > header > nav ul {
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-nav li {
+body > header > nav li {
   display: inline-block;
 }
 
-nav li a {
+body > header > nav li a {
   color: black;
   text-decoration: none;
   display: inline-block;
@@ -542,16 +542,16 @@ nav li a {
   transition: color 0.3s ease;
 }
 
-nav li:last-of-type a {
+body > header > nav li:last-of-type a {
   margin-right: 0px;
 }
 
-nav .active {
+body > header > nav .active {
   color: var(--text-color);
   font-weight: var(--font-weight-thick);
 }
 
-nav li a:hover {
+body > header > nav li a:hover {
   color: var(--theme-darksilver-color);
 }
 
@@ -616,7 +616,7 @@ body > header .blog-name a {
     padding-bottom: 0.5rem;
   }
 
-  nav {
+  body > header > nav {
     width: 100%;
   }
 }
@@ -637,13 +637,13 @@ instead, display a burger menu.
     width: 70%;
   }
 
-  nav {
+  body > header > nav {
     display: inline-block;
     width: 27%;
   }
 
-  nav ul,
-  nav:active ul {
+  body > header > nav ul,
+  body > header > nav:active ul {
     display: none;
     position: absolute;
 
@@ -657,14 +657,14 @@ instead, display a burger menu.
     z-index: 1;
   }
 
-  nav li {
+  body > header > nav li {
     text-align: left;
     display: block;
     padding: 0;
     margin: 0;
   }
 
-  nav:hover ul {
+  body > header > nav:hover ul {
     display: block;
   }
 
