@@ -106,7 +106,9 @@ def render(
         src = path
     table_of_contents = path_metadata.get("toc", metadata.get("toc", False))
     toc_depth = path_metadata.get("toc-depth", metadata.get("toc-depth", 4))
-    if path in last_updated and path not in metadata.get("footer-exclude", []):
+    if path in last_updated and str(path) not in metadata.get(
+        "footer-exclude", []
+    ):
         dt = last_updated[path]
         date = dt.strftime(metadata.get("date-format", "%Y-%m-%d"))
         timestamp = f'<time datetime="{dt.isoformat()}">{date}</time>'
