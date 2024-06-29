@@ -1609,16 +1609,16 @@ Complexity: $\BigO(\alpha(N))$
 where $\alpha$ is the inverse [Ackermann
 function](https://en.wikipedia.org/wiki/Ackermann_function).
 
-@@centering,border
-\begin{figure}
-  \figpreview{Mikasa Ackerman}{358414.webp}{225}{350}{
-    https://cdn.myanimelist.net/images/characters/15/358414.jpg
-  }
-  \caption{
+:::{.centering .border}
+
+<figure>
+  [![Mikasa Ackerman](/assets/blog/algorithm-library/358414.webp){width=225 height=350}](https://cdn.myanimelist.net/images/characters/15/358414.jpg)
+  <figcaption>
     [Mikasa Ackerman](https://myanimelist.net/character/40881/Mikasa_Ackerman).
-  }
-\end{figure}
-@@
+  </figcaption>
+</figure>
+
+:::
 
 ```python
 def union_init(n: int) -> tuple:
