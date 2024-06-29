@@ -62,19 +62,20 @@ with (Path(__file__).parent / "last-updated.json").open() as f:
 # TODO: generate from stdin
 
 
-def get_header(path: Path) -> dict | None:
-    """Parse the yaml header of the path."""
-    if path.suffix == ".md" and path.open().readline() == "---\n":
-        return next(yaml.safe_load_all(path.open()))
+def get_metadata(path: Path) -> dict:
+    """Parse the yaml metadata of the path."""
+    return (
+        next(yaml.safe_load_all(path.open()))
+        if path.suffix == ".md" and path.open().readline() == "---\n"
+        else {}
+    )
 
 
-def render(
-    path: Path,
-    out: Path = build / "out.html",
-    table_of_contents: bool = True,
-    toc_depth: int = 3,
-) -> int:
+def render(path: Path, out: Path = build / "out.html") -> int:
     """Render a path to html."""
+    path_metadata = get_metadata(path)
+    table_of_contents = path_metadata.get("toc", False)
+    toc_depth = path_metadata.get("toc-depth", 3)
     if path in last_updated and path not in metadata["footer-exclude"]:
         dt = last_updated[path]
         date = dt.strftime(metadata["date-format"])
