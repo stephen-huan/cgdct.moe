@@ -6,6 +6,7 @@ date: 2019-12-7
 keywords: ["cs"]
 toc: true
 toc-depth: 3
+katex: true
 ---
 
 ## Basics
@@ -91,7 +92,7 @@ for i in range(N):
 
 [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) -
 [Verification]() -
-Complexity: $ \BigO(\log b) $
+Complexity: $\BigO(\log b)$
 ```python
 def gcd(a: int, b: int) -> int:
     while b != 0:
@@ -126,7 +127,7 @@ def prime(n: int) -> bool:
 
 [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/G) -
-Complexity: $ \BigO(n \log \log n) $
+Complexity: $\BigO(n \log \log n)$
 ```python
 def sieve(n: int) -> list:
     """ Generates a look up table of primality up to n. """
@@ -158,14 +159,14 @@ m = 1000000007
 ```
 tl;dr spam modulo if the problem asks you to return the answer mod `m`.
 
-If asking for count (which is often) must be $ \geq 0 $
+If asking for count (which is often) must be $\geq 0$
 ```python
 x if x >= 0 else x + m
 ```
 
 [Modular exponentiation](https://en.wikipedia.org/wiki/Modular_exponentiation) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/238084/problem/E) -
-Complexity: $ \BigO(\log e) $
+Complexity: $\BigO(\log e)$
 ```python
 def mod_exp(b: int, e: int, m: int) -> int:
     """ Returns b^e % m """
@@ -183,7 +184,7 @@ def mod_exp(b: int, e: int, m: int) -> int:
 
 [Extended Euclidean algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/238084/problem/G) -
-Complexity: $ \BigO(\log b) $
+Complexity: $\BigO(\log b)$
 ```python
 def extended_gcd(a: int, b: int) -> tuple:
     """ Returns (gcd(a, b), x, y) such that ax + by = gcd(a, b). """
@@ -226,7 +227,7 @@ def factor(n: int) -> list:
 
 [Prime Factorization](https://en.wikipedia.org/wiki/Trial_division) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/G) -
-Complexity: $ \BigO(\sqrt{x}/\log{x}) $
+Complexity: $\BigO(\sqrt{x}/\log{x})$
 ```python
 def prime_factor(n: int, primes: list) -> list:
     """ Prime factorizes a number, given a precomputed list of primes. """
@@ -247,7 +248,7 @@ def prime_factor(n: int, primes: list) -> list:
 
 [Most Significant Bit](http://web.stanford.edu/class/cs166/lectures/16/Slides16.pdf) -
 [Verification]() -
-Complexity: Can be done in $ \BigO(1) $ with some work
+Complexity: Can be done in $\BigO(1)$ with some work
 ```python
 def msb(n: int) -> int:
     """ Returns the index of the most significant bit of n. """
@@ -256,7 +257,7 @@ def msb(n: int) -> int:
 
 [Brian Kernighan's set bit count](https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetKernighan) -
 [Verification: Othello]() -
-Complexity: $ \BigO(\log x) $
+Complexity: $\BigO(\log x)$
 ```python
 def set_pos(x: int) -> list:
     """ Finds the number of 1's in a number. """
@@ -270,7 +271,7 @@ def set_pos(x: int) -> list:
 
 [Binary Counter]() -
 [Verification]() -
-Complexity: amortized $ \BigO(1) $ over $ n $ operations
+Complexity: amortized $\BigO(1)$ over $n$ operations
 ```python
 def increment(c: int, m: int) -> int:
     """ Increments a binary counter. """
@@ -323,7 +324,7 @@ def mat_exp(A: list, k: int) -> list:
 
 [Gauss–Jordan elimination](https://en.wikipedia.org/wiki/Gaussian_elimination) -
 [Verification: Google Foobar](https://foobar.withgoogle.com/) -
-Complexity: $ \BigO(n^3) $
+Complexity: $\BigO(n^3)$
 ```python
 def inv(m):
     """ Inverts a matrix. """
@@ -354,7 +355,7 @@ def inv(m):
 
 [Simplex Algorithm](https://en.wikipedia.org/wiki/Simplex_algorithm) -
 [Verification]() -
-Complexity: $ \BigO(?) $ (see [smoothed
+Complexity: $\BigO(?)$ (see [smoothed
 analysis](https://en.wikipedia.org/wiki/Smoothed_analysis))
 
 ```python
@@ -515,7 +516,7 @@ def simplex(prog) -> tuple:
 ### Fast Fourier Transform
 [Cooley–Tukey Recursive FFT](https://cp-algorithms.com/algebra/fft.html#toc-tgt-2) -
 [Verification]() -
-Complexity: $ \BigO(n \log n) $
+Complexity: $\BigO(n \log n)$
 ```python
 import cmath, math
 
@@ -542,7 +543,7 @@ def inv_recur_fft(a: list) -> list:
 
 [Cooley–Tukey Iterative FFT](https://cp-algorithms.com/algebra/fft.html#toc-tgt-5) -
 [Verification]() -
-Complexity: $ \BigO(n \log n) $
+Complexity: $\BigO(n \log n)$
 ```python
 def rev_increment(c: int, m: int) -> int:
     """ Increments a reverse binary counter. """
@@ -661,7 +662,7 @@ def inv_int_fft(a: list, wn: int, p: int) -> list:
 
 [Recursive FFT with modulo (NTT)](https://cp-algorithms.com/algebra/fft.html#toc-tgt-7) -
 [Verification]() -
-Complexity: $ \BigO(n \log n) $
+Complexity: $\BigO(n \log n)$
 ```python
 def recur_int_fft(a: list, wn: int, p: int) -> list:
     """ Computes the DFT of a with recursion and modulo. """
@@ -681,10 +682,10 @@ def recur_int_fft(a: list, wn: int, p: int) -> list:
 
 Polynomial Multiplication with the FFT -
 [Verification: SPOJ POLYMUL](https://www.spoj.com/problems/POLYMUL/) -
-Complexity: $ \BigO(n \log n) $
+Complexity: $\BigO(n \log n)$
 
-Note: make sure $ p $ is bigger than $ m^2 n $, where $ m $ is the
-biggest number in the array and $ n $ is the length of the array.
+Note: make sure $p$ is bigger than $m^2 n$, where $m$ is the
+biggest number in the array and $n$ is the length of the array.
 ```python
 def mirror(a: list) -> list:
     """
@@ -718,7 +719,7 @@ if __name__ == "__main__":
 
 [2D Convolution](https://en.wikipedia.org/wiki/Multidimensional_discrete_convolution) -
 [Verification]() -
-Complexity: $ \BigO(nm \log{nm}) $
+Complexity: $\BigO(nm \log{nm})$
 ```python
 def flatten(m: list, pad=0) -> list:
     """ Flattens a matrix into a list. """
@@ -754,7 +755,7 @@ by Almost Pure Induced-Sorting_](https://doi.org/10.1109/DCC.2009.42).
 
 [Suffix Array by Induced Sorting](http://web.stanford.edu/class/cs166/lectures/04/Small04.pdf) -
 [Verification: SPOJ SARRAY](https://www.spoj.com/problems/SARRAY/) -
-Complexity: $ \BigO(m) $
+Complexity: $\BigO(m)$
 ```python
 def lms_block(s: list, t: list, i: int) -> str:
     """ Label each character of s with L (False) or S (True). """
@@ -877,7 +878,7 @@ and Its Applications_](https://doi.org/10.1007/3-540-48194-X_17)
 
 [Kasai](http://web.stanford.edu/class/cs166/lectures/03/Slides03.pdf) -
 [Verification: USACO Standing Out](http://www.usaco.org/index.php?page=viewproblem2&cpid=768) -
-Complexity: $ \BigO(m) $
+Complexity: $\BigO(m)$
 ```python
 def lcp_array(s: str, sa: list) -> list:
     """" Construct the LCP array given a string s and its suffix array sa. """
@@ -1112,7 +1113,7 @@ Lectures:
 
 [Generalized Suffix Tree](http://web.stanford.edu/class/archive/cs/cs166/cs166.1186/lectures/03/Small03.pdf) -
 [Verification]() -
-Complexity: $ \BigO(n) $
+Complexity: $\BigO(n)$
 ```python
 def generalized_suffix_tree(words: list) -> SuffixTree:
     """ Construct a suffix tree on the concatenation of multiple words. """
@@ -1141,7 +1142,7 @@ def generalized_suffix_tree(words: list) -> SuffixTree:
 
 Suffix Tree to DAG -
 [Verification]() -
-Complexity: $ \BigO(n) $
+Complexity: $\BigO(n)$
 ```python
 def suffix_tree_dag(t: SuffixTree) -> dict:
     """ Converts a suffix tree to a numeric DAG. """
@@ -1166,7 +1167,7 @@ def suffix_tree_dag(t: SuffixTree) -> dict:
 
 [Aho-Corasick](http://web.stanford.edu/class/archive/cs/cs166/cs166.1166/lectures/02/Small02.pdf) -
 [Verification: USACO Censoring](http://www.usaco.org/index.php?page=viewproblem2&cpid=533) -
-Complexity: $ \langle \BigO(n), \BigO(m + z) \rangle $
+Complexity: $\langle \BigO(n), \BigO(m + z) \rangle$
 ```python
 from collections import deque
 
@@ -1276,7 +1277,7 @@ def aho_corasick(s: str, patterns: list, t: Trie=None) -> list:
 
 [Knuth-Morris-Pratt](https://web.stanford.edu/class/cs97si/10-string-algorithms.pdf) -
 [Verification: SPOJ Rotations](https://www.spoj.com/problems/EC_WORLD/) -
-Complexity: $ \langle \BigO(n), \BigO(m) \rangle $
+Complexity: $\langle \BigO(n), \BigO(m) \rangle$
 ```python
 def prefix_function(s: str) -> list:
     pi = [-1]*len(s)
@@ -1326,7 +1327,7 @@ print(recur.cache_info())
 
 [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search) -
 [Verification: AI]() -
-Complexity: $ \BigO(V + E) $
+Complexity: $\BigO(V + E)$
 ```python
 from collections import deque
 
@@ -1344,7 +1345,7 @@ def bfs(graph, start):
 
 [Depth-first search](https://en.wikipedia.org/wiki/Depth-first_search) -
 [Verification: AI]() -
-Complexity: $ \BigO(V + E) $
+Complexity: $\BigO(V + E)$
 ```python
 def dfs(graph, start):
     """ Depth-first search on graph from start. """
@@ -1360,7 +1361,7 @@ def dfs(graph, start):
 
 [Iterative post-order depth-first search](https://en.wikipedia.org/wiki/Tree_traversal) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/A) -
-Complexity: $ \BigO(V + E) $
+Complexity: $\BigO(V + E)$
 ```python
 def dfs(graph, u):
     """ Iterative post-order depth-first search. """
@@ -1382,7 +1383,7 @@ def dfs(graph, u):
 
 [Iterative post-order DFS (without indexing children)](https://en.wikipedia.org/wiki/Tree_traversal) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/A) -
-Complexity: $ \BigO(V + E) $
+Complexity: $\BigO(V + E)$
 ```python
 def dfs(graph, u):
     """ Iterative post-order depth-first search. """
@@ -1407,7 +1408,7 @@ def dfs(graph, u):
 
 [Eulerian Tour](https://en.wikipedia.org/wiki/Eulerian_path) -
 [Verification: USACO Training Riding the Fences](https://train.usaco.org/usacoprob2?a=TpH8RHs6Taa&S=fence) -
-Complexity: $ \BigO(V + E) $
+Complexity: $\BigO(V + E)$
 ```python
 def eulerian_tour(graph: dict) -> list:
     """ Finds a Eulerian tour or walk of the graph, whichever is possible. """
@@ -1443,7 +1444,7 @@ def eulerian_tour(graph: dict) -> list:
 
 [Topological Sort](https://en.wikipedia.org/wiki/Topological_sorting) -
 [Verification](https://leetcode.com/problems/course-schedule-ii/) -
-Complexity: $ \BigO(V + E) $
+Complexity: $\BigO(V + E)$
 ```python
 def dfs(graph: dict, u: int, order: list, done: set) -> list:
     """ Depth-first search on graph from start. """
@@ -1482,7 +1483,7 @@ def topological_sort(graph: dict) -> list:
 
 [Dijkstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) -
 [Verification: USACO Training Sweet Butter](https://train.usaco.org/usacoprob2?a=TpH8RHs6Taa&S=butter) -
-Complexity: $ \BigO((E + V) \log V) $ (I think)
+Complexity: $\BigO((E + V) \log V)$ (I think)
 ```python
 import heapq
 
@@ -1533,7 +1534,7 @@ def heap_dijkstra(graph, i):
 
 [Floyd-Warshall](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm) -
 [Verification: USACO Training Bessie Come Home](https://train.usaco.org/usacoprob2?a=TpH8RHs6Taa&S=comehome) -
-Complexity: $ \BigO(V^3) $
+Complexity: $\BigO(V^3)$
 ```python
 def floyd_warshall():
     """ All-pairs shortest path for the graph. """
@@ -1603,9 +1604,9 @@ def Astar(start):
 
 [Union-find (or disjoint-set)](https://activities.tjhsst.edu/sct/lectures/1920/2019_10_18_Union_Find_and_MST.pdf) -
 [Verification: USACO Closing](http://usaco.org/index.php?page=viewproblem2&cpid=646) -
-Complexity: $ \BigO(\alpha(N)) $
+Complexity: $\BigO(\alpha(N))$
 
-where $ \alpha $ is the inverse [Ackermann
+where $\alpha$ is the inverse [Ackermann
 function](https://en.wikipedia.org/wiki/Ackermann_function).
 
 @@centering,border
@@ -1661,7 +1662,7 @@ def find(parent: dict, u: int) -> int:
 
 [Kruskal](https://activities.tjhsst.edu/sct/lectures/1920/2019_10_18_Union_Find_and_MST.pdf) -
 [Verification: USACO Simplify](http://www.usaco.org/index.php?page=viewproblem2&cpid=101) -
-Complexity: $ \BigO(E \log E) = \BigO(E \log V) $
+Complexity: $\BigO(E \log E) = \BigO(E \log V)$
 ```python
 def kruskal(graph: dict) -> list:
     """ Find the minimum spanning tree of the graph with Kruskal's. """
@@ -1678,7 +1679,7 @@ def kruskal(graph: dict) -> list:
 
 [Prim](https://en.wikipedia.org/wiki/Prim%27s_algorithm) -
 [Verification](https://train.usaco.org/usacoprob2?a=TpH8RHs6Taa&S=agrinet) -
-Complexity: $ \BigO(V^2) $
+Complexity: $\BigO(V^2)$
 ```python
 def prim(m: list) -> float:
     """ Find the minimum spanning tree of the graph with Prim's. """
@@ -1715,7 +1716,7 @@ sys.setrecursionlimit(10**6)
 
 Connected components -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/238084/problem/I) -
-Complexity: $ \BigO(V + E) $
+Complexity: $\BigO(V + E)$
 ```python
 def assign(u, num, ids={}):
     """ Assign u and its children to the component num. """
@@ -1821,7 +1822,7 @@ for key, value in ids.items():
 
 [Lowest Common Ancestor](https://en.wikipedia.org/wiki/Lowest_common_ancestor) -
 [Verification: PClassic]() -
-Complexity: $ \langle 0, \BigO(n) \rangle $
+Complexity: $\langle 0, \BigO(n) \rangle$
 ```python
 def bfs(graph, start):
     """ Breadth-first search on graph from start. """
@@ -1857,7 +1858,7 @@ def lca(heights, parents, u, v):
 
 [Jump Pointers](https://activities.tjhsst.edu/sct/lectures/1920/2019_10_25_LCA.pdf) -
 [Verification: USACO Max Flow](http://www.usaco.org/index.php?page=viewproblem2&cpid=576) -
-Complexity: $ \langle \BigO(n \log n), \BigO(\log n) \rangle $
+Complexity: $\langle \BigO(n \log n), \BigO(\log n) \rangle$
 ```python
 import math
 
@@ -1905,7 +1906,7 @@ def lca(heights: dict, table: list, u: int, v: int) -> int:
 
 [Euler Tour](https://activities.tjhsst.edu/sct/lectures/1819/2019_2_11_LCA.pdf) -
 [Verification: USACO Max Flow](http://www.usaco.org/index.php?page=viewproblem2&cpid=576) -
-Complexity: $ \langle \BigO(n), \BigO(1) \rangle $
+Complexity: $\langle \BigO(n), \BigO(1) \rangle$
 ```python
 def traversal(u) -> tuple:
     """ Euler tour on the tree rooted at u. """
@@ -1944,7 +1945,7 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]
 
 [Heavy-Light Decomposition](https://activities.tjhsst.edu/sct/lectures/1819/2019_3_15_HLD.pdf) -
 [Verification: USACO Milk Visits](http://usaco.org/index.php?page=viewproblem2&cpid=970) -
-Complexity: $ \BigO(n) $
+Complexity: $\BigO(n)$
 ```python
 def hld(graph: dict, start: int) -> tuple:
     """ Heavy-light decomposition of the tree. """
@@ -2018,7 +2019,7 @@ def query(parents: dict, heights: dict, head: dict,
 #### Tree to Array
 
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/B) -
-Complexity: $ \BigO(V + E) $
+Complexity: $\BigO(V + E)$
 ```python
 def tree_to_dag(u, seen=set()):
     """ Turn a tree into a DAG. """
@@ -2074,7 +2075,7 @@ def dfs(u, seen=set()):
 
 [Edmonds-Karp](https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm) -
 [Verification: SPOJ MTOTALF](https://www.spoj.com/problems/MTOTALF/) -
-Complexity: $ \BigO(V E^2) $
+Complexity: $\BigO(V E^2)$
 ```python
 def bfs(c, f, s, t):
     """ Breadth-first search on graph from start. """
@@ -2123,15 +2124,15 @@ Min-cost
 - \url{https://open.kattis.com/problems/mincostmaxflow}
 
 Extensions
-- Self edge: flow is 0 ($ f(u, u) = -f(u, u)$), therefore capacity is 0
-- Multiple edges between $ (u, v) $: one edge with the sum of the capacities
-- Undirected graph: add $ (u, v) $ and $ (v, u) $
+- Self edge: flow is 0 ($f(u, u) = -f(u, u)$), therefore capacity is 0
+- Multiple edges between $(u, v)$: one edge with the sum of the capacities
+- Undirected graph: add $(u, v)$ and $(v, u)$
 - Unweighted graph: weight of 1
-- If vertex $ v $ has capacity $ c $: make new
-  vertices $ v_\text{in} $, $ v_\text{out} $.
-  All edges going into $ v $ go into $ v_\text{in}
-  $, going out of $ v $ goes from $ v_\text{out} $.
-  Add edge $ (v_\text{in}, v_\text{out}) $ with capacity $ c $.
+- If vertex $v$ has capacity $c$: make new
+  vertices $v_\text{in}$, $v_\text{out}$.
+  All edges going into $v$ go into $v_\text{in}$,
+  going out of $v$ goes from $v_\text{out}$.
+  Add edge $(v_\text{in}, v_\text{out})$ with capacity $c$.
 - Multiple sources/sinks: make supersource connected to each source with
   infinite capacity and each sink connected to supersink with infinite capacity
 
@@ -2151,7 +2152,7 @@ Notes:
 
 [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) -
 [Verification: MBIT Hen Hackers](https://pdfhost.io/v/E8BXkbbdN_mBIT_Advancedpdf.pdf) -
-Complexity: $ \BigO(n \log n) $
+Complexity: $\BigO(n \log n)$
 ```python
 def merge_two(l1: list, l2: list) -> list:
     """ Takes in two sorted lists and returns a sorted list. """
@@ -2174,7 +2175,7 @@ def merge_sort(l: list) -> list:
 
 [Quick Sort](https://en.wikipedia.org/wiki/Quicksort) -
 [Verification]() -
-Complexity: expected $ \BigO(n \log n) $
+Complexity: expected $\BigO(n \log n)$
 ```python
 def median(n1: int, n2: int, n3: int) -> int:
     """ Finds the median of three numbers. """
@@ -2194,7 +2195,7 @@ def quick_sort(l: list) -> list:
 
 [Order statistics](https://activities.tjhsst.edu/computervision/lectures/kmeans_Handout.pdf#page=38) -
 [Verification]() -
-Complexity: $ \BigO(n) $
+Complexity: $\BigO(n)$
 ```python
 def split(l: list, x: float) -> tuple:
     """ Splits the list by a particular value x. """
@@ -2226,7 +2227,7 @@ def select(l: list, i: int) -> float:
 
 [Monotonic Queue]() -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/220486/problem/A) -
-Complexity: $ \BigO(1) $
+Complexity: $\BigO(1)$
 ```python
 class MinStack:
     """ O(1) append O(1) pop O(1) min query. """
@@ -2431,7 +2432,7 @@ def rmq(o: list, b: int, a: list, indexes: list, ids: list,
 
 [Binary Indexed Trees](https://activities.tjhsst.edu/sct/lectures/1920/2019_11_01_Binary_Index_Trees.pdf) -
 [Verification]() -
-Complexity: $ \BigO(n \log n) $ construction, $ \BigO(\log n) $ query
+Complexity: $\BigO(n \log n)$ construction, $\BigO(\log n)$ query
 ```python
 class BIT:
 
@@ -2498,7 +2499,7 @@ class RBIT:
 
 [Segment Tree](https://activities.tjhsst.edu/sct/lectures/1920/2019_11_15_Segment_Trees.pdf) -
 [Verification]() -
-Complexity: $ \BigO(n) $ construction, $ \BigO(\log n) $ query
+Complexity: $\BigO(n)$ construction, $\BigO(\log n)$ query
 ```python
 class SegTree:
 
@@ -2579,7 +2580,7 @@ class SegTree:
 
 [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree) -
 [Verification]() -
-Complexity: $ \BigO(n \log n) $ construction, $ \BigO(\log n) $ query
+Complexity: $\BigO(n \log n)$ construction, $\BigO(\log n)$ query
 ```python
 class Node:
 
@@ -2769,7 +2770,7 @@ class BST:
 
 [Cartesian Tree](http://web.stanford.edu/class/cs166/lectures/01/Slides01.pdf) -
 [Verification: SPOJ RMQSQ](https://www.spoj.com/problems/RMQSQ/) -
-Complexity: $ \BigO(n) $
+Complexity: $\BigO(n)$
 ```python
 class CartesianTree:
 
@@ -2808,8 +2809,8 @@ lecture slides](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/kdtrees.pdf)
 [kd-Tree](https://activities.tjhsst.edu/computervision/lectures/kmeans_Handout.pdf) -
 [Verification]() -
 Complexity:
-- $ \BigO(n \log n) $ construction
-- $ \BigO(2^d + \log n) $ nearest neighbor query
+- $\BigO(n \log n)$ construction
+- $\BigO(2^d + \log n)$ nearest neighbor query
 ```python
 ### median selection
 
@@ -3000,7 +3001,7 @@ class kdTree(kdNode):
 
 [1D Prefix Sums]() -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/C) -
-Complexity: $ \BigO(n) $
+Complexity: $\BigO(n)$
 ```python
 def query(i, j):
     return prefix[j + 1] - prefix[i]
@@ -3012,7 +3013,7 @@ for i in range(N):
 
 [2D Prefix Sums]() -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/232015/problem/D) -
-Complexity: $ \BigO(nm) $
+Complexity: $\BigO(nm)$
 ```python
 def query(prefix, x1, y1, x2, y2):
     return prefix[x2 + 1][y2 + 1] - prefix[x2 + 1][y1] - prefix[x1][y2 + 1] + \
@@ -3050,7 +3051,7 @@ def ccw(p1: tuple, p2: tuple, p3: tuple) -> bool:
 ### Closest Pair
 [Closest pair](https://en.wikipedia.org/wiki/Closest_pair_of_points_problem) -
 [Verification: CV]() -
-Complexity: $ \BigO(n \log n) $
+Complexity: $\BigO(n \log n)$
 ```python
 def slow_closest_pair(points: list) -> tuple:
     best = float("inf")
@@ -3101,7 +3102,7 @@ def closest_pair(points: list) -> tuple:
 [Graham scan](https://en.wikipedia.org/wiki/Graham_scan),
 specifically [Andrew's Monotone Chain](https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain) -
 [Verification: Kattis convexhull](https://open.kattis.com/problems/convexhull) -
-Complexity: $ \BigO(n \log n) $
+Complexity: $\BigO(n \log n)$
 ```python
 def convex_hull(points: list) -> list:
     """ Finds the convex hull of the point list. """
