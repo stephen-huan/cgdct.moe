@@ -23,6 +23,7 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import yaml
 from watchfiles import watch
 
 source = Path("src")
@@ -58,8 +59,13 @@ with (Path(__file__).parent / "last-updated.json").open() as f:
 # TODO: https://tree-sitter.github.io/tree-sitter/syntax-highlighting
 # https://codeberg.org/NomisIV/pandoc-tree-sitter-filter
 
-# TODO: parse header with pandoc
 # TODO: generate from stdin
+
+
+def get_header(path: Path) -> dict | None:
+    """Parse the yaml header of the path."""
+    if path.suffix == ".md" and path.open().readline() == "---\n":
+        return next(yaml.safe_load_all(path.open()))
 
 
 def render(

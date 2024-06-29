@@ -18,6 +18,7 @@
         # site-dependencies = site.nativeBuildInputs;
         site-dependencies = [ ];
         python' = pkgs.python3.withPackages (ps: with ps; [
+          pyyaml
           watchfiles
         ]);
       in
