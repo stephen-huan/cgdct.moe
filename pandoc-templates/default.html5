@@ -20,7 +20,7 @@ $endif$
   <style>
     $styles.html()$
   </style>
-$if(displaymath-css)$
+$if(katex)$
   <link rel="stylesheet" href="$katex-vendor-css$" />
   <link rel="stylesheet" href="$katex-css$" />
 $endif$
