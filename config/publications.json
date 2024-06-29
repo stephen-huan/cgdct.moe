@@ -1,24 +1,22 @@
-{
-  "publications": [
-    {
-      "title": "Sparse Cholesky factorization by greedy conditional selection",
-      "authors": [
-        "Stephen Huan",
-        "Joseph Guinness",
-        "Matthias Katzfuss",
-        "Houman Owhadi",
-        "Florian Schäfer"
-      ],
-      "journal": "arXiv preprint arXiv:2307.11648",
-      "year": 2023,
-      "metadata": [
-        ["arxiv", "https://arxiv.org/abs/2307.11648"],
-        ["blog", "/projects/cholesky/"],
-        ["code", "https://github.com/stephen-huan/conditional-knn"],
-        ["poster", "/assets/pdf/2022-11-11_cse-recruiting.pdf"],
-        ["slides", "/assets/pdf/2022-09-28_mds.pdf"]
-      ],
-      "selected": true
-    }
-  ]
-}
+[
+  {
+    "title": "Sparse Cholesky factorization by greedy conditional selection",
+    "authors": [
+      "Stephen Huan",
+      "Joseph Guinness",
+      "Matthias Katzfuss",
+      "Houman Owhadi",
+      "Florian Schäfer"
+    ],
+    "journal": "arXiv preprint arXiv:2307.11648",
+    "year": 2023,
+    "metadata": [
+      ["arxiv", "https://arxiv.org/abs/2307.11648"],
+      ["blog", "/projects/cholesky/"],
+      ["code", "https://github.com/stephen-huan/conditional-knn"],
+      ["poster", "/assets/pdf/2022-11-11_cse-recruiting.pdf"],
+      ["slides", "/assets/pdf/2022-09-28_mds.pdf"]
+    ],
+    "selected": true
+  }
+]
