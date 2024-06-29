@@ -1,0 +1,14 @@
+<li>
+  <div class="paper-title"><cite>$it.title$</cite></div>
+  <div class="paper-authors">
+    $for(it.authors/allbutlast)$$it$, $endfor$ and $it.authors/last$
+  </div>
+  <div class="paper-venue">
+    <span class="paper-journal">$it.journal$</span>, $it.year$
+  </div>
+  <div class="paper-metadata">
+    $for(it.metadata)$
+    <a href="$it/last$">$it/first$</a>
+    $endfor$
+  </div>
+</li>

@@ -56,6 +56,9 @@ with (Path(__file__).parent / "last-updated.json").open() as f:
 with (config / "news.json").open() as f:
     news = json.load(f)
 
+with (config / "publications.json").open() as f:
+    publications = json.load(f)
+
 # TODO: https://pandoc.org/filters.html
 # https://github.com/pandoc-ext/section-bibliographies
 
@@ -81,8 +84,30 @@ def render(
     path_metadata = get_metadata(path)
     # evaluate file as template and re-evaluate
     if path_metadata.get("is-template", False) and src is None:
+        selected_publications = publications
+        if path_metadata.get("publications-selected"):
+            selected_publications = sorted(
+                (
+                    publication
+                    for publication in publications
+                    if publication["selected"] is not None
+                ),
+                key=lambda publication: publication["selected"],
+            )
+        elif path_metadata.get("publications-by-year"):
+            selected_publications = {}
+            for publication in publications:
+                year = publication["year"]
+                if year not in selected_publications:
+                    selected_publications[year] = []
+                selected_publications[year].append(publication)
+            selected_publications = [
+                {"year": year, "publications": selected_publications[year]}
+                for year in sorted(selected_publications, reverse=True)
+            ]
         metadata_tmp = {
-            "news": news[: path_metadata.get("news-entries", len(news))]
+            "news": news[: path_metadata.get("news-entries", len(news))],
+            "publications": selected_publications,
         }
         with tempfile.NamedTemporaryFile(
             mode="w+", suffix=".md"
