@@ -80,28 +80,29 @@ def render(
     """Render a path to html."""
     path_metadata = get_metadata(path)
     # evaluate file as template and re-evaluate
-    # https://github.com/jgm/pandoc/issues/1950#issuecomment-74613325
     if path_metadata.get("is-template", False) and src is None:
         metadata_tmp = {
             "news": news[: path_metadata.get("news-entries", len(news))]
         }
-        with tempfile.NamedTemporaryFile(mode="w+", suffix=".md") as tmpfile:
-            with tempfile.NamedTemporaryFile(
-                mode="w+", suffix=".json"
-            ) as metadata_tmpfile:
-                json.dump(metadata_tmp, metadata_tmpfile)
-                metadata_tmpfile.flush()
-                subprocess.run(
-                    [
-                        "pandoc",
-                        f"--template={path}",
-                        f"--output={tmpfile.name}",
-                        f"--metadata-file={metadata_path}",
-                        f"--metadata-file={metadata_tmpfile.name}",
-                        path,
-                    ]
-                )
-                return render(path, out, Path(tmpfile.name))
+        with tempfile.NamedTemporaryFile(
+            mode="w+", suffix=".md"
+        ) as tmpfile, tempfile.NamedTemporaryFile(
+            mode="w+", suffix=".json"
+        ) as metadata_tmpfile:
+            json.dump(metadata_tmp, metadata_tmpfile)
+            metadata_tmpfile.flush()
+            # https://github.com/jgm/pandoc/issues/1950#issuecomment-74613325
+            subprocess.run(
+                [
+                    "pandoc",
+                    f"--template={path}",
+                    f"--output={tmpfile.name}",
+                    f"--metadata-file={metadata_path}",
+                    f"--metadata-file={metadata_tmpfile.name}",
+                    path,
+                ]
+            )
+            return render(path, out, Path(tmpfile.name))
     if src is None:
         src = path
     table_of_contents = path_metadata.get("toc", metadata.get("toc", False))
