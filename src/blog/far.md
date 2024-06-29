@@ -1,9 +1,10 @@
 ---
 title: "far: a (f)ast re-write of the Unix utility p(ar)"
 subtitle: "Optimal variance text reflow for aesthetically pleasing borders."
+description: >-
+  Optimal variance text reflow for aesthetically pleasing borders.
 date: 2020-12-16
 keywords: ["cs"]
-toc: false
 ---
 
 [[Video]](https://youtu.be/H3Agto3ZSnk)
