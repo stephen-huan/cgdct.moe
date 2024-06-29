@@ -437,26 +437,26 @@ rt {
     BASIC GRID FOR PROFILE PIC
 ================================================================== */
 
-.franklin-content .row {
+.franklin-content .columns-start {
   display: block;
 }
 
-.franklin-content .left {
+.franklin-content .column-left {
   float: left;
   margin-right: 1rem;
 }
 
-.franklin-content .right {
+.franklin-content .column-right {
   float: right;
   margin-left: 1rem;
 }
 
-.franklin-content .no-margin {
-  margin: 0;
+.franklin-content .columns-end {
+  clear: both;
 }
 
-.franklin-content .column-end {
-  clear: both;
+.franklin-content .no-margin {
+  margin: 0;
 }
 
 /* ==================================================================
