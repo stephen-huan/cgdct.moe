@@ -8,7 +8,7 @@
   <tbody>
     $for(news)$
     <tr>
-      <td>$news.date$</td>
+      <td><time datetime="$news.date$">$news.date$</time></td>
       <td>$news.description$</td>
     </tr>
     $endfor$
