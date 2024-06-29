@@ -40,6 +40,7 @@ with open("test.out", "w") as f:
 [Verification: SPOJ INTEST](https://www.spoj.com/problems/INTEST/),
 [SPOJ INOUTEST](https://www.spoj.com/problems/INOUTEST/),
 testing with [timeit](https://docs.python.org/3/library/timeit.html)
+
 ```python
 import sys
 input = sys.stdin.readline # fast cin
@@ -93,6 +94,7 @@ for i in range(N):
 [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) -
 [Verification]() -
 Complexity: $\BigO(\log b)$
+
 ```python
 def gcd(a: int, b: int) -> int:
     while b != 0:
@@ -103,11 +105,13 @@ def lcm(a: int, b: int) -> int: return (a//gcd(a, b))*b
 ```
 
 floor
+
 ```python
 x//1
 ```
 
 ceiling
+
 ```python
 -(-x//1)
 ```
@@ -128,6 +132,7 @@ def prime(n: int) -> bool:
 [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/G) -
 Complexity: $\BigO(n \log \log n)$
+
 ```python
 def sieve(n: int) -> list:
     """ Generates a look up table of primality up to n. """
@@ -157,9 +162,11 @@ m = 1000000007
 (a - b) % m == ((a % m) - (b % m)) % m
 (a * b) % m == ((a % m) * (b % m)) % m
 ```
+
 tl;dr spam modulo if the problem asks you to return the answer mod `m`.
 
 If asking for count (which is often) must be $\geq 0$
+
 ```python
 x if x >= 0 else x + m
 ```
@@ -167,6 +174,7 @@ x if x >= 0 else x + m
 [Modular exponentiation](https://en.wikipedia.org/wiki/Modular_exponentiation) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/238084/problem/E) -
 Complexity: $\BigO(\log e)$
+
 ```python
 def mod_exp(b: int, e: int, m: int) -> int:
     """ Returns b^e % m """
@@ -185,6 +193,7 @@ def mod_exp(b: int, e: int, m: int) -> int:
 [Extended Euclidean algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/238084/problem/G) -
 Complexity: $\BigO(\log b)$
+
 ```python
 def extended_gcd(a: int, b: int) -> tuple:
     """ Returns (gcd(a, b), x, y) such that ax + by = gcd(a, b). """
@@ -204,6 +213,7 @@ def extended_gcd(a: int, b: int) -> tuple:
 [Modular multiplicative inverse](https://en.wikipedia.org/wiki/Modular_multiplicative_inverse) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/238084/problem/G) -
 Complexity: same as the Euclidean algorithm
+
 ```python
 def inv(x: int, m: int) -> int:
     """ Returns the inverse y such that xy mod m = 1. """
@@ -228,6 +238,7 @@ def factor(n: int) -> list:
 [Prime Factorization](https://en.wikipedia.org/wiki/Trial_division) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/G) -
 Complexity: $\BigO(\sqrt{x}/\log{x})$
+
 ```python
 def prime_factor(n: int, primes: list) -> list:
     """ Prime factorizes a number, given a precomputed list of primes. """
@@ -249,6 +260,7 @@ def prime_factor(n: int, primes: list) -> list:
 [Most Significant Bit](http://web.stanford.edu/class/cs166/lectures/16/Slides16.pdf) -
 [Verification]() -
 Complexity: Can be done in $\BigO(1)$ with some work
+
 ```python
 def msb(n: int) -> int:
     """ Returns the index of the most significant bit of n. """
@@ -258,6 +270,7 @@ def msb(n: int) -> int:
 [Brian Kernighan's set bit count](https://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetKernighan) -
 [Verification: Othello]() -
 Complexity: $\BigO(\log x)$
+
 ```python
 def set_pos(x: int) -> list:
     """ Finds the number of 1's in a number. """
@@ -272,6 +285,7 @@ def set_pos(x: int) -> list:
 [Binary Counter]() -
 [Verification]() -
 Complexity: amortized $\BigO(1)$ over $n$ operations
+
 ```python
 def increment(c: int, m: int) -> int:
     """ Increments a binary counter. """
@@ -288,6 +302,7 @@ def increment(c: int, m: int) -> int:
 ### Matrices
 
 Miscellaneous operations
+
 ```python
 def dotp(u: list, v: list) -> float:
     """ Dot product. """
@@ -325,6 +340,7 @@ def mat_exp(A: list, k: int) -> list:
 [Gauss–Jordan elimination](https://en.wikipedia.org/wiki/Gaussian_elimination) -
 [Verification: Google Foobar](https://foobar.withgoogle.com/) -
 Complexity: $\BigO(n^3)$
+
 ```python
 def inv(m):
     """ Inverts a matrix. """
@@ -514,9 +530,11 @@ def simplex(prog) -> tuple:
 ```
 
 ### Fast Fourier Transform
+
 [Cooley–Tukey Recursive FFT](https://cp-algorithms.com/algebra/fft.html#toc-tgt-2) -
 [Verification]() -
 Complexity: $\BigO(n \log n)$
+
 ```python
 import cmath, math
 
@@ -544,6 +562,7 @@ def inv_recur_fft(a: list) -> list:
 [Cooley–Tukey Iterative FFT](https://cp-algorithms.com/algebra/fft.html#toc-tgt-5) -
 [Verification]() -
 Complexity: $\BigO(n \log n)$
+
 ```python
 def rev_increment(c: int, m: int) -> int:
     """ Increments a reverse binary counter. """
@@ -586,14 +605,16 @@ def inv_iter_fft(a: list) -> list:
 ```
 
 Readings for the following number theoretic FFT algorithms:
- - [Euler's totient function](https://en.wikipedia.org/wiki/Euler%27s_totient_function)
- - [Primitive root modulo n](https://en.wikipedia.org/wiki/Primitive_root_modulo_n)
- - [Application of FFT to polynomial multiplication](https://cs170.org/assets/pdf/hw03-sol.pdf)
- - [The Number Theoretic Transform (NTT)](https://www.nayuki.io/page/number-theoretic-transform-integer-dft)
+
+- [Euler's totient function](https://en.wikipedia.org/wiki/Euler%27s_totient_function)
+- [Primitive root modulo n](https://en.wikipedia.org/wiki/Primitive_root_modulo_n)
+- [Application of FFT to polynomial multiplication](https://cs170.org/assets/pdf/hw03-sol.pdf)
+- [The Number Theoretic Transform (NTT)](https://www.nayuki.io/page/number-theoretic-transform-integer-dft)
 
 [Iterative FFT with modulo (NTT)](https://cp-algorithms.com/algebra/fft.html#toc-tgt-7) -
 [Verification: SPOJ MAXMATCH](https://www.spoj.com/problems/MAXMATCH/) -
 Complexity: O(n log n)
+
 ```python
 def find_kp(n: int) -> tuple:
     """
@@ -663,6 +684,7 @@ def inv_int_fft(a: list, wn: int, p: int) -> list:
 [Recursive FFT with modulo (NTT)](https://cp-algorithms.com/algebra/fft.html#toc-tgt-7) -
 [Verification]() -
 Complexity: $\BigO(n \log n)$
+
 ```python
 def recur_int_fft(a: list, wn: int, p: int) -> list:
     """ Computes the DFT of a with recursion and modulo. """
@@ -686,6 +708,7 @@ Complexity: $\BigO(n \log n)$
 
 Note: make sure $p$ is bigger than $m^2 n$, where $m$ is the
 biggest number in the array and $n$ is the length of the array.
+
 ```python
 def mirror(a: list) -> list:
     """
@@ -720,6 +743,7 @@ if __name__ == "__main__":
 [2D Convolution](https://en.wikipedia.org/wiki/Multidimensional_discrete_convolution) -
 [Verification]() -
 Complexity: $\BigO(nm \log{nm})$
+
 ```python
 def flatten(m: list, pad=0) -> list:
     """ Flattens a matrix into a list. """
@@ -756,6 +780,7 @@ by Almost Pure Induced-Sorting_](https://doi.org/10.1109/DCC.2009.42).
 [Suffix Array by Induced Sorting](http://web.stanford.edu/class/cs166/lectures/04/Small04.pdf) -
 [Verification: SPOJ SARRAY](https://www.spoj.com/problems/SARRAY/) -
 Complexity: $\BigO(m)$
+
 ```python
 def lms_block(s: list, t: list, i: int) -> str:
     """ Label each character of s with L (False) or S (True). """
@@ -879,6 +904,7 @@ and Its Applications_](https://doi.org/10.1007/3-540-48194-X_17)
 [Kasai](http://web.stanford.edu/class/cs166/lectures/03/Slides03.pdf) -
 [Verification: USACO Standing Out](http://www.usaco.org/index.php?page=viewproblem2&cpid=768) -
 Complexity: $\BigO(m)$
+
 ```python
 def lcp_array(s: str, sa: list) -> list:
     """" Construct the LCP array given a string s and its suffix array sa. """
@@ -907,6 +933,7 @@ def lcp_array(s: str, sa: list) -> list:
 [Generalized Suffix Arrays](http://web.stanford.edu/class/cs166/lectures/02/Slides02.pdf) -
 [Verification: SPOJ LPS](http://www.spoj.com/problems/LPS/) -
 Complexity: O(m)
+
 ```python
 def generalized_suffix_array(words: list) -> tuple:
     """ Build a single suffix array on the concatenation of multiple words. """
@@ -920,6 +947,7 @@ def generalized_suffix_array(words: list) -> tuple:
 [Suffix Trees](http://web.stanford.edu/class/cs166/lectures/04/Small04.pdf) -
 [Verification: SPOJ STAMMER](http://www.spoj.com/problems/STAMMER/) -
 Complexity: O(m)
+
 ```python
 class SuffixTree:
 
@@ -1105,15 +1133,17 @@ def suffix_tree(s: str, sa: list, lcp: list,
 Ukkonen's algorithm (direct construction)
 
 Lectures:
- - [Duke](https://www2.cs.duke.edu/courses/fall14/compsci260/resources/suffix.trees.in.detail.pdf)
- - [CMU](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/suffixtrees.pdf)
- - [Stanford](https://web.stanford.edu/~mjkay/gusfield.pdf)
+
+- [Duke](https://www2.cs.duke.edu/courses/fall14/compsci260/resources/suffix.trees.in.detail.pdf)
+- [CMU](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/suffixtrees.pdf)
+- [Stanford](https://web.stanford.edu/~mjkay/gusfield.pdf)
 
 ##### Generalized Suffix Tree
 
 [Generalized Suffix Tree](http://web.stanford.edu/class/archive/cs/cs166/cs166.1186/lectures/03/Small03.pdf) -
 [Verification]() -
 Complexity: $\BigO(n)$
+
 ```python
 def generalized_suffix_tree(words: list) -> SuffixTree:
     """ Construct a suffix tree on the concatenation of multiple words. """
@@ -1143,6 +1173,7 @@ def generalized_suffix_tree(words: list) -> SuffixTree:
 Suffix Tree to DAG -
 [Verification]() -
 Complexity: $\BigO(n)$
+
 ```python
 def suffix_tree_dag(t: SuffixTree) -> dict:
     """ Converts a suffix tree to a numeric DAG. """
@@ -1168,6 +1199,7 @@ def suffix_tree_dag(t: SuffixTree) -> dict:
 [Aho-Corasick](http://web.stanford.edu/class/archive/cs/cs166/cs166.1166/lectures/02/Small02.pdf) -
 [Verification: USACO Censoring](http://www.usaco.org/index.php?page=viewproblem2&cpid=533) -
 Complexity: $\langle \BigO(n), \BigO(m + z) \rangle$
+
 ```python
 from collections import deque
 
@@ -1278,6 +1310,7 @@ def aho_corasick(s: str, patterns: list, t: Trie=None) -> list:
 [Knuth-Morris-Pratt](https://web.stanford.edu/class/cs97si/10-string-algorithms.pdf) -
 [Verification: SPOJ Rotations](https://www.spoj.com/problems/EC_WORLD/) -
 Complexity: $\langle \BigO(n), \BigO(m) \rangle$
+
 ```python
 def prefix_function(s: str) -> list:
     pi = [-1]*len(s)
@@ -1323,11 +1356,13 @@ print(recur.cache_info())
 ```
 
 ## Graph Algorithms
+
 ### Traversals
 
 [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search) -
 [Verification: AI]() -
 Complexity: $\BigO(V + E)$
+
 ```python
 from collections import deque
 
@@ -1346,6 +1381,7 @@ def bfs(graph, start):
 [Depth-first search](https://en.wikipedia.org/wiki/Depth-first_search) -
 [Verification: AI]() -
 Complexity: $\BigO(V + E)$
+
 ```python
 def dfs(graph, start):
     """ Depth-first search on graph from start. """
@@ -1362,6 +1398,7 @@ def dfs(graph, start):
 [Iterative post-order depth-first search](https://en.wikipedia.org/wiki/Tree_traversal) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/A) -
 Complexity: $\BigO(V + E)$
+
 ```python
 def dfs(graph, u):
     """ Iterative post-order depth-first search. """
@@ -1384,6 +1421,7 @@ def dfs(graph, u):
 [Iterative post-order DFS (without indexing children)](https://en.wikipedia.org/wiki/Tree_traversal) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/A) -
 Complexity: $\BigO(V + E)$
+
 ```python
 def dfs(graph, u):
     """ Iterative post-order depth-first search. """
@@ -1409,6 +1447,7 @@ def dfs(graph, u):
 [Eulerian Tour](https://en.wikipedia.org/wiki/Eulerian_path) -
 [Verification: USACO Training Riding the Fences](https://train.usaco.org/usacoprob2?a=TpH8RHs6Taa&S=fence) -
 Complexity: $\BigO(V + E)$
+
 ```python
 def eulerian_tour(graph: dict) -> list:
     """ Finds a Eulerian tour or walk of the graph, whichever is possible. """
@@ -1445,6 +1484,7 @@ def eulerian_tour(graph: dict) -> list:
 [Topological Sort](https://en.wikipedia.org/wiki/Topological_sorting) -
 [Verification](https://leetcode.com/problems/course-schedule-ii/) -
 Complexity: $\BigO(V + E)$
+
 ```python
 def dfs(graph: dict, u: int, order: list, done: set) -> list:
     """ Depth-first search on graph from start. """
@@ -1484,6 +1524,7 @@ def topological_sort(graph: dict) -> list:
 [Dijkstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) -
 [Verification: USACO Training Sweet Butter](https://train.usaco.org/usacoprob2?a=TpH8RHs6Taa&S=butter) -
 Complexity: $\BigO((E + V) \log V)$ (I think)
+
 ```python
 import heapq
 
@@ -1508,6 +1549,7 @@ def dijkstra(graph, i):
 ```
 
 Dijkstra assuming the priority queue provides a `.update(key, value)` function
+
 ```python
 def heap_dijkstra(graph, i):
     """ Single-source shortest path for the graph starting at i. """
@@ -1535,6 +1577,7 @@ def heap_dijkstra(graph, i):
 [Floyd-Warshall](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm) -
 [Verification: USACO Training Bessie Come Home](https://train.usaco.org/usacoprob2?a=TpH8RHs6Taa&S=comehome) -
 Complexity: $\BigO(V^3)$
+
 ```python
 def floyd_warshall():
     """ All-pairs shortest path for the graph. """
@@ -1554,6 +1597,7 @@ def floyd_warshall():
 
 Floyd-Warshall for sparse graphs -
 [Verification: USACO Training Cow Tours](https://train.usaco.org/usacoprob2?a=TpH8RHs6Taa&S=cowtour)
+
 ```python
 def floyd_warshall():
     """ All-pairs shortest path for the graph. """
@@ -1576,13 +1620,15 @@ def floyd_warshall():
 ```
 
 [Manhattan Distance](https://en.wikipedia.org/wiki/Taxicab_geometry)
+
 ```python
 manhat = lambda i, j, x, y: abs(i - x) + abs(j - y)
 ```
 
-[A*](https://en.wikipedia.org/wiki/A*_search_algorithm) -
+[A\*](https://en.wikipedia.org/wiki/A*_search_algorithm) -
 [Verification: AI]() -
 Complexity: ???
+
 ```python
 def Astar(start):
     """ Single-source shortest path for the graph. """
@@ -1645,6 +1691,7 @@ def union(parent: dict, size: dict, u: int, v: int) -> bool:
 ```
 
 Iterative variant
+
 ```python
 def find(parent: dict, u: int) -> int:
     """ Find the root of u. """
@@ -1663,6 +1710,7 @@ def find(parent: dict, u: int) -> int:
 [Kruskal](https://activities.tjhsst.edu/sct/lectures/1920/2019_10_18_Union_Find_and_MST.pdf) -
 [Verification: USACO Simplify](http://www.usaco.org/index.php?page=viewproblem2&cpid=101) -
 Complexity: $\BigO(E \log E) = \BigO(E \log V)$
+
 ```python
 def kruskal(graph: dict) -> list:
     """ Find the minimum spanning tree of the graph with Kruskal's. """
@@ -1680,6 +1728,7 @@ def kruskal(graph: dict) -> list:
 [Prim](https://en.wikipedia.org/wiki/Prim%27s_algorithm) -
 [Verification](https://train.usaco.org/usacoprob2?a=TpH8RHs6Taa&S=agrinet) -
 Complexity: $\BigO(V^2)$
+
 ```python
 def prim(m: list) -> float:
     """ Find the minimum spanning tree of the graph with Prim's. """
@@ -1707,6 +1756,7 @@ def prim(m: list) -> float:
 ### Connected Components
 
 Important if using recursion
+
 ```python
 import sys
 sys.setrecursionlimit(10**6)
@@ -1717,6 +1767,7 @@ sys.setrecursionlimit(10**6)
 Connected components -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/238084/problem/I) -
 Complexity: $\BigO(V + E)$
+
 ```python
 def assign(u, num, ids={}):
     """ Assign u and its children to the component num. """
@@ -1742,6 +1793,7 @@ def connected(graph):
 #### Directed (Strongly connected components)
 
 Recursion bad - see iterative post-order/assign
+
 ```python
 def visit(u, seen=set(), l=deque([])):
     """ Visit u and its children. """
@@ -1764,6 +1816,7 @@ def assign(u, num, ids={}):
 [Kosaraju-Sharir](https://activities.tjhsst.edu/sct/lectures/1920/2019_11_01_Strongly_Connected_Components.pdf) -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/A) -
 Complexity: O(V + E)
+
 ```python
 def assign(u, num, ids={}):
     """ Assign u and its children to the component num. """
@@ -1810,6 +1863,7 @@ def kosaraju_sharir(graph):
 ```
 
 Recover components from ids
+
 ```python
 comps = {i: [] for i in range(N)}
 for key, value in ids.items():
@@ -1823,6 +1877,7 @@ for key, value in ids.items():
 [Lowest Common Ancestor](https://en.wikipedia.org/wiki/Lowest_common_ancestor) -
 [Verification: PClassic]() -
 Complexity: $\langle 0, \BigO(n) \rangle$
+
 ```python
 def bfs(graph, start):
     """ Breadth-first search on graph from start. """
@@ -1859,6 +1914,7 @@ def lca(heights, parents, u, v):
 [Jump Pointers](https://activities.tjhsst.edu/sct/lectures/1920/2019_10_25_LCA.pdf) -
 [Verification: USACO Max Flow](http://www.usaco.org/index.php?page=viewproblem2&cpid=576) -
 Complexity: $\langle \BigO(n \log n), \BigO(\log n) \rangle$
+
 ```python
 import math
 
@@ -1907,6 +1963,7 @@ def lca(heights: dict, table: list, u: int, v: int) -> int:
 [Euler Tour](https://activities.tjhsst.edu/sct/lectures/1819/2019_2_11_LCA.pdf) -
 [Verification: USACO Max Flow](http://www.usaco.org/index.php?page=viewproblem2&cpid=576) -
 Complexity: $\langle \BigO(n), \BigO(1) \rangle$
+
 ```python
 def traversal(u) -> tuple:
     """ Euler tour on the tree rooted at u. """
@@ -1946,6 +2003,7 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]
 [Heavy-Light Decomposition](https://activities.tjhsst.edu/sct/lectures/1819/2019_3_15_HLD.pdf) -
 [Verification: USACO Milk Visits](http://usaco.org/index.php?page=viewproblem2&cpid=970) -
 Complexity: $\BigO(n)$
+
 ```python
 def hld(graph: dict, start: int) -> tuple:
     """ Heavy-light decomposition of the tree. """
@@ -2020,6 +2078,7 @@ def query(parents: dict, heights: dict, head: dict,
 
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/B) -
 Complexity: $\BigO(V + E)$
+
 ```python
 def tree_to_dag(u, seen=set()):
     """ Turn a tree into a DAG. """
@@ -2076,6 +2135,7 @@ def dfs(u, seen=set()):
 [Edmonds-Karp](https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm) -
 [Verification: SPOJ MTOTALF](https://www.spoj.com/problems/MTOTALF/) -
 Complexity: $\BigO(V E^2)$
+
 ```python
 def bfs(c, f, s, t):
     """ Breadth-first search on graph from start. """
@@ -2111,6 +2171,7 @@ def edmonds_karp(c, s, t):
 Problems:
 
 Max Flow
+
 - \url{http://poj.org/problem?id=1273} (USACO Drainage Ditches)
 - \url{https://codeforces.com/problemset/problem/843/E}
 - \url{https://www.spoj.com/problems/POTHOLE/}
@@ -2118,12 +2179,15 @@ Max Flow
 - \url{https://open.kattis.com/problems/maxflow}
 
 Dynamic
+
 - \url{https://codeforces.com/problemset/problem/903/G}
 
 Min-cost
+
 - \url{https://open.kattis.com/problems/mincostmaxflow}
 
 Extensions
+
 - Self edge: flow is 0 ($f(u, u) = -f(u, u)$), therefore capacity is 0
 - Multiple edges between $(u, v)$: one edge with the sum of the capacities
 - Undirected graph: add $(u, v)$ and $(v, u)$
@@ -2145,6 +2209,7 @@ Problems:
 \url{https://www.spoj.com/problems/MATCHING/}
 
 Notes:
+
 - Reduce into max flow by assigning each edge a capacity of 1, add source
   connected to each left vertex and sink connected to each right vertex.
 
@@ -2153,6 +2218,7 @@ Notes:
 [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) -
 [Verification: MBIT Hen Hackers](https://pdfhost.io/v/E8BXkbbdN_mBIT_Advancedpdf.pdf) -
 Complexity: $\BigO(n \log n)$
+
 ```python
 def merge_two(l1: list, l2: list) -> list:
     """ Takes in two sorted lists and returns a sorted list. """
@@ -2176,6 +2242,7 @@ def merge_sort(l: list) -> list:
 [Quick Sort](https://en.wikipedia.org/wiki/Quicksort) -
 [Verification]() -
 Complexity: expected $\BigO(n \log n)$
+
 ```python
 def median(n1: int, n2: int, n3: int) -> int:
     """ Finds the median of three numbers. """
@@ -2196,6 +2263,7 @@ def quick_sort(l: list) -> list:
 [Order statistics](https://activities.tjhsst.edu/computervision/lectures/kmeans_Handout.pdf#page=38) -
 [Verification]() -
 Complexity: $\BigO(n)$
+
 ```python
 def split(l: list, x: float) -> tuple:
     """ Splits the list by a particular value x. """
@@ -2228,6 +2296,7 @@ def select(l: list, i: int) -> float:
 [Monotonic Queue]() -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/220486/problem/A) -
 Complexity: $\BigO(1)$
+
 ```python
 class MinStack:
     """ O(1) append O(1) pop O(1) min query. """
@@ -2319,6 +2388,7 @@ slides](http://web.stanford.edu/class/cs166/lectures/00/Slides00.pdf)
 [Fischer-Heun](http://web.stanford.edu/class/cs166/lectures/01/Slides01.pdf) -
 [Verification: SPOJ RMQSQ](https://www.spoj.com/problems/RMQSQ/) -
 Complexity: <O(n), O(1)>
+
 ```python
 import math
 
@@ -2433,6 +2503,7 @@ def rmq(o: list, b: int, a: list, indexes: list, ids: list,
 [Binary Indexed Trees](https://activities.tjhsst.edu/sct/lectures/1920/2019_11_01_Binary_Index_Trees.pdf) -
 [Verification]() -
 Complexity: $\BigO(n \log n)$ construction, $\BigO(\log n)$ query
+
 ```python
 class BIT:
 
@@ -2494,12 +2565,12 @@ class RBIT:
         self.t2.update(j + 1, j*v)
 ```
 
-
 #### Segment Tree
 
 [Segment Tree](https://activities.tjhsst.edu/sct/lectures/1920/2019_11_15_Segment_Trees.pdf) -
 [Verification]() -
 Complexity: $\BigO(n)$ construction, $\BigO(\log n)$ query
+
 ```python
 class SegTree:
 
@@ -2581,6 +2652,7 @@ class SegTree:
 [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree) -
 [Verification]() -
 Complexity: $\BigO(n \log n)$ construction, $\BigO(\log n)$ query
+
 ```python
 class Node:
 
@@ -2771,6 +2843,7 @@ class BST:
 [Cartesian Tree](http://web.stanford.edu/class/cs166/lectures/01/Slides01.pdf) -
 [Verification: SPOJ RMQSQ](https://www.spoj.com/problems/RMQSQ/) -
 Complexity: $\BigO(n)$
+
 ```python
 class CartesianTree:
 
@@ -2809,8 +2882,10 @@ lecture slides](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/kdtrees.pdf)
 [kd-Tree](https://activities.tjhsst.edu/computervision/lectures/kmeans_Handout.pdf) -
 [Verification]() -
 Complexity:
+
 - $\BigO(n \log n)$ construction
 - $\BigO(2^d + \log n)$ nearest neighbor query
+
 ```python
 ### median selection
 
@@ -3002,6 +3077,7 @@ class kdTree(kdNode):
 [1D Prefix Sums]() -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/259141/problem/C) -
 Complexity: $\BigO(n)$
+
 ```python
 def query(i, j):
     return prefix[j + 1] - prefix[i]
@@ -3014,6 +3090,7 @@ for i in range(N):
 [2D Prefix Sums]() -
 [Verification](https://codeforces.com/group/M4wsRWBHyZ/contest/232015/problem/D) -
 Complexity: $\BigO(nm)$
+
 ```python
 def query(prefix, x1, y1, x2, y2):
     return prefix[x2 + 1][y2 + 1] - prefix[x2 + 1][y1] - prefix[x1][y2 + 1] + \
@@ -3049,9 +3126,11 @@ def ccw(p1: tuple, p2: tuple, p3: tuple) -> bool:
 ```
 
 ### Closest Pair
+
 [Closest pair](https://en.wikipedia.org/wiki/Closest_pair_of_points_problem) -
 [Verification: CV]() -
 Complexity: $\BigO(n \log n)$
+
 ```python
 def slow_closest_pair(points: list) -> tuple:
     best = float("inf")
@@ -3103,6 +3182,7 @@ def closest_pair(points: list) -> tuple:
 specifically [Andrew's Monotone Chain](https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain) -
 [Verification: Kattis convexhull](https://open.kattis.com/problems/convexhull) -
 Complexity: $\BigO(n \log n)$
+
 ```python
 def convex_hull(points: list) -> list:
     """ Finds the convex hull of the point list. """
@@ -3136,4 +3216,3 @@ def get_children(i, j):
     return [child for child in [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]
             if is_valid(*child)]
 ```
-
