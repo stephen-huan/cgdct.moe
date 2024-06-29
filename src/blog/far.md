@@ -5,6 +5,7 @@ description: >-
   Optimal variance text reflow for aesthetically pleasing borders.
 date: 2020-12-16
 keywords: ["cs"]
+katex: true
 ---
 
 [[Video]](https://youtu.be/H3Agto3ZSnk)
