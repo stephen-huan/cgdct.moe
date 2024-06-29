@@ -53,6 +53,9 @@ with (Path(__file__).parent / "last-updated.json").open() as f:
         for path, timestamp in last_updated.items()
     }
 
+with (config / "news.json").open() as f:
+    news = json.load(f)
+
 # TODO: https://pandoc.org/filters.html
 # https://github.com/pandoc-ext/section-bibliographies
 
@@ -79,7 +82,9 @@ def render(
     # evaluate file as template and re-evaluate
     # https://github.com/jgm/pandoc/issues/1950#issuecomment-74613325
     if path_metadata.get("is-template", False) and src is None:
-        metadata_tmp = {}
+        metadata_tmp = {
+            "news": news[: path_metadata.get("news-entries", len(news))]
+        }
         with tempfile.NamedTemporaryFile(mode="w+", suffix=".md") as tmpfile:
             with tempfile.NamedTemporaryFile(
                 mode="w+", suffix=".json"
