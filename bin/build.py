@@ -75,7 +75,7 @@ def get_metadata(path: Path) -> dict:
 
 
 def render(
-    path: Path, out: Path = build / "out.html", src: Path | None = None
+    path: Path, dst: Path = build / "out.html", src: Path | None = None
 ) -> int:
     """Render a path to html."""
     path_metadata = get_metadata(path)
@@ -104,7 +104,7 @@ def render(
                     path,
                 ]
             )
-            return render(path, out, Path(tmpfile.name))
+            return render(path, dst, Path(tmpfile.name))
     if src is None:
         src = path
     table_of_contents = path_metadata.get("toc", metadata.get("toc", False))
@@ -125,7 +125,7 @@ def render(
     for header in headers:
         if header["url"] == "/":
             header["active"] = path == source / "index.md"
-        elif header["url"] in str(out):
+        elif header["url"] in str(dst):
             header["active"] = True
     css = ["/css/main.css"]
     css_path = Path(
@@ -148,7 +148,7 @@ def render(
                 "--standalone",
                 f"--template={template}",
                 f"--include-in-header={templates / 'favicon.html'}",
-                f"--output={out}",
+                f"--output={dst}",
                 f"--table-of-contents={table_of_contents}",
                 f"--toc-depth={toc_depth}",
                 f"--metadata-file={metadata_path}",
@@ -180,7 +180,7 @@ def process_file(path: Path) -> None:
             if path.name not in ["index.md", "404.md"]:
                 dst = dst.parent / path.stem / "index.md"
             dst.parent.mkdir(exist_ok=True, parents=True)
-            render(path, out=dst.with_suffix(".html"))
+            render(path, dst=dst.with_suffix(".html"))
         else:
             if not dst.exists() or hash_file(dst) != hash_file(path):
                 dst.parent.mkdir(exist_ok=True, parents=True)
