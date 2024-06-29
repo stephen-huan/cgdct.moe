@@ -18,7 +18,9 @@ publications-by-year: true
 $for(publications)$
 <div class="year">
   <h2 id="$it.year$">
-    <a href="#$it.year$" class="header-anchor">$it.year$</a>
+    <a href="#$it.year$" class="header-anchor"
+      ><time datetime="$it.year$">$it.year$</time></a
+    >
   </h2>
 </div>
 <ol>
