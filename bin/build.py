@@ -95,6 +95,8 @@ def render(
             subprocess.run(
                 [
                     "pandoc",
+                    f"--from=markdown{extensions}",
+                    "--to=html",
                     f"--template={path}",
                     f"--output={tmpfile.name}",
                     f"--metadata-file={metadata_path}",
