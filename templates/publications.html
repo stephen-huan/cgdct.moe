@@ -4,7 +4,8 @@
     $for(it.authors/allbutlast)$$it$, $endfor$ and $it.authors/last$
   </div>
   <div class="paper-venue">
-    <span class="paper-journal">$it.journal$</span>, $it.year$
+    <span class="paper-journal">$it.journal$</span>,
+    <time datetime="$it.year$">$it.year$</time>
   </div>
   <div class="paper-metadata">
     $for(it.metadata)$
