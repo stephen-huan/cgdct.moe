@@ -47,7 +47,7 @@ highlight = config / "atom-one-light.theme"
 
 with (Path(__file__).parent / "last-updated.json").open() as f:
     last_updated = json.load(f)
-    tzinfo = ZoneInfo(metadata["timezone"])
+    tzinfo = ZoneInfo(metadata.get("timezone", "UTC"))
     last_updated = {
         Path(path): datetime.fromtimestamp(timestamp, tz=tzinfo)
         for path, timestamp in last_updated.items()
@@ -74,19 +74,19 @@ def get_metadata(path: Path) -> dict:
 def render(path: Path, out: Path = build / "out.html") -> int:
     """Render a path to html."""
     path_metadata = get_metadata(path)
-    table_of_contents = path_metadata.get("toc", False)
-    toc_depth = path_metadata.get("toc-depth", 3)
-    if path in last_updated and path not in metadata["footer-exclude"]:
+    table_of_contents = path_metadata.get("toc", metadata.get("toc", False))
+    toc_depth = path_metadata.get("toc-depth", metadata.get("toc-depth", 3))
+    if path in last_updated and path not in metadata.get("footer-exclude", []):
         dt = last_updated[path]
-        date = dt.strftime(metadata["date-format"])
+        date = dt.strftime(metadata.get("date-format", "%Y-%m-%d"))
         timestamp = f'<time datetime="{dt.isoformat()}">{date}</time>'
         lastupdated = f"Last updated: {timestamp}."
     else:
         lastupdated = ""
-    url = f"{metadata['git-repo']}{path}"
+    url = f"{metadata.get('git-repo', '')}{path}"
     space = " " if len(lastupdated) > 0 else ""
     pagesource = f'<a href="{url}">Page source</a>.{space}'
-    headers = copy.deepcopy(metadata["headers"])
+    headers = copy.deepcopy(metadata.get("headers", []))
     for header in headers:
         if header["url"] == "/":
             header["active"] = path == source / "index.md"
