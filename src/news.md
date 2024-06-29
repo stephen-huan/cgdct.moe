@@ -12,5 +12,7 @@ is-template: true
 :::
 
 :::{.news .clean-table .no-header}
+
 $ ../templates/news.html() $
+
 :::
