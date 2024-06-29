@@ -1,6 +1,8 @@
 {
   "author": "Stephen Huan",
   "lang": "en-us",
+  "toc": false,
+  "toc-depth": 4,
   "document-css": false,
   "maxwidth": "50em",
   "katex-vendor-css": "/lib/katex/katex.min.css",

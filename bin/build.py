@@ -75,7 +75,7 @@ def render(path: Path, out: Path = build / "out.html") -> int:
     """Render a path to html."""
     path_metadata = get_metadata(path)
     table_of_contents = path_metadata.get("toc", metadata.get("toc", False))
-    toc_depth = path_metadata.get("toc-depth", metadata.get("toc-depth", 3))
+    toc_depth = path_metadata.get("toc-depth", metadata.get("toc-depth", 4))
     if path in last_updated and path not in metadata.get("footer-exclude", []):
         dt = last_updated[path]
         date = dt.strftime(metadata.get("date-format", "%Y-%m-%d"))
