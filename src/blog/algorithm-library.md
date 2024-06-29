@@ -1,15 +1,12 @@
-+++
-title = "Algorithms for competitive programming"
-date = Date(2019, 12, 7)
-rss = "Implementations of some useful algorithms."
-maxtoclevel = 3
-
-tags = ["cs"]
-+++
-
-{{maketitle}}
-
-\tableofcontents
+---
+title: "Algorithms for competitive programming"
+subtitle: "Implementations of some useful algorithms."
+description: "Implementations of some useful algorithms."
+date: 2019-12-7
+keywords: ["cs"]
+toc: true
+toc-depth: 3
+---
 
 ## Basics
 
