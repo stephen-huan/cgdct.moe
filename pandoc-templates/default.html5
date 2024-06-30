@@ -46,9 +46,11 @@ $if(title)$
 $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
+$if(show-author)$
 $for(author)$
 <p class="author">$author$</p>
 $endfor$
+$endif$
 $if(date)$
 <p class="date">$date$</p>
 $endif$
