@@ -15,7 +15,7 @@ publications-selected: true
 
 :::title
 
-# **Stephen** Huan [(浣苇杭)]{lang="cmn"}
+# **Stephen** Huan [(浣苇杭)]{lang="zh-Hans"}
 
 :::
 
