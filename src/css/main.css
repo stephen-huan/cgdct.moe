@@ -317,7 +317,7 @@ rt {
   text-decoration: none;
 }
 
-.franklin-content .title h1 {
+.franklin-content h1.top-title {
   font-weight: var(--font-weight-normal);
   padding-bottom: 0.5em;
   margin-top: 0em;
@@ -325,7 +325,7 @@ rt {
   border-bottom: none;
 }
 
-.franklin-content .title strong {
+.franklin-content .top-title strong {
   font-weight: var(--font-weight-bold);
 }
 

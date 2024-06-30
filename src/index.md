@@ -13,14 +13,10 @@ news-entries: 5
 publications-selected: true
 ---
 
-:::title
-
-# **Stephen** Huan [(浣苇杭)]{lang="zh-Hans"}
-
-:::
+# **Stephen** Huan [(浣苇杭)]{lang="zh-Hans"} {.top-title}
 
 :::pgp
-PGP:&nbsp;[<samp>0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E</samp>](/assets/misc/EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E.asc)
+PGP:`&nbsp;`{=html}[`<samp>0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E</samp>`{=html}](/assets/misc/EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E.asc)
 :::
 
 :::columns-start
@@ -49,11 +45,7 @@ ideas from optimal experimental design and compressed sensing.
 
 I am best reached via [email](mailto:shuan@gatech.edu).
 
-::::links
-
-## external links
-
-::::
+## external links {.links}
 
 - GitHub: [stephen-huan](https://github.com/stephen-huan)
 - ORCID: [0009-0009-6309-4415](https://orcid.org/0009-0009-6309-4415)
@@ -63,11 +55,7 @@ I am best reached via [email](mailto:shuan@gatech.edu).
 ::::
 :::
 
-:::showhover
-
-## [news](/news/)
-
-:::
+## [news](/news/) {.showhover}
 
 :::{.news .clean-table .no-header}
 
@@ -78,11 +66,7 @@ $../templates/news.html()$
 
 :::
 
-:::showhover
-
-## [selected publications](/publications/)
-
-:::
+## [selected publications](/publications/) {.showhover}
 
 :::publications
 

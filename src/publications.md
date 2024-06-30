@@ -6,11 +6,7 @@ is-template: true
 publications-by-year: true
 ---
 
-:::title
-
-# publications
-
-:::
+# publications {.top-title}
 
 :::publications
 

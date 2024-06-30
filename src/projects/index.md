@@ -12,17 +12,9 @@ projects:
     preview-size: [812, 1181]
 ---
 
-:::title
+# projects {.top-title}
 
-# projects
-
-:::
-
-:::category
-
-## inference and computation
-
-:::
+## inference and computation {.category}
 
 :::inference
 

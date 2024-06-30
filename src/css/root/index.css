@@ -52,7 +52,7 @@
   }
 }
 
-.franklin-content .links h2 {
+.franklin-content h2.links {
   font-size: var(--font-size-h3);
   padding-bottom: 0;
   border-bottom: none;

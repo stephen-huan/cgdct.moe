@@ -5,11 +5,7 @@ description: "A list of all the noteworthy things I've done."
 is-template: true
 ---
 
-:::title
-
-# older news
-
-:::
+# older news {.top-title}
 
 :::{.news .clean-table .no-header}
 
