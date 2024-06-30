@@ -42,11 +42,7 @@ $endfor$
 <article class="franklin-content">
 $if(title)$
 <header id="title-block-header">
-$if(title-lang)$
-<h1 class="title" lang="$title-lang$">$title$</h1>
-$else$
 <h1 class="title">$title$</h1>
-$endif$
 $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
