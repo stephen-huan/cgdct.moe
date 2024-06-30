@@ -110,7 +110,9 @@ def render(
             {
                 "url": f"/{post.relative_to(source).parent / post.stem}/",
                 "title": (post_metadata := get_metadata(post))["title"],
-                "subtitle": post_metadata.get("subtitle", None),
+                "subtitle": post_metadata.get(
+                    "subtitle", post_metadata.get("description", None)
+                ),
                 "date": post_metadata["date"].strftime(date_format),
                 "keywords": post_metadata.get("keywords", []),
             }
