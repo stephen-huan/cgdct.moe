@@ -42,6 +42,9 @@ build = Path("build")
 template = Path("pandoc-templates/default.html5")
 templates = Path("templates")
 
+katex_config = config / "katex.toml"
+highlight = config / "atom-one-light.theme"
+
 metadata_path = config / "metadata.json"
 with metadata_path.open() as f:
     metadata = json.load(f)
@@ -53,20 +56,17 @@ tzinfo = ZoneInfo(metadata.get("timezone", "UTC"))
 with (config / "extensions.json").open() as f:
     extensions = "".join(sorted(json.load(f)))
 
-katex_config = config / "katex.toml"
-highlight = config / "atom-one-light.theme"
+with (config / "news.json").open() as f:
+    news = json.load(f)
+
+with (config / "publications.json").open() as f:
+    publications = json.load(f)
 
 with (Path(__file__).parent / "last-updated.json").open() as f:
     last_updated = {
         Path(path): datetime.fromtimestamp(timestamp, tz=tzinfo)
         for path, timestamp in json.load(f).items()
     }
-
-with (config / "news.json").open() as f:
-    news = json.load(f)
-
-with (config / "publications.json").open() as f:
-    publications = json.load(f)
 
 
 def get_metadata(path: Path) -> dict:
