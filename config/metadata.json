@@ -3,6 +3,7 @@
   "lang": "en",
   "toc": false,
   "toc-depth": 4,
+  "show-author": false,
   "document-css": false,
   "maxwidth": "50em",
   "katex-vendor-css": "/lib/katex/katex.min.css",
