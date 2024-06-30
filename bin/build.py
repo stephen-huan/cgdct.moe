@@ -144,7 +144,8 @@ def render(
                     f"--metadata-file={metadata_path}",
                     f"--metadata-file={metadata_tmpfile.name}",
                     path,
-                ]
+                ],
+                check=True,
             )
             return render(path, dst, Path(tmpfile.name))
     if src is None:
@@ -205,6 +206,7 @@ def render(
             | {
                 "PANDOC_KATEX_CONFIG_FILE": katex_config,
             },
+            check=True,
         ).returncode
 
 
