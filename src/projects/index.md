@@ -28,7 +28,6 @@ projects:
 
 ```{=html}
 $projects.cholesky:../../templates/project.html()$
-
 ```
 
 :::

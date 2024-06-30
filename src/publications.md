@@ -29,7 +29,6 @@ $for(publications)$
   $endfor$
 </ol>
 $endfor$
-
 ```
 
 :::

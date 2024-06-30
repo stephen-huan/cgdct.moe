@@ -94,7 +94,6 @@ $../templates/news.html()$
   $it:../templates/publications.html()$
   $endfor$
 </ol>
-
 ```
 
 :::
