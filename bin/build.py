@@ -46,6 +46,9 @@ metadata_path = config / "metadata.json"
 with metadata_path.open() as f:
     metadata = json.load(f)
 
+date_format = metadata.get("date-format", "%Y-%m-%d")
+tzinfo = ZoneInfo(metadata.get("timezone", "UTC"))
+
 # `pandoc --list-extensions=markdown`
 with (config / "extensions.json").open() as f:
     extensions = "".join(sorted(json.load(f)))
@@ -54,11 +57,9 @@ katex_config = config / "katex.toml"
 highlight = config / "atom-one-light.theme"
 
 with (Path(__file__).parent / "last-updated.json").open() as f:
-    last_updated = json.load(f)
-    tzinfo = ZoneInfo(metadata.get("timezone", "UTC"))
     last_updated = {
         Path(path): datetime.fromtimestamp(timestamp, tz=tzinfo)
-        for path, timestamp in last_updated.items()
+        for path, timestamp in json.load(f).items()
     }
 
 with (config / "news.json").open() as f:
@@ -138,7 +139,7 @@ def render(
         "footer-exclude", []
     ):
         dt = last_updated[path]
-        date = dt.strftime(metadata.get("date-format", "%Y-%m-%d"))
+        date = dt.strftime(date_format)
         timestamp = f'<time datetime="{dt.isoformat()}">{date}</time>'
         lastupdated = f"Last updated: {timestamp}."
     else:
