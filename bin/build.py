@@ -26,6 +26,14 @@ from zoneinfo import ZoneInfo
 import yaml
 from watchfiles import watch
 
+# TODO: https://pandoc.org/filters.html
+# https://github.com/pandoc-ext/section-bibliographies
+
+# TODO: https://tree-sitter.github.io/tree-sitter/syntax-highlighting
+# https://codeberg.org/NomisIV/pandoc-tree-sitter-filter
+
+# TODO: fix katex suppress equation numbers (align*)
+
 source = Path("src")
 config = Path("config")
 build = Path("build")
@@ -58,14 +66,6 @@ with (config / "news.json").open() as f:
 
 with (config / "publications.json").open() as f:
     publications = json.load(f)
-
-# TODO: https://pandoc.org/filters.html
-# https://github.com/pandoc-ext/section-bibliographies
-
-# TODO: https://tree-sitter.github.io/tree-sitter/syntax-highlighting
-# https://codeberg.org/NomisIV/pandoc-tree-sitter-filter
-
-# TODO: generate from stdin
 
 
 def get_metadata(path: Path) -> dict:
