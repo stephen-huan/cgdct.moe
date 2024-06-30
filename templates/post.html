@@ -1,0 +1,11 @@
+$if(it.subtitle)$
+<p>$it.subtitle$</p>
+$endif$
+<span class="post-meta"><time datetime="$it.date$">$it.date$</time></span
+>$if(it.keywords)$<span class="post-tags"
+  >&nbsp; &middot; $for(it.keywords)$ &nbsp;<a href="/tag/$it$"
+    ><b>#</b> $it$</a
+  >
+  $endfor$
+</span>
+$endif$

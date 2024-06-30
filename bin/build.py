@@ -106,9 +106,23 @@ def render(
                 {"year": year, "publications": selected_publications[year]}
                 for year in sorted(selected_publications, reverse=True)
             ]
+        posts = (
+            {
+                "url": f"/{post.relative_to(source).parent / post.stem}/",
+                "title": (post_metadata := get_metadata(post))["title"],
+                "subtitle": post_metadata.get("subtitle", None),
+                "date": post_metadata["date"].strftime(date_format),
+                "keywords": post_metadata.get("keywords", []),
+            }
+            for post in (source / "blog").glob("*.md")
+            if post != source / "blog" / "index.md"
+        )
         metadata_tmp = {
             "news": news[: path_metadata.get("news-entries", len(news))],
             "publications": selected_publications,
+            "blog-posts": sorted(
+                posts, key=lambda post: post["date"], reverse=True
+            ),
         }
         with tempfile.NamedTemporaryFile(
             mode="w+", suffix=".md"
