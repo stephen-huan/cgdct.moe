@@ -1,6 +1,5 @@
 ---
 title: "Algorithms for competitive programming"
-subtitle: "Implementations of some useful algorithms."
 description: "Implementations of some useful algorithms."
 date: 2019-12-07
 keywords: ["cs"]
