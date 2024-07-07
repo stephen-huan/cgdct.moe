@@ -702,3 +702,16 @@ instead, display a burger menu.
 .post-tags a {
   text-decoration: none;
 }
+
+.tagged-posts a {
+  text-decoration: none;
+}
+
+.tagged-posts th:first-of-type {
+  font-weight: var(--font-weight-thick);
+  border: none;
+}
+
+.tagged-posts td {
+  text-align: left;
+}
