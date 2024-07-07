@@ -214,6 +214,8 @@ def render(
             header["active"] = path == source / "index.md"
         elif header["url"] in str(dst):
             header["active"] = True
+        elif header["name"] == "blog" and src.parents[0] == source / "tag":
+            header["active"] = True
     css = ["/css/main.css"]
     css_path = Path(
         str(path).replace(str(source), "src/css/root")
