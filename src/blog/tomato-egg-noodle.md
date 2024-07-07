@@ -40,7 +40,7 @@ who also took the below photograph (of my cooking). Thanks!_
 - cook tomatoes
   - put tomatoes in
   - add salt at the beginning to get water out (something about osmosis)
-  - flatten tomatos with wooden spoon (to press out the liquid)
+  - flatten tomatoes with wooden spoon (to press out the liquid)
   - keep the lid on to prevent boil off,
     occasionally open and press again
   - let cook for a bit
