@@ -189,6 +189,7 @@ def render(
     metadata_tmp = {
         "headers": headers,
         "css": css,
+        "self": path_metadata,
     }
     with tempfile.NamedTemporaryFile(mode="w+", suffix=".json") as tmpfile:
         json.dump(metadata_tmp, tmpfile, cls=JSONEncoder)
