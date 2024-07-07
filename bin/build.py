@@ -13,13 +13,13 @@ Filters
 
 import argparse
 import copy
+import datetime
 import hashlib
 import json
 import os
 import shutil
 import subprocess
 import tempfile
-from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -64,9 +64,19 @@ with (config / "publications.json").open() as f:
 
 with (Path(__file__).parent / "last-updated.json").open() as f:
     last_updated = {
-        Path(path): datetime.fromtimestamp(timestamp, tz=tzinfo)
+        Path(path): datetime.datetime.fromtimestamp(timestamp, tz=tzinfo)
         for path, timestamp in json.load(f).items()
     }
+
+
+class JSONEncoder(json.JSONEncoder):
+    """Custom JSON encoder."""
+
+    def default(self, o: object) -> object:
+        """Support serializing date objects."""
+        if isinstance(o, datetime.date):
+            return o.strftime(date_format)
+        return super().default(o)
 
 
 def get_metadata(path: Path) -> dict:
@@ -113,7 +123,7 @@ def render(
                 "subtitle": post_metadata.get(
                     "subtitle", post_metadata.get("description", None)
                 ),
-                "date": post_metadata["date"].strftime(date_format),
+                "date": post_metadata["date"],
                 "keywords": post_metadata.get("keywords", []),
             }
             for post in (source / "blog").glob("*.md")
@@ -131,7 +141,7 @@ def render(
         ) as tmpfile, tempfile.NamedTemporaryFile(
             mode="w+", suffix=".json"
         ) as metadata_tmpfile:
-            json.dump(metadata_tmp, metadata_tmpfile)
+            json.dump(metadata_tmp, metadata_tmpfile, cls=JSONEncoder)
             metadata_tmpfile.flush()
             # https://github.com/jgm/pandoc/issues/1950#issuecomment-74613325
             subprocess.run(
@@ -181,7 +191,7 @@ def render(
         "css": css,
     }
     with tempfile.NamedTemporaryFile(mode="w+", suffix=".json") as tmpfile:
-        json.dump(metadata_tmp, tmpfile)
+        json.dump(metadata_tmp, tmpfile, cls=JSONEncoder)
         tmpfile.flush()
         return subprocess.run(
             [
