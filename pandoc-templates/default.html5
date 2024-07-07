@@ -43,17 +43,7 @@ $endfor$
 $if(title)$
 <header id="title-block-header">
 <h1 class="title">$title$</h1>
-$if(subtitle)$
-<p class="subtitle">$subtitle$</p>
-$endif$
-$if(show-author)$
-$for(author)$
-<p class="author">$author$</p>
-$endfor$
-$endif$
-$if(date)$
-<p class="date">$date$</p>
-$endif$
+$self:../templates/post.html()$
 $if(abstract)$
 <div class="abstract">
 <div class="abstract-title">$abstract-title$</div>
