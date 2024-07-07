@@ -116,7 +116,7 @@ def render(
                 {"year": year, "publications": selected_publications[year]}
                 for year in sorted(selected_publications, reverse=True)
             ]
-        posts = (
+        posts = [
             {
                 "url": f"/{post.relative_to(source).parent / post.stem}/",
                 "title": (post_metadata := get_metadata(post))["title"],
@@ -128,13 +128,47 @@ def render(
             }
             for post in (source / "blog").glob("*.md")
             if post != source / "blog" / "index.md"
-        )
+        ]
+        projects = [
+            {
+                "url": f"/{post.relative_to(source).parent / post.stem}/",
+                "title": (
+                    post_metadata["title"]
+                    if (post_metadata := get_metadata(post))["title"]
+                    else post_metadata["pagetitle"]
+                ),
+                "subtitle": post_metadata.get(
+                    "subtitle", post_metadata.get("description", None)
+                ),
+                "date": post_metadata["date"],
+                "keywords": post_metadata.get("keywords", []),
+            }
+            for post in (source / "projects").glob("*.md")
+            if post != source / "projects" / "index.md"
+        ]
+        keywords = get_metadata(source / "blog" / "index.md")[
+            "display-keywords"
+        ]
         metadata_tmp = {
             "news": news[: path_metadata.get("news-entries", len(news))],
             "publications": selected_publications,
             "blog-posts": sorted(
                 posts, key=lambda post: post["date"], reverse=True
             ),
+            "posts-keyword": {
+                keyword: {
+                    "posts": sorted(
+                        (
+                            post
+                            for post in posts + projects
+                            if keyword in post["keywords"]
+                        ),
+                        key=lambda post: post["date"],
+                        reverse=True,
+                    )
+                }
+                for keyword in keywords
+            },
         }
         with tempfile.NamedTemporaryFile(
             mode="w+", suffix=".md"
