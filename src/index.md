@@ -16,7 +16,7 @@ publications-selected: true
 # **Stephen** Huan [(浣苇杭)]{lang="zh-Hans"} {.top-title}
 
 :::pgp
-PGP:&nbsp;[`<samp>0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E</samp>`{=html}
+PGP:\ [`<samp>0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E</samp>`{=html}
 ](/assets/misc/EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E.asc)
 :::
 

@@ -18,10 +18,10 @@ lang: "ja"
 
   <figcaption>
     ---老倉 育
-    ([Oikura "Euler" Sodachi](https://www.zerochan.net/2805028)) <br />
+    ([Oikura "Euler" Sodachi](https://www.zerochan.net/2805028)) \
     TVアニメ「終物語」第三巻/そだちロスト
     ([Owarimonogatari/Sodachi Lost](
-    https://www.monogatari-series.com/owarimonogatari/package/03.html)) <br />
+    https://www.monogatari-series.com/owarimonogatari/package/03.html)) \
     キャラクターコメンタリー
     ([character commentary](https://youtu.be/W-RqGvLPpwo?t=1489))
   </figcaption>
@@ -43,7 +43,7 @@ lang: "ja"
     ---ティザービジュアル＜夜＞
     ([teaser visual\<night\>](https://yurucamp.jp/second/gallery/))
     キャッチコピー
-    ([catch copy](https://yurucamp.jp/news/information/5583)) <br />
+    ([catch copy](https://yurucamp.jp/news/information/5583)) \
     TVアニメ「ゆるキャン△ SEASON２」
     ([Yuru Camp△ SEASON２](https://yurucamp.jp/second/))
   </figcaption>
@@ -66,7 +66,7 @@ lang: "ja"
   <figcaption>
     ---EDテーマ
     チマメ隊／ときめきポポロン♪
-    ([Tokimeki Poporon♪](https://www.uta-net.com/song/197310/)) <br />
+    ([Tokimeki Poporon♪](https://www.uta-net.com/song/197310/)) \
     TVアニメ「ご注文はうさぎですか？？」
     ([Is the order a rabbit??](https://gochiusa.com/series_cd/2/ed.html))
   </figcaption>
@@ -85,7 +85,7 @@ lang: "ja"
 > 読めないな…
 
   <figcaption>
-    ---チト ([Chito](http://girls-last-tour.com/character/)) <br />
+    ---チト ([Chito](http://girls-last-tour.com/character/)) \
     少女終末旅行　1巻
     ([_Girls' Last Tour, Vol. 1_](https://www.shinchosha.co.jp/book/771781/))
     つくみず／著
@@ -108,7 +108,7 @@ lang: "ja"
 
   <figcaption>
     ---EDテーマ
-    [TrySail 『azure』](https://www.uta-net.com/song/258811/) <br />
+    [TrySail 『azure』](https://www.uta-net.com/song/258811/) \
     TVアニメ「続・終物語」
     ([Zoku Owarimonogatari](
     https://www.monogatari-series.com/zokuowarimonogatari/music/))
@@ -133,7 +133,7 @@ lang: "ja"
 
   <figcaption>
     ---高坂麗奈
-    ([Kousaka Reina](http://tv.anime-eupho.com/character/#/reina)) <br />
+    ([Kousaka Reina](http://tv.anime-eupho.com/character/#/reina)) \
     TVアニメ「響け！ユーフォニアム」
     ([Hibike! Euphonium](http://tv.anime-eupho.com/))
   </figcaption>
@@ -154,7 +154,7 @@ lang: "ja"
 
   <figcaption>
     ---ココア
-    ([Cocoa](https://gochiusa.com/chara/cocoa.html)) <br />
+    ([Cocoa](https://gochiusa.com/chara/cocoa.html)) \
     TVアニメ「ご注文はうさぎですか？」
     ([Is the order a rabbit?](https://gochiusa.com/01/))
   </figcaption>
