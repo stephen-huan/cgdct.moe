@@ -1657,7 +1657,10 @@ function](https://en.wikipedia.org/wiki/Ackermann_function).
 :::{.centering .border}
 
 <figure>
-  [![Mikasa Ackerman](/assets/blog/algorithm-library/358414.webp){width=225 height=350}](https://cdn.myanimelist.net/images/characters/15/358414.jpg)
+  [![Mikasa Ackerman](
+    /assets/blog/algorithm-library/358414.webp
+  ){width=225 height=350}
+  ](https://cdn.myanimelist.net/images/characters/15/358414.jpg)
   <figcaption>
     [Mikasa Ackerman](https://myanimelist.net/character/40881/Mikasa_Ackerman).
   </figcaption>

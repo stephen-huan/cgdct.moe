@@ -16,13 +16,15 @@ publications-selected: true
 # **Stephen** Huan [(浣苇杭)]{lang="zh-Hans"} {.top-title}
 
 :::pgp
-PGP:`&nbsp;`{=html}[`<samp>0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E</samp>`{=html}](/assets/misc/EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E.asc)
+PGP:&nbsp;[`<samp>0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E</samp>`{=html}
+](/assets/misc/EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E.asc)
 :::
 
 :::columns-start
 ::::{.column-right .index-column-right}
 :::::profile
-[![profile picture](/assets/profile_picture.webp){width=530 height=749}](/assets/profile_picture.jpg)
+[![profile picture](/assets/profile_picture.webp){width=530 height=749}
+](/assets/profile_picture.jpg)
 :::::
 :::::address
 | S1320 CODA
