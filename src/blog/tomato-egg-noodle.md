@@ -3,7 +3,6 @@ title: 'Tomato and egg noodle [(西红柿鸡蛋面)]{lang="zh-Hans"}'
 description: "A simple and easy to make but tasty recipe for a classic dish."
 date: 2022-10-23
 keywords: ["misc"]
-toc: false
 ---
 
 _This recipe is from [Daniel](https://blog.danielclu.com/)
