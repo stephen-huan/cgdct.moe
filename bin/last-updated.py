@@ -6,7 +6,7 @@ import json
 import subprocess
 from pathlib import Path
 
-OUT = Path(__file__).parent / "last-updated.json"
+OUT = Path(__file__).parent.parent / "config" / "last-updated.json"
 
 timestamps = {}
 
