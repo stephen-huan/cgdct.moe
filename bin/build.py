@@ -202,12 +202,11 @@ def render(
         dt = last_updated[path]
         date = dt.strftime(date_format)
         timestamp = f'<time datetime="{dt.isoformat()}">{date}</time>'
-        lastupdated = f"Last updated: {timestamp}."
+        lastupdated = f"&nbsp;Last updated: {timestamp}."
     else:
         lastupdated = ""
     url = f"{metadata.get('git-repo', '')}{path}"
-    space = " " if len(lastupdated) > 0 else ""
-    pagesource = f'<a href="{url}">Page source</a>.{space}'
+    pagesource = f"<a href='{url}'>Page source</a>."
     headers = copy.deepcopy(metadata.get("headers", []))
     for header in headers:
         if header["url"] == "/":
@@ -225,6 +224,8 @@ def render(
     metadata_tmp = {
         "headers": headers,
         "css": css,
+        "git-pagesource": pagesource,
+        "git-lastupdated": lastupdated,
         "self": path_metadata,
     }
     with tempfile.NamedTemporaryFile(mode="w+", suffix=".json") as tmpfile:
@@ -245,8 +246,6 @@ def render(
                 f"--metadata-file={tmpfile.name}",
                 f"--highlight-style={highlight}",
                 "--filter=pandoc-katex",
-                f"--variable=git-pagesource:{pagesource}",
-                f"--variable=git-lastupdated:{lastupdated}",
                 src,
             ],
             env=os.environ
