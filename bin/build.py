@@ -79,8 +79,8 @@ class JSONEncoder(json.JSONEncoder):
         return super().default(o)
 
 
-def get_metadata(path: Path) -> dict:
-    """Parse the yaml metadata of the path."""
+def get_frontmatter(path: Path) -> dict[str, Any]:
+    """Parse the yaml metadata header of the path."""
     return (
         next(yaml.safe_load_all(path.open()))
         if path.suffix == ".md" and path.open().readline() == "---\n"
@@ -92,7 +92,7 @@ def render(
     path: Path, dst: Path = build / "out.html", src: Path | None = None
 ) -> int:
     """Render a path to html."""
-    path_metadata = get_metadata(path)
+    path_metadata = get_frontmatter(path)
     # evaluate file as template and re-evaluate
     if path_metadata.get("is-template", False) and src is None:
         selected_publications = publications
@@ -119,7 +119,7 @@ def render(
         posts = [
             {
                 "url": f"/{post.relative_to(source).parent / post.stem}/",
-                "title": (post_metadata := get_metadata(post))["title"],
+                "title": (post_metadata := get_frontmatter(post))["title"],
                 "subtitle": post_metadata.get(
                     "subtitle", post_metadata.get("description", None)
                 ),
@@ -134,7 +134,7 @@ def render(
                 "url": f"/{post.relative_to(source).parent / post.stem}/",
                 "title": (
                     post_metadata["title"]
-                    if (post_metadata := get_metadata(post))["title"]
+                    if (post_metadata := get_frontmatter(post))["title"]
                     else post_metadata["pagetitle"]
                 ),
                 "subtitle": post_metadata.get(
@@ -146,7 +146,7 @@ def render(
             for post in (source / "projects").glob("*.md")
             if post != source / "projects" / "index.md"
         ]
-        keywords = get_metadata(source / "blog" / "index.md")[
+        keywords = get_frontmatter(source / "blog" / "index.md")[
             "display-keywords"
         ]
         metadata_tmp = {
