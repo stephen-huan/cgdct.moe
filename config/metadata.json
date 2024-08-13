@@ -17,7 +17,7 @@
     "src/blog/index.md",
     "src/news.md",
     "src/projects/index.md",
-    "src/publications/index.md"
+    "src/publications.md"
   ],
   "headers": [
     { "url": "/", "name": "about" },
