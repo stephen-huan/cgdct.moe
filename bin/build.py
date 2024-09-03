@@ -142,6 +142,7 @@ def render(
                 f"--metadata-file={metadata_path}",
                 f"--metadata-file={tmpfile.name}",
                 f"--highlight-style={highlight}",
+                "--citeproc",
                 "--filter=pandoc-katex",
                 src,
             ],
