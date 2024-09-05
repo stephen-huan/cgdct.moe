@@ -21,26 +21,26 @@ PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><samp>0x{{pgp}}</samp></a>
   {{assets}}/profile_picture.jpg
 }
 @@address
-  S1320 CODA
+  GHC 6221
 
-  756 W Peachtree St
+  4902 Forbes Ave
 
-  Atlanta, GA 30332
+  Pittsburgh, PA 15213
 @@
 @@
 \end{column}
 
-I'm an undergraduate student studying computer science at [Georgia
-Tech](https://www.gatech.edu/), currently advised by [Florian
-Schäfer](https://f-t-s.github.io/) in the [School of Computational
-Science and Engineering](https://cse.gatech.edu/). Prior to Georgia
-Tech, I was at [TJHSST](https://tjhsst.edu/).
+I'm a PhD student in the [Computer Science Department](https://csd.cmu.edu/)
+of [Carnegie Mellon University](https://www.cmu.edu/)'s [School of
+Computer Science](https://www.cs.cmu.edu/). Prior to CMU, I was advised
+by [Florian Schäfer](https://f-t-s.github.io/) in the [School of
+Computational Science and Engineering](https://cse.gatech.edu/) at
+[Georgia Tech](https://www.gatech.edu/).
 
-My research exploits the interplay between numerical
-computation and statistical inference for faster algorithms.
-For example, my [previous work](/projects/) includes computing
-sparse Cholesky factors of dense covariance matrices using
-ideas from optimal experimental design and compressed sensing.
+My research interests are in problems spanning machine learning, statistics,
+and applied mathematics. I'm particularly interested in efficient numerical
+algorithms for generative modeling, sampling, and statistical inference. See
+these [high-level summaries](/projects/) for more details about my work.
 
 I am best reached via [email](mailto:shuan@gatech.edu).
 
