@@ -15,7 +15,7 @@ buildNpmPackage rec {
 
   src = ../..;
 
-  npmDepsHash = "sha256-iqUwXXAQSjKgghyavvwqoTukqSMG57OUFJFDDmMsmSg=";
+  npmDepsHash = "sha256-Jc/ztSkG+xM8RuNoMjokDWr+QM5Q8fEzrH2PNmBkLbY=";
 
   site = "__site";
 
@@ -40,11 +40,12 @@ buildNpmPackage rec {
       "$@"
   '';
 
+  env.LOCALE_ARCHIVE = "${glibcLocales}/lib/locale/locale-archive";
+  env.LC_ALL = "en_US.UTF-8";
+
   configurePhase = ''
     runHook preConfigure
 
-    export LOCALE_ARCHIVE="${glibcLocales}/lib/locale/locale-archive"
-    export LANG=en_US.UTF-8
     # give a valid node binary to Franklin.jl
     # https://github.com/tlienart/Franklin.jl/pull/1069
     NODE="$(which node)"
@@ -95,6 +96,6 @@ buildNpmPackage rec {
     description = "Stephen Huan's personal website";
     homepage = "https://cgdct.moe/";
     license = licenses.unlicense;
-    maintainers = [ ];
+    maintainers = with maintainers; [ stephen-huan ];
   };
 }
