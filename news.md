@@ -10,6 +10,10 @@ meta_description = "A list of all the noteworthy things I've done."
 @@news,clean-table,no-header
 | Date       | Description |
 |------------|-------------|
+| 2024-10-21 | I will present a talk and poster at [SIAM Conference on Mathematics of Data Science (MDS24)](https://www.siam.org/conferences-events/siam-conferences/mds24/). |
+| 2024-08-26 | I will (unoffically) attend the Simons Institute's [Modern Paradigms in Generalization](https://simons.berkeley.edu/programs/modern-paradigms-generalization) program. |
+| 2024-05-04 | I graduated from Georgia Tech with a BS in Computer Science and minor in Mathematics. |
+| 2024-04-15 | I will start my PhD in [Carnegie Mellon University](https://www.cmu.edu/)'s [Computer Science Department](https://csd.cmu.edu/) in fall 2024! |
 | 2023-08-24 | [Slides](/assets/pdf/2023-08-24_surf.pdf) for a [talk](https://sfp.caltech.edu/documents/25695/Session_K__Schedule.pdf) at the [SFP Summer Seminar Day](https://sfp.caltech.edu/undergraduate-research/summer_requirements/final_presentation). |
 | 2023-08-15 | I will be advertising for [Florian Schäfer](https://f-t-s.github.io) at the [UROC](https://www.cc.gatech.edu/undergraduate-research-opportunities-computing-uroc) virtual job fair. |
 | 2023-07-21 | New [paper](https://arxiv.org/abs/2307.11648) on information-theoretic conditional selection improving sparsity patterns on arXiv! Joint work with [Joseph Guinness](https://guinness.cals.cornell.edu), [Matthias Katzfuss](https://sites.google.com/view/katzfuss/), [Houman Owhadi](http://users.cms.caltech.edu/~owhadi/index.htm), and [Florian Schäfer](https://f-t-s.github.io). |
