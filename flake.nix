@@ -61,15 +61,15 @@
         apps.${system} = {
           publish = {
             type = "app";
-            program = "${lib.getExe (pkgs.writeShellApplication {
+            program = lib.getExe (pkgs.writeShellApplication {
               name = "publish";
               runtimeInputs = site-dependencies;
               text = builtins.readFile bin/publish;
-            })}";
+            });
           };
           serve = {
             type = "app";
-            program = "${lib.getExe (pkgs.writeShellApplication {
+            program = lib.getExe (pkgs.writeShellApplication {
               name = "serve";
               runtimeInputs = site-dependencies;
               text = ''
@@ -80,15 +80,15 @@
                   using Franklin: serve; serve(prerender=true)
                 " 2> >("${lib.getExe filter}" >&2)
               '';
-            })}";
+            });
           };
           update = {
             type = "app";
-            program = "${lib.getExe (pkgs.writeShellApplication {
+            program = lib.getExe (pkgs.writeShellApplication {
               name = "update";
               runtimeInputs = site-dependencies;
               text = builtins.readFile bin/update;
-            })}";
+            });
           };
         };
       }
