@@ -1713,26 +1713,26 @@ M834 80h400000v40h-400000z"
         <span class="hljs-comment"># cartesian tree variables</span>
         <span class="hljs-comment"># stores the LCP value for internal nodes</span>
         <span class="hljs-comment"># and the suffix index for leaf nodes</span>
-        self.key = key
-        self.parent = parent
-        self.child = [left, right]
+        <span class="hljs-variable language_">self</span>.key = key
+        <span class="hljs-variable language_">self</span>.parent = parent
+        <span class="hljs-variable language_">self</span>.child = [left, right]
 
         <span class="hljs-comment"># suffix tree variables</span>
         <span class="hljs-comment"># keyed by first character (distinct)</span>
-        self.children = {}
+        <span class="hljs-variable language_">self</span>.children = {}
         <span class="hljs-comment"># start and end indexes in the string</span>
-        self.start, self.end = start, end
+        <span class="hljs-variable language_">self</span>.start, <span class="hljs-variable language_">self</span>.end = start, end
         <span class="hljs-comment"># root contains a copy of the original string</span>
-        self.s = <span class="hljs-literal">None</span>
+        <span class="hljs-variable language_">self</span>.s = <span class="hljs-literal">None</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self, n=<span class="hljs-literal">None</span>, s=<span class="hljs-string">""</span>, d=<span class="hljs-number">0</span></span>) -&gt; <span class="hljs-built_in">str</span>:
         <span class="hljs-string">""" Fancy tree printing (uses the original string to draw edges). """</span>
-        <span class="hljs-keyword">if</span> self.s <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.s <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
             rtn = []
 
             <span class="hljs-comment"># precompute heights</span>
-            h = {<span class="hljs-literal">None</span>: -<span class="hljs-number">1</span>, self: <span class="hljs-number">0</span>}
-            q = [self]
+            h = {<span class="hljs-literal">None</span>: -<span class="hljs-number">1</span>, <span class="hljs-variable language_">self</span>: <span class="hljs-number">0</span>}
+            q = [<span class="hljs-variable language_">self</span>]
             <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(q) &gt; <span class="hljs-number">0</span>:
                 n = q.pop()
                 <span class="hljs-keyword">for</span> child <span class="hljs-keyword">in</span> n.children.values():
@@ -1740,37 +1740,37 @@ M834 80h400000v40h-400000z"
                     h[child] = h[n] + <span class="hljs-number">1</span>
 
             <span class="hljs-comment"># actually compute string representation</span>
-            q = [self]
+            q = [<span class="hljs-variable language_">self</span>]
             <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(q) &gt; <span class="hljs-number">0</span>:
                 n = q.pop()
             <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(q) &gt; <span class="hljs-number">0</span>:
                 n = q.pop()
-                edge = self.s[n.start: n.end + <span class="hljs-number">1</span>] \
+                edge = <span class="hljs-variable language_">self</span>.s[n.start: n.end + <span class="hljs-number">1</span>] \
                     <span class="hljs-keyword">if</span> n.start <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">and</span> n.end <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">else</span> <span class="hljs-string">""</span>
                 <span class="hljs-comment"># edge = (n.start, n.end)</span>
                 rtn.append(<span class="hljs-string">"{}{} {}\n"</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">" "</span>*<span class="hljs-number">4</span>*h[n], n.key, edge))
                 <span class="hljs-keyword">for</span> child <span class="hljs-keyword">in</span> <span class="hljs-built_in">sorted</span>(n.children, reverse=<span class="hljs-literal">True</span>):
                     q.append(n.children[child])
             <span class="hljs-keyword">return</span> <span class="hljs-string">""</span>.join(rtn)
-        <span class="hljs-keyword">return</span> <span class="hljs-string">"{}{}"</span>.<span class="hljs-built_in">format</span>(self.key, <span class="hljs-string">"$"</span> <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(self.children) == <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-string">""</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"{}{}"</span>.<span class="hljs-built_in">format</span>(<span class="hljs-variable language_">self</span>.key, <span class="hljs-string">"$"</span> <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.children) == <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-string">""</span>)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__contains__</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">bool</span>:
         <span class="hljs-string">""" Whether s is a substring of the suffix tree. """</span>
-        <span class="hljs-keyword">return</span> self.<span class="hljs-keyword">match</span>(s) <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.<span class="hljs-keyword">match</span>(s) <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">match</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-string">"SuffixTree"</span>:
         <span class="hljs-string">"""
         Returns the subtree matching the string s, None if it does not exist.
         """</span>
         i = <span class="hljs-number">0</span>
-        t = self
+        t = <span class="hljs-variable language_">self</span>
         <span class="hljs-keyword">while</span> i &lt; <span class="hljs-built_in">len</span>(s):
             <span class="hljs-keyword">if</span> s[i] <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> t.children:
                 <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
             t = t.children[s[i]]
             j = t.start
             <span class="hljs-keyword">while</span> j &lt;= t.end <span class="hljs-keyword">and</span> i &lt; <span class="hljs-built_in">len</span>(s):
-                <span class="hljs-keyword">if</span> s[i] != self.s[j]:
+                <span class="hljs-keyword">if</span> s[i] != <span class="hljs-variable language_">self</span>.s[j]:
                     <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
                 j += <span class="hljs-number">1</span>
                 i += <span class="hljs-number">1</span>
@@ -1778,7 +1778,7 @@ M834 80h400000v40h-400000z"
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">count</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">list</span>:
         <span class="hljs-string">""" Reports the index of each occurrence of s in the string. """</span>
-        t = self.<span class="hljs-keyword">match</span>(s)
+        t = <span class="hljs-variable language_">self</span>.<span class="hljs-keyword">match</span>(s)
         l = []
         <span class="hljs-keyword">if</span> t <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
             <span class="hljs-keyword">return</span> l
@@ -1797,7 +1797,7 @@ M834 80h400000v40h-400000z"
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">suffix_array</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">list</span>:
         <span class="hljs-string">""" Inorder traversal yields a suffix array. """</span>
         sa = []
-        stk = [self]
+        stk = [<span class="hljs-variable language_">self</span>]
         <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(stk) &gt; <span class="hljs-number">0</span>:
             n = stk.pop()
             <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(n.children) == <span class="hljs-number">0</span>:
@@ -2065,23 +2065,23 @@ M834 80h400000v40h-400000z"
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">Trie</span>:
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, ch=<span class="hljs-literal">None</span></span>) -&gt; <span class="hljs-literal">None</span>:
-        self.children = {}                           <span class="hljs-comment"># pointers to children</span>
-        self.ch = ch <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(ch, <span class="hljs-built_in">str</span>) <span class="hljs-keyword">else</span> <span class="hljs-string">""</span>  <span class="hljs-comment"># character</span>
-        self.end = []                                <span class="hljs-comment"># represents a pattern</span>
-        self.suffix = self.output = <span class="hljs-literal">None</span>             <span class="hljs-comment"># aho-corasick</span>
+        <span class="hljs-variable language_">self</span>.children = {}                           <span class="hljs-comment"># pointers to children</span>
+        <span class="hljs-variable language_">self</span>.ch = ch <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(ch, <span class="hljs-built_in">str</span>) <span class="hljs-keyword">else</span> <span class="hljs-string">""</span>  <span class="hljs-comment"># character</span>
+        <span class="hljs-variable language_">self</span>.end = []                                <span class="hljs-comment"># represents a pattern</span>
+        <span class="hljs-variable language_">self</span>.suffix = <span class="hljs-variable language_">self</span>.output = <span class="hljs-literal">None</span>             <span class="hljs-comment"># aho-corasick</span>
 
         <span class="hljs-comment"># create trie from list of patterns</span>
         <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(ch, <span class="hljs-built_in">list</span>):
             <span class="hljs-keyword">for</span> i, pattern <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(ch):
-                self.add(pattern, i)
+                <span class="hljs-variable language_">self</span>.add(pattern, i)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">str</span>:
-        <span class="hljs-keyword">if</span> self.ch == <span class="hljs-string">""</span>:
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.ch == <span class="hljs-string">""</span>:
             rtn = []
 
             <span class="hljs-comment"># precompute heights</span>
-            h = {<span class="hljs-literal">None</span>: -<span class="hljs-number">1</span>, self: <span class="hljs-number">0</span>}
-            q = [self]
+            h = {<span class="hljs-literal">None</span>: -<span class="hljs-number">1</span>, <span class="hljs-variable language_">self</span>: <span class="hljs-number">0</span>}
+            q = [<span class="hljs-variable language_">self</span>]
             <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(q) &gt; <span class="hljs-number">0</span>:
                 n = q.pop()
                 <span class="hljs-keyword">for</span> child <span class="hljs-keyword">in</span> n.children.values():
@@ -2089,7 +2089,7 @@ M834 80h400000v40h-400000z"
                     h[child] = h[n] + <span class="hljs-number">1</span>
 
             <span class="hljs-comment"># actually compute string representation</span>
-            q = [self]
+            q = [<span class="hljs-variable language_">self</span>]
             <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(q) &gt; <span class="hljs-number">0</span>:
                 n = q.pop()
                 rtn.append(<span class="hljs-string">"{}{}{}:{} {}\n"</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">" "</span>*h[n], n.ch,
@@ -2099,15 +2099,15 @@ M834 80h400000v40h-400000z"
                                     reverse=<span class="hljs-literal">True</span>, key=<span class="hljs-keyword">lambda</span> x: x.ch):
                     q.append(child)
             <span class="hljs-keyword">return</span> <span class="hljs-string">""</span>.join(rtn)
-        <span class="hljs-keyword">return</span> <span class="hljs-string">"{}{}"</span>.<span class="hljs-built_in">format</span>(self.ch, <span class="hljs-string">"$"</span> <span class="hljs-keyword">if</span> self.end <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">else</span> <span class="hljs-string">""</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"{}{}"</span>.<span class="hljs-built_in">format</span>(<span class="hljs-variable language_">self</span>.ch, <span class="hljs-string">"$"</span> <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.end <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">else</span> <span class="hljs-string">""</span>)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">self, s: <span class="hljs-built_in">str</span>, <span class="hljs-built_in">id</span>: <span class="hljs-built_in">int</span>=<span class="hljs-literal">None</span></span>) -&gt; <span class="hljs-literal">None</span>:
         <span class="hljs-string">""" Add s to the trie. """</span>
         <span class="hljs-keyword">for</span> ch <span class="hljs-keyword">in</span> s:
-            <span class="hljs-keyword">if</span> ch <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> self.children:
-                self.children[ch] = Trie(ch)
-            self = self.children[ch]
-        self.end.append(<span class="hljs-built_in">id</span>)
+            <span class="hljs-keyword">if</span> ch <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> <span class="hljs-variable language_">self</span>.children:
+                <span class="hljs-variable language_">self</span>.children[ch] = Trie(ch)
+            <span class="hljs-variable language_">self</span> = <span class="hljs-variable language_">self</span>.children[ch]
+        <span class="hljs-variable language_">self</span>.end.append(<span class="hljs-built_in">id</span>)
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">link</span>(<span class="hljs-params">root: Trie</span>) -&gt; <span class="hljs-literal">None</span>:
     <span class="hljs-string">""" Computes the suffix links and output links for a given trie. """</span>
@@ -4428,25 +4428,25 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
     <span class="hljs-string">""" O(1) append O(1) pop O(1) min query. """</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, f=<span class="hljs-built_in">min</span></span>):
-        self.stk, self.f = [], f
+        <span class="hljs-variable language_">self</span>.stk, <span class="hljs-variable language_">self</span>.f = [], f
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__len__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">int</span>:
-        <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(self.stk)
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.stk)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">str</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-string">f"stack(<span class="hljs-subst">{self.stk}</span>)"</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">append</span>(<span class="hljs-params">self, val</span>):
-        self.stk.append(
-            (val, self.f(val, self.stk[-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]) <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(self.stk) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> val)
+        <span class="hljs-variable language_">self</span>.stk.append(
+            (val, <span class="hljs-variable language_">self</span>.f(val, <span class="hljs-variable language_">self</span>.stk[-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]) <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.stk) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> val)
         )
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">pop</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">return</span> self.stk.pop()
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.stk.pop()
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">min</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(self.stk) &gt; <span class="hljs-number">0</span>:
-            <span class="hljs-keyword">return</span> self.stk[-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.stk) &gt; <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.stk[-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]
         <span class="hljs-keyword">else</span>:
             <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"min() arg is an empty sequence"</span>)
 
@@ -4458,50 +4458,50 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
     """</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, f=<span class="hljs-built_in">min</span></span>):
-        self.instk, self.outstk = MinStack(f), MinStack(f)
-        self.f = f
+        <span class="hljs-variable language_">self</span>.instk, <span class="hljs-variable language_">self</span>.outstk = MinStack(f), MinStack(f)
+        <span class="hljs-variable language_">self</span>.f = f
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__len__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">int</span>:
-        <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(self.instk) + <span class="hljs-built_in">len</span>(self.outstk)
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.instk) + <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.outstk)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__iter__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-string">"MinQueue"</span>:
-        self.i, self.l = <span class="hljs-number">0</span>, <span class="hljs-number">0</span>
-        <span class="hljs-keyword">return</span> self
+        <span class="hljs-variable language_">self</span>.i, <span class="hljs-variable language_">self</span>.l = <span class="hljs-number">0</span>, <span class="hljs-number">0</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__next__</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">if</span> self.l == <span class="hljs-number">2</span>:
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.l == <span class="hljs-number">2</span>:
             <span class="hljs-keyword">raise</span> StopIteration
-        l = [self.outstk.stk, self.instk.stk][self.l]
-        <span class="hljs-keyword">if</span> self.i == <span class="hljs-built_in">len</span>(l):
-            self.l += <span class="hljs-number">1</span>
-            self.i = <span class="hljs-number">0</span>
-            <span class="hljs-keyword">return</span> self.__next__()
-        v = l[<span class="hljs-built_in">len</span>(l) - <span class="hljs-number">1</span> - self.i] <span class="hljs-keyword">if</span> self.l == <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> l[self.i]
-        self.i += <span class="hljs-number">1</span>
+        l = [<span class="hljs-variable language_">self</span>.outstk.stk, <span class="hljs-variable language_">self</span>.instk.stk][<span class="hljs-variable language_">self</span>.l]
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.i == <span class="hljs-built_in">len</span>(l):
+            <span class="hljs-variable language_">self</span>.l += <span class="hljs-number">1</span>
+            <span class="hljs-variable language_">self</span>.i = <span class="hljs-number">0</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.__next__()
+        v = l[<span class="hljs-built_in">len</span>(l) - <span class="hljs-number">1</span> - <span class="hljs-variable language_">self</span>.i] <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.l == <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> l[<span class="hljs-variable language_">self</span>.i]
+        <span class="hljs-variable language_">self</span>.i += <span class="hljs-number">1</span>
         <span class="hljs-keyword">return</span> v[<span class="hljs-number">0</span>]
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">str</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-string">f"queue(<span class="hljs-subst">{[x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> self]}</span>)"</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">append</span>(<span class="hljs-params">self, val</span>) -&gt; <span class="hljs-literal">None</span>:
-        self.instk.append(val)
+        <span class="hljs-variable language_">self</span>.instk.append(val)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">popleft</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(self.outstk) == <span class="hljs-number">0</span>:
-            <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(self.instk) != <span class="hljs-number">0</span>:
-                self.outstk.append(self.instk.pop())
-        <span class="hljs-keyword">return</span> self.outstk.pop()
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.outstk) == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.instk) != <span class="hljs-number">0</span>:
+                <span class="hljs-variable language_">self</span>.outstk.append(<span class="hljs-variable language_">self</span>.instk.pop())
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.outstk.pop()
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">appendleft</span>(<span class="hljs-params">self, val</span>) -&gt; <span class="hljs-literal">None</span>:
-        self.outstk.append(val)
+        <span class="hljs-variable language_">self</span>.outstk.append(val)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">min</span>(<span class="hljs-params">self</span>):
-        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(self.instk) != <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-built_in">len</span>(self.outstk) != <span class="hljs-number">0</span>:
-            <span class="hljs-keyword">return</span> self.f(self.instk.<span class="hljs-built_in">min</span>(), self.outstk.<span class="hljs-built_in">min</span>())
-        <span class="hljs-keyword">elif</span> <span class="hljs-built_in">len</span>(self.instk) == <span class="hljs-number">0</span>:
-            <span class="hljs-keyword">return</span> self.outstk.<span class="hljs-built_in">min</span>()
-        <span class="hljs-keyword">elif</span> <span class="hljs-built_in">len</span>(self.outstk) == <span class="hljs-number">0</span>:
-            <span class="hljs-keyword">return</span> self.instk.<span class="hljs-built_in">min</span>()
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.instk) != <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.outstk) != <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.f(<span class="hljs-variable language_">self</span>.instk.<span class="hljs-built_in">min</span>(), <span class="hljs-variable language_">self</span>.outstk.<span class="hljs-built_in">min</span>())
+        <span class="hljs-keyword">elif</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.instk) == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.outstk.<span class="hljs-built_in">min</span>()
+        <span class="hljs-keyword">elif</span> <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.outstk) == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.instk.<span class="hljs-built_in">min</span>()
         <span class="hljs-keyword">else</span>:
             <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"min() arg is an empty sequence"</span>)</code></pre>
       <h3 id="range_minimum_query">
@@ -4700,32 +4700,32 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, n</span>) -&gt; <span class="hljs-literal">None</span>:
         <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(n, <span class="hljs-built_in">list</span>):
-            self.l = [<span class="hljs-number">0</span>]*(<span class="hljs-built_in">len</span>(n) + <span class="hljs-number">1</span>)
+            <span class="hljs-variable language_">self</span>.l = [<span class="hljs-number">0</span>]*(<span class="hljs-built_in">len</span>(n) + <span class="hljs-number">1</span>)
             <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(n)):
-                self.update(i, n[i])
+                <span class="hljs-variable language_">self</span>.update(i, n[i])
         <span class="hljs-keyword">else</span>:
-            self.l = [<span class="hljs-number">0</span>]*(n + <span class="hljs-number">1</span>)
+            <span class="hljs-variable language_">self</span>.l = [<span class="hljs-number">0</span>]*(n + <span class="hljs-number">1</span>)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">str</span>:
-        <span class="hljs-keyword">return</span> <span class="hljs-built_in">str</span>(self.l)
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">str</span>(<span class="hljs-variable language_">self</span>.l)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">query</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">float</span>:
         <span class="hljs-string">""" sum of elements up to (and including) i """</span>
         i += <span class="hljs-number">1</span>
         ans = <span class="hljs-number">0</span>
         <span class="hljs-keyword">while</span> i &gt; <span class="hljs-number">0</span>:
-            ans += self.l[i]
+            ans += <span class="hljs-variable language_">self</span>.l[i]
             i -= (i &amp; -i)
         <span class="hljs-keyword">return</span> ans
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">range</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span>, j: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">float</span>:
         <span class="hljs-string">""" sum of elements between i and j, inclusive on both ends """</span>
-        <span class="hljs-keyword">return</span> self.query(j) - (self.query(i - <span class="hljs-number">1</span>) <span class="hljs-keyword">if</span> i &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.query(j) - (<span class="hljs-variable language_">self</span>.query(i - <span class="hljs-number">1</span>) <span class="hljs-keyword">if</span> i &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span>, v: <span class="hljs-built_in">float</span></span>) -&gt; <span class="hljs-literal">None</span>:
         i += <span class="hljs-number">1</span>
-        <span class="hljs-keyword">while</span> i &lt; <span class="hljs-built_in">len</span>(self.l):
-            self.l[i] += v
+        <span class="hljs-keyword">while</span> i &lt; <span class="hljs-built_in">len</span>(<span class="hljs-variable language_">self</span>.l):
+            <span class="hljs-variable language_">self</span>.l[i] += v
             i += (i &amp; -i)
 
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">RBIT</span>:
@@ -4734,26 +4734,26 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, n</span>) -&gt; <span class="hljs-literal">None</span>:
         p = <span class="hljs-built_in">len</span>(n) <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(n, <span class="hljs-built_in">list</span>) <span class="hljs-keyword">else</span> n
-        self.t1, self.t2 = BIT(p), BIT(p)
+        <span class="hljs-variable language_">self</span>.t1, <span class="hljs-variable language_">self</span>.t2 = BIT(p), BIT(p)
 
         <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(n, <span class="hljs-built_in">list</span>):
             <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(p):
-                self.update(i, i, n[i])
+                <span class="hljs-variable language_">self</span>.update(i, i, n[i])
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">str</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.t1}</span> <span class="hljs-subst">{self.t2}</span>"</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">query</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">float</span>:
-        <span class="hljs-keyword">return</span> i*self.t1.query(i) + self.t2.query(i)
+        <span class="hljs-keyword">return</span> i*<span class="hljs-variable language_">self</span>.t1.query(i) + <span class="hljs-variable language_">self</span>.t2.query(i)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">range</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span>, j: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">float</span>:
-        <span class="hljs-keyword">return</span> self.query(j) - (self.query(i - <span class="hljs-number">1</span>) <span class="hljs-keyword">if</span> i &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.query(j) - (<span class="hljs-variable language_">self</span>.query(i - <span class="hljs-number">1</span>) <span class="hljs-keyword">if</span> i &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span>, j: <span class="hljs-built_in">int</span>, v: <span class="hljs-built_in">float</span></span>) -&gt; <span class="hljs-literal">None</span>:
-        self.t1.update(i, v)
-        self.t1.update(j + <span class="hljs-number">1</span>, -v)
-        self.t2.update(i, -(i - <span class="hljs-number">1</span>)*v)
-        self.t2.update(j + <span class="hljs-number">1</span>, j*v)</code></pre>
+        <span class="hljs-variable language_">self</span>.t1.update(i, v)
+        <span class="hljs-variable language_">self</span>.t1.update(j + <span class="hljs-number">1</span>, -v)
+        <span class="hljs-variable language_">self</span>.t2.update(i, -(i - <span class="hljs-number">1</span>)*v)
+        <span class="hljs-variable language_">self</span>.t2.update(j + <span class="hljs-number">1</span>, j*v)</code></pre>
       <h4 id="segment_tree">
         <a class="header-anchor" href="#segment_tree">Segment Tree</a>
       </h4>
@@ -4817,75 +4817,75 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, n</span>) -&gt; <span class="hljs-literal">None</span>:
         <span class="hljs-keyword">if</span> <span class="hljs-built_in">isinstance</span>(n, <span class="hljs-built_in">list</span>):
-            self.l = [<span class="hljs-number">0</span>]*(<span class="hljs-built_in">len</span>(n)&lt;&lt;<span class="hljs-number">2</span>)
-            self.build(n, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(n) - <span class="hljs-number">1</span>)
-            self.n = <span class="hljs-built_in">len</span>(n)
+            <span class="hljs-variable language_">self</span>.l = [<span class="hljs-number">0</span>]*(<span class="hljs-built_in">len</span>(n)&lt;&lt;<span class="hljs-number">2</span>)
+            <span class="hljs-variable language_">self</span>.build(n, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(n) - <span class="hljs-number">1</span>)
+            <span class="hljs-variable language_">self</span>.n = <span class="hljs-built_in">len</span>(n)
         <span class="hljs-keyword">else</span>:
-            self.l = [<span class="hljs-number">0</span>]*(n&lt;&lt;<span class="hljs-number">2</span>)
-            self.n = n
-        self.lazy = [<span class="hljs-number">0</span>]*(self.n&lt;&lt;<span class="hljs-number">2</span>)
+            <span class="hljs-variable language_">self</span>.l = [<span class="hljs-number">0</span>]*(n&lt;&lt;<span class="hljs-number">2</span>)
+            <span class="hljs-variable language_">self</span>.n = n
+        <span class="hljs-variable language_">self</span>.lazy = [<span class="hljs-number">0</span>]*(<span class="hljs-variable language_">self</span>.n&lt;&lt;<span class="hljs-number">2</span>)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">str</span>:
-        <span class="hljs-keyword">return</span> <span class="hljs-built_in">str</span>(self.l)
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">str</span>(<span class="hljs-variable language_">self</span>.l)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">build</span>(<span class="hljs-params">self, a: <span class="hljs-built_in">list</span>, p: <span class="hljs-built_in">int</span>, l: <span class="hljs-built_in">int</span>, r: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-literal">None</span>:
         <span class="hljs-comment"># leaf</span>
         <span class="hljs-keyword">if</span> l == r:
-            self.l[p] = a[l]
+            <span class="hljs-variable language_">self</span>.l[p] = a[l]
         <span class="hljs-keyword">else</span>:
             pl, pr = p&lt;&lt;<span class="hljs-number">1</span>, p&lt;&lt;<span class="hljs-number">1</span>|<span class="hljs-number">1</span>
             m = (l + r)&gt;&gt;<span class="hljs-number">1</span>
-            self.build(a, pl, l, m)
-            self.build(a, pr, m + <span class="hljs-number">1</span>, r)
-            self.l[p] = self.l[pl] + self.l[pr]
+            <span class="hljs-variable language_">self</span>.build(a, pl, l, m)
+            <span class="hljs-variable language_">self</span>.build(a, pr, m + <span class="hljs-number">1</span>, r)
+            <span class="hljs-variable language_">self</span>.l[p] = <span class="hljs-variable language_">self</span>.l[pl] + <span class="hljs-variable language_">self</span>.l[pr]
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">push</span>(<span class="hljs-params">self, p: <span class="hljs-built_in">int</span>, l: <span class="hljs-built_in">int</span>, r: <span class="hljs-built_in">int</span></span>):
         <span class="hljs-string">""" Propagate lazy values """</span>
         pl, pr = p&lt;&lt;<span class="hljs-number">1</span>, p&lt;&lt;<span class="hljs-number">1</span>|<span class="hljs-number">1</span>
         <span class="hljs-comment"># update the actual value proportional</span>
         <span class="hljs-comment"># to the number of elements in the range</span>
-        self.l[p] += (r - l + <span class="hljs-number">1</span>)*self.lazy[p]
+        <span class="hljs-variable language_">self</span>.l[p] += (r - l + <span class="hljs-number">1</span>)*<span class="hljs-variable language_">self</span>.lazy[p]
         <span class="hljs-comment"># not leaf</span>
         <span class="hljs-keyword">if</span> l != r:
-            self.lazy[pl] += self.lazy[p]
-            self.lazy[pr] += self.lazy[p]
-        self.lazy[p] = <span class="hljs-number">0</span>
+            <span class="hljs-variable language_">self</span>.lazy[pl] += <span class="hljs-variable language_">self</span>.lazy[p]
+            <span class="hljs-variable language_">self</span>.lazy[pr] += <span class="hljs-variable language_">self</span>.lazy[p]
+        <span class="hljs-variable language_">self</span>.lazy[p] = <span class="hljs-number">0</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">query</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span>, j: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">float</span>:
-        <span class="hljs-keyword">return</span> self.subquery(i, j, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, self.n - <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.subquery(i, j, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-variable language_">self</span>.n - <span class="hljs-number">1</span>)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">subquery</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span>, j: <span class="hljs-built_in">int</span>, p: <span class="hljs-built_in">int</span>, l: <span class="hljs-built_in">int</span>, r: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">float</span>:
         <span class="hljs-comment"># segment outside query</span>
         <span class="hljs-keyword">if</span> i &gt; r <span class="hljs-keyword">or</span> j &lt; l:
             <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
-        self.push(p, l, r)
+        <span class="hljs-variable language_">self</span>.push(p, l, r)
         <span class="hljs-comment"># segment inside query</span>
         <span class="hljs-keyword">if</span> i &lt;= l <span class="hljs-keyword">and</span> r &lt;= j:
-            <span class="hljs-keyword">return</span> self.l[p]
+            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.l[p]
         <span class="hljs-comment"># partial</span>
         pl, pr = p&lt;&lt;<span class="hljs-number">1</span>, p&lt;&lt;<span class="hljs-number">1</span>|<span class="hljs-number">1</span>
         m = (l + r)&gt;&gt;<span class="hljs-number">1</span>
-        vl = self.subquery(i, j, pl, l, m)
-        vr = self.subquery(i, j, pr, m + <span class="hljs-number">1</span>, r)
+        vl = <span class="hljs-variable language_">self</span>.subquery(i, j, pl, l, m)
+        vr = <span class="hljs-variable language_">self</span>.subquery(i, j, pr, m + <span class="hljs-number">1</span>, r)
         <span class="hljs-keyword">return</span> (vl + vr)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span>, j: <span class="hljs-built_in">int</span>, v: <span class="hljs-built_in">float</span></span>) -&gt; <span class="hljs-literal">None</span>:
-        self.subupdate(i, j, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, self.n - <span class="hljs-number">1</span>, v)
+        <span class="hljs-variable language_">self</span>.subupdate(i, j, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-variable language_">self</span>.n - <span class="hljs-number">1</span>, v)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">subupdate</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span>, j: <span class="hljs-built_in">int</span>, p: <span class="hljs-built_in">int</span>,
                   l: <span class="hljs-built_in">int</span>, r: <span class="hljs-built_in">int</span>, v: <span class="hljs-built_in">float</span></span>) -&gt; <span class="hljs-literal">None</span>:
         <span class="hljs-keyword">if</span> i &gt; r <span class="hljs-keyword">or</span> j &lt; l:
             <span class="hljs-keyword">return</span>
-        self.push(p, l, r)
+        <span class="hljs-variable language_">self</span>.push(p, l, r)
         <span class="hljs-keyword">if</span> i &lt;= l <span class="hljs-keyword">and</span> r &lt;= j:
-            self.lazy[p] += v
-            self.push(p, l, r)
+            <span class="hljs-variable language_">self</span>.lazy[p] += v
+            <span class="hljs-variable language_">self</span>.push(p, l, r)
         <span class="hljs-keyword">else</span>:
             pl, pr = p&lt;&lt;<span class="hljs-number">1</span>, p&lt;&lt;<span class="hljs-number">1</span>|<span class="hljs-number">1</span>
             m = (l + r)&gt;&gt;<span class="hljs-number">1</span>
-            self.subupdate(i, j, pl, l, m, v)
-            self.subupdate(i, j, pr, m + <span class="hljs-number">1</span>, r, v)
-            self.l[p] = self.l[pl] + self.l[pr]</code></pre>
+            <span class="hljs-variable language_">self</span>.subupdate(i, j, pl, l, m, v)
+            <span class="hljs-variable language_">self</span>.subupdate(i, j, pr, m + <span class="hljs-number">1</span>, r, v)
+            <span class="hljs-variable language_">self</span>.l[p] = <span class="hljs-variable language_">self</span>.l[pl] + <span class="hljs-variable language_">self</span>.l[pr]</code></pre>
       <h4 id="avl_tree">
         <a class="header-anchor" href="#avl_tree">AVL Tree</a>
       </h4>
@@ -4951,108 +4951,108 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
       <pre><code class="python hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span>:
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, key, value=<span class="hljs-literal">None</span>, parent=<span class="hljs-literal">None</span>, left=<span class="hljs-literal">None</span>, right=<span class="hljs-literal">None</span></span>):
-        self.key = key
-        self.value = value
-        self.parent = parent
-        self.child = [left, right]
-        self.balance = <span class="hljs-number">0</span>
-        self.height = <span class="hljs-number">1</span>
+        <span class="hljs-variable language_">self</span>.key = key
+        <span class="hljs-variable language_">self</span>.value = value
+        <span class="hljs-variable language_">self</span>.parent = parent
+        <span class="hljs-variable language_">self</span>.child = [left, right]
+        <span class="hljs-variable language_">self</span>.balance = <span class="hljs-number">0</span>
+        <span class="hljs-variable language_">self</span>.height = <span class="hljs-number">1</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">str</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-string">f"<span class="hljs-subst">{self.key}</span>:<span class="hljs-subst">{self.value}</span>:<span class="hljs-subst">{self.balance}</span>"</span> \
-            <span class="hljs-keyword">if</span> self.value <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">else</span> <span class="hljs-built_in">str</span>(self.key)
+            <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.value <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">else</span> <span class="hljs-built_in">str</span>(<span class="hljs-variable language_">self</span>.key)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">extrema</span>(<span class="hljs-params">self, i: <span class="hljs-built_in">int</span></span>):
-        n = self
+        n = <span class="hljs-variable language_">self</span>
         <span class="hljs-keyword">while</span> n.child[i] <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
             n = n.child[i]
         <span class="hljs-keyword">return</span> n
 
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">min</span>(<span class="hljs-params">self</span>): <span class="hljs-keyword">return</span> self.extrema(<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">min</span>(<span class="hljs-params">self</span>): <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.extrema(<span class="hljs-number">0</span>)
 
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">max</span>(<span class="hljs-params">self</span>): <span class="hljs-keyword">return</span> self.extrema(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">max</span>(<span class="hljs-params">self</span>): <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.extrema(<span class="hljs-number">1</span>)
 
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">BST</span>:
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
-        self.root = <span class="hljs-literal">None</span>
+        <span class="hljs-variable language_">self</span>.root = <span class="hljs-literal">None</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self, n=<span class="hljs-literal">None</span>, s=<span class="hljs-string">""</span>, d=<span class="hljs-number">0</span></span>) -&gt; <span class="hljs-built_in">str</span>:
-        <span class="hljs-keyword">if</span> d == <span class="hljs-number">0</span>: n = self.root
+        <span class="hljs-keyword">if</span> d == <span class="hljs-number">0</span>: n = <span class="hljs-variable language_">self</span>.root
         <span class="hljs-keyword">if</span> n <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>: <span class="hljs-keyword">return</span> s
-        s = self.__str__(n.child[<span class="hljs-number">0</span>], s, d + <span class="hljs-number">1</span>)
+        s = <span class="hljs-variable language_">self</span>.__str__(n.child[<span class="hljs-number">0</span>], s, d + <span class="hljs-number">1</span>)
         s += <span class="hljs-string">" "</span>*<span class="hljs-number">4</span>*d + <span class="hljs-built_in">str</span>(n) + <span class="hljs-string">"\n"</span>
-        s = self.__str__(n.child[<span class="hljs-number">1</span>], s, d + <span class="hljs-number">1</span>)
+        s = <span class="hljs-variable language_">self</span>.__str__(n.child[<span class="hljs-number">1</span>], s, d + <span class="hljs-number">1</span>)
         <span class="hljs-keyword">return</span> s
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__len__</span>(<span class="hljs-params">self</span>) -&gt; <span class="hljs-built_in">int</span>:
         <span class="hljs-comment"># future: OS tree (302 in introduction to algorithms)</span>
-        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> <span class="hljs-keyword">if</span> self.root <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">else</span> <span class="hljs-number">1</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.root <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">else</span> <span class="hljs-number">1</span>
 
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">min</span>(<span class="hljs-params">self</span>): <span class="hljs-keyword">return</span> self.root.<span class="hljs-built_in">min</span>()
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">min</span>(<span class="hljs-params">self</span>): <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.root.<span class="hljs-built_in">min</span>()
 
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">max</span>(<span class="hljs-params">self</span>): <span class="hljs-keyword">return</span> self.root.<span class="hljs-built_in">max</span>()
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">max</span>(<span class="hljs-params">self</span>): <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.root.<span class="hljs-built_in">max</span>()
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">self, key, value=<span class="hljs-literal">None</span></span>):
-        <span class="hljs-keyword">if</span> self.root <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
-            self.root = Node(key, value)
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.root <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-variable language_">self</span>.root = Node(key, value)
             <span class="hljs-keyword">return</span>
-        self.subadd(key, value, self.root)
+        <span class="hljs-variable language_">self</span>.subadd(key, value, <span class="hljs-variable language_">self</span>.root)
 
-        n = self.find(key, value)
-        self.trace_heights(n)
-        self.trace(n)
+        n = <span class="hljs-variable language_">self</span>.find(key, value)
+        <span class="hljs-variable language_">self</span>.trace_heights(n)
+        <span class="hljs-variable language_">self</span>.trace(n)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">find</span>(<span class="hljs-params">self, key, value=<span class="hljs-literal">None</span></span>):
-        <span class="hljs-keyword">return</span> self.subfind(key, value, self.root)
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.subfind(key, value, <span class="hljs-variable language_">self</span>.root)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">contains</span>(<span class="hljs-params">self, key, value=<span class="hljs-literal">None</span></span>) -&gt; <span class="hljs-built_in">bool</span>:
-        <span class="hljs-keyword">return</span> self.find(key, value) <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.find(key, value) <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">delete</span>(<span class="hljs-params">self, key, value=<span class="hljs-literal">None</span></span>):
-        n = self.find(key, value)
+        n = <span class="hljs-variable language_">self</span>.find(key, value)
         <span class="hljs-comment"># leaf node</span>
         <span class="hljs-keyword">if</span> n.child[<span class="hljs-number">0</span>] <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">and</span> n.child[<span class="hljs-number">1</span>] <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
             <span class="hljs-comment"># root node</span>
             <span class="hljs-keyword">if</span> n.parent <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
-                self.root = <span class="hljs-literal">None</span>
+                <span class="hljs-variable language_">self</span>.root = <span class="hljs-literal">None</span>
                 <span class="hljs-keyword">return</span>
-            self.set_children(n.parent, n.key, <span class="hljs-literal">None</span>)
+            <span class="hljs-variable language_">self</span>.set_children(n.parent, n.key, <span class="hljs-literal">None</span>)
             to_trace = n.parent
         <span class="hljs-keyword">elif</span> n.child[<span class="hljs-number">0</span>] <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
             <span class="hljs-keyword">if</span> n.parent <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
-                self.root = n.child[<span class="hljs-number">1</span>]
-                self.root.parent = <span class="hljs-literal">None</span>
+                <span class="hljs-variable language_">self</span>.root = n.child[<span class="hljs-number">1</span>]
+                <span class="hljs-variable language_">self</span>.root.parent = <span class="hljs-literal">None</span>
                 <span class="hljs-keyword">return</span>
-            self.set_children(n.parent, n.key, n.child[<span class="hljs-number">1</span>])
+            <span class="hljs-variable language_">self</span>.set_children(n.parent, n.key, n.child[<span class="hljs-number">1</span>])
             to_trace = n.child[<span class="hljs-number">1</span>]
         <span class="hljs-keyword">elif</span> n.child[<span class="hljs-number">1</span>] <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
             <span class="hljs-keyword">if</span> n.parent <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
-                self.root = n.child[<span class="hljs-number">0</span>]
-                self.root.parent = <span class="hljs-literal">None</span>
+                <span class="hljs-variable language_">self</span>.root = n.child[<span class="hljs-number">0</span>]
+                <span class="hljs-variable language_">self</span>.root.parent = <span class="hljs-literal">None</span>
                 <span class="hljs-keyword">return</span>
-            self.set_children(n.parent, n.key, n.child[<span class="hljs-number">0</span>])
+            <span class="hljs-variable language_">self</span>.set_children(n.parent, n.key, n.child[<span class="hljs-number">0</span>])
             to_trace = n.child[<span class="hljs-number">0</span>]
         <span class="hljs-comment"># two children</span>
         <span class="hljs-keyword">else</span>:
             temp = n.child[<span class="hljs-number">0</span>].<span class="hljs-built_in">max</span>()
             n.key, n.value = temp.key, temp.value
-            self.set_children(temp.parent, temp.key, temp.child[<span class="hljs-number">0</span>])
+            <span class="hljs-variable language_">self</span>.set_children(temp.parent, temp.key, temp.child[<span class="hljs-number">0</span>])
             <span class="hljs-keyword">if</span> temp.child[<span class="hljs-number">0</span>] <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
-                self.trace_heights(temp.child[<span class="hljs-number">0</span>])
-            self.trace_heights(temp)
+                <span class="hljs-variable language_">self</span>.trace_heights(temp.child[<span class="hljs-number">0</span>])
+            <span class="hljs-variable language_">self</span>.trace_heights(temp)
             <span class="hljs-keyword">return</span>
 
-        self.trace_heights(to_trace)
-        self.trace(to_trace)
+        <span class="hljs-variable language_">self</span>.trace_heights(to_trace)
+        <span class="hljs-variable language_">self</span>.trace(to_trace)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">self, key, value, new</span>):
-        self.delete(key, value)
-        self.add(new, value)
+        <span class="hljs-variable language_">self</span>.delete(key, value)
+        <span class="hljs-variable language_">self</span>.add(new, value)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">pop</span>(<span class="hljs-params">self</span>):
-        n = self.<span class="hljs-built_in">min</span>()
-        self.delete(n.key, n.value)
+        n = <span class="hljs-variable language_">self</span>.<span class="hljs-built_in">min</span>()
+        <span class="hljs-variable language_">self</span>.delete(n.key, n.value)
         <span class="hljs-keyword">return</span> n.key, n.value
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">set_children</span>(<span class="hljs-params">self, n, key, value</span>):
@@ -5064,7 +5064,7 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
         <span class="hljs-keyword">if</span> n.child[key &gt; n.key] <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
             n.child[key &gt; n.key] = Node(key, value, n)
             <span class="hljs-keyword">return</span>
-        self.subadd(key, value, n.child[key &gt; n.key])
+        <span class="hljs-variable language_">self</span>.subadd(key, value, n.child[key &gt; n.key])
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">subfind</span>(<span class="hljs-params">self, key, value, n</span>):
         <span class="hljs-keyword">if</span> key == n.key <span class="hljs-keyword">and</span> value == n.value:
@@ -5073,11 +5073,11 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
         <span class="hljs-keyword">if</span> n.child[key &gt; n.key] <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
             <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
 
-        <span class="hljs-keyword">return</span> self.subfind(key, value, n.child[key &gt; n.key])
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.subfind(key, value, n.child[key &gt; n.key])
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">trace_heights</span>(<span class="hljs-params">self, n</span>):
         <span class="hljs-keyword">while</span> n <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
-            self.update_height(n)
+            <span class="hljs-variable language_">self</span>.update_height(n)
             n = n.parent
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">update_height</span>(<span class="hljs-params">self, n</span>):
@@ -5092,12 +5092,12 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
             <span class="hljs-comment"># right child</span>
             <span class="hljs-keyword">if</span> n.key &gt; p.key:
                 <span class="hljs-keyword">if</span> p.balance == <span class="hljs-number">2</span>:
-                    (self.rotate_right_left <span class="hljs-keyword">if</span> n.balance &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> \
-                     self.rotate_left)(p, n)
+                    (<span class="hljs-variable language_">self</span>.rotate_right_left <span class="hljs-keyword">if</span> n.balance &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> \
+                     <span class="hljs-variable language_">self</span>.rotate_left)(p, n)
             <span class="hljs-keyword">else</span>:
                 <span class="hljs-keyword">if</span> p.balance == -<span class="hljs-number">2</span>:
-                    (self.rotate_left_right <span class="hljs-keyword">if</span> n.balance &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> \
-                     self.rotate_right)(p, n)
+                    (<span class="hljs-variable language_">self</span>.rotate_left_right <span class="hljs-keyword">if</span> n.balance &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> \
+                     <span class="hljs-variable language_">self</span>.rotate_right)(p, n)
             n = p
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">rotate</span>(<span class="hljs-params">self, p, n, d</span>):
@@ -5112,24 +5112,24 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
         <span class="hljs-keyword">if</span> p.parent <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
             p.parent.child[p.key &gt; p.parent.key] = n
         <span class="hljs-keyword">else</span>:
-            self.root = n
+            <span class="hljs-variable language_">self</span>.root = n
         p.parent = n
 
         <span class="hljs-comment"># order matters: update from the bottom up</span>
-        self.update_height(p)
-        self.update_height(n)
+        <span class="hljs-variable language_">self</span>.update_height(p)
+        <span class="hljs-variable language_">self</span>.update_height(n)
 
         <span class="hljs-keyword">return</span> n
 
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">rotate_left</span>(<span class="hljs-params">self, p, n</span>): <span class="hljs-keyword">return</span> self.rotate(p, n, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">rotate_left</span>(<span class="hljs-params">self, p, n</span>): <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.rotate(p, n, <span class="hljs-number">0</span>)
 
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">rotate_right</span>(<span class="hljs-params">self, p, n</span>): <span class="hljs-keyword">return</span> self.rotate(p, n, <span class="hljs-number">1</span>)
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">rotate_right</span>(<span class="hljs-params">self, p, n</span>): <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.rotate(p, n, <span class="hljs-number">1</span>)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">rotate_left_right</span>(<span class="hljs-params">self, p, n</span>):
-        <span class="hljs-keyword">return</span> self.rotate_right(p, self.rotate_left(n, n.child[<span class="hljs-number">1</span>]))
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.rotate_right(p, <span class="hljs-variable language_">self</span>.rotate_left(n, n.child[<span class="hljs-number">1</span>]))
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">rotate_right_left</span>(<span class="hljs-params">self, p, n</span>):
-        <span class="hljs-keyword">return</span> self.rotate_left(p, self.rotate_right(n, n.child[<span class="hljs-number">0</span>]))</code></pre>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.rotate_left(p, <span class="hljs-variable language_">self</span>.rotate_right(n, n.child[<span class="hljs-number">0</span>]))</code></pre>
       <h4 id="cartesian_tree">
         <a class="header-anchor" href="#cartesian_tree">Cartesian Tree</a>
       </h4>
@@ -5167,16 +5167,16 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
       <pre><code class="python hljs"><span class="hljs-keyword">class</span> <span class="hljs-title class_">CartesianTree</span>:
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, key, parent=<span class="hljs-literal">None</span>, left=<span class="hljs-literal">None</span>, right=<span class="hljs-literal">None</span></span>):
-        self.key = key
-        self.parent = parent
-        self.child = [left, right]
+        <span class="hljs-variable language_">self</span>.key = key
+        <span class="hljs-variable language_">self</span>.parent = parent
+        <span class="hljs-variable language_">self</span>.child = [left, right]
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self, n=<span class="hljs-literal">None</span>, s=<span class="hljs-string">""</span>, d=<span class="hljs-number">0</span></span>) -&gt; <span class="hljs-built_in">str</span>:
-        <span class="hljs-keyword">if</span> d == <span class="hljs-number">0</span>: n = self
+        <span class="hljs-keyword">if</span> d == <span class="hljs-number">0</span>: n = <span class="hljs-variable language_">self</span>
         <span class="hljs-keyword">if</span> n <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>: <span class="hljs-keyword">return</span> s
-        s = self.__str__(n.child[<span class="hljs-number">0</span>], s, d + <span class="hljs-number">1</span>)
+        s = <span class="hljs-variable language_">self</span>.__str__(n.child[<span class="hljs-number">0</span>], s, d + <span class="hljs-number">1</span>)
         s += <span class="hljs-string">" "</span>*<span class="hljs-number">4</span>*d + <span class="hljs-built_in">str</span>(n.key) + <span class="hljs-string">"\n"</span>
-        s = self.__str__(n.child[<span class="hljs-number">1</span>], s, d + <span class="hljs-number">1</span>)
+        s = <span class="hljs-variable language_">self</span>.__str__(n.child[<span class="hljs-number">1</span>], s, d + <span class="hljs-number">1</span>)
         <span class="hljs-keyword">return</span> s
 
 <span class="hljs-keyword">def</span> <span class="hljs-title function_">cartesian_tree</span>(<span class="hljs-params">l: <span class="hljs-built_in">list</span></span>) -&gt; CartesianTree:
@@ -5368,29 +5368,29 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
     <span class="hljs-string">""" kd-tree node. """</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, point: <span class="hljs-built_in">tuple</span>=<span class="hljs-literal">None</span>, cd: <span class="hljs-built_in">int</span>=<span class="hljs-number">0</span></span>) -&gt; <span class="hljs-literal">None</span>:
-        self.child, self.point, self.cd, self.bb = [<span class="hljs-literal">None</span>, <span class="hljs-literal">None</span>], point, cd, []
-        self.D, self.tight_bb = <span class="hljs-built_in">len</span>(point) <span class="hljs-keyword">if</span> point <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>, <span class="hljs-literal">False</span>
+        <span class="hljs-variable language_">self</span>.child, <span class="hljs-variable language_">self</span>.point, <span class="hljs-variable language_">self</span>.cd, <span class="hljs-variable language_">self</span>.bb = [<span class="hljs-literal">None</span>, <span class="hljs-literal">None</span>], point, cd, []
+        <span class="hljs-variable language_">self</span>.D, <span class="hljs-variable language_">self</span>.tight_bb = <span class="hljs-built_in">len</span>(point) <span class="hljs-keyword">if</span> point <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span>, <span class="hljs-literal">False</span>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self, n: <span class="hljs-string">"kdNode"</span>=<span class="hljs-literal">None</span>, d: <span class="hljs-built_in">int</span>=<span class="hljs-number">0</span></span>) -&gt; <span class="hljs-built_in">str</span>:
         <span class="hljs-string">""" Fancy string representation. """</span>
-        <span class="hljs-keyword">if</span> d == <span class="hljs-number">0</span>: n = self <span class="hljs-comment"># called with None by defualt, set to the root</span>
+        <span class="hljs-keyword">if</span> d == <span class="hljs-number">0</span>: n = <span class="hljs-variable language_">self</span> <span class="hljs-comment"># called with None by defualt, set to the root</span>
         <span class="hljs-keyword">if</span> n <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>: <span class="hljs-keyword">return</span> [] <span class="hljs-comment"># leaf node</span>
         s = [<span class="hljs-string">f"<span class="hljs-subst">{<span class="hljs-string">' '</span>*<span class="hljs-number">4</span>*d}</span><span class="hljs-subst">{n.point}</span>"</span>]
-        s += self.__str__(n.child[<span class="hljs-number">0</span>], d + <span class="hljs-number">1</span>)
-        s += self.__str__(n.child[<span class="hljs-number">1</span>], d + <span class="hljs-number">1</span>)
+        s += <span class="hljs-variable language_">self</span>.__str__(n.child[<span class="hljs-number">0</span>], d + <span class="hljs-number">1</span>)
+        s += <span class="hljs-variable language_">self</span>.__str__(n.child[<span class="hljs-number">1</span>], d + <span class="hljs-number">1</span>)
         <span class="hljs-keyword">return</span> <span class="hljs-string">"\n"</span>.join(s) <span class="hljs-keyword">if</span> d == <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> s
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">dir</span>(<span class="hljs-params">self, p: <span class="hljs-built_in">tuple</span></span>) -&gt; <span class="hljs-built_in">int</span>:
         <span class="hljs-string">""" Gets the proper left/right child depending on the point. """</span>
-        <span class="hljs-keyword">return</span> p[self.cd] &gt;= self.point[self.cd]
+        <span class="hljs-keyword">return</span> p[<span class="hljs-variable language_">self</span>.cd] &gt;= <span class="hljs-variable language_">self</span>.point[<span class="hljs-variable language_">self</span>.cd]
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">tighten</span>(<span class="hljs-params">self, t: <span class="hljs-string">"KdNode"</span>=<span class="hljs-literal">None</span></span>) -&gt; <span class="hljs-literal">None</span>:
         <span class="hljs-string">""" Tighten bounding boxes in O(nd). """</span>
-        <span class="hljs-keyword">if</span> t <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>: t = self <span class="hljs-comment"># called with None, set to the root</span>
+        <span class="hljs-keyword">if</span> t <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>: t = <span class="hljs-variable language_">self</span> <span class="hljs-comment"># called with None, set to the root</span>
         l, r, t.tight_bb = t.child[<span class="hljs-number">0</span>], t.child[<span class="hljs-number">1</span>], <span class="hljs-literal">True</span>
         <span class="hljs-comment"># recur on children</span>
-        <span class="hljs-keyword">if</span> l <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>: self.tighten(l)
-        <span class="hljs-keyword">if</span> r <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>: self.tighten(r)
+        <span class="hljs-keyword">if</span> l <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>: <span class="hljs-variable language_">self</span>.tighten(l)
+        <span class="hljs-keyword">if</span> r <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>: <span class="hljs-variable language_">self</span>.tighten(r)
         <span class="hljs-keyword">if</span> l <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">and</span> r <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>: <span class="hljs-comment"># leaf node, box is just the singular point</span>
             t.bb = [(t.point[d], t.point[d]) <span class="hljs-keyword">for</span> d <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(t.D)]
         <span class="hljs-keyword">elif</span> l <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">or</span> r <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>: <span class="hljs-comment"># one child, inherit box of child</span>
@@ -5408,7 +5408,7 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
         <span class="hljs-keyword">elif</span> t.point == p: <span class="hljs-comment"># ignore duplicates</span>
             <span class="hljs-keyword">return</span> t
         <span class="hljs-keyword">else</span>:              <span class="hljs-comment"># update pointers</span>
-            t.child[t.<span class="hljs-built_in">dir</span>(p)] = self.__add(t.child[t.<span class="hljs-built_in">dir</span>(p)], p, t)
+            t.child[t.<span class="hljs-built_in">dir</span>(p)] = <span class="hljs-variable language_">self</span>.__add(t.child[t.<span class="hljs-built_in">dir</span>(p)], p, t)
             t.tight_bb = <span class="hljs-literal">False</span> <span class="hljs-comment"># no longer use tight bounding boxes</span>
             <span class="hljs-comment"># is it worth O(d log n) instead of O(log n) for tighter boxes?</span>
             <span class="hljs-comment"># if so, manually update t.bb over each of the d dimensions</span>
@@ -5416,36 +5416,36 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">self, p: <span class="hljs-built_in">tuple</span></span>) -&gt; <span class="hljs-literal">None</span>:
         <span class="hljs-string">""" Wrapper over the recursive helper function __add. """</span>
-        <span class="hljs-keyword">if</span> self.point <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>: <span class="hljs-comment"># empty tree, simply change our own point</span>
-            self.__init__(p)
-        self.__add(self, p)
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.point <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>: <span class="hljs-comment"># empty tree, simply change our own point</span>
+            <span class="hljs-variable language_">self</span>.__init__(p)
+        <span class="hljs-variable language_">self</span>.__add(<span class="hljs-variable language_">self</span>, p)
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__closest</span>(<span class="hljs-params">self, t: <span class="hljs-string">"kdNode"</span>, p: <span class="hljs-built_in">tuple</span>, curr_bb: <span class="hljs-built_in">list</span></span>) -&gt; <span class="hljs-built_in">tuple</span>:
         <span class="hljs-string">""" Returns the closest point to p in the tree (nearest neighbor). """</span>
         <span class="hljs-comment"># all points in this bounding box farther than existing point</span>
         bb = t.bb <span class="hljs-keyword">if</span> t <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">and</span> t.tight_bb <span class="hljs-keyword">else</span> curr_bb
-        <span class="hljs-keyword">if</span> t <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">or</span> distbb(p, bb) &gt; self.best_dist:
+        <span class="hljs-keyword">if</span> t <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">or</span> distbb(p, bb) &gt; <span class="hljs-variable language_">self</span>.best_dist:
             <span class="hljs-keyword">return</span>
         <span class="hljs-comment"># update best point</span>
         d = dist(p, t.point)
-        <span class="hljs-keyword">if</span> d &lt; self.best_dist:
-            self.best, self.best_dist = t.point, d
+        <span class="hljs-keyword">if</span> d &lt; <span class="hljs-variable language_">self</span>.best_dist:
+            <span class="hljs-variable language_">self</span>.best, <span class="hljs-variable language_">self</span>.best_dist = t.point, d
         <span class="hljs-comment"># visit subtrees in order of distance from p</span>
         i, j = t.<span class="hljs-built_in">dir</span>(p), <span class="hljs-number">1</span> - t.<span class="hljs-built_in">dir</span>(p)
-        self.__closest(t.child[i], p, trimbb(curr_bb, t.cd, t.point, i))
-        self.__closest(t.child[j], p, trimbb(curr_bb, t.cd, t.point, j))
+        <span class="hljs-variable language_">self</span>.__closest(t.child[i], p, trimbb(curr_bb, t.cd, t.point, i))
+        <span class="hljs-variable language_">self</span>.__closest(t.child[j], p, trimbb(curr_bb, t.cd, t.point, j))
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">closest</span>(<span class="hljs-params">self, p: <span class="hljs-built_in">tuple</span></span>) -&gt; <span class="hljs-built_in">tuple</span>:
         <span class="hljs-string">""" Wrapper over the recursive helper function __closest. """</span>
-        self.best, self.best_dist = <span class="hljs-literal">None</span>, <span class="hljs-built_in">float</span>(<span class="hljs-string">"inf"</span>)
+        <span class="hljs-variable language_">self</span>.best, <span class="hljs-variable language_">self</span>.best_dist = <span class="hljs-literal">None</span>, <span class="hljs-built_in">float</span>(<span class="hljs-string">"inf"</span>)
         bb = [[-<span class="hljs-built_in">float</span>(<span class="hljs-string">"inf"</span>), <span class="hljs-built_in">float</span>(<span class="hljs-string">"inf"</span>)] <span class="hljs-keyword">for</span> d <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(p))]
-        self.__closest(self, p, [] <span class="hljs-keyword">if</span> self.tight_bb <span class="hljs-keyword">else</span> bb)
-        <span class="hljs-keyword">return</span> self.best
+        <span class="hljs-variable language_">self</span>.__closest(<span class="hljs-variable language_">self</span>, p, [] <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.tight_bb <span class="hljs-keyword">else</span> bb)
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.best
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">nnsearch</span>(<span class="hljs-params">self, p: <span class="hljs-built_in">tuple</span>, r: <span class="hljs-built_in">float</span></span>) -&gt; <span class="hljs-built_in">tuple</span>:
         <span class="hljs-string">""" Finds the points that are within a radius of r from p. """</span>
         l = []
-        h = [(<span class="hljs-number">0</span>, self)]
+        h = [(<span class="hljs-number">0</span>, <span class="hljs-variable language_">self</span>)]
         <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(h) &gt; <span class="hljs-number">0</span>:
             d, n = heapq.heappop(h)
             <span class="hljs-keyword">if</span> d &gt; r*r: <span class="hljs-comment"># stop processing if out of circle</span>
@@ -5468,15 +5468,15 @@ l = inv[rmq(array, *fh, indexes[a], indexes[b])]</code></pre>
         <span class="hljs-built_in">super</span>().__init__()
         <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(points) &gt; <span class="hljs-number">0</span>:
             <span class="hljs-comment"># no need for duplicate points</span>
-            self.__build_tree(self, <span class="hljs-built_in">list</span>(<span class="hljs-built_in">set</span>(points)))
-            self.tighten()
+            <span class="hljs-variable language_">self</span>.__build_tree(<span class="hljs-variable language_">self</span>, <span class="hljs-built_in">list</span>(<span class="hljs-built_in">set</span>(points)))
+            <span class="hljs-variable language_">self</span>.tighten()
 
     <span class="hljs-keyword">def</span> <span class="hljs-title function_">__build_tree</span>(<span class="hljs-params">self, t: kdNode, points: <span class="hljs-built_in">list</span>, cd: <span class="hljs-built_in">int</span>=<span class="hljs-number">0</span></span>) -&gt; kdNode:
         <span class="hljs-string">""" Constructs a kd-tree in O(n log n). """</span>
         N, D, t.cd = <span class="hljs-built_in">len</span>(points), <span class="hljs-built_in">len</span>(points[<span class="hljs-number">0</span>]), cd
         t.point, points = split_median(points, cd) <span class="hljs-comment"># median</span>
         t.D, next_cd = D, (cd + <span class="hljs-number">1</span>) % D
-        t.child = [self.__build_tree(kdNode(), l, next_cd) <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(l) &gt; <span class="hljs-number">0</span>
+        t.child = [<span class="hljs-variable language_">self</span>.__build_tree(kdNode(), l, next_cd) <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(l) &gt; <span class="hljs-number">0</span>
                    <span class="hljs-keyword">else</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> split(points, cd, t.point)]
         <span class="hljs-keyword">return</span> t</code></pre>
       <h3 id="prefix_sums">
