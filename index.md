@@ -31,18 +31,17 @@ PGP:&nbsp;<a href="/assets/misc/{{pgp}}.asc"><samp>0x{{pgp}}</samp></a>
 \end{column}
 
 I'm a PhD student in the [Computer Science Department](https://csd.cmu.edu/)
-of [Carnegie Mellon University](https://www.cmu.edu/)'s [School of
-Computer Science](https://www.cs.cmu.edu/). Prior to CMU, I was advised
-by [Florian Schäfer](https://f-t-s.github.io/) in the [School of
-Computational Science and Engineering](https://cse.gatech.edu/) at
-[Georgia Tech](https://www.gatech.edu/).
+at [Carnegie Mellon University](https://www.cmu.edu/), advised by [Andrej
+Risteski](https://www.andrew.cmu.edu/user/aristesk/). Prior to CMU, I was an
+undergraduate at [Georgia Tech](https://www.gatech.edu/), where I worked on
+computation and inference with [Florian Schäfer](https://f-t-s.github.io/).
 
 My research interests are in problems spanning machine learning, statistics,
 and applied mathematics. I'm particularly interested in efficient numerical
 algorithms for generative modeling, sampling, and statistical inference. See
 these [high-level summaries](/projects/) for more details about my work.
 
-I am best reached via [email](mailto:shuan@gatech.edu).
+I am best reached via [email](mailto:slhuan@cs.cmu.edu).
 
 @@links
 ## external links
