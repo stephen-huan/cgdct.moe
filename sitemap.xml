@@ -1,49 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://cgdct.moe/blog/misc-math/index.html</loc>
-    <lastmod>1970-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cgdct.moe/news/index.html</loc>
-    <lastmod>1970-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cgdct.moe/blog/index.html</loc>
-    <lastmod>2024-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://cgdct.moe/index.html</loc>
-    <lastmod>1970-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cgdct.moe/projects/cholesky/index.html</loc>
-    <lastmod>1970-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cgdct.moe/blog/far/index.html</loc>
-    <lastmod>1970-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cgdct.moe/blog/multiplicative-additive/index.html</loc>
-    <lastmod>1970-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cgdct.moe/blog/algorithm-library/index.html</loc>
     <lastmod>1970-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -55,13 +13,61 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://cgdct.moe/blog/tomato-egg-noodle/index.html</loc>
+    <loc>https://cgdct.moe/news/index.html</loc>
+    <lastmod>1970-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cgdct.moe/blog/algorithm-library/index.html</loc>
+    <lastmod>1970-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cgdct.moe/blog/multiplicative-additive/index.html</loc>
+    <lastmod>1970-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cgdct.moe/projects/cholesky/index.html</loc>
+    <lastmod>1970-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cgdct.moe/blog/misc-math/index.html</loc>
     <lastmod>1970-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://cgdct.moe/publications/index.html</loc>
+    <lastmod>1970-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cgdct.moe/blog/tomato-egg-noodle/index.html</loc>
+    <lastmod>1970-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cgdct.moe/blog/far/index.html</loc>
+    <lastmod>1970-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cgdct.moe/projects/index.html</loc>
+    <lastmod>1970-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cgdct.moe/blog/index.html</loc>
     <lastmod>1970-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
