@@ -2,7 +2,7 @@
   "name": "cgdct.moe",
   "dependencies": {
     "highlight.js": "^11.10.0",
-    "katex": "^0.16.11"
+    "katex": "^0.16.21"
   },
   "devDependencies": {
     "@prettier/plugin-xml": "^3.4.1",
