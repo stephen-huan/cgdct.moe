@@ -5,6 +5,9 @@ A simple utility that reformats paragraphs to a fixed width.
 3. Ignore the last line, while making sure it's shorter than average
 That's it! Runs in O(NK) where N = # characters and K = width
 """
+
+# ruff: file-ignore[C417]
+
 import sys
 
 Block = tuple[list[str], int, str]
@@ -135,7 +138,7 @@ def parse_lines(lines, width: int) -> list[Block]:
             if len(par) > 0:
                 pars += parse_prefix(par, width)
             pars.append(([], width, ""))
-            par, par = [], []
+            par = []
     if len(par) > 0:
         pars += parse_prefix(par, width)
     return pars
