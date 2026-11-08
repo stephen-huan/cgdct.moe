@@ -9,8 +9,8 @@ katex: true
 
 [[Video]](https://youtu.be/H3Agto3ZSnk)
 [[Source code]](https://github.com/stephen-huan/inflow)
-[[Python]]({{assets}}/far.py)
-[[C++]]({{assets}}/far.cpp)
+[[Python]](/assets/blog/far/far.py)
+[[C++]](/assets/blog/far/far.cpp)
 [[Emacs Lisp by esrh]](https://github.com/eshrh/far.el)
 
 [`par`](http://www.nicemice.net/par/) is a formatting tool that inserts line
