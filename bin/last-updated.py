@@ -23,4 +23,5 @@ for file in include("md") + include("html"):
     )
 
 with OUT.open("w") as f:
-    json.dump(timestamps, f, indent=4, sort_keys=True)
+    json.dump(timestamps, f, indent=2, sort_keys=True)
+    f.write("\n")
