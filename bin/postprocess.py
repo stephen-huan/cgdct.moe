@@ -97,7 +97,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-o",
         "--katex-output",
-        default="__site/libs/katex/katex.min.css",
+        default="build/lib/katex/katex.min.css",
         help="output path for modified katex css",
     )
     parser.add_argument(
