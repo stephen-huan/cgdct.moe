@@ -1,15 +1,14 @@
 [
   {
     "title": "Mitigating error propagation in chaotic dynamics via inference-time noising: a view from backward sampling",
-    "authors": [
-      "*Stephen Huan*",
-      "Andrej Risteski",
-      "Qiuhong (Anna) Wei"
-    ],
+    "authors": ["*Stephen Huan*", "Andrej Risteski", "Qiuhong (Anna) Wei"],
     "journal": "Submitted to STOC 2027",
     "year": 2026,
     "metadata": [
-      ["pdf", "https://github.com/sigact-stoc/stoc2027/releases/download/papers-2/1398.pdf"]
+      [
+        "pdf",
+        "https://github.com/sigact-stoc/stoc2027/releases/download/papers-2/1398.pdf"
+      ]
     ],
     "selected": 1
   },
