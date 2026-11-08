@@ -9,6 +9,7 @@
   "maxwidth": "50em",
   "katex-vendor-css": "/lib/katex/katex.min.css",
   "katex-css": "/css/katex.css",
+  "eqnPrefixTemplate": "<span class=\"eqref\">($$i$$)</span>",
   "git-repo": "https://github.com/stephen-huan/cgdct.moe/blob/master/",
   "timezone": "Antarctica/Syowa",
   "date-format": "%Y-%m-%d",
