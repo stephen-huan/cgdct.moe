@@ -22,6 +22,7 @@ git subtree add --prefix "$site_dir" "$push_branch"
 nix build .#default.passthru.tests.links
 nix build
 cp --recursive "result/" -T "$site_dir"
+chmod --recursive +w "$site_dir"
 
 # publish
 git add --force "$site_dir"
