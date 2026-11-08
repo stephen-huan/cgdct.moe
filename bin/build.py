@@ -65,7 +65,6 @@ else:
         path: Path, dst: Path, is_template: bool = False
     ) -> dict[str, Any]:
         """Return the metadata for the path."""
-        (path, dst, is_template)  # pyright: ignore
         return {}
 
     from json import JSONEncoder

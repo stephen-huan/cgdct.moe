@@ -2,6 +2,7 @@
 """
 Post-process the result of Franklin.jl
 """
+
 import argparse
 import glob
 import hashlib
@@ -114,7 +115,8 @@ if __name__ == "__main__":
         with open(file) as f:
             soup = BeautifulSoup(f, "lxml", from_encoding="utf-8")
         modified = any(
-            [
+            # stateful, list comprehension prevents short-circuiting
+            [  # noqa: C419
                 f(soup)
                 for f in (
                     rewrite,

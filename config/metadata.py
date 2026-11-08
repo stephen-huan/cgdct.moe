@@ -69,7 +69,7 @@ def get_headers(path: Path, dst: Path) -> list[dict[str, str | bool]]:
     for header in headers:
         if header["url"] == "/":
             header["active"] = path == source / "index.md"
-        elif header["url"] in str(dst):
+        elif header["url"] in str(dst):  # noqa: SIM114
             header["active"] = True
         elif header["name"] == "blog" and path.parents[0] == source / "tag":
             header["active"] = True

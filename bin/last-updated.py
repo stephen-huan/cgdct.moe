@@ -2,6 +2,7 @@
 """
 Feed information from git to the Nix store.
 """
+
 import json
 import subprocess
 from pathlib import Path
@@ -10,12 +11,14 @@ OUT = Path(__file__).parent.parent / "config" / "last-updated.json"
 
 timestamps = {}
 
-include = lambda ext: list(Path("src").rglob(f"*.{ext}"))  # noqa: E731
+include = lambda ext: list(Path("src").rglob(f"*.{ext}"))
 for file in include("md") + include("html"):
     # https://www.git-scm.com/docs/git-log#_pretty_formats
     timestamps[str(file)] = int(
         subprocess.run(
-            ["git", "log", "--pretty=%at", "-1", file], capture_output=True
+            ["git", "log", "--pretty=%at", "-1", file],
+            capture_output=True,
+            check=True,
         ).stdout.decode()
     )
 

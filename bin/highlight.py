@@ -2,6 +2,7 @@
 """
 Modify a pandoc highlight style.
 """
+
 import json
 
 name = "atom-one-light.theme"

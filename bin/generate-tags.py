@@ -2,6 +2,7 @@
 """
 Generate tag pages from the blog.
 """
+
 from build import get_metadata, source
 
 # TODO: relative_to(walk_up=True)
