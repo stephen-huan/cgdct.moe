@@ -1,0 +1,5 @@
+.*Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.*
+.*Bad value “” for attribute “columnspacing” on element “mtable”.*
+.*Element “mi” not allowed as child of element “m(i|o)” in this context.*
+.*Element “mo” not allowed as child of element “msub” in this context.*
+.*Element “mpadded” not allowed as child of element “mi” in this context.*
