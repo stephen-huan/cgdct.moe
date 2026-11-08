@@ -7,6 +7,7 @@ See https://pandoc.org/MANUAL.html.
 Filters
 
 - https://github.com/xu-cheng/pandoc-katex
+- https://github.com/lierdakil/pandoc-crossref
 - https://github.com/pandoc-ext/section-bibliographies
 - https://codeberg.org/NomisIV/pandoc-tree-sitter-filter
 """
@@ -142,6 +143,7 @@ def render(
                 f"--metadata-file={metadata_path}",
                 f"--metadata-file={tmpfile.name}",
                 f"--highlight-style={highlight}",
+                "--filter=pandoc-crossref",
                 "--citeproc",
                 "--filter=pandoc-katex",
                 src,
