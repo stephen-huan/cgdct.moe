@@ -4,4 +4,4 @@ set -o errexit
 set -o nounset
 
 # lychee: https://github.com/lycheeverse/lychee
-lychee --cache --exclude-mail "$@"
+lychee --cache=true --include-mail=false --root-dir build "$@"
