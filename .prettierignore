@@ -1,0 +1,6 @@
+.direnv/
+bin/
+pandoc-templates/
+src/lib
+build/lib
+*.md
