@@ -1,3 +1,6 @@
+[tool.pyright]
+exclude = [".direnv"]
+
 [tool.ruff]
 line-length = 79
 
