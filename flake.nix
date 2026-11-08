@@ -41,9 +41,7 @@
             ${lib.getExe pkgs.ruff} check .
             ${lib.getExe pkgs.shfmt} --diff .
             ${lib.getExe pkgs.statix} check
-            source ./bin/vnu _assets
-            source ./bin/vnu _css
-            source ./bin/vnu _libs
+            source ./bin/vnu src
           '';
           installPhase = "touch $out";
         };
