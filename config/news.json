@@ -1,5 +1,69 @@
 [
   {
+    "date": "2026-11-18",
+    "description": "Giving a talk at CMU's [Statistical Transport Talk Series](https://cmu-statistical-transport.github.io/). Thanks [Siva](https://www.stat.cmu.edu/~siva/) for the invite!"
+  },
+  {
+    "date": "2026-11-15",
+    "description": "Attending [Supercomputing (SC) 26](https://sc26.supercomputing.org/)."
+  },
+  {
+    "date": "2026-08-03",
+    "description": "At the Simons Institute's [Diffusion Generative Modeling: Progress and Next Steps](https://simons.berkeley.edu/workshops/diffusion-generative-modeling-progress-next-steps) program."
+  },
+  {
+    "date": "2026-07-14",
+    "description": "[Poster](/assets/pdf/2026-07-14_doecsgf.pdf) session at the [DOE CSGF Annual Program Review](https://www.krellinst.org/csgf/conf/2026/fellows-poster-session-abstracts)."
+  },
+  {
+    "date": "2026-06-22",
+    "description": "I will (unoffically) attend SLMath's [Summer School on Mathematics of Generative Models](https://www.slmath.org/summer-schools/1136)."
+  },
+  {
+    "date": "2026-05-11",
+    "description": "I start my practicum at [Lawrence Berkeley National Laboratory](https://www.lbl.gov/), advised by [Michael Lindsey](https://quantumtative.github.io/)."
+  },
+  {
+    "date": "2026-03-26",
+    "description": "I will attend the [Frontiers of Flows for Generative AI Workshop](https://cmu-l3.github.io/flows2026/)."
+  },
+  {
+    "date": "2025-11-22",
+    "description": "I will attend the [Workshop on Mathematical Analysis in Machine Learning](https://sites.google.com/view/mlanalysis/home)."
+  },
+  {
+    "date": "2025-07-13",
+    "description": "I will attend the [DOE CSGF Annual Program Review](https://www.krellinst.org/csgf/conf/2025)."
+  },
+  {
+    "date": "2025-06-03",
+    "description": "I will be attending the [Frontiers in Applied Analysis](https://events.mcs.cmu.edu/frontiers2025/) workshop."
+  },
+  {
+    "date": "2025-05-07",
+    "description": "I will attend IMSI's [Statistical and Computational Challenges in Probabilistic SciML](https://www.imsi.institute/activities/statistical-and-computational-challenges-in-probabilistic-scientific-machine-learning-sciml/) workshop."
+  },
+  {
+    "date": "2025-04-28",
+    "description": "I am awarded the [Department of Energy Computational Science Graduate Fellowship](https://www.krellinst.org/csgf/)!"
+  },
+  {
+    "date": "2025-03-03",
+    "description": "[_Sparse Cholesky factorization by greedy conditional selection_](https://cgdct.moe/projects/cholesky/) is accepted to SIAM JUQ!"
+  },
+  {
+    "date": "2025-01-13",
+    "description": "I will be a teaching assistant for [10-708 (Probablistic Graphical Models)](https://andrejristeski.github.io/10708S25/) in Spring 2025."
+  },
+  {
+    "date": "2024-10-21",
+    "description": "I will present a [talk](https://meetings.siam.org/sess/dsp_talk.cfm?p=139376) and [poster](https://meetings.siam.org/sess/dsp_talk.cfm?p=140078) at [SIAM Conference on Mathematics of Data Science (MDS24)](https://www.siam.org/conferences-events/siam-conferences/mds24/)."
+  },
+  {
+    "date": "2024-08-26",
+    "description": "I will (unoffically) attend the Simons Institute's [Modern Paradigms in Generalization](https://simons.berkeley.edu/programs/modern-paradigms-generalization) program."
+  },
+  {
     "date": "2024-05-04",
     "description": "I graduated from Georgia Tech with a BS in Computer Science and minor in Mathematics."
   },
@@ -57,7 +121,7 @@
   },
   {
     "date": "2022-09-28",
-    "description": "[Slides](/assets/pdf/2022-09-28_mds.pdf) for a [talk](https://meetings.siam.org/sess/dsp_talk.cfm?p=122967) at the [SIAM Conference on Mathematics of Data Science (MDS22)](https://www.siam.org/conferences/cm/conference/mds22)."
+    "description": "[Slides](/assets/pdf/2022-09-28_mds.pdf) for a [talk](https://meetings.siam.org/sess/dsp_talk.cfm?p=122967) at the [SIAM Conference on Mathematics of Data Science (MDS22)](https://www.siam.org/conferences-events/past-event-archive/mds22/)."
   },
   {
     "date": "2022-09-23",
