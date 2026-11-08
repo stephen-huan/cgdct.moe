@@ -395,7 +395,7 @@ illustrates the benefits of selection by information.
 In this 1-d regression problem, the goal is to predict the $y$-value of the
 $\textcolor{\orange}{\text{target}}$ point, given the locations of many
 $\textcolor{\lightblue}{\text{training}}$ points. However, the predictor can
-only use the $ y $-values of two training points, so which points it ends up
+only use the $y$-values of two training points, so which points it ends up
 $\textcolor{\seagreen}{\text{selecting}}$ will determine the prediction.
 
 :::{.img-half .centering}
