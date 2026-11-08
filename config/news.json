@@ -16,6 +16,10 @@
     "description": "[Poster](/assets/pdf/2026-07-14_doecsgf.pdf) session at the [DOE CSGF Annual Program Review](https://www.krellinst.org/csgf/conf/2026/fellows-poster-session-abstracts)."
   },
   {
+    "date": "2026-06-30",
+    "description": "[Lightning talk](/assets/pdf/2026-06-30_slmath.pdf) at the SLMath's [Summer School on Mathematics of Generative Models](https://www.slmath.org/summer-schools/1136)."
+  },
+  {
     "date": "2026-06-22",
     "description": "I will (unoffically) attend SLMath's [Summer School on Mathematics of Generative Models](https://www.slmath.org/summer-schools/1136)."
   },
@@ -32,16 +36,24 @@
     "description": "I will attend the [Workshop on Mathematical Analysis in Machine Learning](https://sites.google.com/view/mlanalysis/home)."
   },
   {
+    "date": "2025-11-06",
+    "description": "Paper on analyzing the randomized midpoint method for sampling diffusion models on arXiv! Joint work with [Matthew S. Zhang](https://matthewzhang1998.github.io/), [Jerry Huang](https://jrrhuang.github.io/), [Nicholas M. Boffi](https://nmboffi.github.io/), [Sitan Chen](https://www.sitanchen.com/), and [Sinho Chewi](https://chewisinho.github.io/)."
+  },
+  {
     "date": "2025-07-13",
     "description": "I will attend the [DOE CSGF Annual Program Review](https://www.krellinst.org/csgf/conf/2025)."
   },
   {
-    "date": "2025-06-03",
-    "description": "I will be attending the [Frontiers in Applied Analysis](https://events.mcs.cmu.edu/frontiers2025/) workshop."
+    "date": "2025-06-10",
+    "description": "[Slides](/assets/pdf/2025-06-10_probsciml-presentation.pdf) for a lightning talk and [poster](/assets/pdf/2025-06-10_probsciml-poster.pdf) session at the [IMSI workshop](https://www.imsi.institute/activities/statistical-and-computational-challenges-in-probabilistic-scientific-machine-learning-sciml/)."
   },
   {
-    "date": "2025-05-07",
+    "date": "2025-06-09",
     "description": "I will attend IMSI's [Statistical and Computational Challenges in Probabilistic SciML](https://www.imsi.institute/activities/statistical-and-computational-challenges-in-probabilistic-scientific-machine-learning-sciml/) workshop."
+  },
+  {
+    "date": "2025-06-03",
+    "description": "I will be attending the [Frontiers in Applied Analysis](https://events.mcs.cmu.edu/frontiers2025/) workshop."
   },
   {
     "date": "2025-04-28",
@@ -57,7 +69,11 @@
   },
   {
     "date": "2024-10-21",
-    "description": "I will present a [talk](https://meetings.siam.org/sess/dsp_talk.cfm?p=139376) and [poster](https://meetings.siam.org/sess/dsp_talk.cfm?p=140078) at [SIAM Conference on Mathematics of Data Science (MDS24)](https://www.siam.org/conferences-events/siam-conferences/mds24/)."
+    "description": "[Slides](/assets/pdf/2024-10-21_mds-presentation.pdf) for a [talk](https://meetings.siam.org/sess/dsp_talk.cfm?p=139376) and [poster](/assets/pdf/2024-10-21_mds-poster.pdf) at [SIAM Conference on Mathematics of Data Science (MDS24)](https://www.siam.org/conferences-events/siam-conferences/mds24/)."
+  },
+  {
+    "date": "2024-09-17",
+    "description": "[Slides](/assets/pdf/2024-09-17_simons.pdf) for a lightning talk at the [Modern Paradigms in Generalization](https://simons.berkeley.edu/programs/modern-paradigms-generalization) Simons program."
   },
   {
     "date": "2024-08-26",
