@@ -1,6 +1,6 @@
 [
   {
-    "title": "Sparse Cholesky factorization by greedy conditional selection",
+    "title": "Sparse inverse Cholesky factorization of dense kernel matrices by greedy conditional selection",
     "authors": [
       "*Stephen Huan*",
       "Joseph Guinness",
@@ -8,8 +8,8 @@
       "Houman Owhadi",
       "Florian Schäfer"
     ],
-    "journal": "arXiv preprint arXiv:2307.11648",
-    "year": 2023,
+    "journal": "SIAM/ASA Journal on Uncertainty Quantification",
+    "year": 2025,
     "metadata": [
       ["arxiv", "https://arxiv.org/abs/2307.11648"],
       ["blog", "/projects/cholesky/"],
