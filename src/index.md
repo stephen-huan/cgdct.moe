@@ -34,15 +34,17 @@ PGP:\ [`<samp>0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E</samp>`{=html}
 ::::
 
 I'm a PhD student in the [Computer Science Department](https://csd.cmu.edu/)
-at [Carnegie Mellon University](https://www.cmu.edu/), advised by [Andrej
-Risteski](https://www.andrew.cmu.edu/user/aristesk/). Prior to CMU, I was an
-undergraduate at [Georgia Tech](https://www.gatech.edu/), where I worked on
-computation and inference with [Florian Schäfer](https://f-t-s.github.io/).
+at [Carnegie Mellon University](https://www.cmu.edu/), advised
+by [Andrej Risteski](https://www.andrejristeski.org/) and [Nick
+Boffi](https://nmboffi.github.io/). Prior to CMU, I was an undergraduate
+at [Georgia Tech](https://www.gatech.edu/), where I worked on applied
+math with [Florian Schäfer](https://f-t-s.github.io/).
 
 My research interests are in problems spanning machine learning, statistics,
-and applied mathematics. I'm particularly interested in efficient numerical
-algorithms for generative modeling, sampling, and statistical inference. See
-these [high-level summaries](/projects/) for more details about my work.
+and applied mathematics. I'm particularly interested in designing efficient
+numerical algorithms for generative modeling, sampling, and statistical
+inference. See these [high-level summaries](/projects/) for details about
+my work.
 
 I am best reached via [email](mailto:slhuan@cs.cmu.edu).
 
