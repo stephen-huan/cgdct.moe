@@ -1,5 +1,24 @@
 [
   {
+    "title": "Sublinear iterations can suffice even for DDPMs",
+    "authors": [
+      "Matthew S. Zhang",
+      "*Stephen Huan*",
+      "Jerry Huang",
+      "Nicholas M. Boffi",
+      "Sitan Chen",
+      "Sinho Chewi"
+    ],
+    "journal": "arXiv preprint arXiv:2511.04844",
+    "year": 2025,
+    "metadata": [
+      ["arxiv", "https://arxiv.org/abs/2511.04844"],
+      ["code", "https://github.com/stephen-huan/edm_rmd"],
+      ["poster", "/assets/pdf/2026-07-14_doecsgf.pdf"]
+    ],
+    "selected": null
+  },
+  {
     "title": "Sparse inverse Cholesky factorization of dense kernel matrices by greedy conditional selection",
     "authors": [
       "*Stephen Huan*",
