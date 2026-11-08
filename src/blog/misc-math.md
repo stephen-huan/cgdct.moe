@@ -1,44 +1,45 @@
-+++
-title = "Miscellaneous mathematical observations"
-date = Date(2022, 9, 23)
-rss = "Self-contained observations that aren't long enough for their own post."
-
-tags = ["math"]
-mintoclevel = 1
-+++
-
-\newcommand{\date}[1]{
-  ~~~<span class="post-meta"><time datetime="!#1">!#1</time></span>~~~
-}
-
-{{maketitle}}
-
-\tableofcontents
+---
+title: "Miscellaneous mathematical observations"
+description: >-
+  Self-contained observations that aren't long enough for their own post.
+date: 2022-09-23
+keywords: ["math"]
+katex: true
+toc: true
+toc-depth: 3
+---
 
 # Gradient is orthogonal to contours
 
-\date{2022-09-23}
+[`<time datetime="2022-09-23">2022-09-23</time>`{=html}]{.post-meta}
 
 _Geometric intuition for the gradient._
 
-\begin{definition}
-For a scalar function $ f: \R^n \to \R $ we say a \emph{contour} or \emph{level
-set} of $ f $ is a parameterized curve $ \vec{r}(t): \R \to \R^n $ such that
-for every point on the curve, the function value is the same, that is, there is
-a fixed constant $ c \in \R $ such that
-\begin{align}
-  \label{eq:contour}
+:::definition
+**Definition**.
+For a scalar function $f: \R^n \to \R$ we say a _contour_ or _level set_
+of $f$ is a parameterized curve $\vec{r}(t): \R \to \R^n$ such that for
+every point on the curve, the function value is the same, that is, there
+is a fixed constant $c \in \R$ such that
+
+$$
+\begin{align*}
   f(\vec{r}(t)) = c
-\end{align}
-\end{definition}
+\end{align*}
+$$ {#eq:contour}
 
-**Claim**. The gradient $ \nabla f $ is
-orthogonal to the contour at every point.
+:::
 
-\begin{proof}
-Take the derivative of both sides of \cref{eq:contour} with respect to $ t $.
+**Claim**.
+The gradient $\nabla f$ is orthogonal to the contour at every point.
+
+:::proof
+_Proof_.
+Take the derivative of both sides of @eq:contour with respect to $t$.
 
 <!-- Align distinct align*s: https://tex.stackexchange.com/a/282052 -->
+
+$$
 \begin{align*}
   \hphantom{
     \frac{df}{dt} =
@@ -48,9 +49,11 @@ Take the derivative of both sides of \cref{eq:contour} with respect to $ t $.
   \mathllap{f(\vec{r}(t))} &= c \\
   \frac{df}{dt} &= 0
 \end{align*}
+$$
 
 Expanding using the multivariate chain rule,
 
+$$
 \begin{align*}
   \frac{df}{dt} =
     \frac{df}{d r_1} \frac{d r_1}{dt} + \dotsb +
@@ -65,20 +68,24 @@ Expanding using the multivariate chain rule,
   \end{pmatrix} &= 0 \\
   \inner{\nabla f(t)}{\vec{r}'(t)} &= 0
 \end{align*}
+$$
 
 which is what we wanted to show.
-\end{proof}
+[$\square$]{.qedsymbol}
+:::
 
 Thus the gradient is orthogonal to every tangent of the contour, so
 moving along the contour moves orthogonally to the gradient. This
 should make intuitive sense since the change in the function value
-after moving in the direction $ \Delta \vec{x} $ is approximately
-(to first order Taylor series approximation)
+after moving in the direction $\Delta \vec{x}$ is approximately (to
+first order Taylor series approximation)
 
+$$
 \begin{align*}
   f(\vec{x} + \Delta \vec{x}) \approx
-    f(\vec{x}) + \nabla f(t)^\T \Delta \vec{x}
+    f(\vec{x}) + \nabla f(t)^\top \Delta \vec{x}
 \end{align*}
+$$
 
 Therefore if we want the function value to not change (which is the
 definition of a contour), we want the direction of movement to be
@@ -86,24 +93,31 @@ orthogonal to the gradient, which is precisely what we have shown happens.
 
 # Positive definite implies Cauchy–Schwarz
 
-\date{2022-09-23}
+[`<time datetime="2022-09-23">2022-09-23</time>`{=html}]{.post-meta}
 
 _A quick derivation of the Cauchy–Schwarz inequality._
 
-\begin{theorem}
+:::theorem
+**Theorem**.
 (Cauchy–Schwarz inequality).
-Every pair of vectors $ u, v $ satisfies
+Every pair of vectors $u, v$ satisfies
+
+$$
 \begin{align*}
   \inner{u}{u} \inner{v}{v} &\geq \inner{u}{v}^2
 \end{align*}
-\end{theorem}
+$$
 
-\begin{proof}
-For vectors $ u, v \in \R^n $, let $ V \defeq
-\begin{pmatrix} u & v \end{pmatrix} \in \R^{n \times 2}
-$ be the matrix with $ u $ and $ v $ as columns.
+:::
+
+:::proof
+_Proof_.
+For vectors $u, v \in \R^n$, let $V \defeq \begin{pmatrix} u & v \end{pmatrix}
+\in \R^{n \times 2}$ be the matrix with $u$ and $ v$ as columns.
+
+$$
 \begin{align*}
-  \Theta \defeq V^{\T} V =
+  \Theta \defeq V^{\top} V =
     \begin{pmatrix}
       \inner{u}{u} & \inner{u}{v} \\
       \inner{v}{u} & \inner{v}{v}
@@ -111,31 +125,41 @@ $ be the matrix with $ u $ and $ v $ as columns.
   \det(\Theta) = \inner{u}{u} \inner{v}{v} - \inner{u}{v}^2 &\geq 0 \\
   \implies \inner{u}{u} \inner{v}{v} &\geq \inner{u}{v}^2
 \end{align*}
-where we use that $ \Theta $ is symmetric
+$$
+
+where we use that $\Theta$ is symmetric
 positive-definite so its determinant is positive.
-\end{proof}
+[$\square$]{.qedsymbol}
+:::
 
 A similar line of reasoning can be used to show that the variance is positive.
-\begin{theorem}
-For any random variable $ X $, define its variance as
+
+:::theorem
+**Theorem**.
+For any random variable $X$, define its variance as
+
+$$
 \begin{align*}
   \Var{X} \defeq \E{X^2} - \E{X}^2
 \end{align*}
-Then $ \Var{X} \geq 0 $.
-\end{theorem}
+$$
 
-The usual approach is to show that $ \Var{X} = \E{(X - \E{X})^2} $
-and then argue that the expectation of a nonnegative quantity must be
-nonnegative. Alternatively, it follows directly from
-[Jensen's
-inequality](https://lectures.cgdct.moe/misc/bessel-correction/bessel.pdf#page=19)
-on the convex function $ f(x) = x^2 $. We will take a different approach.
+Then $\Var{X} \geq 0$.
+:::
 
-\begin{lemma}
-For any random variable $ X $, let $ \mu_i \defeq \E{X^i} $ be its $ i
-$-th moment. Then the matrices collecting its moments up to order $ n $
-\begin{align}
-  \label{eq:moment_matrix}
+The usual approach is to show that $\Var{X} = \E{(X - \E{X})^2}$
+and then argue that the expectation of a nonnegative quantity
+must be nonnegative. Alternatively, it follows directly from
+[Jensen's inequality](https://lectures.cgdct.moe/misc/bessel-correction/bessel.pdf#page=19)
+on the convex function $f(x) = x^2$. We will take a different approach.
+
+:::lemma
+**Lemma**.
+For any random variable $X$, let $\mu_i \defeq \E{X^i}$ be its $i$-th
+moment. Then the matrices collecting its moments up to order $n$
+
+$$
+\begin{align*}
   M_r \defeq
     \begin{pmatrix}
       1 & \mu_1 & \mu_2 & \cdots & \mu_r \\
@@ -144,83 +168,100 @@ $-th moment. Then the matrices collecting its moments up to order $ n $
       \vdots & \vdots & \vdots & \ddots & \vdots \\
       \mu_r & \mu_{r + 1} & \mu_{r + 2} & \cdots & \mu_{2 r} \\
     \end{pmatrix}
-\end{align}
-are all positive semi-definite for $ r = 1, 2, \dotsc, \floor{n/2} $.
-\end{lemma}
+\end{align*}
+$$ {#eq:moment_matrix}
 
-\begin{proof}
+are all positive semi-definite for $r = 1, 2, \dotsc, \floor{n/2}$.
+:::
+
+:::proof
+_Proof_.
 Take the expectation of the squared polynomial
-with coefficients $ a_0, \dotsc, a_r $.
+with coefficients $a_0, \dotsc, a_r$.
+
+$$
 \begin{align*}
   \E{(a_0 + a_1 X + a_2 X^2 + \dotsb + a_r X^r)^2} \geq 0
 \end{align*}
+$$
+
 Expanding the square directly, we have
+
+$$
 \begin{align*}
   \E*{\sum_{0 \leq i, j \leq r} a_i a_j X^{i + j}}
   = \sum_{0 \leq i, j \leq r} a_i a_j \E{X^{i + j}}
   = \sum_{0 \leq i, j \leq r} a_i a_j \mu_{i + j}
 \end{align*}
-where we use the linearity of expectation and the definition of moments.
-But this is precisely the quadratic form $ \vec{a}^{\top} M \vec{a} $ for
-$ \vec{a} \defeq (a_0, \dotsc, a_r) $ and $ M_{i, j} \defeq \mu_{i + j} $,
-matching the definition in \cref{eq:moment_matrix}. Since $ \vec{a}^{\top}
-M \vec{a} \geq 0 $ holds for any $ a \in \R^{r + 1} $, $ M $ is positive
-semi-definite by definition.
-\end{proof}
+$$
+
+where we use the linearity of expectation and the definition of moments. But
+this is precisely the quadratic form $\vec{a}^{\top} M \vec{a}$ for $\vec{a}
+\defeq (a_0, \dotsc, a_r)$ and $M_{i, j} \defeq \mu_{i + j}$, matching the
+definition in @eq:moment_matrix. Since $\vec{a}^{\top} M \vec{a} \geq 0$
+holds for any $a \in \R^{r + 1}$, $M$ is positive semi-definite by definition.
+[$\square$]{.qedsymbol}
+:::
 
 Now to prove the nonnegativity of variance, we
-need only to apply the lemma for $ r = 1 $.
-\begin{proof}
-  Take $ M_2 = \left (
-    \begin{smallmatrix}
-      1 & \mu_1 \\
-      \mu_1 & \mu_2
-    \end{smallmatrix}
-  \right ) = \left (
-    \begin{smallmatrix}
-      1 & \E{X} \\
-      \E{X} & \E{X^2}
-    \end{smallmatrix}
-  \right )$.
-  Since $ M_2 $ is positive semi-definite its determinant is nonnegative, so we
-  have $ \det(M_2) = \E{X^2} - \E{X}^2 \geq 0 $, showing $ \Var{X} \geq 0 $.
-\end{proof}
+need only to apply the lemma for $r = 1$.
+
+:::proof
+_Proof_.
+Take $M_2 = \left(
+  \begin{smallmatrix}
+    1 & \mu_1 \\
+    \mu_1 & \mu_2 \\
+  \end{smallmatrix}
+\right) = \left(
+  \begin{smallmatrix}
+    1 & \E{X} \\
+    \E{X} & \E{X^2} \\
+  \end{smallmatrix}
+\right)$.
+Since $M_2$ is positive semi-definite its determinant is nonnegative, so
+we have $\det(M_2) = \E{X^2} - \E{X}^2 \geq 0$, showing $\Var{X} \geq 0$.
+[$\square$]{.qedsymbol}
+:::
 
 # 証明は絶対
 
-\date{2023-06-02}
+[`<time datetime="2023-06-02">2023-06-02</time>`{=html}]{.post-meta}
 
 _A joke transcribed from page 9 of
-[『数学女子: 1』](https://www.takeshobo.co.jp/book\_d/shohin/2036201)
+[『数学女子: 1』](https://www.takeshobo.co.jp/book_d/shohin/2036201)
 (著者名：[安田まさえ](https://bentobooks.com/styled/))
 \cite{yasudamasae.2010suugakujosi}._
 
-* 女は時間と金が \\
+- 女は時間と金が \
   かかる
 
-  $ \boxed{\sf 女 = 時 \times 金} $
-* 「時は金なり」から
+  $\boxed{\sf 女 = 時 \times 金}$
 
-  $ \boxed{\sf 時= 金} $
-* これを代入して
+- 「時は金なり」から
 
-  $ \boxed{
+  $\boxed{\sf 時= 金}$
+
+- これを代入して
+
+  $\boxed{
     \begin{aligned}
       & \sf 女 = 金 \times 金 \\
       & \sf \hphantom{女} = 金^2
-    \end{aligned}} $
-* 「金は諸悪の根源」から \\
-  根源 $ \Rightarrow \textsf{root} \Rightarrow \sqrt{\hphantom{x}} $
+    \end{aligned}}$
 
-  $ \boxed{\sf 金= \sqrt{\hphantom{x}} 悪} $
-* これを先ほどの式に代入
+- 「金は諸悪の根源」から \
+  根源 $\Rightarrow \textsf{root} \Rightarrow \sqrt{\hphantom{x}}$
 
-  $ \boxed{
+  $\boxed{\sf 金= \sqrt{\hphantom{x}} 悪}$
+
+- これを先ほどの式に代入
+
+  $\boxed{
     \begin{aligned}
       & \sf 女 = (\sqrt{\hphantom{x}} 悪)^2 \\
       & \sf \therefore 女 = 悪
     \end{aligned}
-  } $
+  }$
 
-\bibliography{references_証明は絶対}
-
+\bibliography{references\_証明は絶対}
