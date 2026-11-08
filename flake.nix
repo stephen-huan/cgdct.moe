@@ -13,18 +13,12 @@
     eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        # site = self.packages.${system}.default;
-        # inherit (site) filter julia';
-        # site-dependencies = site.nativeBuildInputs;
-        site-dependencies = [ ];
-        python' = pkgs.python3.withPackages (ps: with ps; [
-          pyyaml
-          watchfiles
-        ]);
+        site = self.packages.${system}.default;
+        site-dependencies = site.nativeBuildInputs;
       in
       {
-        packages.${system} = let inherit (pkgs) callPackage; in {
-          # default = callPackage ./pkgs/cgdct-moe { };
+        packages.${system} = let inherit (pkgs) callPackage; in rec {
+          default = callPackage ./pkgs { cgdct-moe = default; };
         };
 
         formatter.${system} = pkgs.writeShellScriptBin "formatter" ''
@@ -102,20 +96,6 @@
               text = builtins.readFile bin/update;
             });
           };
-        };
-
-        devShells.${system}.default = (pkgs.mkShellNoCC.override {
-          # https://discourse.nixos.org/t/minimal-nix-shell/14373/3
-          stdenv = pkgs.stdenvNoCC.override {
-            initialPath = [ pkgs.coreutils ];
-          };
-        }) {
-          packages = [
-            pkgs.haskellPackages.pandoc-crossref
-            pkgs.pandoc
-            pkgs.pandoc-katex
-            python'
-          ];
         };
       }
     );
