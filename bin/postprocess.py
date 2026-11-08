@@ -24,7 +24,7 @@ def prettier_check(path: str) -> set[str]:
     return {
         file[:-1]
         for line in subprocess.run(
-            ["npx", "prettier", "--check", path],
+            ["prettier", "--check", path],
             check=False,
             capture_output=True,
         )

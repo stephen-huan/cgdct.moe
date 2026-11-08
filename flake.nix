@@ -22,23 +22,20 @@
         };
 
         formatter.${system} = pkgs.writeShellScriptBin "formatter" ''
-          npx prettier --write "$@"
-          {julia'}/bin/julia --eval "using JuliaFormatter; format(\"$1\")"
+          prettier --write "$@"
           ${lib.getExe pkgs.isort} "$@"
           ${lib.getExe pkgs.black} "$@"
           ${lib.getExe pkgs.shfmt} --write "$@"
           ${lib.getExe pkgs.nixpkgs-fmt} "$@"
         '';
 
-        checks.${system}.lint = pkgs.buildNpmPackage {
+        checks.${system}.lint = pkgs.stdenvNoCC.mkDerivation {
           name = "lint";
           src = ./.;
-          # inherit (site) npmDepsHash;
-          dontNpmBuild = true;
           doCheck = true;
           nativeCheckInputs = site-dependencies;
           checkPhase = ''
-            npx prettier --check .
+            prettier --check .
             ${lib.getExe pkgs.isort} --check --diff .
             ${lib.getExe pkgs.black} --check --diff .
             ${lib.getExe pkgs.ruff} check .
