@@ -351,11 +351,20 @@ rt {
 .franklin-content .eqref a {
   color: var(--theme-darkrust-color);
 }
+
+.eqref {
+  color: var(--theme-darkrust-color);
+}
+
 /* this may seem a bit odd but it's how SIAM \cref looks for equations */
 .franklin-content .cref {
   color: var(--theme-darkrust-color);
 }
 .franklin-content .bibref a {
+  color: var(--theme-darkseagreen-color);
+}
+
+ .citation {
   color: var(--theme-darkseagreen-color);
 }
 
