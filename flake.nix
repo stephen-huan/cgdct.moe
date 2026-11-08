@@ -98,6 +98,7 @@
           };
         }) {
           packages = [
+            pkgs.haskellPackages.pandoc-crossref
             pkgs.pandoc
             pkgs.pandoc-katex
             python'
