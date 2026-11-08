@@ -83,14 +83,6 @@
               text = builtins.readFile bin/serve;
             });
           };
-          update = {
-            type = "app";
-            program = lib.getExe (pkgs.writeShellApplication {
-              name = "update";
-              runtimeInputs = site-dependencies;
-              text = builtins.readFile bin/update;
-            });
-          };
         };
       }
     );
