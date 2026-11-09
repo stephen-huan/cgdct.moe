@@ -65,6 +65,10 @@ $body$
 $for(include-after)$
 $include-after$
 $endfor$
+${if(footer-index)}
+$../templates/footer_index.html()$
+${else}
 $../templates/footer.html()$
+${endif}
 </body>
 </html>
