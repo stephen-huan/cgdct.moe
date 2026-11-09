@@ -1,11 +1,930 @@
-.pgp {
-  font-size: var(--font-size-small);
-  overflow-wrap: break-word;
+/* ==================================================================
+    VARIABLES
+================================================================== */
+
+/* prettier-ignore */
+:root {
+  --text-color: #000;
+  --background: #fff;
+  --block-background:  hsl(0, 0%, 94%);
+  --output-background: hsl(0, 0%, 98%);
+  --font: "LMRoman10", serif;
+  --font-small: "LMRoman9", "LMRoman10", serif;
+  --font-footnote: "LMRoman8", "LMRoman10", serif;
+  --font-large: "LMRoman12", "LMRoman10", serif;
+  --monospace: "LMMono10", monospace;
+  --font-demi: "LMRomanDemi10", "LMRoman10", serif;
+  /* font scale
+   * - https://www.aleksandrhovhannisyan.com/blog/use-rems-for-font-size/
+   * - https://getbootstrap.com/docs/5.2/content/typography/
+   */
+  --font-size-h1:       2.50rem;
+  --font-size-h2:       2.00rem;
+  --font-size-h3:       1.75rem;
+  --font-size-h4:       1.50rem;
+  --font-size-h5:       1.25rem;
+  --font-size-h6:       1.1875rem;
+  /* https://en.wikibooks.org/wiki/LaTeX/Fonts */
+  --font-size-huge:     2.074rem;
+  --font-size-large:    1.2rem;
+  --font-size-normal:   1.0rem;
+  --font-size-small:    0.9rem;
+  --font-size-footnote: 0.8rem;
+  --font-size-script:   0.7rem;
+  --font-weight-normal: 400;
+  --font-weight-thick:  400;
+  --font-weight-bold:   700;
+  /* adding the Florian colorscheme colors */
+  --theme-silver-color:        #9e9997;
+  --theme-lightblue-color:     #a1b4c7;
+  --theme-seagreen-color:      #23553c;
+  --theme-orange-color:        #ea8810;
+  --theme-rust-color:          #b8420f;
+
+  --theme-lightsilver-color:   #e7e6e5;
+  --theme-darksilver-color:    #96918f;
+  --theme-darklightblue-color: #8999a9;
+  --theme-darkseagreen-color:  #1e4833;
+  --theme-darkorange-color:    #c7740e;
+  --theme-darkrust-color:      #9c380d;
+
+  --siamexlinkcolor: #800000;
+  --siaminlinkcolor: #008000;
+
+  /* styling */
+  --box-shadow:
+    0 2px  5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  --rule: 1px solid lightgrey;
 }
 
-.pgp p {
+body {
+  /* counters for KaTeX equation numbers and figures */
+  counter-reset: eqnum fignum;
+}
+
+/* ==================================================================
+    DEFAULT FONT AND LAYOUT
+================================================================== */
+
+html {
+  font-size: 10pt;
+  zoom: 140%;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  color: var(--text-color);
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================================================================
+    TEXT GEOMETRY
+================================================================== */
+
+.franklin-content {
+  position: relative;
+  padding-left: 12.5%;
+  padding-right: 12.5%;
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
+  line-height: 1.2;
+}
+
+/* On wide screens, fix content width to a max value. */
+@media (min-width: 940px) {
+  .franklin-content {
+    width: 500px;
+    height: 745px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* On narrow device, reduce margins. */
+@media (max-width: 480px) {
+  .franklin-content {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+/* ==================================================================
+    GENERAL FORMATTING
+================================================================== */
+
+.centering {
+  text-align: center;
+}
+
+.font-weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* links */
+
+.franklin-content a {
+  color: var(--siamexlinkcolor);
+  text-decoration: none;
+  /* text-decoration: none; */
+  /* border-bottom: 1px solid var(--theme-silver-color); */
+}
+
+.franklin-content a:hover {
+  text-decoration: underline;
+}
+.franklin-content .showhover a:hover {
+  text-decoration: underline;
+}
+
+/* lists */
+
+/* Spacing between bullet points. */
+.franklin-content li p {
+  margin: 0.5rem 0;
+}
+
+/* tables */
+
+.franklin-content table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  border-collapse: collapse;
+  text-align: center;
+  line-height: 1em;
+}
+
+.franklin-content th,
+.franklin-content td {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-script);
+  padding: 0.25rem 0.5rem 0rem 0rem;
+  border: var(--rule);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--output-background);
+}
+
+tr:first-of-type > th {
+  text-align: center; /* background-color: #eae9f4; */
+}
+
+.clean-table table {
+  margin-left: 0;
+}
+
+.clean-table tr,
+.clean-table table tbody tr td {
+  border: none;
+}
+
+.clean-table tbody tr:nth-child(even) {
+  background-color: var(--background);
+}
+
+.no-header table thead {
+  display: none;
+}
+
+/* blockquote */
+
+.franklin-content blockquote {
+  /* background-color: var(--output-background); */
+  /* font-style: italic; */
+  border-left: 0.125rem solid var(--theme-darksilver-color);
+  margin: 0.5rem 0.625rem;
+  padding: 0.625rem;
+}
+
+.franklin-content blockquote p {
+  /* display: inline; */
   margin-top: 0;
   margin-bottom: 0;
+}
+
+/* horizontal rule */
+
+hr {
+  border-top: var(--rule);
+  border-bottom: 0;
+}
+
+/* code */
+
+code {
+  font-family: var(--monospace);
+  font-size: var(--font-size-small);
+  background-color: var(--output-background);
+  border-radius: 2px;
+  padding: 0.1em 0.2em;
+}
+
+pre > code {
+  font-family: var(--monospace);
+  font-size: var(--font-size-small);
+  /* font-weight: var(--font-weight-thick); */
+  background-color: var(--background);
+  border-radius: 10px;
+}
+
+pre.plaintext {
+  background-color: var(--background);
+  border: 1px dashed lightgrey;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+/* ruby */
+
+rt {
+  margin-bottom: -0.25em;
+}
+
+/* ==================================================================
+    TITLES
+================================================================== */
+
+.franklin-content h1 {
+  font-size: var(--font-size-h1);
+}
+.franklin-content h2 {
+  font-size: var(--font-size-h2);
+}
+.franklin-content h3 {
+  font-size: var(--font-size-h3);
+}
+.franklin-content h4 {
+  font-size: var(--font-size-h4);
+}
+.franklin-content h5 {
+  font-size: var(--font-size-h5);
+}
+.franklin-content h6 {
+  font-size: var(--font-size-h6);
+}
+
+.franklin-content h1,
+.franklin-content h2,
+.franklin-content h3,
+.franklin-content h4,
+.franklin-content h5,
+.franklin-content h6 {
+  text-align: left;
+  font-weight: var(--font-weight-normal);
+  margin-top: var(--font-size-normal);
+  margin-bottom: var(--font-size-normal);
+}
+
+.franklin-content h1 {
+  padding-bottom: 0.5rem;
+  border-bottom: 3px double lightgrey;
+}
+
+.franklin-content h2 {
+  padding-bottom: 0.25rem;
+  border-bottom: var(--rule);
+}
+
+.franklin-content h1 a,
+.franklin-content h2 a,
+.franklin-content h3 a,
+.franklin-content h4 a,
+.franklin-content h5 a,
+.franklin-content h6 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.franklin-content h1 a:hover,
+.franklin-content h2 a:hover,
+.franklin-content h3 a:hover,
+.franklin-content h4 a:hover,
+.franklin-content h5 a:hover,
+.franklin-content h6 a:hover {
+  text-decoration: none;
+}
+
+.franklin-content .top-title h1 {
+  font-family: var(--font-large);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+  font-variant-caps: all-small-caps;
+  padding-bottom: 0;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  border-bottom: none;
+  text-align: center;
+}
+
+.franklin-content .top-title strong {
+  font-weight: var(--font-weight-bold);
+}
+
+/* ==================================================================
+    HYPERREFS AND FOOTNOTES
+================================================================== */
+
+/* table of contents */
+
+/* Avoid clickable elements being too close together. */
+.franklin-toc li {
+  margin: 0.5rem 0;
+}
+.franklin-toc li a {
+  text-decoration: none;
+}
+.franklin-toc ol ol {
+  list-style-type: lower-alpha;
+}
+
+/* inline citations and equation numbering */
+
+.franklin-content .eqref a {
+  color: var(--theme-darkrust-color);
+}
+
+.eqref {
+  color: var(--theme-darkrust-color);
+}
+
+/* this may seem a bit odd but it's how SIAM \cref looks for equations */
+.franklin-content .cref {
+  color: var(--theme-darkrust-color);
+}
+.franklin-content .bibref a {
+  color: var(--theme-darkseagreen-color);
+}
+
+.citation {
+  color: var(--theme-darkseagreen-color);
+}
+
+.franklin-content .eqref a,
+.franklin-content .bibref a {
+  text-decoration: none;
+}
+
+/* references */
+
+.references ol {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.references h2 {
+  text-align: center;
+}
+.references p {
+  text-indent: -4rem;
+  padding-left: 4rem;
+}
+
+/* footnotes */
+
+.franklin-content .footnote {
+  position: relative;
+  top: -0.5rem;
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+}
+
+.franklin-content sup {
+  font-size: 0.6rem;
+  /* vertical-align: text-top; */
+  vertical-align: 0.2rem;
+}
+
+.franklin-content sup a {
+  text-decoration: none;
+}
+
+.franklin-content table.fndef {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.franklin-content .fndef tr,
+.franklin-content .fndef td {
+  padding: 0;
+  border: 0;
+  text-align: left;
+}
+
+/*
+ * .franklin-content .fndef tr {
+ *   border-left: 0.125rem solid var(--theme-darksilver-color);
+ * }
+ */
+
+.franklin-content .fndef td.fndef-backref {
+  color: var(--theme-darkrust-color);
+  vertical-align: top;
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+  padding-left: 0.25rem;
+}
+
+.franklin-content .fndef td.fndef-backref a {
+  text-decoration: none;
+}
+
+.franklin-content .fndef td.fndef-content {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+  padding-left: 0.5rem;
+  width: 100%;
+}
+
+/* ==================================================================
+    BASIC GRID FOR PROFILE PIC
+================================================================== */
+
+.franklin-content .columns-start {
+  display: block;
+}
+
+.franklin-content .column-left {
+  float: left;
+  margin-right: 1rem;
+}
+
+.franklin-content .column-right {
+  float: right;
+  margin-left: 2rem;
+}
+
+.franklin-content .columns-end {
+  clear: both;
+}
+
+.franklin-content .no-margin {
+  margin: 0;
+}
+
+/* ==================================================================
+    IMAGES in CONTENT
+================================================================== */
+
+.franklin-content .border img {
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+}
+
+.franklin-content .img-large img {
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+  text-align: center;
+}
+
+.franklin-content .img-small img {
+  width: 60%;
+  height: auto;
+  margin-left: 20%;
+  text-align: center;
+}
+
+.franklin-content .img-half figure {
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.franklin-content .img-half img {
+  width: 48%;
+  height: auto;
+  text-align: center;
+  vertical-align: top;
+  margin: 0 0.25%;
+}
+
+/* captions with automatic numbering */
+
+/*
+.franklin-content h2::before {
+  counter-increment: fignum;
+  content: counter(fignum) ". ";
+}
+*/
+
+.franklin-content figcaption::before {
+  counter-increment: fignum;
+  content: "Fig. " counter(fignum) ". ";
+  font-style: normal;
+  font-variant-caps: all-small-caps;
+}
+
+.franklin-content .nonumber figcaption::before {
+  counter-increment: nothing;
+  content: "";
+}
+
+.franklin-content figcaption {
+  text-align: center;
+}
+
+/* ==================================================================
+    HEADER AND NAV
+================================================================== */
+
+body > header > nav {
+  width: 65%;
+  display: inline-block;
+}
+
+body > header > nav ul {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body > header > nav li {
+  display: inline-block;
+}
+
+body > header > nav li a {
+  color: var(--siamexlinkcolor);
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.25rem 0rem 0.25rem 0rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+body > header > nav li:last-of-type a {
+  margin-right: 0px;
+}
+
+body > header > nav .active {
+  color: var(--text-color);
+  /* font-family: var(--font-demi); */
+  /* font-weight: var(--font-weight-thick); */
+}
+
+body > header > nav li a:hover {
+  color: var(--theme-darksilver-color);
+}
+
+body > header {
+  text-align: right;
+  margin-top: 12rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+body > header .blog-name {
+  width: 35%;
+  display: inline-block;
+  text-align: left;
+  font-size: var(--font-size-h5);
+  /* font-family: var(--monospace); */
+  padding-top: 0.5rem;
+}
+
+body > header .blog-name a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#menu-icon {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  body > header {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+@media (min-width: 481px) {
+  body > header {
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+  }
+}
+
+/* wide display: enforce maximum width of header to match content */
+@media (min-width: 940px) {
+  body > header {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* medium display: nav goes under name */
+@media (max-width: 940px) {
+  body > header {
+    display: block;
+  }
+
+  body > header .blog-name {
+    display: block;
+    width: 100%;
+    padding-bottom: 0.5rem;
+  }
+
+  body > header > nav {
+    width: 100%;
+  }
+}
+
+/*
+narrow display: collapse the header (don't show the menu items)
+instead, display a burger menu.
+*/
+@media (max-width: 760px) {
+  body > header {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  body > header .blog-name {
+    display: inline-block;
+    width: 70%;
+  }
+
+  body > header > nav {
+    display: inline-block;
+    width: 27%;
+  }
+
+  body > header > nav ul,
+  body > header > nav:active ul {
+    display: none;
+    position: absolute;
+
+    /* padding: 0.5rem; */
+    background-color: var(--background);
+    border: 1px solid black;
+    right: 12.5%;
+    top: 3.3rem;
+    width: 8rem;
+    border-radius: 4px 0 4px 4px;
+    z-index: 1;
+  }
+
+  body > header > nav li {
+    text-align: left;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  body > header > nav:hover ul {
+    display: block;
+  }
+
+  #menu-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+  }
+}
+
+/* ==================================================================
+    FOOT / COPYRIGHT
+================================================================== */
+
+div:has(.page-foot) {
+  flex: 1;
+}
+
+.page-foot {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+  /* color: var(--theme-silver-color); */
+  text-align: left;
+  text-indent: 1.25rem;
+  /* margin-top: 5rem; */
+  padding-top: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-foot:after {
+  content: "";
+  background: black;
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 0.5pt;
+}
+
+.page-foot p {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.page-number {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+  text-align: center;
+}
+
+/* ==================================================================
+    BLOG POSTS
+================================================================== */
+
+.post-meta,
+.post-tags {
+  color: var(--theme-darksilver-color);
+  font-size: var(--font-size-small);
+}
+
+.post-tags a {
+  text-decoration: none;
+}
+
+.tagged-posts a {
+  text-decoration: none;
+}
+
+.tagged-posts th:first-of-type {
+  font-family: var(--font-demi);
+  /* font-weight: var(--font-weight-thick); */
+  border: none;
+}
+
+.tagged-posts td {
+  text-align: left;
+}
+
+/* news */
+
+#news\. {
+  margin-top: 0em;
+}
+
+.news td:first-of-type {
+  font-family: "LMSans8";
+  /* font-family: var(--font-demi); */
+  /* font-weight: var(--font-weight-thick); */
+}
+
+.news td {
+  text-align: left;
+}
+
+/* publications */
+
+.year h2 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-normal);
+  color: var(--theme-lightsilver-color);
+  text-align: right;
+  margin-top: 2rem;
+  margin-bottom: -3.75rem;
+  padding-top: 1rem;
+  border-top: var(--rule);
+  border-bottom: none;
+}
+
+.franklin-content .publications h2 {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+  font-variant-caps: all-small-caps;
+  font-weight: var(--font-weight-normal);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.publications ol {
+  list-style: none;
+  padding-left: 16%;
+  padding-right: 4rem;
+}
+
+.publications li {
+  padding: 0.5rem 0;
+}
+
+.publications div.csl-left-margin {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+}
+
+.publications div.csl-right-inline {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+  margin-left: 2rem;
+  padding-left: 1.25rem;
+  text-indent: -1.25rem;
+  /* overflow-wrap: break-word; */
+  /* line-break: anywhere; */
+}
+
+span.authors {
+  font-variant-caps: small-caps;
+}
+
+.paper-title {
+  font-family: "LMSans10";
+  /* font-family: var(--font-demi); */
+  /* font-weight: var(--font-weight-thick); */
+}
+
+.paper-title cite {
+  font-style: normal;
+}
+
+.paper-authors em {
+  font-style: normal;
+  border-bottom: 1px solid currentcolor;
+}
+
+.paper-journal {
+  font-style: italic;
+}
+
+div.paper-metadata {
+  margin-left: 3rem;
+}
+
+.paper-metadata a {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  margin: 0.375rem;
+  font-family: "LMSans8";
+  /* font-family: var(--font-demi); */
+  /* font-weight: var(--font-weight-thick); */
+  font-size: var(--font-size-footnote);
+  text-decoration: none;
+  border: 1px solid var(--text-color);
+  border-radius: 0.125rem;
+}
+
+.paper-metadata a:hover {
+  color: var(--theme-darksilver-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* CSS for citations */
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left: 2em;
+  text-indent: -2em;
+}
+div.csl-left-margin {
+  min-width: 2em;
+  float: left;
+}
+div.csl-right-inline {
+  margin-left: 2em;
+  padding-left: 1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+
+/* index */
+
+.franklin-content .author p {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+  font-variant-caps: all-small-caps;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.franklin-content .author sup {
+  /* vertical-align: text-top; */
+  vertical-align: 0.4rem;
+}
+
+.indent {
+  text-indent: 1.25rem;
+}
+
+.indent p {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+.abstract {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+  text-indent: 1.25rem;
+}
+
+.pgp {
+  overflow-wrap: break-word;
 }
 
 .pgp samp {
@@ -13,6 +932,7 @@
 }
 
 .pgp a {
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -27,11 +947,26 @@
   margin-bottom: 0rem;
 }
 
-.franklin-content .profile img {
-  width: 265px;
-  height: 375.5px;
+.profile img {
+  width: 150px;
+  height: 150px;
   border-radius: 4px;
   box-shadow: var(--box-shadow);
+}
+
+.profile figure {
+  margin: 0 0 0 0;
+}
+
+figcaption {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  /* text-align: left; */
+  /* text-indent: 1.25rem; */
 }
 
 .profile p {
@@ -52,8 +987,15 @@
   }
 }
 
-.franklin-content h2.links {
-  font-size: var(--font-size-h3);
+.franklin-content h2 {
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0rem;
   padding-bottom: 0;
   border-bottom: none;
+  text-indent: 1.25rem;
+}
+
+.franklin-content .links ul {
+  margin-top: 0rem;
 }
