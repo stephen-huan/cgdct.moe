@@ -29,22 +29,24 @@
           ${lib.getExe pkgs.nixpkgs-fmt} "$@"
         '';
 
-        checks.${system}.lint = pkgs.stdenvNoCC.mkDerivation {
-          name = "lint";
-          src = ./.;
-          doCheck = true;
-          nativeCheckInputs = site-dependencies;
-          checkPhase = ''
-            prettier --check .
-            ${lib.getExe pkgs.isort} --check --diff .
-            ${lib.getExe pkgs.black} --check --diff .
-            ${lib.getExe pkgs.ruff} check .
-            ${lib.getExe pkgs.shfmt} --indent 2 --diff .
-            ${lib.getExe pkgs.statix} check
-            source ./bin/vnu src
-          '';
-          installPhase = "touch $out";
-        };
+        checks.${system} = {
+          lint = pkgs.stdenvNoCC.mkDerivation {
+            name = "lint";
+            src = ./.;
+            doCheck = true;
+            nativeCheckInputs = site-dependencies;
+            checkPhase = ''
+              prettier --check .
+              ${lib.getExe pkgs.isort} --check --diff .
+              ${lib.getExe pkgs.black} --check --diff .
+              ${lib.getExe pkgs.ruff} check .
+              ${lib.getExe pkgs.shfmt} --indent 2 --diff .
+              ${lib.getExe pkgs.statix} check
+              source ./bin/vnu src
+            '';
+            installPhase = "touch $out";
+          };
+        } // site.passthru.tests;
 
         apps.${system} = {
           build = {
