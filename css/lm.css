@@ -1,0 +1,246 @@
+/* LMRoman7 */
+@font-face {
+  font-family: LMRoman7;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmroman7-regular.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman7;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/fonts/opentype/lm/lmroman7-bold.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman7;
+  font-style: italic;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmroman7-italic.otf) format("opentype");
+}
+/* LMRoman8 */
+@font-face {
+  font-family: LMRoman8;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmroman8-regular.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman8;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/fonts/opentype/lm/lmroman8-bold.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman8;
+  font-style: italic;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmroman8-italic.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman8;
+  font-style: oblique;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmromanslant8-regular.otf)
+    format("opentype");
+}
+/* LMRoman9 */
+@font-face {
+  font-family: LMRoman9;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmroman9-regular.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman9;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/fonts/opentype/lm/lmroman9-bold.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman9;
+  font-style: italic;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmroman9-italic.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman9;
+  font-style: oblique;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmromanslant9-regular.otf)
+    format("opentype");
+}
+/* LMRoman10 */
+@font-face {
+  font-family: LMRoman10;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmroman10-regular.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman10;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/fonts/opentype/lm/lmroman10-bold.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman10;
+  font-style: italic;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmroman10-italic.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman10;
+  font-style: oblique;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmromanslant10-regular.otf)
+    format("opentype");
+}
+@font-face {
+  font-family: LMRoman10;
+  font-style: italic;
+  font-weight: 700;
+  src: url(/assets/fonts/opentype/lm/lmroman10-bolditalic.otf)
+    format("opentype");
+}
+@font-face {
+  font-family: LMRoman10;
+  font-style: oblique;
+  font-weight: 700;
+  src: url(/assets/fonts/opentype/lm/lmromanslant10-bold.otf) format("opentype");
+}
+/* LMRoman12 */
+@font-face {
+  font-family: LMRoman12;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmroman12-regular.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman12;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/fonts/opentype/lm/lmroman12-bold.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman12;
+  font-style: italic;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmroman12-italic.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRoman12;
+  font-style: oblique;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmromanslant12-regular.otf)
+    format("opentype");
+}
+/* LMSans8 */
+@font-face {
+  font-family: LMSans8;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmsans8-regular.otf) format("opentype");
+}
+@font-face {
+  font-family: LMSans8;
+  font-style: oblique;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmsans8-oblique.otf) format("opentype");
+}
+/* LMSans9 */
+@font-face {
+  font-family: LMSans9;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmsans9-regular.otf) format("opentype");
+}
+@font-face {
+  font-family: LMSans9;
+  font-style: oblique;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmsans9-oblique.otf) format("opentype");
+}
+/* LMSans10 */
+@font-face {
+  font-family: LMSans10;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmsans10-regular.otf) format("opentype");
+}
+@font-face {
+  font-family: LMSans10;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/fonts/opentype/lm/lmsans10-bold.otf) format("opentype");
+}
+@font-face {
+  font-family: LMSans10;
+  font-style: oblique;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmsans10-oblique.otf) format("opentype");
+}
+@font-face {
+  font-family: LMRSans10;
+  font-style: oblique;
+  font-weight: 700;
+  src: url(/assets/fonts/opentype/lm/lmsans10-boldoblique.otf)
+    format("opentype");
+}
+/* LMMono10 */
+@font-face {
+  font-family: LMMono10;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmmono10-regular.otf) format("opentype");
+}
+@font-face {
+  font-family: LMMono10;
+  font-style: italic;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmmono10-italic.otf) format("opentype");
+}
+/* LMRomanCaps10 */
+@font-face {
+  font-family: LMRomanCaps10;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmromancaps10-regular.otf)
+    format("opentype");
+}
+@font-face {
+  font-family: LMRomanCaps10;
+  font-style: oblique;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmromancaps10-oblique.otf)
+    format("opentype");
+}
+/* LMRomanCaps10 */
+@font-face {
+  font-family: LMMonoCaps10;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmmonocaps10-regular.otf)
+    format("opentype");
+}
+@font-face {
+  font-family: LMMonoCaps10;
+  font-style: oblique;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmmonocaps10-oblique.otf)
+    format("opentype");
+}
+/* LMRomanDemi10 */
+@font-face {
+  font-family: LMRomanDemi10;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmromandemi10-regular.otf)
+    format("opentype");
+}
+@font-face {
+  font-family: LMRomanDemi10;
+  font-style: oblique;
+  font-weight: 400;
+  src: url(/assets/fonts/opentype/lm/lmromandemi10-oblique.otf)
+    format("opentype");
+}

@@ -46,10 +46,8 @@
         margin: 0.5rem auto;
       }
     </style>
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/root/news.css" />
-    <link rel="stylesheet" href="/css/root/publications.css" />
     <link rel="stylesheet" href="/css/root/index.css" />
+    <link rel="stylesheet" href="/css/lm.css" />
     <link rel="icon" href="/assets/favicon.svg" />
   </head>
   <body>
@@ -83,80 +81,78 @@
       </nav>
     </header>
     <article class="franklin-content">
-      <h1 class="top-title" id="stephen-huan-浣苇杭">
-        <strong>Stephen</strong> Huan <span lang="zh-Hans">(浣苇杭)</span>
-      </h1>
-      <div class="pgp">
-        <p>
-          PGP: <a
-            href="/assets/misc/EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E.asc"
-            ><samp>0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E</samp></a
-          >
-        </p>
+      <div class="top-title">
+        <h1>Personal webpage<sup>*</sup></h1>
       </div>
-      <div class="columns-start">
-        <div class="column-right index-column-right">
-          <div class="profile">
-            <p>
-              <a href="/assets/profile_picture.jpg"
-                ><img
-                  src="/assets/profile_picture.webp"
-                  width="530"
-                  height="749"
-                  alt="profile picture"
-              /></a>
-            </p>
-          </div>
-          <div class="address">
-            <div class="line-block">
-              GHC 6221<br />
-              5000 Forbes Ave<br />
-              Pittsburgh, PA 15213
-            </div>
-          </div>
-        </div>
+      <div class="author">
+        <p>Stephen Huan <span lang="zh-Hans">(浣苇杭)</span><sup>†</sup></p>
+      </div>
+      <div class="abstract">
         <p>
-          I'm a PhD student in the
+          <strong>Abstract.</strong> I'm a PhD student in the
           <a href="https://csd.cmu.edu/">Computer Science Department</a> at
           <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, advised
           by <a href="https://www.andrejristeski.org/">Andrej Risteski</a> and
-          <a href="https://nmboffi.github.io/">Nick Boffi</a>. Prior to CMU, I
-          was an undergraduate at
+          <a href="https://nmboffi.github.io/">Nicholas Boffi</a>. Prior to CMU,
+          I was an undergraduate at
           <a href="https://www.gatech.edu/">Georgia Tech</a>, where I worked on
           applied math with
           <a href="https://f-t-s.github.io/">Florian Schäfer</a>.
         </p>
         <p>
-          My research interests are in problems spanning machine learning,
-          statistics, and applied mathematics. I'm particularly interested in
-          designing efficient numerical algorithms for generative modeling,
-          sampling, and statistical inference. See these
-          <a href="/projects/">high-level summaries</a> for details about my
-          work.
+          <strong>Key words.</strong> generative modeling, statistical
+          inference, numerical computation
         </p>
-        <p>
-          I am best reached via <a href="mailto:slhuan@cs.cmu.edu">email</a>.
-        </p>
-        <h2 class="links" id="external-links">external links</h2>
-        <ul>
-          <li>
-            GitHub: <a href="https://github.com/stephen-huan">stephen-huan</a>
-          </li>
-          <li>
-            ORCID:
-            <a href="https://orcid.org/0009-0009-6309-4415"
-              >0009-0009-6309-4415</a
-            >
-          </li>
-          <li>
-            <a href="https://scholar.google.com/citations?user=CKjDUWwAAAAJ"
-              >Google Scholar</a
-            >
-          </li>
-        </ul>
+        <p><strong>MSC codes.</strong> 68Q32, 62-08, 65F55</p>
+      </div>
+      <div class="columns-start">
+        <div class="column-right index-column-right">
+          <div class="profile">
+            <figure>
+              <a href="/assets/profile_square.jpg"
+                ><img
+                  src="/assets/profile_square.webp"
+                  width="1024"
+                  height="1024"
+                  alt="profile picture"
+              /></a>
+              <figcaption>A picture of the author.</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="indent">
+          <p>
+            <strong>1. Introduction.</strong> My research interests are in
+            problems spanning machine learning, statistics, and applied
+            mathematics. I'm particularly interested in designing efficient
+            numerical algorithms for generative modeling, sampling, and
+            statistical inference. See these
+            <a href="/projects/">high-level summaries</a> for details about my
+            work.
+          </p>
+        </div>
+        <section id="external-links" class="links">
+          <h2>2. External links</h2>
+          <ul>
+            <li>
+              GitHub: <a href="https://github.com/stephen-huan">stephen-huan</a>
+            </li>
+            <li>
+              ORCID:
+              <a href="https://orcid.org/0009-0009-6309-4415"
+                >0009-0009-6309-4415</a
+              >
+            </li>
+            <li>
+              <a href="https://scholar.google.com/citations?user=CKjDUWwAAAAJ"
+                >Google Scholar</a
+              >
+            </li>
+          </ul>
+        </section>
         <div class="columns-end"></div>
       </div>
-      <h2 class="showhover" id="news"><a href="/news/">news</a></h2>
+      <h2 class="showhover" id="news.">3. <a href="/news/">News</a>.</h2>
       <div class="news clean-table no-header">
         <table>
           <thead>
@@ -218,24 +214,28 @@
           </tbody>
         </table>
       </div>
-      <h2 class="showhover" id="selected-publications">
-        <a href="/publications/">selected publications</a>
-      </h2>
-      <div class="publications">
-        <ol>
-          <li>
-            <div class="paper-title">
-              <cite
-                >Mitigating error propagation in chaotic dynamics via
-                inference-time noising: a view from backward sampling</cite
+      <section id="references" class="showhover publications">
+        <h2 class="showhover"><a href="/publications/">References</a></h2>
+        <!-- manually formatted -->
+        <div
+          id="refs"
+          class="references csl-bib-body"
+          data-entry-spacing="0"
+          role="list"
+        >
+          <div id="ref-huan2026mitigating" class="csl-entry" role="listitem">
+            <div class="csl-left-margin">[1]</div>
+            <div class="csl-right-inline">
+              <span class="authors"
+                >S. <b>Huan</b>, A. Risteski, and Q. A. Wei</span
+              >,
+              <span
+                ><em
+                  >Mitigating error propagation in chaotic dynamics via
+                  inference-time noising: a view from backward sampling,</em
+                ></span
               >
-            </div>
-            <div class="paper-authors">
-              <em>Stephen Huan</em>, Andrej Risteski, and Qiuhong (Anna) Wei
-            </div>
-            <div class="paper-venue">
-              <span class="paper-journal">Submitted to STOC 2027</span>,
-              <time datetime="2026">2026</time>
+              submitted to STOC 2027.
             </div>
             <div class="paper-metadata">
               <a
@@ -243,23 +243,25 @@
                 >pdf</a
               >
             </div>
-          </li>
-          <li>
-            <div class="paper-title">
-              <cite
-                >Sparse inverse Cholesky factorization of dense kernel matrices
-                by greedy conditional selection</cite
-              >
-            </div>
-            <div class="paper-authors">
-              <em>Stephen Huan</em>, Joseph Guinness, Matthias Katzfuss, Houman
-              Owhadi, and Florian Schäfer
-            </div>
-            <div class="paper-venue">
-              <span class="paper-journal"
-                >SIAM/ASA Journal on Uncertainty Quantification</span
+          </div>
+          <div id="ref-huan2025sparse" class="csl-entry" role="listitem">
+            <div class="csl-left-margin">[2]</div>
+            <div class="csl-right-inline">
+              <span class="authors"
+                >S. <b>Huan</b>, J. Guinness, M. Katzfuss, H. Owhadi, and F.
+                Schäfer</span
               >,
-              <time datetime="2025">2025</time>
+              <span
+                ><em
+                  >Sparse Inverse Cholesky Factorization of Dense Kernel
+                  Matrices by Greedy Conditional Selection,</em
+                ></span
+              >
+              SIAM/ASA Journal on Uncertainty Quantification, 13 (2025), pp.
+              1649–1679,
+              <a href="https://doi.org/10.1137/23M1606253"
+                >https://doi.org/<wbr />10.1137/<wbr />23M1606253</a
+              >.
             </div>
             <div class="paper-metadata">
               <a href="https://arxiv.org/abs/2307.11648">arxiv</a>
@@ -268,18 +270,39 @@
               <a href="/assets/pdf/2022-11-11_cse-recruiting.pdf">poster</a>
               <a href="/assets/pdf/2022-09-28_mds.pdf">slides</a>
             </div>
-          </li>
-        </ol>
-      </div>
+          </div>
+        </div>
+      </section>
     </article>
     <div class="franklin-content">
       <div class="page-foot">
-        さみしいも、たのしい。<a
-          href="https://github.com/stephen-huan/cgdct.moe/blob/master/src/index.md"
-          >Page source</a
-        >. Last updated:
-        <time datetime="2026-11-08T19:47:56+03:00">2026-11-08</time>.
+        <p>
+          <sup>*</sup>さみしいも、たのしい。<a
+            href="https://github.com/stephen-huan/cgdct.moe/blob/master/src/index.md"
+            >Page source</a
+          >. Last updated:
+          <time datetime="2026-11-09T19:15:43+03:00">2026-11-09</time>.
+        </p>
+        <p>
+          <sup class="hidden">*</sup><b>Funding:</b>
+          <a href="https://www.krellinst.org/csgf/"
+            >Department of Energy Computational Science Graduate Fellowship</a
+          >
+          (DOE CSGF)
+        </p>
+        <p>
+          <sup>†</sup>Carnegie Mellon University, GHC 6221, 5000 Forbes Ave,
+          Pittsburgh, PA 15213,
+          <a href="mailto:slhuan@cs.cmu.edu">slhuan@cs.cmu.edu</a>,
+          <span class="pgp"
+            >PGP:&nbsp;<a
+              href="/assets/misc/EA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E.asc"
+              ><samp>0xEA6E27948C7DBF5D0DF085A10FBC2E3BA99DD60E</samp></a
+            ></span
+          >, Corresponding Author
+        </p>
       </div>
+      <div class="page-number">1</div>
     </div>
   </body>
 </html>
