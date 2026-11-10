@@ -66,7 +66,7 @@ details about my work.
 
 :::links
 
-## 2. External links
+## 2. External links.
 
 - GitHub: [stephen-huan](https://github.com/stephen-huan)
 - ORCID: [0009-0009-6309-4415](https://orcid.org/0009-0009-6309-4415)
