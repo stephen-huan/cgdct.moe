@@ -1,9 +1,5 @@
 /* https://epubs.siam.org/pb-assets/files/SIAM_STYLE_GUIDE_2019.pdf */
 
-/* ==================================================================
-    VARIABLES
-================================================================== */
-
 /* prettier-ignore */
 :root {
   --text-color: #000;
@@ -15,19 +11,10 @@
   --font-footnote: "LMRoman8", "LMRoman10", serif;
   --font-large: "LMRoman12", "LMRoman10", serif;
   --monospace: "LMMono10", monospace;
+  --sans: "LMSans10", sans-serif;
+  --sans-small: "LMSans8", "LMSans10", sans-serif;
   --font-demi: "LMRomanDemi10", "LMRoman10", serif;
-  /* font scale
-   * - https://www.aleksandrhovhannisyan.com/blog/use-rems-for-font-size/
-   * - https://getbootstrap.com/docs/5.2/content/typography/
-   */
-  --font-size-h1:       2.50rem;
-  --font-size-h2:       2.00rem;
-  --font-size-h3:       1.75rem;
-  --font-size-h4:       1.50rem;
-  --font-size-h5:       1.25rem;
-  --font-size-h6:       1.1875rem;
   /* https://en.wikibooks.org/wiki/LaTeX/Fonts */
-  --font-size-huge:     2.074rem;
   --font-size-large:    1.2rem;
   --font-size-normal:   1.0rem;
   --font-size-small:    0.9rem;
@@ -37,18 +24,7 @@
   --font-weight-thick:  400;
   --font-weight-bold:   700;
   /* adding the Florian colorscheme colors */
-  --theme-silver-color:        #9e9997;
-  --theme-lightblue-color:     #a1b4c7;
-  --theme-seagreen-color:      #23553c;
-  --theme-orange-color:        #ea8810;
-  --theme-rust-color:          #b8420f;
-
-  --theme-lightsilver-color:   #e7e6e5;
-  --theme-darksilver-color:    #96918f;
-  --theme-darklightblue-color: #8999a9;
-  --theme-darkseagreen-color:  #1e4833;
-  --theme-darkorange-color:    #c7740e;
-  --theme-darkrust-color:      #9c380d;
+  --theme-darksilver-color: #96918f;
 
   --siamexlinkcolor: #800000;
   --siaminlinkcolor: #008000;
@@ -129,40 +105,41 @@ body {
     GENERAL FORMATTING
 ================================================================== */
 
-.centering {
-  text-align: center;
+p,
+ul {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
 
-.font-weight-bold {
-  font-weight: var(--font-weight-bold);
+p,
+h2 {
+  text-indent: 1.25rem;
+}
+
+h2 {
+  display: inline-block;
+}
+
+h2 + p {
+  display: inline;
 }
 
 /* links */
 
-.franklin-content a {
+a {
   color: var(--siamexlinkcolor);
   text-decoration: none;
-  /* text-decoration: none; */
   /* border-bottom: 1px solid var(--theme-silver-color); */
 }
 
-.franklin-content a:hover {
+a:hover,
+.showhover a:hover {
   text-decoration: underline;
-}
-.franklin-content .showhover a:hover {
-  text-decoration: underline;
-}
-
-/* lists */
-
-/* Spacing between bullet points. */
-.franklin-content li p {
-  margin: 0.5rem 0;
 }
 
 /* tables */
 
-.franklin-content table {
+table {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
@@ -171,162 +148,52 @@ body {
   line-height: 1em;
 }
 
-.franklin-content th,
-.franklin-content td {
+th,
+td {
   font-family: var(--font-footnote);
   font-size: 0.75rem;
   padding: 0.25rem 0rem 0rem 0rem;
-  border: var(--rule);
+  border: none;
 }
 
-.franklin-content td:first-of-type {
+td:first-of-type {
   padding-right: 0.5rem;
 }
 
-tbody tr:nth-child(even) {
-  background-color: var(--output-background);
-}
-
 tr:first-of-type > th {
-  text-align: center; /* background-color: #eae9f4; */
+  text-align: center;
 }
 
 .clean-table table {
   margin-left: 0;
 }
 
-.clean-table tr,
-.clean-table table tbody tr td {
-  border: none;
-}
-
-.clean-table tbody tr:nth-child(even) {
-  background-color: var(--background);
-}
-
 .no-header table thead {
   display: none;
 }
 
-/* blockquote */
+/* titles */
 
-.franklin-content blockquote {
-  /* background-color: var(--output-background); */
-  /* font-style: italic; */
-  border-left: 0.125rem solid var(--theme-darksilver-color);
-  margin: 0.5rem 0.625rem;
-  padding: 0.625rem;
-}
-
-.franklin-content blockquote p {
-  /* display: inline; */
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* horizontal rule */
-
-hr {
-  border-top: var(--rule);
-  border-bottom: 0;
-}
-
-/* code */
-
-code {
-  font-family: var(--monospace);
-  font-size: var(--font-size-small);
-  background-color: var(--output-background);
-  border-radius: 2px;
-  padding: 0.1em 0.2em;
-}
-
-pre > code {
-  font-family: var(--monospace);
-  font-size: var(--font-size-small);
-  /* font-weight: var(--font-weight-thick); */
-  background-color: var(--background);
-  border-radius: 10px;
-}
-
-pre.plaintext {
-  background-color: var(--background);
-  border: 1px dashed lightgrey;
-  border-radius: 10px;
-  padding: 1em;
-}
-
-/* ruby */
-
-rt {
-  margin-bottom: -0.25em;
-}
-
-/* ==================================================================
-    TITLES
-================================================================== */
-
-.franklin-content h1 {
-  font-size: var(--font-size-h1);
-}
-.franklin-content h2 {
-  font-size: var(--font-size-h2);
-}
-.franklin-content h3 {
-  font-size: var(--font-size-h3);
-}
-.franklin-content h4 {
-  font-size: var(--font-size-h4);
-}
-.franklin-content h5 {
-  font-size: var(--font-size-h5);
-}
-.franklin-content h6 {
-  font-size: var(--font-size-h6);
-}
-
-.franklin-content h1,
-.franklin-content h2,
-.franklin-content h3,
-.franklin-content h4,
-.franklin-content h5,
-.franklin-content h6 {
-  text-align: left;
-  font-weight: var(--font-weight-normal);
-  margin-top: var(--font-size-normal);
-  margin-bottom: var(--font-size-normal);
-}
-
-.franklin-content h1 {
-  padding-bottom: 0.5rem;
-  border-bottom: 3px double lightgrey;
-}
-
-.franklin-content h2 {
-  padding-bottom: 0.25rem;
-  border-bottom: var(--rule);
-}
-
-.franklin-content h1 a,
-.franklin-content h2 a,
-.franklin-content h3 a,
-.franklin-content h4 a,
-.franklin-content h5 a,
-.franklin-content h6 a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   color: inherit;
   text-decoration: none;
 }
 
-.franklin-content h1 a:hover,
-.franklin-content h2 a:hover,
-.franklin-content h3 a:hover,
-.franklin-content h4 a:hover,
-.franklin-content h5 a:hover,
-.franklin-content h6 a:hover {
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
   text-decoration: none;
 }
 
-.franklin-content .top-title h1 {
+.top-title h1 {
   font-family: var(--font-large);
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
@@ -334,190 +201,49 @@ rt {
   padding-bottom: 0;
   margin-top: 0em;
   margin-bottom: 0em;
-  border-bottom: none;
   text-align: center;
 }
 
-.franklin-content .top-title strong {
+h2 {
+  font-size: var(--font-size-normal);
   font-weight: var(--font-weight-bold);
-}
-
-/* ==================================================================
-    HYPERREFS AND FOOTNOTES
-================================================================== */
-
-/* table of contents */
-
-/* Avoid clickable elements being too close together. */
-.franklin-toc li {
-  margin: 0.5rem 0;
-}
-.franklin-toc li a {
-  text-decoration: none;
-}
-.franklin-toc ol ol {
-  list-style-type: lower-alpha;
-}
-
-/* inline citations and equation numbering */
-
-.franklin-content .eqref a {
-  color: var(--theme-darkrust-color);
-}
-
-.eqref {
-  color: var(--theme-darkrust-color);
-}
-
-/* this may seem a bit odd but it's how SIAM \cref looks for equations */
-.franklin-content .cref {
-  color: var(--theme-darkrust-color);
-}
-.franklin-content .bibref a {
-  color: var(--theme-darkseagreen-color);
-}
-
-.citation {
-  color: var(--theme-darkseagreen-color);
-}
-
-.franklin-content .eqref a,
-.franklin-content .bibref a {
-  text-decoration: none;
-}
-
-/* references */
-
-.references ol {
-  list-style: none;
-  padding-left: 1rem;
-}
-
-.references h2 {
-  text-align: center;
-}
-
-.references p {
-  text-indent: -4rem;
-  padding-left: 4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0;
 }
 
 /* footnotes */
 
-.franklin-content .footnote {
-  position: relative;
-  top: -0.5rem;
-  font-family: var(--font-footnote);
-  font-size: var(--font-size-footnote);
-}
-
-.franklin-content sup {
+sup {
   font-size: 0.6rem;
   /* vertical-align: text-top; */
   vertical-align: 0.2rem;
-}
-
-.franklin-content sup a {
-  text-decoration: none;
-}
-
-.franklin-content table.fndef {
-  margin: 0;
-  margin-bottom: 1rem;
-}
-
-.franklin-content .fndef tr,
-.franklin-content .fndef td {
-  padding: 0;
-  border: 0;
-  text-align: left;
-}
-
-/*
- * .franklin-content .fndef tr {
- *   border-left: 0.125rem solid var(--theme-darksilver-color);
- * }
- */
-
-.franklin-content .fndef td.fndef-backref {
-  color: var(--theme-darkrust-color);
-  vertical-align: top;
-  font-family: var(--font-footnote);
-  font-size: var(--font-size-footnote);
-  padding-left: 0.25rem;
-}
-
-.franklin-content .fndef td.fndef-backref a {
-  text-decoration: none;
-}
-
-.franklin-content .fndef td.fndef-content {
-  font-family: var(--font-footnote);
-  font-size: var(--font-size-footnote);
-  padding-left: 0.5rem;
-  width: 100%;
 }
 
 /* ==================================================================
     BASIC GRID FOR PROFILE PIC
 ================================================================== */
 
-.franklin-content .columns-start {
+.columns-start {
   display: block;
 }
 
-.franklin-content .column-left {
+.column-left {
   float: left;
   margin-right: 1rem;
 }
 
-.franklin-content .column-right {
+.column-right {
   float: right;
   margin-left: 2rem;
 }
 
-.franklin-content .columns-end {
+.columns-end {
   clear: both;
 }
 
-.franklin-content .no-margin {
+.no-margin {
   margin: 0;
-}
-
-/* ==================================================================
-    IMAGES in CONTENT
-================================================================== */
-
-.franklin-content .border img {
-  border-radius: 4px;
-  box-shadow: var(--box-shadow);
-}
-
-.franklin-content .img-large img {
-  width: 80%;
-  height: auto;
-  margin-left: 10%;
-  text-align: center;
-}
-
-.franklin-content .img-small img {
-  width: 60%;
-  height: auto;
-  margin-left: 20%;
-  text-align: center;
-}
-
-.franklin-content .img-half figure {
-  margin-left: 0%;
-  margin-right: 0%;
-}
-
-.franklin-content .img-half img {
-  width: 48%;
-  height: auto;
-  text-align: center;
-  vertical-align: top;
-  margin: 0 0.25%;
 }
 
 /* captions with automatic numbering */
@@ -531,7 +257,7 @@ h2::after {
   content: ".";
 }
 
-.franklin-content figcaption::before {
+figcaption::before {
   counter-increment: fignum;
   content: "Fig. " counter(fignum) ". ";
   font-style: normal;
@@ -545,7 +271,7 @@ h2.noperiod::after,
   content: "";
 }
 
-.franklin-content figcaption {
+figcaption {
   text-align: center;
 }
 
@@ -554,7 +280,7 @@ h2.noperiod::after,
 ================================================================== */
 
 body > header > nav {
-  width: 65%;
+  width: 100%;
   display: inline-block;
 }
 
@@ -600,20 +326,6 @@ body > header {
   align-items: center;
 }
 
-body > header .blog-name {
-  width: 35%;
-  display: inline-block;
-  text-align: left;
-  font-size: var(--font-size-h5);
-  /* font-family: var(--monospace); */
-  padding-top: 0.5rem;
-}
-
-body > header .blog-name a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
 #menu-icon {
   display: none;
 }
@@ -654,23 +366,6 @@ body > header .blog-name a {
   }
 }
 
-/* medium display: nav goes under name */
-@media screen and (max-width: 940px) {
-  body > header {
-    display: block;
-  }
-
-  body > header .blog-name {
-    display: block;
-    width: 100%;
-    padding-bottom: 0.5rem;
-  }
-
-  body > header > nav {
-    width: 100%;
-  }
-}
-
 /*
 narrow display: collapse the header (don't show the menu items)
 instead, display a burger menu.
@@ -682,14 +377,9 @@ instead, display a burger menu.
     align-items: center;
   }
 
-  body > header .blog-name {
-    display: inline-block;
-    width: 70%;
-  }
-
   body > header > nav {
     display: inline-block;
-    width: 27%;
+    width: 100%;
   }
 
   body > header > nav ul,
@@ -701,8 +391,8 @@ instead, display a burger menu.
     background-color: var(--background);
     border: 1px solid black;
     right: 12.5%;
-    top: 3.3rem;
-    width: 8rem;
+    top: 2.5rem;
+    width: 6.25rem;
     border-radius: 4px 0 4px 4px;
     z-index: 1;
   }
@@ -736,10 +426,7 @@ div:has(.page-foot) {
 .page-foot {
   font-family: var(--font-footnote);
   font-size: var(--font-size-footnote);
-  /* color: var(--theme-silver-color); */
   text-align: left;
-  text-indent: 1.25rem;
-  /* margin-top: 5rem; */
   padding-top: 0.25rem;
   margin-bottom: 0.5rem;
 }
@@ -753,11 +440,6 @@ div:has(.page-foot) {
   height: 0.5pt;
 }
 
-.page-foot p {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-}
-
 .hidden {
   visibility: hidden;
 }
@@ -768,34 +450,6 @@ div:has(.page-foot) {
   text-align: center;
 }
 
-/* ==================================================================
-    BLOG POSTS
-================================================================== */
-
-.post-meta,
-.post-tags {
-  color: var(--theme-darksilver-color);
-  font-size: var(--font-size-small);
-}
-
-.post-tags a {
-  text-decoration: none;
-}
-
-.tagged-posts a {
-  text-decoration: none;
-}
-
-.tagged-posts th:first-of-type {
-  font-family: var(--font-demi);
-  /* font-weight: var(--font-weight-thick); */
-  border: none;
-}
-
-.tagged-posts td {
-  text-align: left;
-}
-
 /* news */
 
 #news\. {
@@ -803,7 +457,7 @@ div:has(.page-foot) {
 }
 
 .news td:first-of-type {
-  font-family: "LMSans8";
+  font-family: var(--sans-small);
   /* font-family: var(--font-demi); */
   /* font-weight: var(--font-weight-thick); */
 }
@@ -814,19 +468,7 @@ div:has(.page-foot) {
 
 /* publications */
 
-.year h2 {
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-normal);
-  color: var(--theme-lightsilver-color);
-  text-align: right;
-  margin-top: 2rem;
-  margin-bottom: -3.75rem;
-  padding-top: 1rem;
-  border-top: var(--rule);
-  border-bottom: none;
-}
-
-.franklin-content .publications h2 {
+.publications h2 {
   /* same note as author */
   /* font-family: var(--font-footnote); */
   /* font-size: var(--font-size-footnote); */
@@ -838,16 +480,6 @@ div:has(.page-foot) {
   margin-top: 1.25rem;
   margin-bottom: 1rem;
   display: block;
-}
-
-.publications ol {
-  list-style: none;
-  padding-left: 16%;
-  padding-right: 4rem;
-}
-
-.publications li {
-  padding: 0.5rem 0;
 }
 
 .publications div.csl-left-margin {
@@ -867,25 +499,6 @@ div:has(.page-foot) {
 
 span.authors {
   font-variant-caps: small-caps;
-}
-
-.paper-title {
-  font-family: "LMSans10";
-  /* font-family: var(--font-demi); */
-  /* font-weight: var(--font-weight-thick); */
-}
-
-.paper-title cite {
-  font-style: normal;
-}
-
-.paper-authors em {
-  font-style: normal;
-  border-bottom: 1px solid currentcolor;
-}
-
-.paper-journal {
-  font-style: italic;
 }
 
 div.paper-metadata {
@@ -934,7 +547,7 @@ div.csl-indent {
 
 /* index */
 
-.franklin-content .author p {
+.author p {
   /* contravenes siam style guide, but looks more accurate */
   /* font-family: var(--font-footnote); */
   /* font-size: var(--font-size-footnote); */
@@ -943,6 +556,7 @@ div.csl-indent {
   font-variant-caps: all-small-caps;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  text-indent: 0rem;
   text-align: center;
 }
 
@@ -951,24 +565,10 @@ div.csl-indent {
   font-size: var(--font-size-footnote);
 }
 
-.franklin-content .author sup {
+.author sup {
   /* vertical-align: text-top; */
   font-size: 0.6rem;
   vertical-align: 0.3rem;
-}
-
-.indent p {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  text-indent: 1.25rem;
-}
-
-h2 {
-  display: inline-block;
-}
-
-h2 + p {
-  display: inline;
 }
 
 .abstract {
@@ -976,7 +576,7 @@ h2 + p {
   font-size: var(--font-size-footnote);
 }
 
-.franklin-content .abstract h2 {
+.abstract h2 {
   font-family: var(--font-footnote);
   font-size: var(--font-size-footnote);
   margin-top: 1rem;
@@ -984,29 +584,6 @@ h2 + p {
 
 div.abstract {
   margin-bottom: 1rem;
-}
-
-.abstract p {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  text-indent: 1.25rem;
-}
-
-.pgp {
-  overflow-wrap: break-word;
-}
-
-.pgp samp {
-  font-family: var(--monospace);
-}
-
-.pgp a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-.index-column-right {
-  width: auto;
 }
 
 .address {
@@ -1039,35 +616,15 @@ figcaption {
   /* text-indent: 1.25rem; */
 }
 
-.profile p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 @media screen and (max-width: 760px) {
-  .franklin-content .profile img {
+  .profile img {
     min-width: 100%;
     height: auto;
   }
 
-  .franklin-content .column-right {
+  .column-right {
     margin-left: 0;
     float: none;
     text-align: center;
   }
-}
-
-.franklin-content h2 {
-  font-size: var(--font-size-normal);
-  font-weight: var(--font-weight-bold);
-  margin-top: 0.5rem;
-  margin-bottom: 0rem;
-  padding-bottom: 0;
-  border-bottom: none;
-  text-indent: 1.25rem;
-}
-
-ul {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
 }
