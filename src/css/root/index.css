@@ -1,3 +1,5 @@
+/* https://epubs.siam.org/pb-assets/files/SIAM_STYLE_GUIDE_2019.pdf */
+
 /* ==================================================================
     VARIABLES
 ================================================================== */
@@ -60,7 +62,7 @@
 
 body {
   /* counters for KaTeX equation numbers and figures */
-  counter-reset: eqnum fignum;
+  counter-reset: eqnum fignum secnum;
 }
 
 /* ==================================================================
@@ -95,20 +97,31 @@ body {
 }
 
 /* On wide screens, fix content width to a max value. */
-@media (min-width: 940px) {
+@media screen and (min-width: 940px) {
   .franklin-content {
     width: 500px;
-    height: 745px;
+    height: 707px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
 /* On narrow device, reduce margins. */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .franklin-content {
     padding-left: 6%;
     padding-right: 6%;
+  }
+}
+
+@media print {
+  .franklin-content {
+    width: 500px;
+    height: 707px;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-left: 10%;
+    margin-right: auto;
   }
 }
 
@@ -152,7 +165,7 @@ body {
 .franklin-content table {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   border-collapse: collapse;
   text-align: center;
   line-height: 1em;
@@ -161,9 +174,13 @@ body {
 .franklin-content th,
 .franklin-content td {
   font-family: var(--font-footnote);
-  font-size: var(--font-size-script);
-  padding: 0.25rem 0.5rem 0rem 0rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0rem 0rem 0rem;
   border: var(--rule);
+}
+
+.franklin-content td:first-of-type {
+  padding-right: 0.5rem;
 }
 
 tbody tr:nth-child(even) {
@@ -379,6 +396,7 @@ rt {
 .references h2 {
   text-align: center;
 }
+
 .references p {
   text-indent: -4rem;
   padding-left: 4rem;
@@ -504,12 +522,14 @@ rt {
 
 /* captions with automatic numbering */
 
-/*
-.franklin-content h2::before {
-  counter-increment: fignum;
-  content: counter(fignum) ". ";
+h2::before {
+  counter-increment: secnum;
+  content: counter(secnum) ". ";
 }
-*/
+
+h2::after {
+  content: ".";
+}
 
 .franklin-content figcaption::before {
   counter-increment: fignum;
@@ -518,7 +538,9 @@ rt {
   font-variant-caps: all-small-caps;
 }
 
-.franklin-content .nonumber figcaption::before {
+h2.nonumber::before,
+h2.noperiod::after,
+.nonumber figcaption::before {
   counter-increment: nothing;
   content: "";
 }
@@ -572,7 +594,7 @@ body > header > nav li a:hover {
 
 body > header {
   text-align: right;
-  margin-top: 12rem;
+  margin-top: 8.75rem;
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -596,22 +618,35 @@ body > header .blog-name a {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   body > header {
     padding-left: 6%;
     padding-right: 6%;
   }
 }
 
-@media (min-width: 481px) {
+@media screen and (min-width: 481px) {
   body > header {
     padding-left: 12.5%;
     padding-right: 12.5%;
   }
 }
 
+@media print {
+  body > header {
+    padding-left: 0%;
+    padding-right: 12.5%;
+  }
+
+  body > header {
+    width: 500px;
+    margin-left: 10%;
+    margin-right: auto;
+  }
+}
+
 /* wide display: enforce maximum width of header to match content */
-@media (min-width: 940px) {
+@media screen and (min-width: 940px) {
   body > header {
     width: 500px;
     margin-left: auto;
@@ -620,7 +655,7 @@ body > header .blog-name a {
 }
 
 /* medium display: nav goes under name */
-@media (max-width: 940px) {
+@media screen and (max-width: 940px) {
   body > header {
     display: block;
   }
@@ -640,7 +675,7 @@ body > header .blog-name a {
 narrow display: collapse the header (don't show the menu items)
 instead, display a burger menu.
 */
-@media (max-width: 760px) {
+@media screen and (max-width: 760px) {
   body > header {
     height: 2rem;
     display: flex;
@@ -706,7 +741,7 @@ div:has(.page-foot) {
   text-indent: 1.25rem;
   /* margin-top: 5rem; */
   padding-top: 0.25rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .page-foot:after {
@@ -792,12 +827,17 @@ div:has(.page-foot) {
 }
 
 .franklin-content .publications h2 {
-  font-family: var(--font-footnote);
-  font-size: var(--font-size-footnote);
+  /* same note as author */
+  /* font-family: var(--font-footnote); */
+  /* font-size: var(--font-size-footnote); */
+  font-family: var(--font);
+  font-size: var(--font-size-normal);
   font-variant-caps: all-small-caps;
   font-weight: var(--font-weight-normal);
   text-align: center;
+  margin-top: 1.25rem;
   margin-bottom: 1rem;
+  display: block;
 }
 
 .publications ol {
@@ -895,31 +935,60 @@ div.csl-indent {
 /* index */
 
 .franklin-content .author p {
-  font-family: var(--font-footnote);
-  font-size: var(--font-size-footnote);
+  /* contravenes siam style guide, but looks more accurate */
+  /* font-family: var(--font-footnote); */
+  /* font-size: var(--font-size-footnote); */
+  font-family: var(--font);
+  font-size: var(--font-size-normal);
   font-variant-caps: all-small-caps;
   margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-align: center;
+}
+
+.author span {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
 }
 
 .franklin-content .author sup {
   /* vertical-align: text-top; */
-  vertical-align: 0.4rem;
-}
-
-.indent {
-  text-indent: 1.25rem;
+  font-size: 0.6rem;
+  vertical-align: 0.3rem;
 }
 
 .indent p {
   margin-top: 0rem;
   margin-bottom: 0rem;
+  text-indent: 1.25rem;
+}
+
+h2 {
+  display: inline-block;
+}
+
+h2 + p {
+  display: inline;
 }
 
 .abstract {
   font-family: var(--font-footnote);
   font-size: var(--font-size-footnote);
+}
+
+.franklin-content .abstract h2 {
+  font-family: var(--font-footnote);
+  font-size: var(--font-size-footnote);
+  margin-top: 1rem;
+}
+
+div.abstract {
+  margin-bottom: 1rem;
+}
+
+.abstract p {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   text-indent: 1.25rem;
 }
 
@@ -952,6 +1021,7 @@ div.csl-indent {
   height: 150px;
   border-radius: 4px;
   box-shadow: var(--box-shadow);
+  margin-top: 0.5rem;
 }
 
 .profile figure {
@@ -963,7 +1033,7 @@ figcaption {
   font-size: var(--font-size-footnote);
   font-style: italic;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   text-align: center;
   /* text-align: left; */
   /* text-indent: 1.25rem; */
@@ -974,7 +1044,7 @@ figcaption {
   margin-bottom: 0;
 }
 
-@media (max-width: 760px) {
+@media screen and (max-width: 760px) {
   .franklin-content .profile img {
     min-width: 100%;
     height: auto;
@@ -990,12 +1060,14 @@ figcaption {
 .franklin-content h2 {
   font-size: var(--font-size-normal);
   font-weight: var(--font-weight-bold);
+  margin-top: 0.5rem;
   margin-bottom: 0rem;
   padding-bottom: 0;
   border-bottom: none;
   text-indent: 1.25rem;
 }
 
-.franklin-content .links ul {
+ul {
   margin-top: 0rem;
+  margin-bottom: 0rem;
 }
