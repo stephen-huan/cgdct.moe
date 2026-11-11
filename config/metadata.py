@@ -91,7 +91,8 @@ def get_lastupdated(path: Path) -> str:
         return ""
     else:
         dt = last_updated[path]
-        date = dt.strftime(date_format)
+        format = get_frontmatter(path).get("date-format", date_format)
+        date = dt.strftime(format)
         timestamp = f'<time datetime="{dt.isoformat()}">{date}</time>'
         return f"&nbsp;Last updated: {timestamp}."
 
