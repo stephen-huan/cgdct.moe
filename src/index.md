@@ -5,6 +5,7 @@ description: "Stephen Huan's personal website."
 css:
   - "/css/root/index.css"
   - "/css/lm.css"
+date-format: "%B %-d, %Y"
 disable-blog-name: true
 is-template: true
 news-entries: 5
@@ -24,18 +25,21 @@ Stephen Huan [(浣苇杭)]{lang="zh-Hans"}<sup>†</sup>
 
 :::abstract
 
-**Abstract.**
+## Abstract {.nonumber}
+
 I'm a PhD student in the [Computer Science Department](https://csd.cmu.edu/)
-at [Carnegie Mellon University](https://www.cmu.edu/), advised
-by [Andrej Risteski](https://www.andrejristeski.org/) and [Nicholas
+at [Carnegie Mellon University](https://www.cmu.edu/), advised by
+[Andrej Risteski](https://www.andrejristeski.org/) and [Nicholas
 Boffi](https://nmboffi.github.io/). Prior to CMU, I was an undergraduate
 at [Georgia Tech](https://www.gatech.edu/), where I worked on applied
-math with [Florian Schäfer](https://f-t-s.github.io/).
+math with [Florian Schäfer](https://f-t-s.github.io/). \
 
-**Key words.**
-generative modeling, statistical inference, numerical computation
+## Key words {.nonumber}
 
-**MSC codes.**
+generative modeling, statistical inference, numerical computation \
+
+## MSC codes {.nonumber}
+
 68Q32, 62-08, 65F55
 
 :::
@@ -56,17 +60,19 @@ generative modeling, statistical inference, numerical computation
 
 :::indent
 
-**1. Introduction.** My research interests are in problems spanning machine
-learning, statistics, and applied mathematics. I'm particularly interested in
-designing efficient numerical algorithms for generative modeling, sampling,
-and statistical inference. See these [high-level summaries](/projects/) for
-details about my work.
+## Introduction
+
+My research interests are in problems spanning machine learning, statistics,
+and applied mathematics. I'm particularly interested in designing efficient
+numerical algorithms for generative modeling, sampling, and statistical
+inference. See these [high-level summaries](/projects/) for details about
+my work.
 
 :::
 
 :::links
 
-## 2. External links.
+## External links
 
 - GitHub: [stephen-huan](https://github.com/stephen-huan)
 - ORCID: [0009-0009-6309-4415](https://orcid.org/0009-0009-6309-4415)
@@ -78,7 +84,7 @@ details about my work.
 ::::
 :::
 
-## 3. [News](/news/). {.showhover}
+## [News](/news/) {.showhover}
 
 :::{.news .clean-table .no-header}
 
@@ -91,7 +97,7 @@ $../templates/news.html()$
 
 :::publications
 
-## [References](/publications/) {.showhover}
+## [References](/publications/) {.showhover .nonumber .noperiod}
 
 <!-- manually formatted -->
 
