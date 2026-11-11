@@ -79,7 +79,7 @@ def get_headers(path: Path, dst: Path) -> list[dict[str, str | bool]]:
 def get_pagesource(path: Path) -> str:
     """Get the source of the path."""
     url = f"{static_metadata.get('git-repo', '')}{path}"
-    return f"<a href='{url}'>Page source</a>."
+    return f"<a href='{url}'>Page source</a>"
 
 
 def get_lastupdated(path: Path) -> str:
@@ -93,8 +93,7 @@ def get_lastupdated(path: Path) -> str:
         dt = last_updated[path]
         format = get_frontmatter(path).get("date-format", date_format)
         date = dt.strftime(format)
-        timestamp = f'<time datetime="{dt.isoformat()}">{date}</time>'
-        return f"&nbsp;Last updated: {timestamp}."
+        return f'<time datetime="{dt.isoformat()}">{date}</time>'
 
 
 @cache
